@@ -6,7 +6,7 @@ const Partners: React.FC = () => {
         <div className="bg-base-100 py-16">
             <div className="px-4 max-w-6xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-primary font-dm-sans mb-4">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-primary font-dm-sans">
                         Our Partners
                     </h2>
                 </div>
