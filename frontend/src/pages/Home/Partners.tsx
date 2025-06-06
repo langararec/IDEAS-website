@@ -26,7 +26,7 @@ const Partners: React.FC = () => {
                     ))}
                 </div>
 
-                <p className="px-6 text-gray-700 leading-relaxed font-dm-sans text-center my-4">This project is supported in part by funding from the Social Sciences and Humanities Research Council.</p>\
+                <p className="px-6 text-gray-700 leading-relaxed font-dm-sans text-center my-4">This project is supported in part by funding from the Social Sciences and Humanities Research Council.</p>
 
                 <img src="/SSHRCC.webp" alt="SSHRCC Canada" className="w-full"></img>
             </div>
