@@ -1,9 +1,11 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
+import Project from './pages/Project/Project'
+import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
-import Test from './pages/Test'
 function App() {
 
 
@@ -14,9 +16,11 @@ function App() {
       <div className='mt-24'></div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/test" element={<Test />} />
-        {/* Add more routes as needed */}
+        <Route path="/project" element={<Project />} />
+        <Route path='*' element={<NotFound />} />
+
       </Routes>
+      <Footer />
     </Router>
   )
 }
