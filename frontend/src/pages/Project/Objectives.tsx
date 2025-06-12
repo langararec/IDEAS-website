@@ -64,7 +64,7 @@ const Objectives: React.FC = () => {
                                         {objective.title}
                                     </h3>
                                 </div>
-                                <p className="text-gray-600s md:text-lg leading-relaxed font-dm-sans">
+                                <p className=" md:text-lg leading-relaxed font-dm-sans">
                                     {objective.description}
                                 </p>
                             </div>
