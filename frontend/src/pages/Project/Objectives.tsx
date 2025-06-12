@@ -1,6 +1,8 @@
 import React from "react";
-import { HiLightBulb, HiUsers, HiUserGroup, HiCheckCircle } from "react-icons/hi";
+import {  HiUserGroup, HiCheckCircle } from "react-icons/hi";
+import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaHandHoldingHeart } from "react-icons/fa";
+
 
 
 export interface Objective {
@@ -16,7 +18,7 @@ export const objectivesData: Objective[] = [
         id: "understand-perspectives",
         title: "Understand Perspectives",
         description: "Identify how immigrant and racialized communities experience recreation differently from native-born public recreation staff and how service context shapes design and delivery.",
-        icon: HiLightBulb,
+        icon: HiOutlineLightBulb,
         colorClass: "primary"
     },
     {
