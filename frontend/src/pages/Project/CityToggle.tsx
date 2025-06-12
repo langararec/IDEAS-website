@@ -43,7 +43,7 @@ const CityToggle: React.FC = () => {
                     <h2 className="text-2xl font-semibold text-primary mb-4 font-dm-sans">{city.title}</h2>
                     <div className="space-y-4 leading-relaxed">
                         {city.paragraphs.map((paragraph, index) => (
-                            <p key={index}>
+                            <p key={index} className="md:text-lg leading-relaxed font-dm-sans">
                                 {paragraph}
                             </p>
                         ))}
