@@ -20,10 +20,10 @@ function App() {
         <Route path='*' element={<NotFound />} />
 
       </Routes>
-      
+
       <Footer />
     </Router>
   )
 }
 
-export default App
+export default App;
