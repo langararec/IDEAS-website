@@ -5,8 +5,7 @@ type ItemType = 'component1' | 'component2' | 'component3';
 
 const ItemToggle: React.FC = () => {
     const [activeTab, setActiveTab] = useState<ItemType>('component1');
-
-    // Component 2 - Different structure
+   
     const Component2 = () => (
         <div className="bg-green-50 p-4 md:p-8 rounded-lg">
             <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8">
