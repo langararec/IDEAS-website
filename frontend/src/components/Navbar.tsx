@@ -11,15 +11,15 @@ const Navbar: React.FC = () => {
 
     return (
         <div className='bg-white w-full fixed top-0 z-50 h-24'>
-            <div className="w-full lg:max-w-7xl mx-auto h-full my-auto flex flex-row justify-between py-4">
+            <div className="w-full xl:max-w-7xl mx-auto h-full my-auto flex flex-row justify-between py-4">
                 <div className="my-auto ml-4">
                     <Link to="/">
                         <img src="/logo_rec.svg" alt="Logo" className="h-10 " />
                     </Link>
                 </div>
 
-                {/* Desktop Navigation */}
-                <div className="hidden md:block">
+                {/* Desktop Navigation - Only shows on XL screens and above */}
+                <div className="hidden xl:block">
                     <nav className="flex space-x-8 p-4">
                         <div>
                             <div
@@ -75,8 +75,8 @@ const Navbar: React.FC = () => {
                     </nav>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <div className="md:hidden mr-4 my-auto">
+                {/* Mobile Menu Button - Shows up to XL screens */}
+                <div className="xl:hidden mr-4 my-auto">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="text-primary text-2xl p-2"
@@ -86,9 +86,9 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu - Shows up to XL screens */}
             <div className={`${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100`}>
+                xl:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100`}>
                 
                 <div className="p-4 space-y-4">
                     {/* Mobile About Section */}
