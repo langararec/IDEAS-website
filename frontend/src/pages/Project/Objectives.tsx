@@ -44,6 +44,8 @@ export const objectivesData: Objective[] = [
     }
 ];
 
+
+
 const Objectives: React.FC = () => {
     return (
         <div className="py-8 px-4">
