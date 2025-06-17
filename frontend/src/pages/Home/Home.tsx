@@ -8,6 +8,7 @@ const Home: React.FC = () => {
 
     return (
         <div className="bg-base-100">
+
             {/* Hero Section */}
             <Hero />
 
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
 
             {/* Partners Section */}
             <Partners />
+            
         </div>
     );
 }
