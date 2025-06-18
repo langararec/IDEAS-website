@@ -10,8 +10,8 @@ const Navbar: React.FC = () => {
     const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
     return (
-        <div className='bg-white w-full fixed top-0 z-50 h-24'>
-            <div className="w-full xl:max-w-7xl mx-auto h-full my-auto flex flex-row justify-between py-4">
+        <div className='bg-white w-full fixed top-0 z-50 h-20'>
+            <div className="w-full xl:max-w-7xl mx-auto h-full my-auto flex flex-row justify-between py-4 items-center">
                 <div className="my-auto ml-4">
                     <Link to="/">
                         <img src="/logo_rec.svg" alt="Logo" className="h-10 " />
