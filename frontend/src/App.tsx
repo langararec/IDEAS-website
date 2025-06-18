@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Navbar />
       {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className='mt-24'></div>
+      <div className='mt-20'></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project" element={<Project />} />
