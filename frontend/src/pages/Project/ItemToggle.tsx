@@ -1,39 +1,12 @@
 import React, { useState } from "react";
 import UNSDG from "./ToggleItems/UNSDG";
+import Framework from "./ToggleItems/Framework";
 
 type ItemType = 'component1' | 'component2' | 'component3';
 
 const ItemToggle: React.FC = () => {
     const [activeTab, setActiveTab] = useState<ItemType>('component1');
    
-    const Component2 = () => (
-        <div className="bg-green-50 p-4 md:p-8 rounded-lg">
-            <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8">
-                <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-green-800 mb-4">Component 2</h3>
-                    <ul className="space-y-2">
-                        <li className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                            Item 1
-                        </li>
-                        <li className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                            Item 2
-                        </li>
-                        <li className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                            Item 3
-                        </li>
-                    </ul>
-                </div>
-                <div className="flex-1">
-                    <div className="bg-white p-4 md:p-6 rounded-lg shadow">
-                        <p className="text-gray-700">Content area with different layout</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
 
     // Component 3 - Different structure
     const Component3 = () => (
@@ -65,7 +38,7 @@ const ItemToggle: React.FC = () => {
             case 'component1':
                 return <UNSDG />;
             case 'component2':
-                return <Component2 />;
+                return <Framework />;
             case 'component3':
                 return <Component3 />;
             default:
