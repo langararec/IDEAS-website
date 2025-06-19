@@ -1,31 +1,13 @@
 import React, { useState } from "react";
 import UNSDG from "./ToggleItems/UNSDG";
 import Framework from "./ToggleItems/Framework";
+import Outcomes from "./ToggleItems/Outcomes";
 
 type ItemType = 'component1' | 'component2' | 'component3';
 
 const ItemToggle: React.FC = () => {
     const [activeTab, setActiveTab] = useState<ItemType>('component1');
    
-
-    // Component 3 - Different structure
-    const Component3 = () => (
-        <div className="bg-purple-50 p-4 md:p-8 rounded-lg">
-            <h3 className="text-xl md:text-2xl font-bold text-purple-800 mb-4 md:mb-6 text-center">Component 3</h3>
-            <div className="max-w-2xl mx-auto">
-                <div className="space-y-4">
-                    <div className="bg-white p-4 rounded-lg border-l-4 border-purple-500">
-                        <h4 className="font-semibold text-purple-700">Section A</h4>
-                        <p className="text-gray-600">Centered layout with bordered sections</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg border-l-4 border-purple-500">
-                        <h4 className="font-semibold text-purple-700">Section B</h4>
-                        <p className="text-gray-600">Another section with the same styling</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
 
     const tabs = [
         { id: 'component1' as ItemType, label: 'UN SUSTAINABLE DEVELOPMENT GOALS' },
@@ -40,7 +22,7 @@ const ItemToggle: React.FC = () => {
             case 'component2':
                 return <Framework />;
             case 'component3':
-                return <Component3 />;
+                return <Outcomes />;
             default:
                 return <UNSDG />;
         }
