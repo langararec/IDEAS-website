@@ -1,35 +1,30 @@
 import React, { useState } from "react";
-import UNSDG from "./ToggleItems/UNSDG";
-import Framework from "./ToggleItems/Framework";
-import Outcomes from "./ToggleItems/Outcomes";
+import Timeline from "./Timeline";
+import ProjectUpdate from "./ProjectUpdate"; 
+type ItemType = 'component1' | 'component2';
 
-type ItemType = 'component1' | 'component2' | 'component3';
-
-const ItemToggle: React.FC = () => {
+const UpdatesToggle: React.FC = () => {
     const [activeTab, setActiveTab] = useState<ItemType>('component1');
    
 
     const tabs = [
-        { id: 'component1' as ItemType, label: 'UN SUSTAINABLE DEVELOPMENT GOALS' },
-        { id: 'component2' as ItemType, label: 'FRAMEWORK' },
-        { id: 'component3' as ItemType, label: 'EXPECTED OUTCOMES' }
+        { id: 'component1' as ItemType, label: 'PROJECT TIMELINE' },
+        { id: 'component2' as ItemType, label: 'PROJECT UPDATE' },
     ];
 
     const renderActiveComponent = () => {
         switch (activeTab) {
             case 'component1':
-                return <UNSDG />;
+                return <Timeline />;
             case 'component2':
-                return <Framework />;
-            case 'component3':
-                return <Outcomes />;
+                return <ProjectUpdate />;
             default:
-                return <UNSDG />;
+                return <div></div>
         }
     };
 
     return (
-        <div className="max-w-6xl mx-auto p-4 md:p-6">
+        <div className="max-w-6xl mx-auto p-2 md:p-6">
             {/* Tab Navigation */}
             <div className="mb-6 rounded-xl py-2 px-2 md:py-2 md:px-4 bg-white shadow-sm">
                 <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
@@ -62,4 +57,4 @@ const ItemToggle: React.FC = () => {
     );
 };
 
-export default ItemToggle;
+export default UpdatesToggle;
