@@ -37,7 +37,7 @@ const CityToggle: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'burnaby' | 'courtenay'>('burnaby');
 
     const CityComponent = ({ city }: { city: CityData }) => (
-        <div className="p-6 ">
+        <div className="py-6 ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <div className="my-auto">
                     <h2 className="text-2xl font-semibold text-primary mb-4 font-dm-sans">{city.title}</h2>
@@ -63,28 +63,30 @@ const CityToggle: React.FC = () => {
     const currentCity = citiesData.find(city => city.id === activeTab)!;
 
     return (
-        <div className="max-w-6xl mx-auto p-6">
-            {/* Tab Navigation */}
-            <div className=" mb-6 rounded-xl md:py-2 md:px-4 bg-white shadow-sm">
-                <div className="flex space-x-2">
-                    {citiesData.map((city) => (
-                        <button
-                            key={city.id}
-                            onClick={() => setActiveTab(city.id)}
-                            className={`flex-1 py-3 px-6 rounded-xl font-medium transition-all duration-300 ${activeTab === city.id
-                                ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
-                                : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
-                                }`}
-                        >
-                            {city.title}
-                        </button>
-                    ))}
+        <div className="px-4 py-6">
+            <div className="max-w-7xl mx-auto">
+                {/* Tab Navigation */}
+                <div className=" mb-6 rounded-xl md:py-2 md:px-4 bg-white shadow-sm">
+                    <div className="flex space-x-2">
+                        {citiesData.map((city) => (
+                            <button
+                                key={city.id}
+                                onClick={() => setActiveTab(city.id)}
+                                className={`flex-1 py-3 px-6 rounded-xl font-medium transition-all duration-300 ${activeTab === city.id
+                                    ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
+                                    : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
+                                    }`}
+                            >
+                                {city.title}
+                            </button>
+                        ))}
+                    </div>
                 </div>
-            </div>
 
-            {/* Tab Content */}
-            <div className="transition-all duration-300 ease-in-out">
-                <CityComponent city={currentCity} />
+                {/* Tab Content */}
+                <div className="transition-all duration-300 ease-in-out">
+                    <CityComponent city={currentCity} />
+                </div>
             </div>
         </div>
     );
