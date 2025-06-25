@@ -3,24 +3,24 @@ const MissionStatement: React.FC = () => {
         <div className="relative">
             {/* Spacer to account for overlapping box */}
             <div className="h-20 lg:h-32"></div>
-            
+
             <div className="bg-primary py-16 px-4 relative">
                 <div className="max-w-6xl mx-auto relative">
                     {/* Main Quote Box - Overlapping */}
-                    <div className="bg-base-200 rounded-2xl p-6 lg:p-12 text-center absolute -top-24 md:-top-24  lg:-top-36 left-1/2 transform -translate-x-1/2 w-11/12 lg:w-3/4 xl:w-2/3  z-10">
-                        <h2 className="text-xl lg:text-3xl xl:text-4xl font-bold text-primary leading-tight font-dm-sans">
+                    <div className="bg-base-200 rounded-2xl p-6 lg:p-12 text-center absolute -top-34 md:-top-24 lg:-top-36 left-1/2 transform -translate-x-1/2 w-11/12 lg:w-10/12  z-10">
+                        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-medium text-primary leading-tight font-dm-sans">
                             We aim to understand the unique recreation needs of{" "}
                             <span className="text-accent">racialized</span> and{" "}
-                            <span className="text-accent">immigrant</span> groups compared to Canadian-born residents.
+                            <span className="text-accent">immigrant</span> groups compared to native-born residents.
                         </h2>
                     </div>
 
                     {/* Description Text - More top padding to account for quote box */}
-                    <div className="text-center space-y-6 text-white font-dm-sans pt-32 lg:pt-48">
+                    <div className="text-center space-y-6 text-white font-dm-sans pt-28 lg:pt-38 w-11/12 mx-auto">
                         <p className="text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto">
-                            By uncovering barriers to participation by looking through a lens of 'Belonging, Dignity, Justice, and Joy'
-                            (Davis, 2021) we hope to build stronger community connections and foster a genuine sense of belonging for
-                            everyone through more effective inclusive practices in recreation.
+                            We are committed to supporting communities in Greater Vancouver and a smaller Vancouver Island area. 
+                            By uncovering barriers to participation and encouraging inclusive practices, 
+                            we hope to build stronger community connections and foster a genuine sense of belonging for everyone.
                         </p>
 
                         <p className="text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto">
