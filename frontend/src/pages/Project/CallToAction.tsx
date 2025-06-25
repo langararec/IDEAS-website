@@ -3,8 +3,8 @@ import React from "react";
 const CallToAction: React.FC = () => {
     return (
         <div className="bg-primary py-16 px-4">
-            <div className="max-w-4xl mx-auto text-center">
-                <blockquote className="text-xl md:text-2xl lg:text-3xl text-white font-medium leading-relaxed mb-8 font-dm-sans">
+            <div className="max-w-6xl mx-auto text-center">
+                <blockquote className="text-xl md:text-2xl lg:text-3xl text-white font-medium leading-relaxed  tracking-wide mb-8 font-dm-sans">
                     "This project is dedicated to building an inclusive framework for
                     public recreation that reflects and supports the diverse needs of all
                     community members in British Columbia and beyond."
