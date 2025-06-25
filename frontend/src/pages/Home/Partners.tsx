@@ -1,4 +1,4 @@
-const partnerUrls = ["partner1.webp", "partner2.webp", "partner3.webp", "partner4.webp", "partner5.webp", "partner6.webp", "partner7.webp"];
+const partnerUrls = ["partner1.webp", "partner2.webp", "partner3.webp", "partner4.webp", "partner5.webp", "partner6.webp", "partner7.webp", "partner8.webp"];
 
 const Partners: React.FC = () => {
 
@@ -18,7 +18,7 @@ const Partners: React.FC = () => {
                             className="p-3 md:p-6 rounded-xl transition-shadow duration-300 flex items-center justify-center w-2/5 md:w-1/4 lg:w-1/5"
                         >
                             <img
-                                src={partnerUrl}
+                                src={"/partners/" + partnerUrl}
                                 alt={`Partner ${index + 1}`}
                                 className="max-w-full max-h-16 md:max-h-24 object-contain transition-all duration-300"
                             />
@@ -26,9 +26,11 @@ const Partners: React.FC = () => {
                     ))}
                 </div>
 
-                <p className="px-6 text-gray-700 leading-relaxed font-dm-sans text-center my-4">This project is supported in part by funding from the Social Sciences and Humanities Research Council.</p>
+                <div className="flex flex-col items-center">
+                    <p className="text-gray-700 text-sm lg:text-base leading-relaxed font-dm-sans text-center my-4 max-w-2xl">This project is supported in part by funding from the Social Sciences and Humanities Research Council.</p>
 
-                <img src="/SSHRCC.webp" alt="SSHRCC Canada" className="w-full"></img>
+                    <img src="/SSHRCC.webp" alt="SSHRCC Canada" className="max-w-2xl w-full "></img>
+                </div>
             </div>
         </div>
     );
