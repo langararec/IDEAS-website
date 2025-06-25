@@ -14,7 +14,7 @@ const Carousel: React.FC = () => {
             speed={30}
             gradient={true}
             gradientColor="#ffffff"
-            gradientWidth={20}
+            gradientWidth={5}
             className="py-8 overflow-y-hidden"
             pauseOnHover={true}
             autoFill={true}
