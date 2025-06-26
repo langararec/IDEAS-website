@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
                                 onMouseLeave={() => setIsAboutOpen(false)}
                                 className="flex flex-row items-center relative"
                             >
-                                <p className="text-primary cursor-pointer hover:text-primary/80 transition-colors font-medium text-xl">
+                                <p className="text-primary cursor-pointer hover:text-primary/80 transition-colors font-medium text-xl font-dm-sans">
                                     About
                                 </p>
                                 <RxCaretDown className={`inline ml-1 text-primary transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} />
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
 
                                         <Link
                                             to="/project"
-                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200"
+                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200 font-dm-sans"
                                         >
                                             <div className="flex items-center space-x-3">
                                                 <div>
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                                         >
                                             <div className="flex items-center space-x-3">
                                                 <div>
-                                                    <p className="text-primary font-medium group-hover:text-primary/80">Updates & Timeline</p>
+                                                    <p className="text-primary font-medium group-hover:text-primary/80 font-dm-sans">Updates & Timeline</p>
                                                 </div>
                                             </div>
                                         </Link>
@@ -67,10 +67,10 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <Link to="/team" className="text-primary text-xl font-medium">Team</Link>
+                            <Link to="/team" className="text-primary text-xl font-medium font-dm-sans">Team</Link>
                         </div>
                         <div>
-                            <Link to="/get-involved" className="text-primary font-medium text-xl">Get Involved</Link>
+                            <Link to="/get-involved" className="text-primary font-medium text-xl font-dm-sans">Get Involved</Link>
                         </div>
                     </nav>
                 </div>
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
                     <div>
                         <button
                             onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
-                            className="flex items-center justify-between w-full text-left p-3 text-primary font-medium text-lg"
+                            className="flex items-center justify-between w-full text-left p-3 text-primary font-medium font-dm-sans text-lg"
                         >
                             About
                             <RxCaretDown className={`transition-transform duration-200 ${isMobileAboutOpen ? 'rotate-180' : ''}`} />
@@ -107,14 +107,14 @@ const Navbar: React.FC = () => {
                                 <Link
                                     to="/project"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block p-3 text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                                    className="block p-3 font-dm-sans text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
                                 >
                                     The Project
                                 </Link>
                                 <Link
                                     to="/updates"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block p-3 text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                                    className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
                                 >
                                     Updates & Timeline
                                 </Link>
@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
                     <Link
                         to="/team"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block p-3 text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
+                        className="block p-3 font-dm-sans text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
                     >
                         Team
                     </Link>
@@ -135,7 +135,7 @@ const Navbar: React.FC = () => {
                     <Link
                         to="/get-involved"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block p-3 text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
+                        className="block p-3 font-dm-sans   text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
                     >
                         Get Involved
                     </Link>

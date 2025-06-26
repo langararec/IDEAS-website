@@ -42,9 +42,9 @@ const collaborators: MemberInfo[] = [
         role: "Collaborator",
         program: "Department of Social Services",
         image: "/team/keith.webp",
-        shortDescription: "Yue-Ching Cheng is the Chair of Recreation Studies, innovating pedagogy and specializing in recreation management, community services, and policy development.",
+        shortDescription: "Keith Dormond is a Social Services instructor and researcher specializing in anti-oppressive practices and violence risk assessment.",
         longDescription: "Keith Dormond is an Instructor in the Department of Social Services at Langara College and teaches in the Social Service Worker Certificate and Diploma programs, as well as the Gerontology Diploma program. He has also instructed Criminology courses at Douglas College, The University of Fraser Valley, and Langara College.  Keith holds a PhD in Educational Studies from the University of British Columbia along with a Master degree of social work. His research interests include violence against women and men that is motivated by honour and shame (honour-related violence and oppression), anti-oppressive practice, and violence risk assessment and management. \n\n" +
-        "He is currently a qualitative evaluator for research project at Langara entitled, “Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.” Prior to entering academia, he worked a police officer in Vancouver for over 24 years and community organizer in Toronto and Vancouver.  As a police detective, he was assigned to units including domestic violence, mental health, and recruiting.  He practices, teaches and researches through an anti-racism and anti-oppressive framework." ,
+            "He is currently a qualitative evaluator for research project at Langara entitled, “Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.” Prior to entering academia, he worked a police officer in Vancouver for over 24 years and community organizer in Toronto and Vancouver.  As a police detective, he was assigned to units including domestic violence, mental health, and recruiting.  He practices, teaches and researches through an anti-racism and anti-oppressive framework.",
         programLink: "https://langara.ca/programs-courses/social-service-worker-certificate-we"
     },
     {
@@ -53,9 +53,9 @@ const collaborators: MemberInfo[] = [
         program: "Office of Equity, Diversity, and Inclusion",
         image: "/team/carolyn.webp",
         shortDescription: "Carolyn is an Early Childhood Education faculty member and researcher specializing in equity, diversity, inclusion, and intercultural education.",
-        longDescription: "Carolyn Wing MEd has been a faculty member in Langara College's Early Childhood Education program since 1997 and also holds a position in the college's Office of Equity, Diversity and Inclusion. \n\n"+
-        "She has completed the Certificate in Intercultural Studies from UBC and is a Qualified Administrator for the Intercultural Development Inventory (IDI). As an early childhood educator (ECE) and special educator, Carolyn's work has always revolved in the intercultural, equity, diversity and inclusion space. \n\n" +
-        "Carolyn is past vice president with SIETAR BC: The Society for Intercultural Education and Training and Research, BC Chapter. Currently, Carolyn is the principal investigator conducting a full time research project entitled:  Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.",
+        longDescription: "Carolyn Wing MEd has been a faculty member in Langara College's Early Childhood Education program since 1997 and also holds a position in the college's Office of Equity, Diversity and Inclusion. \n\n" +
+            "She has completed the Certificate in Intercultural Studies from UBC and is a Qualified Administrator for the Intercultural Development Inventory (IDI). As an early childhood educator (ECE) and special educator, Carolyn's work has always revolved in the intercultural, equity, diversity and inclusion space. \n\n" +
+            "Carolyn is past vice president with SIETAR BC: The Society for Intercultural Education and Training and Research, BC Chapter. Currently, Carolyn is the principal investigator conducting a full time research project entitled:  Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.",
         programLink: "https://students.langara.ca/about-langara/edi/"
     }
 ];
@@ -64,75 +64,78 @@ const students: MemberInfo[] = [
     {
         name: "Paula Parman",
         role: "Student Research Assistant",
-        program: "Department of Social Services",
-        image: "/team/keith.webp",
-        shortDescription: "Yue-Ching Cheng is the Chair of Recreation Studies, innovating pedagogy and specializing in recreation management, community services, and policy development.",
-        longDescription: "Keith Dormond is an Instructor in the Department of Social Services at Langara College and teaches in the Social Service Worker Certificate and Diploma programs, as well as the Gerontology Diploma program. He has also instructed Criminology courses at Douglas College, The University of Fraser Valley, and Langara College.  Keith holds a PhD in Educational Studies from the University of British Columbia along with a Master degree of social work. His research interests include violence against women and men that is motivated by honour and shame (honour-related violence and oppression), anti-oppressive practice, and violence risk assessment and management. \n\n" +
-        "He is currently a qualitative evaluator for research project at Langara entitled, “Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.” Prior to entering academia, he worked a police officer in Vancouver for over 24 years and community organizer in Toronto and Vancouver.  As a police detective, he was assigned to units including domestic violence, mental health, and recruiting.  He practices, teaches and researches through an anti-racism and anti-oppressive framework." ,
-        programLink: "https://langara.ca/programs-courses/social-service-worker-certificate-we"
+        program: "Bachelor of Recreation Management",
+        image: "/team/paula.webp",
+        shortDescription: "Paula is a Community Facilities Coordinator dedicated to inclusive recreation, with 15 years of experience in municipal and non-profit sectors.",
+        longDescription: "Paula is pursuing a Bachelor of Recreation Management and holds a diploma in Recreation Leadership. She works as a Community Facilities Coordinator for the City of Richmond's Parks, Recreation, and Culture department, leveraging 15 years of experience in other municipal recreation and non-profit sectors. \n\n" +
+            "As a first-generation immigrant, Paula understands firsthand the importance of accessible public recreation services, particularly for immigrant and racialized communities. She is passionate about creating inclusive, high-quality recreation experiences and actively works to improve accessibility in these areas. \n\n" +
+            "In her leisure time, Paula loves being in nature, hosting board game nights, and volunteering for local organizations that are meaningful to her.",
+        programLink: "https://langara.ca/programs-courses/recreation-management-baccalaureate-degree-we",
+        linkedin: "https://www.linkedin.com/in/paulaparman/"
     },
     {
         name: "Timothy Elias",
         role: "Student Research Assistant",
-        program: "Office of Equity, Diversity, and Inclusion",
-        image: "/team/carolyn.webp",
-        shortDescription: "Carolyn is an Early Childhood Education faculty member and researcher specializing in equity, diversity, inclusion, and intercultural education.",
-        longDescription: "Carolyn Wing MEd has been a faculty member in Langara College's Early Childhood Education program since 1997 and also holds a position in the college's Office of Equity, Diversity and Inclusion. \n\n"+
-        "She has completed the Certificate in Intercultural Studies from UBC and is a Qualified Administrator for the Intercultural Development Inventory (IDI). As an early childhood educator (ECE) and special educator, Carolyn's work has always revolved in the intercultural, equity, diversity and inclusion space. \n\n" +
-        "Carolyn is past vice president with SIETAR BC: The Society for Intercultural Education and Training and Research, BC Chapter. Currently, Carolyn is the principal investigator conducting a full time research project entitled:  Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.",
-        programLink: "https://students.langara.ca/about-langara/edi/"
+        program: "Bachelor of Recreation Management",
+        image: "/team/timothy.webp",
+        shortDescription: "Timothy is a Recreation Program Assistant dedicated to enhancing community well-being through inclusive recreational experiences and events.",
+        longDescription: "Born and raised in Matsqui, British Columbia (also known as Abbotsford), Timothy Elias is grateful to live and work on the unceded traditional territory of the Musqueam, Squamish, and Tsleil-Waututh Nations. Currently studying in the Bachelor of Recreation Management program at Langara College, Timothy is passionate about creating positive recreational experiences for individuals and communities." +
+            "" +
+            "In his current role as a Program Assistant with the City of Vancouver's Board of Parks and Recreation, he supports municipal recreation initiatives and special events while further developing his knowledge in the field. Prior to his studies at Langara, Timothy earned a Bachelor of Business Administration (BA) and gained valuable experience working in alpine activities and the bicycle industry." +
+            "" +
+            "With a strong belief in the power of recreation to foster well-being, Timothy envisions a future where he can help create peaceful, thriving environments through balanced contributions to both individual health and community engagement.",
+        programLink: "https://langara.ca/programs-courses/recreation-management-baccalaureate-degree-we",
+        linkedin: "https://www.linkedin.com/in/tj-elias/"
+    
     },
     {
         name: "Fraser Cameron",
         role: "Student Research Assistant",
-        program: "Department of Social Services",
-        image: "/team/keith.webp",
-        shortDescription: "Yue-Ching Cheng is the Chair of Recreation Studies, innovating pedagogy and specializing in recreation management, community services, and policy development.",
-        longDescription: "Keith Dormond is an Instructor in the Department of Social Services at Langara College and teaches in the Social Service Worker Certificate and Diploma programs, as well as the Gerontology Diploma program. He has also instructed Criminology courses at Douglas College, The University of Fraser Valley, and Langara College.  Keith holds a PhD in Educational Studies from the University of British Columbia along with a Master degree of social work. His research interests include violence against women and men that is motivated by honour and shame (honour-related violence and oppression), anti-oppressive practice, and violence risk assessment and management. \n\n" +
-        "He is currently a qualitative evaluator for research project at Langara entitled, “Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.” Prior to entering academia, he worked a police officer in Vancouver for over 24 years and community organizer in Toronto and Vancouver.  As a police detective, he was assigned to units including domestic violence, mental health, and recruiting.  He practices, teaches and researches through an anti-racism and anti-oppressive framework." ,
-        programLink: "https://langara.ca/programs-courses/social-service-worker-certificate-we"
+        program: "Post-Degree Diploma Applied Planning",
+        image: "/team/fraser.webp",
+        shortDescription: "Fraser is an Urban Geographer, advances sustainable development through research and collaboration, tackling social, environmental, and economic challenges.",
+        longDescription: "Fraser is an Urban Geographer, advances sustainable development through research and collaboration, tackling social, environmental, and economic challenges.",
+        programLink: "https://langara.ca/programs-courses/applied-planning-post-degree-diploma-we",
+        linkedin: "https://www.linkedin.com/in/fraser-cameron-6a833b172/"
     },
     {
         name: "Brendan Tai",
         role: "Student Research Assistant",
-        program: "Office of Equity, Diversity, and Inclusion",
-        image: "/team/carolyn.webp",
-        shortDescription: "Carolyn is an Early Childhood Education faculty member and researcher specializing in equity, diversity, inclusion, and intercultural education.",
-        longDescription: "Carolyn Wing MEd has been a faculty member in Langara College's Early Childhood Education program since 1997 and also holds a position in the college's Office of Equity, Diversity and Inclusion. \n\n"+
-        "She has completed the Certificate in Intercultural Studies from UBC and is a Qualified Administrator for the Intercultural Development Inventory (IDI). As an early childhood educator (ECE) and special educator, Carolyn's work has always revolved in the intercultural, equity, diversity and inclusion space. \n\n" +
-        "Carolyn is past vice president with SIETAR BC: The Society for Intercultural Education and Training and Research, BC Chapter. Currently, Carolyn is the principal investigator conducting a full time research project entitled:  Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.",
-        programLink: "https://students.langara.ca/about-langara/edi/"
+        image: "/team/brendan.webp",
+        shortDescription: "Brendan is a Kinesiology student and youth worker. He hopes in combining his passion for recreation and commitment to the community.",
+        longDescription: "Brendan is a student at Langara College, Youth Worker at Collingwood Neighborhood House, personal trainer/coach earning his Bachelor's in Kinesiology with a specialization in Neuromechanical and Physiological Sciences from UBC in 2024. He hopes to combine his passion for recreation and commitment to the community as a Research Assistant with the ARC-IDEAS in Public Recreation team this summer.",
     },
     {
         name: "Axel Velasquez",
         role: "Web Developer",
-        program: "Department of Social Services",
-        image: "/team/keith.webp",
-        shortDescription: "Yue-Ching Cheng is the Chair of Recreation Studies, innovating pedagogy and specializing in recreation management, community services, and policy development.",
-        longDescription: "Keith Dormond is an Instructor in the Department of Social Services at Langara College and teaches in the Social Service Worker Certificate and Diploma programs, as well as the Gerontology Diploma program. He has also instructed Criminology courses at Douglas College, The University of Fraser Valley, and Langara College.  Keith holds a PhD in Educational Studies from the University of British Columbia along with a Master degree of social work. His research interests include violence against women and men that is motivated by honour and shame (honour-related violence and oppression), anti-oppressive practice, and violence risk assessment and management. \n\n" +
-        "He is currently a qualitative evaluator for research project at Langara entitled, “Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.” Prior to entering academia, he worked a police officer in Vancouver for over 24 years and community organizer in Toronto and Vancouver.  As a police detective, he was assigned to units including domestic violence, mental health, and recruiting.  He practices, teaches and researches through an anti-racism and anti-oppressive framework." ,
-        programLink: "https://langara.ca/programs-courses/social-service-worker-certificate-we"
+        program: "Associate of Science Computer Science",
+        image: "/team/axel.webp",
+        shortDescription: "Axel Velasquez is a Computer Science student at Langara College with a passion for software development and community engagement.",
+        longDescription: "Axel Velasquez is currently pursuing an Associate's Degree in Computer Science at Langara College. He has hands-on experience in software development, creating engaging user experiences for both complex and simple products. Axel enjoys new challenges and embraces working with the latest technology to provide the best possible results.\n" +
+            "\n" +
+            "He is passionate about working with non-profits and connecting with the community, both through his work and his daily walks around the city. Axel enjoys discovering new places and meeting new people; if there's a beautiful park or a quiet library nearby, you just might find him there.\n",
+        programLink: "https://langara.ca/programs-courses/computer-science-associate-science-degree-co-op",
+        linkedin: "https://www.linkedin.com/in/axel-gael-velasquez-castaneda-1a4075323/"
     },
     {
         name: "Dmitrii Zubarev",
         role: "Student Research Assistant",
-        program: "Office of Equity, Diversity, and Inclusion",
-        image: "/team/carolyn.webp",
-        shortDescription: "Carolyn is an Early Childhood Education faculty member and researcher specializing in equity, diversity, inclusion, and intercultural education.",
-        longDescription: "Carolyn Wing MEd has been a faculty member in Langara College's Early Childhood Education program since 1997 and also holds a position in the college's Office of Equity, Diversity and Inclusion. \n\n"+
-        "She has completed the Certificate in Intercultural Studies from UBC and is a Qualified Administrator for the Intercultural Development Inventory (IDI). As an early childhood educator (ECE) and special educator, Carolyn's work has always revolved in the intercultural, equity, diversity and inclusion space. \n\n" +
-        "Carolyn is past vice president with SIETAR BC: The Society for Intercultural Education and Training and Research, BC Chapter. Currently, Carolyn is the principal investigator conducting a full time research project entitled:  Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.",
-        programLink: "https://students.langara.ca/about-langara/edi/"
+        program: "Bachelor of Recreation Management",
+        image: "/team/dima.webp",
+        shortDescription: "Dmitrii is a Leisure Studies student passionate about shaping inclusive, creative, and accessible recreation experiences for newcomers through research and program design.",
+        longDescription: "Dmitrii Zubarev is a Leisure Studies student at Langara College with a passion for inclusive recreation, community-building, and storytelling. With a background in performing arts and international experience, he is focused on expanding access to leisure for immigrants and newcomers through research and creative program design.Axel Velasquez is currently pursuing an Associate's Degree in Computer Science at Langara College. He has hands-on experience in software development, creating engaging user experiences for both complex and simple products. Axel enjoys new challenges and embraces working with the latest technology to provide the best possible results.",
+        programLink: "https://langara.ca/programs-courses/recreation-management-baccalaureate-degree-we",
+        linkedin: "https://www.linkedin.com/in/dmitrii-z-6794b28b/"
     },
     {
         name: "Moana Mudekereza",
         role: "Student Research Assistant",
-        program: "Department of Social Services",
-        image: "/team/keith.webp",
-        shortDescription: "Yue-Ching Cheng is the Chair of Recreation Studies, innovating pedagogy and specializing in recreation management, community services, and policy development.",
-        longDescription: "Keith Dormond is an Instructor in the Department of Social Services at Langara College and teaches in the Social Service Worker Certificate and Diploma programs, as well as the Gerontology Diploma program. He has also instructed Criminology courses at Douglas College, The University of Fraser Valley, and Langara College.  Keith holds a PhD in Educational Studies from the University of British Columbia along with a Master degree of social work. His research interests include violence against women and men that is motivated by honour and shame (honour-related violence and oppression), anti-oppressive practice, and violence risk assessment and management. \n\n" +
-        "He is currently a qualitative evaluator for research project at Langara entitled, “Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.” Prior to entering academia, he worked a police officer in Vancouver for over 24 years and community organizer in Toronto and Vancouver.  As a police detective, he was assigned to units including domestic violence, mental health, and recruiting.  He practices, teaches and researches through an anti-racism and anti-oppressive framework." ,
-        programLink: "https://langara.ca/programs-courses/social-service-worker-certificate-we"
+        program: "Post-Degree Diploma Applied Planning",
+        image: "/team/moana.webp",
+        shortDescription: "Moana is a multi-disciplined professional in urban planning and engineering who thrives to shape inclusive, resilient and accessible communities across British Columbia.",
+        longDescription: "Moana is a multi-disciplined professional in urban planning and engineering who thrives to shape inclusive, resilient and accessible communities across British Columbia.",
+        programLink: "https://langara.ca/programs-courses/applied-planning-post-degree-diploma-we",
+        linkedin: "https://www.linkedin.com/in/moana-mudekereza/"
     },
 ]
 
