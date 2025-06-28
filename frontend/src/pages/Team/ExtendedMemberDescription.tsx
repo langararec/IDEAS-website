@@ -45,7 +45,7 @@ const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ m
                 <FaTimes size={16} />
             </button>
             
-            <div className="py-8 lg:py-16 px-4">
+            <div className="py-8 lg:py-16 px-4 ">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         {/* Left Content */}

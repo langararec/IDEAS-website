@@ -15,7 +15,7 @@ const principalResearchers: MemberInfo[] = [
         name: "Emmalene Courtney",
         role: "Principal Researcher",
         image: "/team/emma.webp",
-        shortDescription: "John Doe is a leading researcher in the field of recreation studies, focusing on community engagement and policy innovation.",
+        shortDescription: "Emma is an educator and leader dedicated to global leadership, intercultural communication, and creating inclusive, joyful learning environments centered on empathy and justice.",
         longDescription: "Emma is an experienced educator and leader with a passion for global leadership, systems thinking, intercultural  communication, epistemic justice, and decolonization. She hold a Masters in Global Leadership and have taught courses in leadership, recreation, and intercultural competencies. Emma is committed to empowering individuals and organizations to create positive change in the world. \n\n" +
             "Her approach to problem-solving and decision-making is informed by her experience as an emergent strategist and pleasure activist. She strive to  create learning environments that prioritize joy, pleasure, and  well-being, while also considering the complex interactions between people, processes, and structures. She is committed to creating a more just, equitable, and joyful world, and she believe that love is a fundamental component of creating positive change. \n\n" +
             "As an educator, researcher, and leader, she center love as a methodology in all that she do. She believe that by approaching her work with a deep sense of empathy, care, and compassion for her students, colleagues, and research participants, she can create spaces and experiences that honor and celebrate their shared humanity. Love allows her to hold space for  difference, engage in difficult conversations, and build meaningful  relationships with those around her. By centering love in her methodology, she is able to engage in reflexive and critical analysis that  acknowledges the multiple, complex layers of power and identity that  shape our experiences.",
@@ -86,7 +86,7 @@ const students: MemberInfo[] = [
             "With a strong belief in the power of recreation to foster well-being, Timothy envisions a future where he can help create peaceful, thriving environments through balanced contributions to both individual health and community engagement.",
         programLink: "https://langara.ca/programs-courses/recreation-management-baccalaureate-degree-we",
         linkedin: "https://www.linkedin.com/in/tj-elias/"
-    
+
     },
     {
         name: "Fraser Cameron",

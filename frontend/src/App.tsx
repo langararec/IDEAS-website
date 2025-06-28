@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import Project from './pages/Project/Project'
 import Updates from './pages/Updates/Updates'
 import Team from './pages/Team/Team'
+import GetInvolved from './pages/Get-Involved/GetInvolved'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -23,6 +24,7 @@ function App() {
         <Route path="/project" element={<Project />} />
         <Route path="/updates" element={<Updates />} />
         <Route path='/team' element={<Team />} />
+        <Route path='/get-involved' element={<GetInvolved />} />
         <Route path='*' element={<NotFound />} />
 
       </Routes>
