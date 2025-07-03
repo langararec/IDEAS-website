@@ -11,6 +11,21 @@ const Hero: React.FC = () => {
                     Our research initiative focused on the experiences of immigrant and racialized communities in British Columbia's public recreation.
                 </p>
                 <Carousel />
+
+                <h3 className="text-lg lg:text-3xl leading-relaxed tracking-wide font-medium font-dm-sans text-primary mt-4"> Take our survey and be entered to win a $10 visa gift card! </h3>
+
+                <div className="flex justify-center mb-10 mt-2">
+                    <a 
+                        href="https://ca.research.net/r/RecreationSurveyWeb" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="Take the research survey (opens in new tab)"
+                        className="inline-block bg-accent text-white px-10 py-3 rounded-full mt-4 hover:bg-primary-dark focus:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all font-medium text-center duration-300  hover:scale-105"
+                    >
+                        GO TO SURVEY
+                    </a>
+                </div>
+
             </div>
         </div>
     );
