@@ -54,7 +54,7 @@ const Outcomes: React.FC = () => {
                     {outcomesData.map((outcome) => (
                         <div
                             key={outcome.id}
-                            className="overflow-hidden flex-1 min-w-80 max-w-96 transition-all duration-300 transform hover:-translate-y-1"
+                            className="overflow-hidden flex-1 min-w-80 max-w-96 transition-all duration-300 transform "
                         >
                             <div className="aspect-w-16 aspect-h-10 rounded-lg">
                                 <img
