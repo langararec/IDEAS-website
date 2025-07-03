@@ -11,7 +11,7 @@ const MissionStatement: React.FC = () => {
                         <h2 className="text-2xl lg:text-3xl xl:text-4xl font-medium text-primary leading-tight font-dm-sans">
                             We aim to understand the unique recreation needs of{" "}
                             <span className="text-accent">racialized</span> and{" "}
-                            <span className="text-accent">immigrant</span> groups compared to native-born residents.
+                            <span className="text-accent">immigrant</span> groups compared to Canadian-born residents.
                         </h2>
                     </div>
 

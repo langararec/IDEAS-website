@@ -38,8 +38,8 @@ export const TeamCard = (info: MemberInfo) => {
     if (showExtended) {
         return (
             <div className="fixed inset-0 z-[9999] bg-white overflow-y-auto">
-                <ExtendedMemberDescription 
-                    member={info} 
+                <ExtendedMemberDescription
+                    member={info}
                     onClose={handleCloseExtended}
                     isTransitioning={isTransitioning}
                 />
@@ -48,22 +48,22 @@ export const TeamCard = (info: MemberInfo) => {
     }
 
     return (
-        <div 
-            className={`flex flex-col lg:flex-row gap-6 py-6 rounded-lg w-full sm:w-1/2 transition-all ${
-                isTransitioning 
-                    ? 'scale-110 duration-400' 
+        <div
+            className={`flex flex-col lg:flex-row gap-6 py-6 rounded-lg w-full sm:w-1/2 transition-all ${isTransitioning
+                    ? 'scale-100 duration-400'
                     : 'scale-100 opacity-100 duration-500'
-            }`}
+                }`}
             style={{
                 animationTimingFunction: 'cubic-bezier(0.4, 0.0, 1, 1)'
             }}
         >
             {/* Profile Image */}
-            <div className="flex-shrink-0">
+            <div className={`flex-shrink-0 lg:w-56 lg:h-56 w-10/12 mx-auto overflow-hidden rounded-lg
+${isTransitioning ? 'scale-100 duration-400' : 'scale-100 opacity-100 duration-500'}`}>
                 <img
                     src={info.image}
                     alt={info.name}
-                    className="w-10/12 mx-auto lg:w-56 lg:h-56 object-cover rounded-lg cursor-pointer  transition-transform duration-200"
+                    className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-110"
                     onClick={handleExpandClick}
                 />
             </div>
@@ -72,7 +72,7 @@ export const TeamCard = (info: MemberInfo) => {
             <div className="flex-1 my-auto mx-auto">
                 {/* Name and LinkedIn */}
                 <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
-                    <h2 
+                    <h2
                         className="text-xl font-bold text-primary font-dm-sans cursor-pointer hover:text-primary/80 transition-colors"
                         onClick={handleExpandClick}
                     >

@@ -48,7 +48,7 @@ const UNSDG: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-6">
                 {unsdgItems.map((item, index) => (
                     <div key={index} className=" py-6 flex flex-col">
-                        <img src={item.image} alt={item.title} className="w-1/2 h-auto mb-4 rounded-lg" />
+                        <img src={item.image} alt={item.title} className="w-1/3 h-auto mb-4 rounded-lg" />
                         <h3 className="text-xl font-semibold text-primary mb-2 font-dm-sans">{item.title}</h3>
                         <p className="md:text-lg leading-relaxed font-dm-sans">{item.description}</p>
                     </div>
