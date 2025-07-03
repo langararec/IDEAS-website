@@ -5,6 +5,7 @@ import Project from './pages/Project/Project'
 import Updates from './pages/Updates/Updates'
 import Team from './pages/Team/Team'
 import GetInvolved from './pages/Get-Involved/GetInvolved'
+import EngagementSchedule from './pages/EngagementSchedule/EngagementSchedule'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -25,6 +26,7 @@ function App() {
         <Route path="/updates" element={<Updates />} />
         <Route path='/team' element={<Team />} />
         <Route path='/get-involved' element={<GetInvolved />} />
+        <Route path='/schedule' element={<EngagementSchedule />} />
         <Route path='*' element={<NotFound />} />
 
       </Routes>
