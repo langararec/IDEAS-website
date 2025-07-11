@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MissionStatement: React.FC = () => {
     return (
         <div className="relative">
@@ -18,8 +20,8 @@ const MissionStatement: React.FC = () => {
                     {/* Description Text - More top padding to account for quote box */}
                     <div className="text-center space-y-6 text-white font-dm-sans pt-28 lg:pt-38 w-11/12 mx-auto">
                         <p className="text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto">
-                            We are committed to supporting communities in Greater Vancouver and a smaller Vancouver Island area. 
-                            By uncovering barriers to participation and encouraging inclusive practices, 
+                            We are committed to supporting communities in Greater Vancouver and a smaller Vancouver Island area.
+                            By uncovering barriers to participation and encouraging inclusive practices,
                             we hope to build stronger community connections and foster a genuine sense of belonging for everyone.
                         </p>
 
@@ -31,9 +33,11 @@ const MissionStatement: React.FC = () => {
 
                         {/* Call to Action Button */}
                         <div className="pt-6">
-                            <button className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
-                                Learn More
-                            </button>
+                            <Link to="/project" aria-label="Learn more about the project">
+                                <button className="bg-accent hover:bg-accent/90 hover:cursor-pointer text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
+                                    Learn More
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
