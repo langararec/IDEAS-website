@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CallToAction: React.FC = () => {
     return (
@@ -10,9 +11,11 @@ const CallToAction: React.FC = () => {
                     community members in British Columbia and beyond."
                 </blockquote>
 
-                <button className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
-                    Get Involved
-                </button>
+                <Link to="/get-involved" className="hover:cursor-pointer">
+                    <button className="bg-accent hover:bg-accent/90 hover:cursor-pointer text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
+                        Get Involved
+                    </button>
+                </Link>
             </div>
         </div>
     );

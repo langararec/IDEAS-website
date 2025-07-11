@@ -83,7 +83,7 @@ ${isTransitioning ? 'scale-100 duration-400' : 'scale-100 opacity-100 duration-5
                             href={info.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-700 transition-colors"
+                            className="text-blue-500 hover:text-blue-600 transition-colors"
                         >
                             <FaLinkedin size={28} />
                         </a>
