@@ -84,7 +84,7 @@ const GetInvolvedForm = () => {
                         <button 
                             type="submit" 
                             disabled={state.submitting}
-                            className="bg-accent hover:bg-accent/90 text-white font-medium py-2 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
+                            className="bg-accent hover:cursor-pointer hover:bg-accent/90 text-white font-medium py-2 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
                         >
                             {state.submitting ? 'SUBMITTING...' : 'SUBMIT'}
                         </button>
