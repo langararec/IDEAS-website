@@ -60,7 +60,7 @@ const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ m
                                         href={member.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-blue-600 hover:text-blue-700 transition-colors"
+                                        className="text-blue-500 hover:text-blue-600 transition-colors"
                                     >
                                         <FaLinkedin size={32} />
                                     </a>
