@@ -9,7 +9,7 @@ const MissionStatement: React.FC = () => {
             <div className="bg-primary py-16 px-4 relative">
                 <div className="max-w-6xl mx-auto relative">
                     {/* Main Quote Box - Overlapping */}
-                    <div className="bg-base-200 rounded-2xl p-6 lg:p-12 text-center absolute -top-34 md:-top-24 lg:-top-36 left-1/2 transform -translate-x-1/2 w-11/12 lg:w-10/12  z-10">
+                    <div className="bg-base-200 rounded-2xl p-6  lg:p-12 text-center absolute -top-40 md:-top-24 lg:-top-36 left-1/2 transform -translate-x-1/2 w-11/12 lg:w-10/12  z-10">
                         <h2 className="text-2xl lg:text-3xl xl:text-4xl font-medium text-primary leading-tight font-dm-sans">
                             We aim to understand the unique recreation needs of{" "}
                             <span className="text-accent">racialized</span> and{" "}
