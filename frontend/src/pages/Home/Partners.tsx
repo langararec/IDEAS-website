@@ -4,9 +4,11 @@ const partners = [
     { image: "partner3.webp", name: "SACH", url: "https://www.sachbc.ca/" },
     { image: "partner4.webp", name: "BC Recreation and Parks Association", url: "https://www.bcrpa.bc.ca/" },
     { image: "partner8.webp", name: "Burnaby Neighbourhood House", url: "https://burnabynh.ca/" },
+    { image: "iwc.webp", name: "Immigrant Welcome Centre", url: "https://immigrantwelcome.ca/" },
     { image: "partner5.webp", name: "Recreation Studies Langara", url: "https://langara.ca/programs-and-courses/programs/recreation-studies/" },
     { image: "partner6.webp", name: "Applied Research Centre Langara", url: "https://students.langara.ca/about-langara/applied-research/index.html" },
     { image: "partner7.webp", name: "Office of Equity, Diversity and Inclusion Langara", url: "https://students.langara.ca/about-langara/edi/" },
+
 ];
 
 const Partners: React.FC = () => {
@@ -20,7 +22,7 @@ const Partners: React.FC = () => {
                     </h2>
                 </div>
 
-                <div className="flex justify-center gap-4 md:gap-8 lg:gap-12 items-center flex-wrap">
+                <div className="flex justify-center gap-4 md:gap-8  lg:gap-12 items-center flex-wrap">
                     {partners.map((partner, index) => (
                         <div
                             key={index}
