@@ -181,8 +181,8 @@ const EngagementSchedule: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="p-6 lg:px-0 max-w-7xl mx-auto relative py-12">
-                    <h1 className="text-5xl leading-wide tracking-wider font-semibold font-dm-sans text-primary mb-8">
+                <div className="p-6 lg:px-0 max-w-7xl mx-auto relative py-8">
+                    <h1 className="text-4xl leading-wide font-bold tracking-wider  font-dm-sans text-primary mb-8">
                         Community Engagement Schedule
                     </h1>
 

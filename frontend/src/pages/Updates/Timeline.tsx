@@ -105,7 +105,7 @@ const timelineData: TimelineItem[] = [
 
 const Timeline: React.FC = () => {
     return (
-        <div className="py-16 sm:px-4 ">
+        <div className="py-4 sm:px-4 ">
             <div className="max-w-7xl ">
                 <div className="relative">
                     {timelineData.map((yearData, yearIndex) => (
@@ -146,7 +146,7 @@ const Timeline: React.FC = () => {
                             {/* Year Title for Mobile View */}
                             <div className="flex-1 py-0">
                                 <div className="text-left my-4 min-w-16  sm:hidden block">
-                                    <h3 className="text-4xl font-bold font-dm-sans text-primary" >
+                                    <h3 className="text-3xl font-bold font-dm-sans text-primary" >
                                         {yearData.year}
                                     </h3>
                                 </div>
@@ -157,13 +157,13 @@ const Timeline: React.FC = () => {
 
                                         {/* Date range */}
                                         <div className="mb-2">
-                                            <span className="font-medium text-xl sm:text-2xl font-dm-sans text-primary" >
+                                            <span className="font-medium text-lg sm:text-2xl font-dm-sans text-primary" >
                                                 {phase.dateRange}
                                             </span>
                                         </div>
 
                                         {/* Phase title */}
-                                        <h4 className="text-2xl sm:text-3xl font-semibold text-black mb-3 font-dm-sans">
+                                        <h4 className="text-xl sm:text-3xl font-semibold text-black mb-3 font-dm-sans">
                                             {phase.title}
                                         </h4>
 
@@ -171,8 +171,8 @@ const Timeline: React.FC = () => {
                                         <ul className="space-y-2">
                                             {phase.bullets.map((bullet, bulletIndex) => (
                                                 <li key={bulletIndex} className="flex items-start">
-                                                    <RxCaretRight className="text-black mt-1 mr-2 size-6" />
-                                                    <span className="text-black font-dm-sans leading-relaxed text-lg">
+                                                    <RxCaretRight className="text-black mt-0 mr-1  size-6 shrink-0" />
+                                                    <span className="text-black font-dm-sans leading-relaxed text-base">
                                                         {bullet}
                                                     </span>
                                                 </li>

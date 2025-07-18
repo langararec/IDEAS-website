@@ -82,7 +82,7 @@ export const objectivesData: Objective[] = [
 
 const Objectives: React.FC = () => {
     return (
-        <div className="py-16 px-4">
+        <div className="py-8 px-4">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-dm-sans">
                     Our Objectives
@@ -92,7 +92,7 @@ const Objectives: React.FC = () => {
                     {objectivesData.map((objective: Objective) => {
                         const IconComponent = objective.icon;
                         return (
-                            <div key={objective.id} className="py-8">
+                            <div key={objective.id} className="py-4 lg:py-8">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className={`text-${objective.colorClass} bg-base-200 p-3 rounded-lg flex-shrink-0 [&>svg]:size-7`}>
                                         <IconComponent />

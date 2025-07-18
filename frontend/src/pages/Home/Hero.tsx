@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
                 <Carousel />
                 <h3 className="text-lg lg:text-3xl leading-relaxed tracking-wide font-medium font-dm-sans text-primary mt-4"> Take our survey and be entered to win a $10 visa gift card! </h3>
 
-                <div className="flex justify-center mb-10 mt-2">
+                <div className="flex justify-center mb-14 mt-2">
                     <a 
                         href="https://ca.research.net/r/RecreationSurveyWeb" 
                         target="_blank" 

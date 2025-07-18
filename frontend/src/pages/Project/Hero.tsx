@@ -1,6 +1,6 @@
 const Hero: React.FC = () => {
     return (
-        <div className="relative min-h-[32vh] flex items-center justify-center">
+        <div className="relative min-h-[32vh] flex items-center justify-center py-16">
 
             {/* Background Image */}
             <div className="absolute inset-0">

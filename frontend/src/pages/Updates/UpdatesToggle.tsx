@@ -24,7 +24,7 @@ const UpdatesToggle: React.FC = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto p-2 md:p-6">
+        <div className="max-w-7xl mx-auto p-2 md:p-6">
             {/* Tab Navigation */}
             <div className="mb-6 rounded-xl py-2 px-2 md:py-2 md:px-4 bg-white shadow-sm">
                 <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
