@@ -63,7 +63,7 @@ const CityToggle: React.FC = () => {
     const currentCity = citiesData.find(city => city.id === activeTab)!;
 
     return (
-        <div className="px-4 py-6">
+        <div className="px-4 py-0">
             <div className="max-w-7xl mx-auto">
                 {/* Tab Navigation */}
                 <div className=" mb-6 rounded-xl md:py-2 md:px-4 bg-white shadow-sm">
