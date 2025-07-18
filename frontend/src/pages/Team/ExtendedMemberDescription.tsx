@@ -40,7 +40,7 @@ const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ m
         >
             <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 hover:cursor-pointer z-[10000] text-gray-500 hover:text-gray-700 transition-all duration-200 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100"
+                className="absolute top-8 sm:top-4 right-4 hover:cursor-pointer z-[10000] text-gray-500 hover:text-gray-700 transition-all duration-200 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100"
             >
                 <FaTimes size={16} />
             </button>
