@@ -50,8 +50,8 @@ export const TeamCard = (info: MemberInfo) => {
     return (
         <div
             className={`flex flex-col lg:flex-row gap-6 py-6 rounded-lg w-full sm:w-1/2 transition-all ${isTransitioning
-                    ? 'scale-100 duration-400'
-                    : 'scale-100 opacity-100 duration-500'
+                ? 'scale-100 duration-400'
+                : 'scale-100 opacity-100 duration-500'
                 }`}
             style={{
                 animationTimingFunction: 'cubic-bezier(0.4, 0.0, 1, 1)'
