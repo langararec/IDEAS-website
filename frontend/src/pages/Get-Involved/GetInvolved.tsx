@@ -15,7 +15,7 @@ const GetInvolvedForm = () => {
     }
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-16 lg:py-30 justify-center">
+        <div className="max-w-7xl mx-auto px-4 py-8 lg:py-30 justify-center">
             <div className="flex flex-col lg:flex-row  gap-12 justify-center items-center w-full">
                 {/* Form Section */}
                 <div className="space-y-4 w-full lg:w-1/3">
