@@ -45,9 +45,9 @@ const UNSDG: React.FC = () => {
         <div>
             <p className="my-4 md:text-lg leading-relaxed font-dm-sans">The project aligns with several United Nations Sustainable Development Goals (SDGs) by promoting inclusive and equitable public recreation services for immigrant and racialized communities in British Columbia.</p>
             <p className="my-4 md:text-lg leading-relaxed font-dm-sans">Here's how the project's objectives correspond with specific SDGs:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-0 py-0 lg:py-6">
                 {unsdgItems.map((item, index) => (
-                    <div key={index} className=" py-6 flex flex-col">
+                    <div key={index} className=" py-4 lg:py-6 flex flex-col">
                         <img src={item.image} alt={item.title} className="w-1/3 h-auto mb-4 rounded-lg" />
                         <h3 className="text-xl font-semibold text-primary mb-2 font-dm-sans">{item.title}</h3>
                         <p className="md:text-lg leading-relaxed font-dm-sans">{item.description}</p>
