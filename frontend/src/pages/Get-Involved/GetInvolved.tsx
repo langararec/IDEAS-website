@@ -59,7 +59,7 @@ const GetInvolvedForm = () => {
                                     id="subject" 
                                     name="subject" 
                                     required
-                                    className="w-full px-3 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-primary appearance-none bg-white hover:cursor-pointer pr-10"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary appearance-none bg-white hover:cursor-pointer pr-10"
                                 >
                                     <option value="Workshops">Workshops</option>
                                     <option value="Updates">Updates</option>
