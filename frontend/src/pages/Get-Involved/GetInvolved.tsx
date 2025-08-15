@@ -1,4 +1,5 @@
 import { useForm } from '@formspree/react';
+import { IoChevronDownOutline } from "react-icons/io5";
 
 const GetInvolvedForm = () => {
     const [state, handleSubmit] = useForm('getInvolved');
@@ -53,16 +54,21 @@ const GetInvolvedForm = () => {
                             <label htmlFor="subject" className="block text-base font-medium text-gray-700 mb-2">
                                 Subject
                             </label>
-                            <select 
-                                id="subject" 
-                                name="subject" 
-                                required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors bg-white"
-                            >
-                                <option value="Workshops">Workshops</option>
-                                <option value="Updates">Updates</option>
-                                <option value="General Inquiry">General Inquiry</option>
-                            </select>
+                            <div className="relative">
+                                <select 
+                                    id="subject" 
+                                    name="subject" 
+                                    required
+                                    className="w-full px-3 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-primary appearance-none bg-white hover:cursor-pointer pr-10"
+                                >
+                                    <option value="Workshops">Workshops</option>
+                                    <option value="Updates">Updates</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-primary">
+                                    <IoChevronDownOutline className="size-4" />
+                                </div>
+                            </div>
                         </div>
 
                         {/* Message Field */}
