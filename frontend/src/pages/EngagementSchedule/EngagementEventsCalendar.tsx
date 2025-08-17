@@ -65,15 +65,15 @@ const EngagementEventsCalendar: React.FC<EngagementEventsCalendarProps> = ({ eng
             {/* Months Content */}
             {displayedEvents.map((monthData, monthIndex) => (
                 <div key={monthIndex} className="rounded-lg">
-                    <h2 className="text-3xl font-semibold text-primary mb-8 py-2 font-dm-sans">
+                    <h2 className="text-3xl font-semibold text-primary mb-2 font-dm-sans">
                         {monthData.month}
                     </h2>
 
                     <div>
                         {monthData.events.map((event, eventIndex) => (
-                            <div key={eventIndex} className="flex gap-8 flex-wrap flex-col lg:flex-row font-dm-sans border-t-gray-200 border-t-2 py-4">
+                            <div key={eventIndex} className="flex gap-0 flex-wrap flex-col lg:flex-row font-dm-sans border-t-gray-200 border-t-2 py-5 ">
                                 <div className="flex-shrink-0">
-                                    <div className="text-4xl lg:text-center font-semibold text-primary text-left">
+                                    <div className="text-3xl lg:text-center font-semibold text-primary text-left">
                                         {event.date}
                                     </div>
                                 </div>
