@@ -1,3 +1,4 @@
+import { useState } from "react";
 import BentoGrid from "./BentoGrid";
 
 const burnabyGalleryImages = [
@@ -5,7 +6,6 @@ const burnabyGalleryImages = [
     { src: "/gallery/burnaby-bobprittie2.webp", alt: "Community surveys at Bob Prittie Library", title: "Bob Prittie Library - Survey Collection" },
     { src: "/gallery/burnaby-brentwood.webp", alt: "Engagement activities at Brentwood Park", title: "Brentwood Park Community Engagement" },
     { src: "/gallery/burnaby-brentwood1.webp", alt: "Community interaction at Brentwood Park", title: "Brentwood Park - Community Interaction" },
-    { src: "/gallery/burnaby-brentwood2.webp", alt: "Survey setup at Brentwood Park", title: "Brentwood Park - Survey Station Setup" },
     { src: "/gallery/burnaby-brentwood3.webp", alt: "Community members participating at Brentwood", title: "Brentwood Park - Community Participation" },
     { src: "/gallery/burnaby-brentwood4.webp", alt: "Engagement booth at Brentwood Park", title: "Brentwood Park - Engagement Booth" },
     { src: "/gallery/burnaby-brentwood5.webp", alt: "Community activities at Brentwood Park", title: "Brentwood Park - Community Activities" },
@@ -35,24 +35,44 @@ const CourtenayGalleryImages = [
     { src: "/gallery/courtenay-lewispark2.webp", alt: "Survey activities at Lewis Park in Courtenay", title: "Lewis Park Courtenay - Survey Activities" },
 ];
 
-const images = {
-    burnaby: burnabyGalleryImages,
-    courtenay: CourtenayGalleryImages
-}
+const allImages = [...burnabyGalleryImages, ...CourtenayGalleryImages];
 
 const pattern1 = [{ colSpan: 1, rowSpan: 1 }, { colSpan: 1, rowSpan: 2 }, { colSpan: 2, rowSpan: 1 }, { colSpan: 1, rowSpan: 1 }, { colSpan: 1, rowSpan: 1 }, { colSpan: 1, rowSpan: 1 }]
 
 const pattern2 = [{ colSpan: 2, rowSpan: 1 }, { colSpan: 1, rowSpan: 2 }, { colSpan: 1, rowSpan: 1 }, { colSpan: 1, rowSpan: 1 }, { colSpan: 1, rowSpan: 1 }, { colSpan: 1, rowSpan: 1 }]
 
+type FilterOption = 'all' | 'burnaby' | 'courtenay';
+
 const Gallery = () => {
+    const [selectedFilter, setSelectedFilter] = useState<FilterOption>('all');
+
+    const filterTabs = [
+        { id: 'all' as FilterOption, label: 'ALL CITIES' },
+        { id: 'burnaby' as FilterOption, label: 'BURNABY' },
+        { id: 'courtenay' as FilterOption, label: 'COURTENAY' }
+    ];
+
+    // Function to get images based on filter
+    const getFilteredImages = () => {
+        switch (selectedFilter) {
+            case 'burnaby':
+                return burnabyGalleryImages;
+            case 'courtenay':
+                return CourtenayGalleryImages;
+            case 'all':
+            default:
+                return allImages;
+        }
+    };
+
     // Function to apply patterns to images
     const applyPatterns = (images: typeof burnabyGalleryImages) => {
         return images.map((image, index) => {
             const groupIndex = Math.floor(index / 6);
             const positionInGroup = index % 6;
-            
+
             const isPattern1Group = groupIndex % 2 === 0;
-            
+
             if (isPattern1Group) {
                 return {
                     ...image,
@@ -70,10 +90,38 @@ const Gallery = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8 justify-center">
+        <div className="max-w-7xl mx-auto p-6 py-8 ">
             <div className="mb-12">
-                <h2 className="text-3xl font-bold text-center mb-8"> Gallery</h2>
-                <BentoGrid images={ applyPatterns(images.burnaby)} />
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-dm-sans">
+                    Our Gallery
+                </h2>
+                {/* Tab Navigation - Imitating ItemToggle design */}
+                <div className="mb-6 rounded-xl py-2 px-2 md:py-2 md:px-4 bg-white shadow-sm">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                        {filterTabs.map((tab) => (
+                            <button
+                                key={tab.id}
+                                onClick={() => setSelectedFilter(tab.id)}
+                                className={`flex-1 py-3 px-3 md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 ${selectedFilter === tab.id
+                                    ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
+                                    : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
+                                    }`}
+                            >
+                                <span className="block sm:hidden">
+                                    {tab.label.split(' ')[0]}
+                                </span>
+                                <span className="hidden sm:block">
+                                    {tab.label}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Tab Content */}
+                <div className="transition-all duration-300 ease-in-out">
+                    <BentoGrid images={applyPatterns(getFilteredImages())} />
+                </div>
             </div>
         </div>
     )
