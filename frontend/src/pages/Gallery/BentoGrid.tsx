@@ -12,6 +12,8 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [modalOpen,setModalOpen] = useState(false);
+    const [currentImage, setCurrentImage] = useState<number>(0);
     const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
     const imagesPerPage = 6;
 
@@ -61,9 +63,15 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
     };
 
     return (
-        <div className="w-full bg-base-100">
+        <div className="w-full bg-base-100" onClick={() => modalOpen ? setModalOpen(false) : null}>
 
             <div className="hidden lg:col-span-1 lg:col-span-2 lg:col-span-3 lg:col-span-4 lg:col-span-5 lg:col-span-6 lg:row-span-1 lg:row-span-2 lg:row-span-3 lg:row-span-4 lg:row-span-5 lg:row-span-6"></div>
+
+            <div className={`${modalOpen ? 'block' : 'hidden'} h-full fixed inset-0 bg-black/90 z-50 items-center justify-center flex`}>
+                <div className='mx-auto max-w-1/2 lg:max-w-1/3 my-auto'>
+                    <img className="w-full object-contain" src={currentImages[currentImage].src} alt={currentImages[currentImage].alt} />
+                </div>
+            </div>
 
             <div className="max-w-7xl w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[20rem] mb-8">
                 {currentImages.map((image, index) => (
@@ -85,6 +93,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                             loading='lazy'
                             onLoadStart={() => handleImageLoadStart(index)}
                             onLoad={() => handleImageLoad(index)}
+                            onClick={() => { setModalOpen(true); setCurrentImage(index); }}
                         />
                     </div>
                 ))}
@@ -96,7 +105,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                     <button
                         onClick={goToPrevPage}
                         disabled={currentPage === 1}
-                        className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-blue-600 transition-colors"
+                        className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-teal-800 transition-colors hover:cursor-pointer"
                     >
                         Previous
                     </button>
@@ -106,9 +115,9 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                             <button
                                 key={page}
                                 onClick={() => goToPage(page)}
-                                className={`px-3 py-2 rounded-lg transition-colors ${currentPage === page
-                                        ? 'bg-primary text-white'
-                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                className={`px-1 py-2 transition-colors text-lg ${currentPage === page
+                                        ? ' text-teal-800'
+                                        : ' text-gray-500 hover:text-teal-800'
                                     }`}
                             >
                                 {page}
@@ -119,7 +128,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                     <button
                         onClick={goToNextPage}
                         disabled={currentPage === totalPages}
-                        className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-blue-600 transition-colors"
+                        className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-500 disabled:cursor-not-allowed hover:bg-teal-800 transition-colors hover:cursor-pointer"
                     >
                         Next
                     </button>
