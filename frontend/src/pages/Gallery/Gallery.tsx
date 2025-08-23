@@ -70,57 +70,50 @@ const Gallery = () => {
         return images.map((image, index) => {
             const groupIndex = Math.floor(index / 6);
             const positionInGroup = index % 6;
-
-            const isPattern1Group = groupIndex % 2 === 0;
-
-            if (isPattern1Group) {
-                return {
-                    ...image,
-                    colSpan: pattern1[positionInGroup].colSpan,
-                    rowSpan: pattern1[positionInGroup].rowSpan
-                };
-            } else {
-                return {
-                    ...image,
-                    colSpan: pattern2[positionInGroup].colSpan,
-                    rowSpan: pattern2[positionInGroup].rowSpan
-                };
-            }
+            const currentPattern = groupIndex % 2 === 0 ? pattern1 : pattern2;
+            const patternItem = currentPattern[positionInGroup % currentPattern.length];
+            return {
+                ...image,
+                colSpan: patternItem.colSpan,
+                rowSpan: patternItem.rowSpan
+            };
         });
     };
 
     return (
-        <div className="max-w-7xl mx-auto p-6 py-8 ">
-            <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-dm-sans">
-                    Our Gallery
-                </h2>
-                {/* Tab Navigation - Imitating ItemToggle design */}
-                <div className="mb-6 rounded-xl py-2 px-2 md:py-2 md:px-4 bg-white shadow-sm">
-                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-                        {filterTabs.map((tab) => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setSelectedFilter(tab.id)}
-                                className={`flex-1 py-3 px-3 md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 ${selectedFilter === tab.id
-                                    ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
-                                    : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
-                                    }`}
-                            >
-                                <span className="block sm:hidden">
-                                    {tab.label.split(' ')[0]}
-                                </span>
-                                <span className="hidden sm:block">
-                                    {tab.label}
-                                </span>
-                            </button>
-                        ))}
+        <div className="w-full bg-base-100">
+            <div className="max-w-7xl mx-auto p-6 py-8 ">
+                <div className="mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-dm-sans">
+                        Our Gallery
+                    </h2>
+                    {/* Tab Navigation - Imitating ItemToggle design */}
+                    <div className="mb-6 rounded-xl py-2 px-2 md:py-2 md:px-4 bg-white shadow-sm">
+                        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                            {filterTabs.map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setSelectedFilter(tab.id)}
+                                    className={`flex-1 py-3 px-3 md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 ${selectedFilter === tab.id
+                                        ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
+                                        : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
+                                        }`}
+                                >
+                                    <span className="block sm:hidden">
+                                        {tab.label.split(' ')[0]}
+                                    </span>
+                                    <span className="hidden sm:block">
+                                        {tab.label}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                {/* Tab Content */}
-                <div className="transition-all duration-300 ease-in-out">
-                    <BentoGrid images={applyPatterns(getFilteredImages())} />
+                    {/* Tab Content */}
+                    <div className="transition-all duration-300 ease-in-out">
+                        <BentoGrid images={applyPatterns(getFilteredImages())} />
+                    </div>
                 </div>
             </div>
         </div>
