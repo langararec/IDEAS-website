@@ -72,6 +72,16 @@ const Navbar: React.FC = () => {
                                                 </div>
                                             </div>
                                         </Link>
+                                        <Link
+                                            to="/gallery"
+                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200"
+                                        >
+                                            <div className="flex items-center space-x-3">
+                                                <div>
+                                                    <p className="text-primary font-medium group-hover:text-primary/80 font-dm-sans">Gallery</p>
+                                                </div>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -134,6 +144,13 @@ const Navbar: React.FC = () => {
                                     className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
                                 >
                                     Engagement Schedule
+                                </Link>
+                                   <Link
+                                    to="/gallery"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                                >
+                                    Gallery
                                 </Link>
                             </div>
                         </div>
