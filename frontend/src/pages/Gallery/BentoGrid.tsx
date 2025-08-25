@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 interface BentoGridProps {
     images: {
         src: string;
@@ -12,7 +12,7 @@ interface BentoGridProps {
 
 const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [modalOpen,setModalOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState<number>(0);
     const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
     const imagesPerPage = 6;
@@ -62,15 +62,30 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
         }
     };
 
+    const goToNextImage = () => {
+        if (currentImage < currentImages.length - 1) {
+            setCurrentImage(currentImage + 1);
+        }
+    }
+
+    const goToPrevImage = () => {
+        if (currentImage > 0) {
+            setCurrentImage(currentImage - 1);
+        }
+
+    }
+
     return (
         <div className="w-full bg-base-100" onClick={() => modalOpen ? setModalOpen(false) : null}>
 
             <div className="hidden lg:col-span-1 lg:col-span-2 lg:col-span-3 lg:col-span-4 lg:col-span-5 lg:col-span-6 lg:row-span-1 lg:row-span-2 lg:row-span-3 lg:row-span-4 lg:row-span-5 lg:row-span-6"></div>
 
-            <div className={`${modalOpen ? 'block' : 'hidden'} h-full fixed inset-0 bg-black/90 z-50 items-center justify-center flex`}>
-                <div className='mx-auto max-w-1/2 lg:max-w-1/3 my-auto'>
+            <div className={`${modalOpen ? 'block' : 'hidden'} h-full fixed inset-0 bg-black/90 z-50 items-center justify-center flex flex-row gap-x-4`}>
+                <FaCaretLeft className='text-white hover:cursor-pointer size-8 lg:size-12' onClick={(e) => {e.stopPropagation();goToPrevImage();}}/>
+                <div className=' max-w-1/2 lg:max-w-1/3 my-auto justify-center'>
                     <img className="w-full object-contain" src={currentImages[currentImage].src} alt={currentImages[currentImage].alt} />
                 </div>
+                <FaCaretRight className='text-white hover:cursor-pointer size-8 lg:size-12' onClick={(e) => {e.stopPropagation();goToNextImage();}} />
             </div>
 
             <div className="max-w-7xl w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[20rem] mb-8">
@@ -116,8 +131,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                                 key={page}
                                 onClick={() => goToPage(page)}
                                 className={`px-1 py-2 transition-colors text-lg ${currentPage === page
-                                        ? ' text-teal-800'
-                                        : ' text-gray-500 hover:text-teal-800'
+                                    ? ' text-teal-800'
+                                    : ' text-gray-500 hover:text-teal-800'
                                     }`}
                             >
                                 {page}
