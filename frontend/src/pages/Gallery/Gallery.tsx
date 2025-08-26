@@ -95,7 +95,7 @@ const Gallery = () => {
                                 <button
                                     key={tab.id}
                                     onClick={() => {setSelectedFilter(tab.id),setCurrentPage(1)}}
-                                    className={`flex-1 py-3 px-3 md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 ${selectedFilter === tab.id
+                                    className={`flex-1 py-3 px-3 font-dm-sans md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 ${selectedFilter === tab.id
                                         ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
                                         : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
                                         }`}
