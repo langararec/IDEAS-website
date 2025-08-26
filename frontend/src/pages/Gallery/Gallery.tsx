@@ -45,6 +45,7 @@ type FilterOption = 'all' | 'burnaby' | 'courtenay';
 
 const Gallery = () => {
     const [selectedFilter, setSelectedFilter] = useState<FilterOption>('all');
+    const [currentPage, setCurrentPage] = useState(1);
 
     const filterTabs = [
         { id: 'all' as FilterOption, label: 'ALL CITIES' },
@@ -93,7 +94,7 @@ const Gallery = () => {
                             {filterTabs.map((tab) => (
                                 <button
                                     key={tab.id}
-                                    onClick={() => setSelectedFilter(tab.id)}
+                                    onClick={() => {setSelectedFilter(tab.id),setCurrentPage(1)}}
                                     className={`flex-1 py-3 px-3 md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 ${selectedFilter === tab.id
                                         ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
                                         : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
@@ -112,7 +113,7 @@ const Gallery = () => {
 
                     {/* Tab Content */}
                     <div className="transition-all duration-300 ease-in-out">
-                        <BentoGrid images={applyPatterns(getFilteredImages())} />
+                        <BentoGrid images={applyPatterns(getFilteredImages())} currentPage={currentPage} setCurrentPage={setCurrentPage} />
                     </div>
                 </div>
             </div>
