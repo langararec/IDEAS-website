@@ -7,11 +7,12 @@ interface BentoGridProps {
         title?: string;
         colSpan: number; // Required column span (1 or 2)
         rowSpan: number; // Required row span (1 or 2)
-    }[];
+    }[],
+    currentPage: number;
+    setCurrentPage: (page: number) => void;
 }
 
-const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
-    const [currentPage, setCurrentPage] = useState(1);
+const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPage }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState<number>(0);
     const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
@@ -103,7 +104,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                             src={image.src}
                             alt={image.alt}
                             title={image.title}
-                            className={`w-full h-full object-cover transition-opacity duration-300 ${loadingImages.has(index) ? 'opacity-0' : 'opacity-100'
+                            className={`w-full h-full object-cover hover:cursor-pointer duration-300 hover:scale-110  ${loadingImages.has(index) ? 'opacity-0' : 'opacity-100'
                                 }`}
                             loading='lazy'
                             onLoadStart={() => handleImageLoadStart(index)}
@@ -130,8 +131,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images }) => {
                             <button
                                 key={page}
                                 onClick={() => goToPage(page)}
-                                className={`px-1 py-2 transition-colors text-lg ${currentPage === page
-                                    ? ' text-teal-800'
+                                className={`px-1 py-2 transition-colors text-lg hover:font-semibold ${currentPage === page
+                                    ? ' text-teal-800 font-semibold'
                                     : ' text-gray-500 hover:text-teal-800'
                                     }`}
                             >
