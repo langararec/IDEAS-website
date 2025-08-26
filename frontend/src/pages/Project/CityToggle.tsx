@@ -72,7 +72,7 @@ const CityToggle: React.FC = () => {
                             <button
                                 key={city.id}
                                 onClick={() => setActiveTab(city.id)}
-                                className={`flex-1 py-3 px-6 rounded-xl font-medium transition-all duration-300 ${activeTab === city.id
+                                className={`flex-1 py-3 px-6 rounded-xl font-medium transition-all font-dm-sans duration-300 ${activeTab === city.id
                                     ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
                                     : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
                                     }`}
