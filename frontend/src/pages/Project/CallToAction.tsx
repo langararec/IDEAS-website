@@ -12,7 +12,7 @@ const CallToAction: React.FC = () => {
                 </blockquote>
 
                 <Link to="/get-involved" className="hover:cursor-pointer">
-                    <button className="bg-accent hover:bg-accent/90 hover:cursor-pointer text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
+                    <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
                         Get Involved
                     </button>
                 </Link>
