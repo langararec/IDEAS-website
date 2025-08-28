@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu - Shows up to XL screens */}
             <div className={`${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                xl:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100`}>
+                xl:hidden overflow-x-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100`}>
                 
                 <div className="p-4 space-y-4">
                     {/* Mobile About Section */}
@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
                             <RxCaretDown className={`transition-transform duration-200 ${isMobileAboutOpen ? 'rotate-180' : ''}`} />
                         </button>
                         
-                        <div className={`${isMobileAboutOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'} 
+                        <div className={`${isMobileAboutOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
                             overflow-hidden transition-all duration-300 ease-in-out`}>
                             <div className="pl-4 space-y-2">
                                 <Link
