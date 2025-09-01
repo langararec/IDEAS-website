@@ -96,7 +96,7 @@ const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ m
 
                             {/* Long Description */}
                             <div className="space-y-4">
-                                {member.longDescription.split('\n\n').map((paragraph, index) => (
+                                {member.longDescription && member.longDescription.split('\n\n').map((paragraph, index) => (
                                     <p key={index} className="text-gray-700 leading-relaxed font-dm-sans text-lg">
                                         {paragraph}
                                     </p>
