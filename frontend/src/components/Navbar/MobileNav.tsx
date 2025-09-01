@@ -29,7 +29,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
 
     return (
         <div className={`${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                xl:hidden overflow-x-hidden transition-all duration-300 ease-in-out`}>
+                lg:hidden overflow-x-hidden transition-all duration-300 ease-in-out`}>
 
             {/* Separated Menu Container with blur and rounded borders */}
             <div className="p-4 ">

@@ -7,17 +7,17 @@ type AboutUsCardProps = {
 
 const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
     return (
-        <div className="w-full xl:w-fit xl:mx-auto bg-white xl:p-6 rounded-lg xl:justify-between xl:gap-x-12 overflow-hidden xl:shadow-md flex flex-col xl:flex-row justify-start" onMouseLeave={() => setCurrentNav && setCurrentNav(null)}>
-            <div className="flex flex-col xl:block">
+        <div className="w-full lg:w-fit lg:mx-auto bg-white lg:p-6 rounded-lg lg:justify-between lg:gap-x-12 overflow-hidden lg:shadow-md flex flex-col lg:flex-row justify-start" onMouseLeave={() => setCurrentNav && setCurrentNav(null)}>
+            <div className="flex flex-col lg:block">
                 {/* Header Section */}
-                <div className="bg-white xl:px-6 py-2 order-1">
+                <div className="bg-white lg:px-6 py-2 order-1">
                     <p className="text-lg font-medium text-gray-400 uppercase tracking-wide font-dm-sans">
                         MEET OUR TEAM
                     </p>
                 </div>
 
                 {/* Image Section - Shows after header on mobile, hidden on XL*/}
-                <div className="xl:hidden order-2 py-2">
+                <div className="lg:hidden order-2 py-2">
                     <img
                         src="/OurTeamNav.jpg"
                         alt="Community engagement - People in a photo"
@@ -28,7 +28,7 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                 {/* Content Section - Shows last on mobile */}
                 <div className="flex flex-col md:flex-row order-3">
                     {/* Content */}
-                    <div className="flex-1 xl:px-6 py-2 space-y-2">
+                    <div className="flex-1 lg:px-6 py-2 space-y-2">
                         <Link to="/team" className="block hover:bg-base-200 rounded-lg p-1">
                             <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
                                 Principal Researchers 
@@ -57,7 +57,7 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
             </div>
 
             {/* Left Image - Only shows on XL screens */}
-            <div className="hidden xl:block xl:h-48 w-full xl:w-fit m-auto p-0">
+            <div className="hidden lg:block lg:h-48 w-full lg:w-fit m-auto p-0">
                 <img
                     src="/OurTeamNav.jpg"
                     alt="Community engagement - People in a photo"
