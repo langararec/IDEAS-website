@@ -48,12 +48,18 @@ const Navbar: React.FC = () => {
             {currentNav && <div className="w-full h-1 bg-gray-100"></div>}
 
             {/* Mobile Menu - Shows up to XL screens */}
-            <MobileNav
-                isMobileMenuOpen={isMobileMenuOpen}
-                setIsMobileMenuOpen={setIsMobileMenuOpen}
-                isMobileAboutOpen={isMobileAboutOpen}
-                setIsMobileAboutOpen={setIsMobileAboutOpen}
-            />
+             <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
+                isMobileMenuOpen 
+                    ? "max-h-[1000vh] opacity-100 py-4 backdrop-blur-sm transform translate-y-0 bg-gradient-to-b from-white/80 via-white-20 to-transparent" 
+                    : "max-h-0 opacity-0 py-0 transform -translate-y-2"
+            }`}>
+                <MobileNav
+                    isMobileMenuOpen={isMobileMenuOpen}
+                    setIsMobileMenuOpen={setIsMobileMenuOpen}
+                    isMobileAboutOpen={isMobileAboutOpen}
+                    setIsMobileAboutOpen={setIsMobileAboutOpen}
+                />
+            </div>
 
             {/* Desktop Navigation Content */}
             <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
@@ -64,7 +70,6 @@ const Navbar: React.FC = () => {
                 <div className={`transition-all duration-300  ${currentNav ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"}`}>
                     {DesktopNavModal({ currentNav, setCurrentNav })}
                 </div>
-
             </div>
         </nav>
     )
