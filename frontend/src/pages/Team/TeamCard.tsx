@@ -1,41 +1,33 @@
-import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
+import { FaLinkedin } from "react-icons/fa";
 import ExtendedMemberDescription from "./ExtendedMemberDescription";
 
 export type MemberInfo = {
     name: string;
     role?: string;
     image: string;
-    shortDescription: string;
-    longDescription: string;
     linkedin?: string;
+    shortDescription?: string;
+    longDescription?: string;
     program?: string;
     programLink?: string;
-}
+};
 
 export const TeamCard = (info: MemberInfo) => {
-    const [showExtended, setShowExtended] = useState(false);
-    const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const handleExpandClick = () => {
-        setIsTransitioning(true);
-        // Wait for zoom out animation to complete, then show extended view
-        setTimeout(() => {
-            setShowExtended(true);
-            setIsTransitioning(false);
-        }, 500);
-    };
+    const [isExtended, setIsExtended] = useState(false);
+
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     const handleCloseExtended = () => {
         setIsTransitioning(true);
-        // Start zoom out of extended view
         setTimeout(() => {
-            setShowExtended(false);
+            setIsExtended(false);
             setIsTransitioning(false);
         }, 500);
     };
 
-    if (showExtended) {
+    if (isExtended) {
         return (
             <div className="fixed inset-0 z-[9999] bg-white overflow-y-auto">
                 <ExtendedMemberDescription
@@ -46,80 +38,38 @@ export const TeamCard = (info: MemberInfo) => {
             </div>
         );
     }
-
     return (
-        <div
-            className={`flex flex-col lg:flex-row gap-6 py-6 rounded-lg w-full sm:w-1/2 transition-all ${isTransitioning
-                ? 'scale-100 duration-400'
-                : 'scale-100 opacity-100 duration-500'
-                }`}
-            style={{
-                animationTimingFunction: 'cubic-bezier(0.4, 0.0, 1, 1)'
-            }}
-        >
+        <div className="relative rounded-2xl overflow-hidden shadow-md w-full max-w-xs hover:cursor-pointer mx-auto bg-white" onClick={() => setIsExtended(true)}>
             {/* Profile Image */}
-            <div className={`flex-shrink-0 lg:w-56 lg:h-56 w-10/12 mx-auto overflow-hidden rounded-lg
-${isTransitioning ? 'scale-100 duration-400' : 'scale-100 opacity-100 duration-500'}`}>
-                <img
-                    src={info.image}
-                    alt={info.name}
-                    className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-110"
-                    onClick={handleExpandClick}
-                />
-            </div>
+            <img
+                src={info.image}
+                alt={info.name}
+                className="w-full h-80 object-cover hover:scale-105 duration-300"
+            />
 
-            {/* Content */}
-            <div className="flex-1 my-auto mx-auto">
-                {/* Name and LinkedIn */}
-                <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
-                    <h2
-                        className="text-xl font-bold text-primary font-dm-sans cursor-pointer hover:text-primary/80 transition-colors"
-                        onClick={handleExpandClick}
-                    >
+            {/* Overlay with name, role, and LinkedIn */}
+            <div className="absolute bottom-0 left-0 w-full bg-black/40 px-4 py-4 flex flex-col">
+                <div className="flex items-center gap-2">
+                    <span className="text-white text-lg font-bold font-dm-sans">
                         {info.name}
-                    </h2>
+                    </span>
                     {info.linkedin && (
                         <a
                             href={info.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600/90 hover:text-blue-600 transition-colors"
+                            className="text-white hover:text-blue-400 transition-colors"
                         >
-                            <FaLinkedin size={28} />
+                            <FaLinkedin size={22} />
                         </a>
                     )}
                 </div>
-
-                {/* Role */}
-                <h3 className=" text-primary font-medium mb-2 font-dm-sans text-center lg:text-left">
-                    {info.role}
-                </h3>
-
-                {/* Program - with conditional link */}
-                {info.program && (
-                    <div className="mb-4 mx-auto w-fit lg:mx-0">
-                        {info.programLink ? (
-                            <a
-                                href={info.programLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-center lg:text-left text-accent font-medium font-dm-sans hover:text-accent/80 transition-colors "
-                            >
-                                {info.program}
-                            </a>
-                        ) : (
-                            <p className="text-center lg:text-left text-accent font-medium font-dm-sans">
-                                {info.program}
-                            </p>
-                        )}
-                    </div>
+                {info.role && (
+                    <span className="text-white text-base font-dm-sans">
+                        {info.role}
+                    </span>
                 )}
-
-                {/* Short Description */}
-                <p className="text-gray-700 leading-relaxed font-dm-sans text-center lg:text-left px-4 sm:px-0 ">
-                    {info.shortDescription}
-                </p>
             </div>
         </div>
     );
-}
+};
