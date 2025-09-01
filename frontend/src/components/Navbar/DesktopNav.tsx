@@ -11,7 +11,7 @@ const DesktopNav = ({ currentNav, setCurrentNav }: DesktopNavProps) => {
 
     return (
 
-        <div className="hidden xl:block max-w-7xl" >
+        <div className="hidden lg:block max-w-7xl" >
             <div className="flex space-x-8 p-4">
                 <div onMouseEnter={() => setCurrentNav("About Us")} >
                     <Link to="/project" className="text-primary text-xl font-medium font-dm-sans">About Us</Link>

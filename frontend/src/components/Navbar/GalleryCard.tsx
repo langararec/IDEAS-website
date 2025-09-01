@@ -7,7 +7,7 @@ type AboutUsCardProps = {
 
 const AboutUsCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
     return (
-        <div className=" xl:w-1/3 mx-auto bg-white xl:p-6 rounded-lg justify-between  shadow-md flex flex-col " onMouseLeave={() => setCurrentNav && setCurrentNav(null)}>
+        <div className=" lg:w-1/3 mx-auto bg-white lg:p-6 rounded-lg justify-between  shadow-md flex flex-col " onMouseLeave={() => setCurrentNav && setCurrentNav(null)}>
             <div>
                 {/* Header Section */}
                 <div className="bg-white  py-2">
@@ -16,7 +16,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                     </p>
                 </div>
 
-                <div className="xl:h-60 max-h-60 m-auto p-0 ">
+                <div className="lg:h-60 max-h-60 m-auto p-0 ">
                     <img
                         src="/burnabyMetrotown.png"
                         alt="Community engagement - Team "
