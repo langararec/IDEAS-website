@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RxCaretDown, RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import DesktopNav from "./Navbar/DesktopNav";
+import DesktopNavModal from "./Navbar/DesktopNavModal";
+import MobileNav from "./Navbar/MobileNav";
 
 const Navbar: React.FC = () => {
 
-    const [isAboutOpen, setIsAboutOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+    const [currentNav, setCurrentNav] = useState<string | null>(null);
 
     return (
-        <div className='bg-white w-full fixed top-0 z-50 h-20'>
-            <div className="w-full xl:max-w-7xl mx-auto h-full my-auto flex flex-row justify-between py-4 items-center">
+        <nav className={` bg-transparent w-full fixed top-0 z-50 ${currentNav ? "h-fit" : "h-20"} `} onMouseLeave={() => setCurrentNav(null)}>
+            <div className={`w-full bg-white max-w-7xl  mx-auto h-20 my-auto flex flex-row justify-between py-4 items-center`}>
                 <div className="my-auto ml-4">
                     <Link to="/">
                         <img src="/logo_rec.svg" alt="Logo" className="h-10 " />
@@ -19,80 +22,15 @@ const Navbar: React.FC = () => {
                 </div>
 
                 {/* Desktop Navigation - Only shows on XL screens and above */}
-                <div className="hidden xl:block">
-                    <nav className="flex space-x-8 p-4">
-                        <div>
-                            <div
-                                onMouseEnter={() => setIsAboutOpen(true)}
-                                onMouseLeave={() => setIsAboutOpen(false)}
-                                className="flex flex-row items-center relative"
-                            >
-                                <p className="text-primary cursor-pointer hover:text-primary/80 transition-colors font-medium text-xl font-dm-sans">
-                                    About
-                                </p>
-                                <RxCaretDown className={`inline ml-1 text-primary transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`} />
+                <DesktopNav currentNav={currentNav} setCurrentNav={setCurrentNav} />
 
-                                <div className={`${isAboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'} 
-        absolute top-full left-1/2 transform -translate-x-1/2 mt-2 
-        w-64 bg-white rounded-xl shadow-2xl border border-gray-100 
-        transition-all duration-300 ease-out z-50`}>
-
-                                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-100"></div>
-
-                                    <div className="p-6 space-y-4">
-
-                                        <Link
-                                            to="/project"
-                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200 font-dm-sans"
-                                        >
-                                            <div className="flex items-center space-x-3">
-                                                <div>
-                                                    <p className="text-primary font-medium group-hover:text-primary/80">The Project</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-
-                                        <Link
-                                            to="/updates"
-                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200"
-                                        >
-                                            <div className="flex items-center space-x-3">
-                                                <div>
-                                                    <p className="text-primary font-medium group-hover:text-primary/80 font-dm-sans">Updates & Timeline</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                        <Link
-                                            to="/schedule"
-                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200"
-                                        >
-                                            <div className="flex items-center space-x-3">
-                                                <div>
-                                                    <p className="text-primary font-medium group-hover:text-primary/80 font-dm-sans">Engagement Schedule</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                        <Link
-                                            to="/gallery"
-                                            className="block group p-3 rounded-lg hover:bg-primary/5 transition-all duration-200"
-                                        >
-                                            <div className="flex items-center space-x-3">
-                                                <div>
-                                                    <p className="text-primary font-medium group-hover:text-primary/80 font-dm-sans">Gallery</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <Link to="/team" className="text-primary text-xl font-medium font-dm-sans">Team</Link>
-                        </div>
-                        <div>
-                            <Link to="/get-involved" className="text-primary font-medium text-xl font-dm-sans">Get Involved</Link>
-                        </div>
-                    </nav>
+                {/*Desktop CTA*/}
+                <div className="hidden xl:block hover:cursor-pointer">
+                    <Link to="/get-involved" className="hover:cursor-pointer">
+                        <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide">
+                            Get Involved
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button - Shows up to XL screens */}
@@ -106,76 +44,34 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
 
+            {/* Separator for Active Desktop Navigation */}
+            {currentNav && <div className="w-full h-1 bg-gray-100"></div>}
+
             {/* Mobile Menu - Shows up to XL screens */}
-            <div className={`${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                xl:hidden overflow-x-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100`}>
-                
-                <div className="p-4 space-y-4">
-                    {/* Mobile About Section */}
-                    <div>
-                        <button
-                            onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
-                            className="flex items-center justify-between w-full text-left p-3 text-primary font-medium font-dm-sans text-lg"
-                        >
-                            About
-                            <RxCaretDown className={`transition-transform duration-200 ${isMobileAboutOpen ? 'rotate-180' : ''}`} />
-                        </button>
-                        
-                        <div className={`${isMobileAboutOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                            overflow-hidden transition-all duration-300 ease-in-out`}>
-                            <div className="pl-4 space-y-2">
-                                <Link
-                                    to="/project"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block p-3 font-dm-sans text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                                >
-                                    The Project
-                                </Link>
-                                <Link
-                                    to="/updates"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                                >
-                                    Updates & Timeline
-                                </Link>
-                                <Link
-                                    to="/schedule"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                                >
-                                    Engagement Schedule
-                                </Link>
-                                   <Link
-                                    to="/gallery"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                                >
-                                    Gallery
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+             <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
+                isMobileMenuOpen 
+                    ? "max-h-[1000vh] opacity-100 py-4 backdrop-blur-sm transform translate-y-0 bg-gradient-to-b from-white/80 via-white-20 to-transparent" 
+                    : "max-h-0 opacity-0 py-0 transform -translate-y-2"
+            }`}>
+                <MobileNav
+                    isMobileMenuOpen={isMobileMenuOpen}
+                    setIsMobileMenuOpen={setIsMobileMenuOpen}
+                    isMobileAboutOpen={isMobileAboutOpen}
+                    setIsMobileAboutOpen={setIsMobileAboutOpen}
+                />
+            </div>
 
-                    {/* Mobile Team Link */}
-                    <Link
-                        to="/team"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block p-3 font-dm-sans text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
-                    >
-                        Team
-                    </Link>
-
-                    {/* Mobile Get Involved Link */}
-                    <Link
-                        to="/get-involved"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block p-3 font-dm-sans   text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
-                    >
-                        Get Involved
-                    </Link>
+            {/* Desktop Navigation Content */}
+            <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
+                currentNav 
+                    ? "max-h-screen opacity-100 py-4 backdrop-blur-sm transform translate-y-0 bg-gradient-to-b from-white/80 via-white-20 to-transparent" 
+                    : "max-h-0 opacity-0 py-0 transform -translate-y-2"
+            }`}>
+                <div className={`transition-all duration-300  ${currentNav ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"}`}>
+                    {DesktopNavModal({ currentNav, setCurrentNav })}
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
 
