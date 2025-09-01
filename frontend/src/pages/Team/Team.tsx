@@ -1,7 +1,7 @@
 import type { MemberInfo } from "./TeamCard";
 import { TeamContainer } from "./TeamContainer";
 
-const principalResearchers: MemberInfo[] = [
+const team: MemberInfo[] = [
     {
         name: "Yue-Ching Cheng",
         role: "Principal Researcher",
@@ -20,23 +20,7 @@ const principalResearchers: MemberInfo[] = [
             "Her approach to problem-solving and decision-making is informed by her experience as an emergent strategist and pleasure activist. She strive to  create learning environments that prioritize joy, pleasure, and  well-being, while also considering the complex interactions between people, processes, and structures. She is committed to creating a more just, equitable, and joyful world, and she believe that love is a fundamental component of creating positive change. \n\n" +
             "As an educator, researcher, and leader, she center love as a methodology in all that she do. She believe that by approaching her work with a deep sense of empathy, care, and compassion for her students, colleagues, and research participants, she can create spaces and experiences that honor and celebrate their shared humanity. Love allows her to hold space for  difference, engage in difficult conversations, and build meaningful  relationships with those around her. By centering love in her methodology, she is able to engage in reflexive and critical analysis that  acknowledges the multiple, complex layers of power and identity that  shape our experiences.",
         linkedin: "https://www.linkedin.com/in/emmalene-courtney/",
-    }
-]
-
-const researchAssistants: MemberInfo[] = [
-    {
-        name: "Jennifer Mallari",
-        role: "Junior Research Assistant",
-        image: "/team/peng.webp",
-        shortDescription: "Jennifer, also called as Peng, is a creative designer and researcher, currently applying her expertise to support recreation projects at Langara College.",
-        longDescription: "Jennifer, also known as Peng, is a creative designer and researcher with a unique background in the satellite industry. After working for five years as a satellite controller, she made a bold career shift to follow her passion for designing intuitive digital platforms, studying Web Design and Development at Langara College. Her journey into recreation design began by supporting the Langara Recreation Department through lecture capture for recreation classes. This involvement evolved into more in-depth research work, including projects like Exploring How Recreation Organizations are Using Artificial Intelligence. \n\n" +
-            "Over the past year, Jennifer has deepened her expertise in recreation research—giving her a unique lens for designing digital experiences that meet the needs of both users and staff in the recreation field. She is passionate about modernizing recreation websites and platforms to be more intuitive, inclusive, accessible, and user-centered. With skills in user research, usability testing, wireframing, prototyping, design systems, and front-end development, Jennifer creates experiences that are not only functional but also engaging and easy to navigate. \n\n" +
-            "When she's not designing, you can find her practicing yoga, running, hiking, crocheting, playing the ukulele, or enjoying a good book—activities that keep her grounded and continually inspire her creative process.",
-        linkedin: "https://www.linkedin.com/in/jennifergmallari/",
-    }
-];
-
-const collaborators: MemberInfo[] = [
+    },
     {
         name: "Keith Dormond",
         role: "Collaborator",
@@ -57,10 +41,17 @@ const collaborators: MemberInfo[] = [
             "She has completed the Certificate in Intercultural Studies from UBC and is a Qualified Administrator for the Intercultural Development Inventory (IDI). As an early childhood educator (ECE) and special educator, Carolyn's work has always revolved in the intercultural, equity, diversity and inclusion space. \n\n" +
             "Carolyn is past vice president with SIETAR BC: The Society for Intercultural Education and Training and Research, BC Chapter. Currently, Carolyn is the principal investigator conducting a full time research project entitled:  Innovating Virtual Reality in Inclusive and Anti-biased Early Learning Child Care Training.",
         programLink: "https://students.langara.ca/about-langara/edi/"
-    }
-];
-
-const students: MemberInfo[] = [
+    },
+    {
+        name: "Jennifer Mallari",
+        role: "Junior Research Assistant",
+        image: "/team/peng.webp",
+        shortDescription: "Jennifer, also called as Peng, is a creative designer and researcher, currently applying her expertise to support recreation projects at Langara College.",
+        longDescription: "Jennifer, also known as Peng, is a creative designer and researcher with a unique background in the satellite industry. After working for five years as a satellite controller, she made a bold career shift to follow her passion for designing intuitive digital platforms, studying Web Design and Development at Langara College. Her journey into recreation design began by supporting the Langara Recreation Department through lecture capture for recreation classes. This involvement evolved into more in-depth research work, including projects like Exploring How Recreation Organizations are Using Artificial Intelligence. \n\n" +
+            "Over the past year, Jennifer has deepened her expertise in recreation research—giving her a unique lens for designing digital experiences that meet the needs of both users and staff in the recreation field. She is passionate about modernizing recreation websites and platforms to be more intuitive, inclusive, accessible, and user-centered. With skills in user research, usability testing, wireframing, prototyping, design systems, and front-end development, Jennifer creates experiences that are not only functional but also engaging and easy to navigate. \n\n" +
+            "When she's not designing, you can find her practicing yoga, running, hiking, crocheting, playing the ukulele, or enjoying a good book—activities that keep her grounded and continually inspire her creative process.",
+        linkedin: "https://www.linkedin.com/in/jennifergmallari/",
+    },
     {
         name: "Paula Parman",
         role: "Student Research Assistant",
@@ -140,37 +131,19 @@ const students: MemberInfo[] = [
 ]
 
 
+
 const Team: React.FC = () => {
 
     return (
         <div className="bg-base-100">
-            <div className="max-w-7xl mx-auto px-2  py-16">
+            <div className="max-w-7xl mx-auto px-6  py-16">
 
                 <h1 className="text-primary text-4xl sm:text-5xl font-dm-sans mb-4 font-bold text-center sm:text-left">Our Team</h1>
                 <p className="text-black mb-12 text-center sm:text-left">
                     Meet our dedicated team committed to making public recreation inclusive and accessible for everyone.
                 </p>
 
-                <div className="py-4">
-                    <h2 className="text-primary text-3xl sm:text-4xl font-dm-sans font-semibold text-center sm:text-left"> Principal Researchers </h2>
-                    <TeamContainer members={principalResearchers} />
-                </div>
-
-                <div className="py-4">
-                    <h2 className="text-primary text-3xl sm:text-4xl font-dm-sans font-semibold text-center sm:text-left"> Research Assistants </h2>
-                    <TeamContainer members={researchAssistants} />
-                </div>
-
-                <div className="py-4">
-                    <h2 className="text-primary text-3xl sm:text-4xl font-dm-sans font-semibold text-center sm:text-left"> Collaborators </h2>
-                    <TeamContainer members={collaborators} />
-                </div>
-
-                <div className="py-4">
-                    <h2 className="text-primary text-3xl sm:text-4xl font-dm-sans font-semibold text-center sm:text-left"> Students </h2>
-                    <TeamContainer members={students} />
-                </div>
-
+                <TeamContainer members={team} />
 
             </div>
 
