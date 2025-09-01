@@ -1,81 +1,112 @@
 import { Link } from "react-router-dom";
 import { RxCaretDown } from "react-icons/rx";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import AboutUsCard from "./AboutUsCard";
+import OurTeamCard from "./OurTeamCard";
+import GalleryCard from "./GalleryCard";
 
 type MobileNavProps = {
     isMobileMenuOpen: boolean;
-    isMobileAboutOpen: boolean; 
+    isMobileAboutOpen: boolean;
     setIsMobileMenuOpen: (value: boolean) => void;
     setIsMobileAboutOpen: (value: boolean) => void;
 }
 
-const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen, setIsMobileAboutOpen, isMobileAboutOpen }: MobileNavProps) => {
+const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) => {
+    const [isGalleryExpanded, setIsGalleryExpanded] = useState(false);
+    const [isAboutExpanded, setIsAboutExpanded] = useState(false);
+    const [isTeamExpanded, setIsTeamExpanded] = useState(false);
+    const location = useLocation();
+
+    // Close mobile menu when location changes
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+        setIsGalleryExpanded(false);
+        setIsAboutExpanded(false);
+        setIsTeamExpanded(false);
+    }, [location.pathname, setIsMobileMenuOpen]);
+
     return (
         <div className={`${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                xl:hidden overflow-x-hidden transition-all duration-300 ease-in-out bg-white border-t border-gray-100`}>
+                xl:hidden overflow-x-hidden transition-all duration-300 ease-in-out`}>
 
-            <div className="p-4 space-y-4">
-                {/* Mobile About Section */}
-                <div>
-                    <button
-                        onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
-                        className="flex items-center justify-between w-full text-left p-3 text-primary font-medium font-dm-sans text-lg"
-                    >
-                        About
-                        <RxCaretDown className={`transition-transform duration-200 ${isMobileAboutOpen ? 'rotate-180' : ''}`} />
-                    </button>
+            {/* Separated Menu Container with blur and rounded borders */}
+            <div className="p-4 ">
+                <div className="bg-white backdrop-blur-sm rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div className="px-6 py-4 space-y-4">
+                        {/* About Us */}
+                        <div className="py-3 border-b border-gray-100">
+                            <div
+                                className="flex items-center justify-between cursor-pointer"
+                                onClick={() => setIsAboutExpanded(!isAboutExpanded)}
+                            >
+                                <Link to="/project">
+                                    <span className="text-primary text-xl font-medium font-dm-sans">
+                                        About Us
+                                    </span>
+                                </Link>
+                                <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isAboutExpanded ? 'rotate-180' : ''}`} />
+                            </div>
 
-                    <div className={`${isMobileAboutOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} 
-                            overflow-hidden transition-all duration-300 ease-in-out`}>
-                        <div className="pl-4 space-y-2">
-                            <Link
-                                to="/project"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block p-3 font-dm-sans text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                            {/* About Us Expanded Content */}
+                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isAboutExpanded ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
+                                }`}>
+                                <AboutUsCard />
+                            </div>
+                        </div>
+
+                        {/* Our Team */}
+                        <div className="py-3 border-b border-gray-100">
+                            <div
+                                className="flex items-center justify-between cursor-pointer"
+                                onClick={() => setIsTeamExpanded(!isTeamExpanded)}
                             >
-                                The Project
-                            </Link>
-                            <Link
-                                to="/updates"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                                <Link to="/team">
+                                    <span className="text-primary text-xl font-medium font-dm-sans">
+                                        Our Team
+                                    </span>
+                                </Link>
+                                <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isTeamExpanded ? 'rotate-180' : ''}`} />
+                            </div>
+
+                            {/* Our Team Expanded Content */}
+                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isTeamExpanded ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
+                                }`}>
+                                <OurTeamCard />
+                            </div>
+                        </div>
+
+                        {/* Gallery */}
+                        <div className="py-3 border-b border-gray-100">
+                            <div
+                                className="flex items-center justify-between cursor-pointer"
+                                onClick={() => setIsGalleryExpanded(!isGalleryExpanded)}
                             >
-                                Updates & Timeline
-                            </Link>
-                            <Link
-                                to="/schedule"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                            >
-                                Engagement Schedule
-                            </Link>
-                            <Link
-                                to="/gallery"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block p-3 font-dm-sans  text-primary/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                            >
-                                Gallery
+                                <Link to="/gallery">
+                                    <span className="text-primary text-xl font-medium font-dm-sans">
+                                        Gallery
+                                    </span>
+                                </Link>
+                                <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isGalleryExpanded ? 'rotate-180' : ''}`} />                            </div>
+
+                            {/* Gallery Expanded Content */}
+                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isGalleryExpanded ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
+                                }`}>
+                                <GalleryCard />
+                            </div>
+                        </div>
+
+                        {/* Get Involved Button */}
+                        <div className="pt-4">
+                            <Link to="/get-involved" className="hover:cursor-pointer">
+                                <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold  py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide w-full">
+                                    Get Involved
+                                </button>
                             </Link>
                         </div>
                     </div>
                 </div>
-
-                {/* Mobile Team Link */}
-                <Link
-                    to="/team"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block p-3 font-dm-sans text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
-                >
-                    Team
-                </Link>
-
-                {/* Mobile Get Involved Link */}
-                <Link
-                    to="/get-involved"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block p-3 font-dm-sans   text-primary font-medium text-lg hover:bg-primary/5 rounded-lg transition-all duration-200"
-                >
-                    Get Involved
-                </Link>
             </div>
         </div>
     )
