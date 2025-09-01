@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), ViteImageOptimizer({
-            png: { quality: 90 },
-            jpeg: { quality: 95 },
+            png: { quality: 80 },
+            jpeg: { quality: 80 },
             webp: { quality: 30 },
             avif: { quality: 90 },
         }),

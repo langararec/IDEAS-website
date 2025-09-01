@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
                 <DesktopNav currentNav={currentNav} setCurrentNav={setCurrentNav} />
 
                 {/*Desktop CTA*/}
-                <div className="hidden xl:block hover:cursor-pointer">
+                <div className="hidden lg:block hover:cursor-pointer mr-4">
                     <Link to="/get-involved" className="hover:cursor-pointer">
                         <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide">
                             Get Involved
@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
                 </div>
 
                 {/* Mobile Menu Button - Shows up to XL screens */}
-                <div className="xl:hidden mr-4 my-auto">
+                <div className="lg:hidden mr-4 my-auto">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="text-primary text-2xl p-2"
