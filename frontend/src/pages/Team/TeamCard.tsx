@@ -50,7 +50,7 @@ export const TeamCard = (info: MemberInfo) => {
             {/* Overlay with name, role, and LinkedIn */}
             <div className="absolute bottom-0 left-0 w-full bg-black/40 px-4 py-4 flex flex-col">
                 <div className="flex items-center gap-2">
-                    <span className="text-white text-lg font-bold font-dm-sans">
+                    <span className="text-white text-lg font-bold font-dm-sans hover:text-accent/90 duration-300">
                         {info.name}
                     </span>
                     {info.linkedin && (
