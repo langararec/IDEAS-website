@@ -85,7 +85,7 @@ const Gallery = () => {
         <div className="w-full bg-base-100 min-h-[80vh]">
             <div className="max-w-7xl mx-auto p-6 py-8 ">
                 <div className="mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-dm-sans">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-dm-sans text-center">
                         Our Gallery
                     </h2>
                     {/* Tab Navigation - Imitating ItemToggle design */}
