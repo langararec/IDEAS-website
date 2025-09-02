@@ -53,7 +53,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
             {/* Right Image - Only shows on XL screens */}
             <div className="hidden lg:block lg:h-48 w-full lg:w-fit m-auto p-0">
                 <img
-                    src="/aboutproject.jpg"
+                    src="/about-nav-image.webp"
                     alt="Community engagement - hands coming together"
                     className="w-full h-48 max-h-60 md:h-full object-cover rounded-lg"
                 />

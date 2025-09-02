@@ -59,7 +59,7 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
             {/* Left Image - Only shows on XL screens */}
             <div className="hidden lg:block lg:h-48 w-full lg:w-fit m-auto p-0">
                 <img
-                    src="/OurTeamNav.jpg"
+                    src="/team-nav-image.webp"
                     alt="Community engagement - People in a photo"
                     className="w-full h-48 max-h-60 md:h-full object-cover rounded-lg"
                 />

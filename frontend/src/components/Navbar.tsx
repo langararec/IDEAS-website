@@ -14,6 +14,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav className={` bg-transparent w-full fixed top-0 z-50 ${currentNav ? "h-fit" : "h-20"} `} onMouseLeave={() => setCurrentNav(null)}>
+            <div className="w-full bg-white">
             <div className={`w-full bg-white max-w-7xl  mx-auto h-20 my-auto flex flex-row justify-between py-4 items-center`}>
                 <div className="my-auto ml-4">
                     <Link to="/">
@@ -43,7 +44,7 @@ const Navbar: React.FC = () => {
                     </button>
                 </div>
             </div>
-
+</div>
             {/* Separator for Active Desktop Navigation */}
             {currentNav && <div className="w-full h-1 bg-gray-100"></div>}
 
@@ -64,7 +65,7 @@ const Navbar: React.FC = () => {
             {/* Desktop Navigation Content */}
             <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
                 currentNav 
-                    ? "max-h-screen opacity-100 py-4 backdrop-blur-sm transform translate-y-0 bg-gradient-to-b from-white/80 via-white-20 to-transparent" 
+                    ? "max-h-screen opacity-100 py-4 backdrop-blur-xs transform translate-y-0 bg-gradient-to-b from-white/25 via-white/20 to-transparent" 
                     : "max-h-0 opacity-0 py-0 transform -translate-y-2"
             }`}>
                 <div className={`transition-all duration-300  ${currentNav ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"}`}>
