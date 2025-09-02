@@ -114,7 +114,7 @@ const team: MemberInfo[] = [
         program: "Bachelor of Recreation Management",
         image: "/team/dima.webp",
         shortDescription: "Dmitrii is a Leisure Studies student passionate about shaping inclusive, creative, and accessible recreation experiences for newcomers through research and program design.",
-        longDescription: "Dmitrii Zubarev is a Leisure Studies student at Langara College with a passion for inclusive recreation, community-building, and storytelling. With a background in performing arts and international experience, he is focused on expanding access to leisure for immigrants and newcomers through research and creative program design.Axel Velasquez is currently pursuing an Associate's Degree in Computer Science at Langara College. He has hands-on experience in software development, creating engaging user experiences for both complex and simple products. Axel enjoys new challenges and embraces working with the latest technology to provide the best possible results.",
+        longDescription: "Dmitrii Zubarev is a Leisure Studies student at Langara College with a passion for inclusive recreation, community-building, and storytelling. With a background in performing arts and international experience, he is focused on expanding access to leisure for immigrants and newcomers through research and creative program design.",
         programLink: "https://langara.ca/programs-courses/recreation-management-baccalaureate-degree-we",
         linkedin: "https://www.linkedin.com/in/dmitrii-z-6794b28b/"
     },
