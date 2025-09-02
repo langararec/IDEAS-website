@@ -138,11 +138,7 @@ const Team: React.FC = () => {
         <div className="bg-base-100">
             <div className="max-w-7xl mx-auto px-6  py-16">
 
-                <h1 className="text-primary text-4xl sm:text-5xl font-dm-sans mb-4 font-bold text-center sm:text-left">Our Team</h1>
-                <p className="text-black mb-12 text-center sm:text-left">
-                    Meet our dedicated team committed to making public recreation inclusive and accessible for everyone.
-                </p>
-
+                <h1 className="text-primary text-4xl sm:text-5xl font-dm-sans mb-10 font-bold text-center ">Meet Our Team</h1>
                 <TeamContainer members={team} />
 
             </div>
