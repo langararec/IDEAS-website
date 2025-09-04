@@ -28,7 +28,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                 <div className="flex flex-col md:flex-row">
                     {/* Left Content */}
                     <div className="flex-1  pt-3 space-y-2 ">
-                        <Link to="/gallery" className="block hover:bg-base-200 rounded-lg p-1">
+                        <Link to="/gallery" className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
                             <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
                                 Browse Photos
                             </div>
