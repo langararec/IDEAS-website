@@ -33,6 +33,10 @@ const CourtenayGalleryImages = [
     { src: "/gallery/courtenay-focus-group3.webp", alt: "Focus group participants in Courtenay", title: "Courtenay Focus Group - Participant Engagement" },
     { src: "/gallery/courtenay-lewispark1.webp", alt: "Community engagement at Lewis Park in Courtenay", title: "Lewis Park Courtenay - Community Engagement" },
     { src: "/gallery/courtenay-lewispark2.webp", alt: "Survey activities at Lewis Park in Courtenay", title: "Lewis Park Courtenay - Survey Activities" },
+    { src: "/gallery/comox-splashpark1.webp", alt: "Community engagement at Comox Splash Park", title: "Comox Splash Park - Community Engagement" },
+    { src: "/gallery/comox-splashpark2.webp", alt: "Families enjoying Comox Splash Park", title: "Comox Splash Park - Survey Collection" },
+    { src: "/gallery/courtenay-lewispark3.webp", alt: "Survey activities at Lewis Park in Courtenay", title: "Lewis Park Courtenay - Survey Collection" },
+    { src: "/gallery/courtenay-lewispark4.webp", alt: "Community members at Lewis Park in Courtenay", title: "Lewis Park Courtenay - Community Members" },
 ];
 
 const allImages = [...burnabyGalleryImages, ...CourtenayGalleryImages];
