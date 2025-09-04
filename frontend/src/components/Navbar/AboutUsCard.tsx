@@ -10,7 +10,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
         <div className="w-full lg:w-fit lg:mx-auto bg-white lg:p-6 rounded-lg lg:justify-between lg:gap-x-12 overflow-hidden lg:shadow-md flex flex-col lg:flex-row justify-start" onMouseLeave={() => setCurrentNav && setCurrentNav(null)}>
             <div className="flex flex-col lg:block">
                 {/* Header Section */}
-                <div className="bg-white lg:px-6 py-2 order-1">
+                <div className="bg-white py-2 order-1">
                     <p className="text-lg font-medium text-gray-400 uppercase tracking-wide font-dm-sans">
                         KNOW MORE ABOUT
                     </p>
@@ -28,20 +28,20 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                 {/* Content Section - Shows last on mobile */}
                 <div className="flex flex-col md:flex-row order-3">
                     {/* Left Content */}
-                    <div className="flex-1 lg:px-6 py-2 space-y-2">
-                        <Link to="/project" className="block hover:bg-base-200 rounded-lg p-1">
+                    <div className="flex-1 py-2 space-y-2">
+                        <Link to="/project" className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
                             <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
                                 The Project
                             </div>
                         </Link>
 
-                        <Link to="/updates" className="block hover:bg-base-200 rounded-lg p-1">
+                        <Link to="/updates" className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
                             <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
                                 Timeline & Updates
                             </div>
                         </Link>
 
-                        <Link to="/schedule" className="block hover:bg-base-200 rounded-lg p-1">
+                        <Link to="/schedule" className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
                             <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
                                 Engagement Schedule
                             </div>
