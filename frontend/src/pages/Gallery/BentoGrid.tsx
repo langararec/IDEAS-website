@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 interface BentoGridProps {
     images: {
@@ -23,6 +23,37 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
     const startIndex = (currentPage - 1) * imagesPerPage;
     const endIndex = startIndex + imagesPerPage;
     const currentImages = images.slice(startIndex, endIndex);
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (!modalOpen) return;
+
+            switch (event.key) {
+                case 'ArrowLeft':
+                    event.preventDefault();
+                    goToPrevImage();
+                    break;
+                case 'ArrowRight':
+                    event.preventDefault();
+                    goToNextImage();
+                    break;
+                case 'Escape':
+                    event.preventDefault();
+                    setModalOpen(false);
+                    break;
+            }
+        };
+
+        // Add event listener when modal is open
+        if (modalOpen) {
+            document.addEventListener('keydown', handleKeyDown);
+        }
+
+        // Cleanup event listener
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [modalOpen, currentImage]);
 
     // Function to get the correct Tailwind classes
     const getGridClasses = (colSpan: number, rowSpan: number) => {
