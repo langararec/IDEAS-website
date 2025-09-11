@@ -1,4 +1,6 @@
 import React from "react";
+import { useLanguage } from "../../context/LanguageContext";
+import { projectContent } from "../../content/ProjectContent";
 
 export interface Objective {
     id: string;
@@ -49,50 +51,30 @@ const Collaborate = () => {
     );
 }
 
-export const objectivesData: Objective[] = [
-    {
-        id: "understand-perspectives",
-        title: "Understand Perspectives",
-        description: "Identify how immigrant and racialized communities experience recreation differently from native-born public recreation staff and how service context shapes design and delivery.",
-        icon: LightBulb,
-        colorClass: "primary"
-    },
-    {
-        id: "co-creation-initiatives",
-        title: "Co-creation Initiatives",
-        description: "Develop a process for equity-deserving groups to collaborate with municipal recreation staff in creating initiatives that enhance access to public recreation.",
-        icon: Hand,
-        colorClass: "primary"
-    },
-    {
-        id: "promote-engagement",
-        title: "Promote Engagement",
-        description: "Explore how Belonging, Dignity, Justice, and Joy (Davis, 2021) as guiding principles can be an alternative framework for fostering Inclusion, Equity, Diversity, and Access (IDEA) in public recreation.",
-        icon: Collaborate,
-        colorClass: "primary"
-    },
-    {
-        id: "enhance-access",
-        title: "Enhance Access",
-        description: "Improve the lives of communities by uncovering gaps in services, identifying barriers, designing training and toolkits to help public recreation staff collaborate and co-create with their communities.",
-        icon: CheckMark,
-        colorClass: "primary"
-    }
-];
-
 const Objectives: React.FC = () => {
+    const { language } = useLanguage();
+    const content = projectContent[language].objectives;
+
+    const iconComponents = [LightBulb, Hand, Collaborate, CheckMark];
+
+    const objectivesData: Objective[] = content.items.map((item, index) => ({
+        ...item,
+        icon: iconComponents[index],
+        colorClass: "primary"
+    }));
+
     return (
-        <div className="py-8 px-4">
+        <div className="py-8 px-4" key={`objectives-${language}`}>
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 font-dm-sans">
-                    Our Objectives
+                    {content.title}
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-x-18">
                     {objectivesData.map((objective: Objective) => {
                         const IconComponent = objective.icon;
                         return (
-                            <div key={objective.id} className="py-4 lg:py-8">
+                            <div key={`${language}-${objective.id}`} className="py-4 lg:py-8">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className={`text-${objective.colorClass} bg-base-200 p-3 rounded-lg flex-shrink-0 [&>svg]:size-7`}>
                                         <IconComponent />

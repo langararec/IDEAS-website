@@ -1,59 +1,18 @@
 import React from "react";
-
-interface Outcome {
-    id: string;
-    title: string;
-    description: string;
-    image: string;
-}
-
-const outcomesData: Outcome[] = [
-    {
-        id: "comprehensive-insights",
-        title: "Comprehensive Insights",
-        description: "Understand immigrant and racialized communities' recreation needs, identify access initiatives, and address barriers through systemic change.",
-        image: "/CollaborativeIntegration.webp"
-    },
-    {
-        id: "social-integration",
-        title: "Social Integration",
-        description: "Create pathways to strengthen societal integration and boost civic engagement within immigrant and racialized communities.",
-        image: "/SocialIntegration.webp"
-    },
-    {
-        id: "collaborative-processes",
-        title: "Collaborative Processes",
-        description: "Build impactful partnerships between municipal recreation staff and immigrant and racialized communities to co-create accessible programs.",
-        image: "/CollaborativeProcess.webp"
-    },
-    {
-        id: "research-artifacts",
-        title: "Research Artifacts",
-        description: "Produce exemplary initiatives that can be adapted and implemented in other Canadian communities to improve access for equity-deserving groups.",
-        image: "/ResearchArtifacts.webp"
-    },
-    {
-        id: "intersectional-data",
-        title: "Intersectional Data",
-        description: "Capture data on the intersectional identities within immigrant and racialized communities to inform future research and support for other equity-deserving groups.",
-        image: "/IntersectionalData.webp"
-    },
-    {
-        id: "positive-community-impact",
-        title: "Positive Community Impact",
-        description: "Ensure co-created initiatives benefit target populations and intersecting communities, including those with disabilities and diverse gender identities.",
-        image: "/PositiveCommunityImpact.webp"
-    }
-];
+import { useLanguage } from "../../../context/LanguageContext";
+import { projectContent } from "../../../content/ProjectContent";
 
 const Outcomes: React.FC = () => {
+    const { language } = useLanguage();
+    const content = projectContent[language].outcomes;
+
     return (
-        <div>
+        <div key={`outcomes-${language}`}>
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-wrap gap-8 justify-center py-6">
-                    {outcomesData.map((outcome) => (
+                    {content.items.map((outcome) => (
                         <div
-                            key={outcome.id}
+                            key={`${language}-outcome-${outcome.id}`}
                             className="overflow-hidden flex-1 min-w-80 max-w-96 transition-all duration-300 transform "
                         >
                             <div className="aspect-w-16 aspect-h-10 rounded-lg">
