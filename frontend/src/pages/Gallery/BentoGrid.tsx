@@ -10,9 +10,13 @@ interface BentoGridProps {
     }[],
     currentPage: number;
     setCurrentPage: (page: number) => void;
+    paginationLabels?: {
+        previous: string;
+        next: string;
+    };
 }
 
-const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPage }) => {
+const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPage, paginationLabels }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState<number>(0);
     const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
@@ -155,7 +159,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                         disabled={currentPage === 1}
                         className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-teal-800 transition-colors hover:cursor-pointer"
                     >
-                        Previous
+                        {paginationLabels?.previous || "Previous"}
                     </button>
 
                     <div className="flex gap-1">
@@ -178,7 +182,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                         disabled={currentPage === totalPages}
                         className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-500 disabled:cursor-not-allowed hover:bg-teal-800 transition-colors hover:cursor-pointer"
                     >
-                        Next
+                        {paginationLabels?.next || "Next"}
                     </button>
                 </div>
             )}
