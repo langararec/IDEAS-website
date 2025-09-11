@@ -1,3 +1,5 @@
+import { useLanguage } from '../../context/LanguageContext';
+import { navContent } from '../../content/NavContent';
 import AboutUsCard from './AboutUsCard'
 import OurTeamCard from './OurTeamCard'
 import GalleryCard from './GalleryCard'
@@ -8,15 +10,16 @@ type DesktopNavModalProps = {
 }
 
 const DesktopNavModal = ({ currentNav, setCurrentNav }: DesktopNavModalProps) => {
+    const { language } = useLanguage();
 
     const displayCurrentModal = () => {
 
         switch (currentNav) {
-            case "About Us":
+            case navContent[language].about:
                 return <AboutUsCard setCurrentNav={setCurrentNav} />;
-            case "Our Team":
+            case navContent[language].team:
                 return <OurTeamCard setCurrentNav={setCurrentNav} />;
-            case "Gallery":
+            case navContent[language].gallery:
                 return <GalleryCard setCurrentNav={setCurrentNav} />;
             default:
                 return null;

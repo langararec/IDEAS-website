@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { RxCaretDown } from "react-icons/rx";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
+import { navContent } from "../../content/NavContent";
 import AboutUsCard from "./AboutUsCard";
 import OurTeamCard from "./OurTeamCard";
 import GalleryCard from "./GalleryCard";
@@ -18,6 +20,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
     const [isAboutExpanded, setIsAboutExpanded] = useState(false);
     const [isTeamExpanded, setIsTeamExpanded] = useState(false);
     const location = useLocation();
+    const { language } = useLanguage();
 
     // Close mobile menu when location changes
     useEffect(() => {
@@ -43,7 +46,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                             >
                                 <Link to="/project">
                                     <span className="text-primary text-xl font-medium font-dm-sans">
-                                        About Us
+                                        {navContent[language].about}
                                     </span>
                                 </Link>
                                 <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isAboutExpanded ? 'rotate-180' : ''}`} />
@@ -64,7 +67,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                             >
                                 <Link to="/team">
                                     <span className="text-primary text-xl font-medium font-dm-sans">
-                                        Our Team
+                                        {navContent[language].team}
                                     </span>
                                 </Link>
                                 <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isTeamExpanded ? 'rotate-180' : ''}`} />
@@ -85,7 +88,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                             >
                                 <Link to="/gallery">
                                     <span className="text-primary text-xl font-medium font-dm-sans">
-                                        Gallery
+                                        {navContent[language].gallery}
                                     </span>
                                 </Link>
                                 <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isGalleryExpanded ? 'rotate-180' : ''}`} />                            </div>
@@ -101,7 +104,7 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                         <div className="pt-4">
                             <Link to="/get-involved" className="hover:cursor-pointer">
                                 <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold  py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide w-full">
-                                    Get Involved
+                                    {navContent[language].getInvolved}
                                 </button>
                             </Link>
                         </div>
