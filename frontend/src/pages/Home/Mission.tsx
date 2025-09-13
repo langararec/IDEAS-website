@@ -18,20 +18,20 @@ const Mission: React.FC = () => {
             <div className="mx-auto relative h-full">
                 <div className="flex flex-col lg:justify-start lg:items-center space-y-8 lg:space-y-0 lg:h-full z-40 w-full">
                     {/* Mobile image */}
-                    <div className="lg:hidden pt-8  px-4">
+                    <div className="lg:hidden">
                         <img
                             src="/our-mission.webp"
                             alt={content.imageAlt}
-                            className="w-full h-auto rounded-2xl shadow-xl"
+                            className="w-full h-auto shadow-xl"
                         />
                     </div>
                     
                     <div className="max-w-7xl 3xl:max-w-3/4 w-full h-full lg:flex lg:items-center lg:justify-start px-4 lg:px-8">
-                        <div className="text-center space-y-6 z-10 max-w-xl  rounded-2xl p-4 my-auto">
-                            <h2 className="text-3xl lg:text-4xl font-bold text-primary font-dm-sans">
+                        <div className="space-y-6 z-10 max-w-xl mx-auto lg:mx-0 rounded-2xl p-4 my-auto">
+                            <h2 className="text-3xl lg:text-4xl text-center lg:text-left font-bold text-primary font-dm-sans">
                                 {content.title}
                             </h2>
-                            <p className="text-lg lg:text-xl text-black leading-relaxed font-dm-sans">
+                            <p className="text-lg lg:text-xl text-center lg:text-left text-black leading-relaxed font-dm-sans">
                                 {content.description}
                             </p>
                         </div>
