@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     return (
         <div className="px-4 pt-12" key={`hero-${language}`}>
             <div className="text-center max-w-6xl mx-auto">
-                <h1 className="text-4xl lg:text-6xl leading-tight tracking-wide font-semibold font-dm-sans text-primary mb-8">
+                <h1 className="text-4xl lg:text-6xl leading-tight tracking-tight font-semibold font-dm-sans text-primary mb-8">
                     {content.title} <span className="text-accent">{content.titleHighlight}</span>
                 </h1>
                 <p className="max-w-2xl text-lg lg:text-xl text-black mx-auto leading-relaxed mb-0 font-dm-sans">
