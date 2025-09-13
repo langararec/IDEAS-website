@@ -119,10 +119,10 @@ const GetInvolved = () => {
         ...(index < 1 ? { colSpan: 4, rowSpan: 1 } : { colSpan: 2, rowSpan: 1 }),
         ...img
     }));
-    
+
     return (
         <div key={`get-involved-${language}`} className="bg-base-100">
-            <div className='lg:py-24 py-8 max-w-7xl mx-auto'>
+            <div className='lg:py-12 py-8 max-w-7xl mx-auto'>
                 <h2 className="text-3xl md:text-4xl md:w-3/4 lg:w-full md:mx-auto lg:mx-0 font-bold text-primary mb-6 font-dm-sans text-left px-4">
                     {content.title}
                 </h2>
