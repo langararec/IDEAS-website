@@ -313,7 +313,8 @@ export const engagementScheduleContent = {
                 mapUrl: "https://maps.google.com/?q=Confederation+Park"
               }
             ]
-          }
+          },
+          
         ]
       }
     ]
