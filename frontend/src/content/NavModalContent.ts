@@ -3,7 +3,7 @@ export const navModalContent = {
     aboutUs: {
       header: "KNOW MORE ABOUT",
       image: {
-        src: "/about-nav-image.webp",
+        src: "/holdinghands.webp",
         alt: "Community engagement - hands coming together"
       },
       links: [
@@ -64,7 +64,7 @@ export const navModalContent = {
     aboutUs: {
       header: "EN SAVOIR PLUS SUR",
       image: {
-        src: "/about-nav-image.webp",
+        src: "/holdinghands.webp",
         alt: "Engagement communautaire - mains qui se rassemblent"
       },
       links: [
