@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
     const footerData = footerContent[language];
 
     return (
-        <footer key={`footer-${language}`} className=" mt-16">
+        <footer key={`footer-${language}`} >
             <div className="max-w-7xl mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
 
@@ -47,7 +47,17 @@ const Footer: React.FC = () => {
 
                     {/* Right Side - Navigation Columns with justify-between */}
                     <div className="flex flex-col sm:flex-row justify-end gap-4 md:gap-16 flex-1 md:max-w-md">
-                        
+
+                        {/* Resources Column */}
+                        <div className="space-y-4">
+                            <h3 className="text-lg font-bold text-gray-800 font-dm-sans">{footerData.resources}</h3>
+                            <div className="space-y-3">
+                                <Link to="/references" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
+                                    {footerData.references}
+                                </Link>
+                            </div>
+                        </div>
+
                         {/* About Us Column */}
                         <div className="space-y-4">
                             <h3 className="text-lg font-bold text-gray-800 font-dm-sans">{content.about}</h3>
@@ -63,6 +73,7 @@ const Footer: React.FC = () => {
                                 </Link>
                             </div>
                         </div>
+
 
                     </div>
                 </div>
