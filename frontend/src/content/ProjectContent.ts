@@ -82,32 +82,32 @@ export const projectContent = {
         {
           title: "Good Health & Well-being",
           description: "By enhancing access to recreation services, the project supports physical activity and social engagement, which are vital for physical and mental health.",
-          image: "/SDG3.webp"
+          image: "/03_Goodhealth_English.png"
         },
         {
           title: "Quality Education",
           description: "The project's educational components, such as EDI training for staff and community workshops, foster understanding and appreciation of cultural diversity and inclusion.",
-          image: "/SDG4.webp"
+          image: "/04_QualityEducation_English.png"
         },
         {
           title: "Reduced Inequalities",
           description: "The project aims to reduce inequalities by ensuring that public recreation services are accessible and welcoming to immigrant and racialized communities.",
-          image: "/SDG10.webp"
+          image: "/10_ReducedInequalities_English.png"
         },
         {
           title: "Sustainable Cities and Communities",
           description: "By enhancing access to recreation services, the project supports physical activity and social engagement, which are vital for physical and mental health.",
-          image: "/SDG11.webp"
+          image: "/11_Sustainable_English.png"
         },
         {
           title: "Peace, Justice and Strong Institutions",
           description: "The project's community-based participatory research approach ensures that marginalized voices are included in decision-making processes related to public recreation services.",
-          image: "/SDG16.webp"
+          image: "/16_PeaceAndJustice_English.png"
         },
         {
           title: "Partnerships for the Goals",
           description: "The project fosters partnerships among municipal recreation departments, community organizations, and immigrant communities to collaboratively enhance recreation services.",
-          image: "/SDG17.webp"
+          image: "/17_Partnerships_English.png"
         }
       ]
     },
@@ -244,32 +244,32 @@ export const projectContent = {
         {
           title: "Bonne Santé et Bien-être",
           description: "En améliorant l'accès aux services de loisirs, le projet soutient l'activité physique et l'engagement social, qui sont vitaux pour la santé physique et mentale.",
-          image: "/SDG3.webp"
+          image: "/03_Goodhealth_French.png"
         },
         {
           title: "Éducation de Qualité",
           description: "Les composants éducatifs du projet, tels que la formation EDI pour le personnel et les ateliers communautaires, favorisent la compréhension et l'appréciation de la diversité culturelle et de l'inclusion.",
-          image: "/SDG4.webp"
+          image: "/04_QualityEducation_French.png"
         },
         {
           title: "Inégalités Réduites",
           description: "Le projet vise à réduire les inégalités en s'assurant que les services de loisirs publics sont accessibles et accueillants pour les communautés immigrantes et racialisées.",
-          image: "/SDG10.webp"
+          image: "/10_ReducedInequalities_French.png"
         },
         {
           title: "Villes et Communautés Durables",
           description: "En améliorant l'accès aux services de loisirs, le projet soutient l'activité physique et l'engagement social, qui sont vitaux pour la santé physique et mentale.",
-          image: "/SDG11.webp"
+          image: "/11_Sustainable_French.png"
         },
         {
           title: "Paix, Justice et Institutions Efficaces",
           description: "L'approche de recherche participative communautaire du projet assure que les voix marginalisées sont incluses dans les processus de prise de décision liés aux services de loisirs publics.",
-          image: "/SDG16.webp"
+          image: "/16_PeaceAndJustice_French.png"
         },
         {
           title: "Partenariats pour les Objectifs",
           description: "Le projet favorise les partenariats entre les départements municipaux de loisirs, les organisations communautaires et les communautés d'immigrants pour améliorer collaborativement les services de loisirs.",
-          image: "/SDG17.webp"
+          image: "/17_Partnerships_French.png"
         }
       ]
     },
