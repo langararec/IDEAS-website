@@ -35,6 +35,8 @@ const ItemToggle: React.FC = () => {
                         <button
                             key={`${language}-item-tab-${tab.id}`}
                             onClick={() => setActiveTab(tab.id as ItemType)}
+                            aria-label={`View ${tab.label}`}
+                            aria-pressed={activeTab === tab.id}
                             className={`flex-1 py-3 px-3 md:px-6 rounded-xl font-medium text-sm md:text-base transition-all duration-300 font-dm-sans ${
                                 activeTab === tab.id
                                     ? 'bg-primary text-white shadow-md transform scale-[1.02] hover:cursor-pointer'
