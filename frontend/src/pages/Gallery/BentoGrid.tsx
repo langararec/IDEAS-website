@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 interface BentoGridProps {
     images: {
@@ -25,11 +25,65 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
     const [currentImage, setCurrentImage] = useState<number>(0);
     const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
 
-    // Calculate pagination
-    const totalPages = Math.ceil(images.length / imagesPerPage);
-    const startIndex = (currentPage - 1) * imagesPerPage;
-    const endIndex = startIndex + imagesPerPage;
-    const currentImages = images.slice(startIndex, endIndex);
+    // Memoize pagination calculations
+    const totalPages = useMemo(() => Math.ceil(images.length / imagesPerPage), [images.length, imagesPerPage]);
+    const startIndex = useMemo(() => (currentPage - 1) * imagesPerPage, [currentPage, imagesPerPage]);
+    const endIndex = useMemo(() => startIndex + imagesPerPage, [startIndex, imagesPerPage]);
+    const currentImages = useMemo(() => images.slice(startIndex, endIndex), [images, startIndex, endIndex]);
+
+    // Memoize grid classes function
+    const getGridClasses = useCallback((colSpan: number, rowSpan: number) => {
+        const colClass = 'col-span-' + colSpan;
+        const rowClass = 'row-span-' + rowSpan;
+
+        if (layoutChange) {
+            return ("lg:" + colClass + ' ' + "lg:" + rowClass);
+        } else {
+            return (colClass + ' ' + rowClass);
+        }
+    }, [layoutChange]);
+
+    // Memoize image load handlers
+    const handleImageLoad = useCallback((index: number) => {
+        setLoadingImages(prev => {
+            const newSet = new Set(prev);
+            newSet.delete(index);
+            return newSet;
+        });
+    }, []);
+
+    const handleImageLoadStart = useCallback((index: number) => {
+        setLoadingImages(prev => new Set(prev).add(index));
+    }, []);
+
+    // Memoize navigation functions
+    const goToPrevImage = useCallback(() => {
+        setCurrentImage(prev => prev > 0 ? prev - 1 : prev);
+    }, []);
+
+    const goToNextImage = useCallback(() => {
+        setCurrentImage(prev => prev < currentImages.length - 1 ? prev + 1 : prev);
+    }, [currentImages.length]);
+
+    const goToPage = useCallback((page: number) => {
+        setCurrentPage(page);
+        // Reset loading state for new page
+        setLoadingImages(new Set(Array.from({ length: imagesPerPage }, (_, i) => i)));
+    }, [setCurrentPage, imagesPerPage]);
+
+    const goToPrevPage = useCallback(() => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+            setLoadingImages(new Set(Array.from({ length: imagesPerPage }, (_, i) => i)));
+        }
+    }, [currentPage, setCurrentPage, imagesPerPage]);
+
+    const goToNextPage = useCallback(() => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+            setLoadingImages(new Set(Array.from({ length: imagesPerPage }, (_, i) => i)));
+        }
+    }, [currentPage, totalPages, setCurrentPage, imagesPerPage]);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -60,76 +114,25 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [modalOpen, currentImage]);
-
-    // Function to get the correct Tailwind classes
-    const getGridClasses = (colSpan: number, rowSpan: number) => {
-        const colClass = 'col-span-' + colSpan;
-        const rowClass = 'row-span-' + rowSpan;
-
-        if (layoutChange) {
-            return ("lg:" + colClass + ' ' + "lg:" + rowClass);
-        } else {
-            return (colClass + ' ' + rowClass);
-        }
-
-    };
-
-    const handleImageLoad = (index: number) => {
-        setLoadingImages(prev => {
-            const newSet = new Set(prev);
-            newSet.delete(index);
-            return newSet;
-        });
-    };
-
-    const handleImageLoadStart = (index: number) => {
-        setLoadingImages(prev => new Set(prev).add(index));
-    };
-
-    const goToPage = (page: number) => {
-        setCurrentPage(page);
-        // Reset loading state for new page
-        setLoadingImages(new Set(Array.from({ length: imagesPerPage }, (_, i) => i)));
-    };
-
-    const goToPrevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-            setLoadingImages(new Set(Array.from({ length: imagesPerPage }, (_, i) => i)));
-        }
-    };
-
-    const goToNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-            setLoadingImages(new Set(Array.from({ length: imagesPerPage }, (_, i) => i)));
-        }
-    };
-
-    const goToNextImage = () => {
-        if (currentImage < currentImages.length - 1) {
-            setCurrentImage(currentImage + 1);
-        }
-    }
-
-    const goToPrevImage = () => {
-        if (currentImage > 0) {
-            setCurrentImage(currentImage - 1);
-        }
-
-    }
+    }, [modalOpen, goToPrevImage, goToNextImage]);
 
     return (
         <div className="w-full bg-base-100" onClick={() => modalOpen ? setModalOpen(false) : null}>
 
-            <div className="hidden lg:col-span-1 lg:col-span-2 lg:col-span-3 lg:col-span-4 lg:col-span-5 lg:col-span-6 lg:row-span-1 lg:row-span-2 lg:row-span-3 lg:row-span-4 lg:row-span-5 lg:row-span-6 col-span-1 col-span-2 col-span-3 col-span-4 row-span-1 row-span-2"></div>
+            <div className="hidden lg:col-span-1 lg:col-span-2 lg:col-span-3 lg:col-span-4 lg:col-span-5 lg:col-span-6 lg:row-span-1 lg:row-span-2 lg:row-span-3 lg:row-span-4 lg:row-span-5 lg:row-span-6 col-span-1 col-span-2 col-span-3 col-span-4 row-span-1 row-span-2 auto-rows-[20rem]"></div>
 
             {modalOpen &&
                 <div className={` h-full fixed inset-0 bg-black/90 z-50 items-center justify-center flex flex-row gap-x-4`}>
                     <FaCaretLeft className='text-white hover:cursor-pointer size-8 lg:size-12' onClick={(e) => { e.stopPropagation(); goToPrevImage(); }} />
                     <div className=' max-w-1/2 lg:max-w-1/3 my-auto justify-center'>
-                        <img className="w-full object-contain" src={currentImages[currentImage].src} alt={currentImages[currentImage].alt} />
+                        <img 
+                            className="w-full object-contain max-h-[90vh]" 
+                            src={currentImages[currentImage].src} 
+                            alt={currentImages[currentImage].alt}
+                            width={1200}
+                            height={900}
+                            loading='eager'
+                        />
                     </div>
                     <FaCaretRight className='text-white hover:cursor-pointer size-8 lg:size-12' onClick={(e) => { e.stopPropagation(); goToNextImage(); }} />
                 </div>}
@@ -149,9 +152,12 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                             src={image.src}
                             alt={image.alt}
                             title={image.title}
+                            width={800}
+                            height={600}
+                            loading='lazy'
+                            decoding='async'
                             className={`w-full h-full object-cover hover:cursor-pointer duration-300 hover:scale-110  ${loadingImages.has(index) ? 'opacity-0' : 'opacity-100'
                                 }`}
-                            loading='lazy'
                             onLoadStart={() => handleImageLoadStart(index)}
                             onLoad={() => handleImageLoad(index)}
                             onClick={() => { setModalOpen(true); setCurrentImage(index); }}
@@ -166,6 +172,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                     <button
                         onClick={goToPrevPage}
                         disabled={currentPage === 1}
+                        aria-label={`${paginationLabels?.previous || "Previous"} page`}
                         className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-teal-800 transition-colors hover:cursor-pointer"
                     >
                         {paginationLabels?.previous || "Previous"}
@@ -176,6 +183,8 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                             <button
                                 key={page}
                                 onClick={() => goToPage(page)}
+                                aria-label={`Go to page ${page}`}
+                                aria-current={currentPage === page ? 'page' : undefined}
                                 className={`px-1 py-2 transition-colors text-lg hover:font-semibold ${currentPage === page
                                     ? ' text-teal-800 font-semibold'
                                     : ' text-gray-500 hover:text-teal-800'
@@ -189,6 +198,7 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                     <button
                         onClick={goToNextPage}
                         disabled={currentPage === totalPages}
+                        aria-label={`${paginationLabels?.next || "Next"} page`}
                         className="px-4 py-2 bg-primary text-white rounded-lg disabled:bg-gray-500 disabled:cursor-not-allowed hover:bg-teal-800 transition-colors hover:cursor-pointer"
                     >
                         {paginationLabels?.next || "Next"}
