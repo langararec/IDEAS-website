@@ -102,8 +102,11 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
 
                         {/* Get Involved Button */}
                         <div className="pt-4">
-                            <Link to="/get-involved" className="hover:cursor-pointer">
-                                <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold  py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide w-full">
+                            <Link to="/get-involved">
+                                <button 
+                                    className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold  py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide w-full"
+                                    aria-label="Navigate to get involved page"
+                                >
                                     {navContent[language].getInvolved}
                                 </button>
                             </Link>

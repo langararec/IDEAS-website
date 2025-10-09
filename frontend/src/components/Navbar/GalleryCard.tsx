@@ -29,6 +29,10 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ setCurrentNav }) => {
                     <img
                         src={content.image.src}
                         alt={content.image.alt}
+                        width={400}
+                        height={240}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-48 max-h-60 md:h-full object-cover rounded-lg"
                     />
                 </div>
