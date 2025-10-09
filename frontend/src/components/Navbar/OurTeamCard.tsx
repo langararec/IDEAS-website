@@ -30,6 +30,10 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                     <img
                         src={content.image.src}
                         alt={content.image.alt}
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-48 max-h-60 object-cover rounded-lg"
                     />
                 </div>
@@ -54,6 +58,10 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                 <img
                     src={content.image.src}
                     alt={content.image.alt}
+                    width={400}
+                    height={192}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-48 max-h-60 md:h-full object-cover rounded-lg"
                 />
             </div>
