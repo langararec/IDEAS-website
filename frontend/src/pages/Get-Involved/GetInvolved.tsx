@@ -99,6 +99,7 @@ const GetInvolvedForm = () => {
                         <button
                             type="submit"
                             disabled={state.submitting}
+                            aria-label={state.submitting ? content.form.submitting : `${content.form.submit} - Submit contact form`}
                             className="w-fit bg-orange-500 hover:cursor-pointer hover:bg-orange-600 duration-300 text-white font-bold py-3 px-8 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide text-base"
                         >
                             {state.submitting ? content.form.submitting : content.form.submit}
@@ -123,9 +124,9 @@ const GetInvolved = () => {
     return (
         <div key={`get-involved-${language}`} className="bg-base-100">
             <div className='lg:py-12 py-8 max-w-7xl mx-auto'>
-                <h2 className="text-3xl md:text-4xl md:w-3/4 lg:w-full md:mx-auto lg:mx-0 font-bold text-primary mb-6 font-dm-sans text-left px-4">
+                <h1 className="text-3xl md:text-4xl md:w-3/4 lg:w-full md:mx-auto lg:mx-0 font-bold text-primary mb-6 font-dm-sans text-left px-4">
                     {content.title}
-                </h2>
+                </h1>
                 <div className='flex flex-col lg:flex-row '>
                     <div className='sm:w-3/4 mx-auto lg:w-1/2 px-4 '>
                         <BentoGrid images={images} currentPage={1} setCurrentPage={() => { }} layoutChange={false} rowHeight={`10rem lg:20rem`}/>

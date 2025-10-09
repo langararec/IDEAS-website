@@ -31,6 +31,10 @@ const Partners: React.FC = () => {
                                 <img
                                     src={"/partners/" + partner.image}
                                     alt={partner.name}
+                                    width={120} 
+                                    height={80}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="max-w-full max-h-16 md:max-h-24 object-contain transition-all duration-300"
                                 />
                             </a>
@@ -43,7 +47,14 @@ const Partners: React.FC = () => {
                         {content.supportText}
                     </p>
 
-                    <img src="/SSHRCC.webp" alt={content.sshrcAlt} className="max-w-2xl w-full "></img>
+                    <img
+                        src="/SSHRCC.webp"
+                        alt={content.sshrcAlt}
+                        width={800}
+                        height={200}
+                        loading="lazy"
+                        className="max-w-2xl w-full"
+                    />
                 </div>
             </div>
         </div>

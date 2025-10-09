@@ -35,8 +35,11 @@ const MissionStatement: React.FC = () => {
 
                         {/* Call to Action Button */}
                         <div className="pt-6">
-                            <Link to="/project" aria-label={content.learnMoreAriaLabel}>
-                                <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide">
+                            <Link to="/project">
+                                <button 
+                                    className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans uppercase tracking-wide"
+                                    aria-label={content.learnMoreAriaLabel}
+                                >
                                     {content.learnMoreButton}
                                 </button>
                             </Link>

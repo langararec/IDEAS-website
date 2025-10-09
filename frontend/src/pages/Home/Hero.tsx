@@ -17,9 +17,9 @@ const Hero: React.FC = () => {
                     {content.description}
                 </p>
                 <Carousel />
-                <h3 className="text-lg lg:text-3xl leading-relaxed tracking-wide font-medium font-dm-sans text-primary mt-4">
+                <p className="text-lg lg:text-3xl leading-relaxed tracking-wide font-medium font-dm-sans text-primary mt-4">
                     {content.surveyCall}
-                </h3>
+                </p>
 
                 <div className="flex justify-center mb-14 mt-2">
                     <a 
