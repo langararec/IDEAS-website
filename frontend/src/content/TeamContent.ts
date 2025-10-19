@@ -80,7 +80,7 @@ export const teamContent = {
       },
       {
         name: "Fraser Cameron",
-        role: "Student Research Assistant",
+        role: "Junior Research Assistant",
         program: "Post-Degree Diploma Applied Planning",
         image: "/team/fraser.webp",
         shortDescription: "Fraser is an Urban Geographer, advances sustainable development through research and collaboration, tackling social, environmental, and economic challenges.",
@@ -210,7 +210,7 @@ export const teamContent = {
       },
       {
         name: "Fraser Cameron",
-        role: "Assistant de Recherche Étudiant",
+        role: "Assistant de Recherche Junior",
         program: "Diplôme Post-Diplôme en Planification Appliquée",
         image: "/team/fraser.webp",
         shortDescription: "Fraser est un Géographe Urbain, fait progresser le développement durable par la recherche et la collaboration, s'attaquant aux défis sociaux, environnementaux et économiques.",
