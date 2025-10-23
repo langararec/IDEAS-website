@@ -74,7 +74,7 @@ const CityToggle: React.FC = () => {
                                     : 'text-gray-500 hover:text-primary hover:bg-white/50 hover:cursor-pointer'
                                     }`}
                             >
-                                {city.title}
+                                {city.title.toUpperCase()}
                             </button>
                         ))}
                     </div>
