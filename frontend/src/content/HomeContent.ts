@@ -5,7 +5,7 @@ export const homeContent = {
       titleHighlight: "Public Recreation",
       description: "Our research initiative focused on the experiences of immigrant and racialized communities in British Columbia's public recreation.",
       surveyCall: "Take our survey and be entered to win a $10 visa gift card!",
-      surveyButton: "GO TO SURVEY",
+      surveyButton: "Go to Survey",
       surveyUrl: "https://ca.research.net/r/RecreationSurveyWeb",
       surveyAriaLabel: "Take the research survey (opens in new tab)"
     },
@@ -92,7 +92,7 @@ export const homeContent = {
       titleHighlight: "Loisirs Publics",
       description: "Notre initiative de recherche axée sur les expériences des communautés immigrantes et racialisées dans les loisirs publics de la Colombie-Britannique.",
       surveyCall: "Répondez à notre sondage et courez la chance de gagner une carte-cadeau Visa de 10 $!",
-      surveyButton: "ALLER AU SONDAGE",
+      surveyButton: "Aller au Sondage",
       surveyUrl: "https://ca.research.net/r/RecreationSurveyWeb",
       surveyAriaLabel: "Répondre au sondage de recherche (s'ouvre dans un nouvel onglet)"
     },
