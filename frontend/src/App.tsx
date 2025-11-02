@@ -8,6 +8,7 @@ import GetInvolved from './pages/Get-Involved/GetInvolved'
 import EngagementSchedule from './pages/EngagementSchedule/EngagementSchedule'
 import Gallery from './pages/Gallery/Gallery'
 import References from './pages/References/References'
+import Statistics from './pages/Statistics/Statistics'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -29,7 +30,8 @@ function App() {
         <Route path='/get-involved' element={<GetInvolved />} />
         <Route path='/schedule' element={<EngagementSchedule />} />
         <Route path='/gallery' element={<Gallery />} />
-        <Route path='/references' element={<References />} /> 
+        <Route path='/references' element={<References />} />
+        <Route path='/statistics' element={<Statistics />} />
         <Route path='*' element={<NotFound />} />
 
       </Routes>
