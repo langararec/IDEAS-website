@@ -57,16 +57,16 @@ const RecreationBehaviors: React.FC = () => {
     // Define color palettes for each residency group
     const colorPalettes = {
         burnaby: {
-            "Less than 1 year": 'rgba(180, 220, 180, 0.9)',      
-            "1-3 years": 'rgba(112, 180, 112, 0.9)',            
-            "4-6 years": 'rgba(49, 112, 57, 0.9)',          
-            "More than 6 years": 'rgba(15, 76, 40, 0.9)'        
+            "Less than 1 year": 'rgba(180, 220, 180, 0.9)',
+            "1-3 years": 'rgba(112, 180, 112, 0.9)',
+            "4-6 years": 'rgba(49, 112, 57, 0.9)',
+            "More than 6 years": 'rgba(15, 76, 40, 0.9)'
         },
         courtenay: {
-            "Less than 1 year": 'rgba(153, 246, 228, 0.9)',     
-            "1-3 years": 'rgba(94, 234, 212, 0.9)',           
-            "4-6 years": 'rgba(20, 184, 166, 0.9)',             
-            "More than 6 years": 'rgba(13, 148, 136, 0.9)'   
+            "Less than 1 year": 'rgba(153, 246, 228, 0.9)',
+            "1-3 years": 'rgba(94, 234, 212, 0.9)',
+            "4-6 years": 'rgba(20, 184, 166, 0.9)',
+            "More than 6 years": 'rgba(13, 148, 136, 0.9)'
         }
     };
 
@@ -75,12 +75,12 @@ const RecreationBehaviors: React.FC = () => {
 
     // Prepare datasets for each residency group
     const datasets = residencyGroups.map((group: string) => {
-        const groupKey = language === 'en' ? group : 
+        const groupKey = language === 'en' ? group :
             group === "Moins d'1 an" ? "Less than 1 year" :
-            group === "1-3 ans" ? "1-3 years" :
-            group === "4-6 ans" ? "4-6 years" :
-            "More than 6 years";
-        
+                group === "1-3 ans" ? "1-3 years" :
+                    group === "4-6 ans" ? "4-6 years" :
+                        "More than 6 years";
+
         return {
             label: group,
             data: currentData.data[groupKey as keyof typeof currentData.data],
@@ -98,6 +98,14 @@ const RecreationBehaviors: React.FC = () => {
     const chartOptions = {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+            padding: {
+                bottom: 20,
+                top: 10,
+                left: 10,
+                right: 10
+            }
+        },
         plugins: {
             legend: {
                 display: true,
@@ -113,7 +121,7 @@ const RecreationBehaviors: React.FC = () => {
             },
             tooltip: {
                 callbacks: {
-                    label: function(context: any) {
+                    label: function (context: any) {
                         return `${context.dataset.label}: ${context.parsed.y}%`;
                     }
                 }
@@ -130,15 +138,12 @@ const RecreationBehaviors: React.FC = () => {
                 },
                 ticks: {
                     font: {
-                        size: 11
+                        size: 13
                     },
-                    maxRotation: 0,
-                    minRotation: 0,
-                    callback: function(value: any, index: number) {
-                        // Simplify labels for better readability
-                        const labels = content.motivations;
-                        return labels[index];
-                    }
+                    maxRotation: 45,
+                    minRotation: 45,
+                    autoSkip: false,
+                    padding: 5
                 }
             },
             y: {
@@ -146,7 +151,7 @@ const RecreationBehaviors: React.FC = () => {
                 max: 80,
                 ticks: {
                     stepSize: 20,
-                    callback: function(value: any) {
+                    callback: function (value: any) {
                         return value;
                     },
                     font: {
@@ -156,6 +161,14 @@ const RecreationBehaviors: React.FC = () => {
                 grid: {
                     display: true,
                     color: 'rgba(0, 0, 0, 0.05)'
+                },
+                title: {
+                    display: true,
+                    text: 'Percentage (%)',
+                    font: {
+                        size: 12,
+                        weight: 'bold' as const
+                    }
                 }
             }
         }
@@ -169,84 +182,79 @@ const RecreationBehaviors: React.FC = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2 font-dm-sans">
                         {content.title}
                     </h3>
-                    
+
                     {/* Subtitle */}
                     <p className="text-sm text-gray-600 mb-6 font-dm-sans">
                         {content.subtitle}
                     </p>
 
-                {/* Filter and Last Updated */}
-                <div className="flex flex-wrap items-center gap-4 mb-6">
-                    <div className="relative" ref={dropdownRef}>
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setIsDropdownOpen(!isDropdownOpen);
-                            }}
-                            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                            aria-label="Select city"
-                            aria-expanded={isDropdownOpen}
-                        >
-                            <span className={`w-2 h-2 rounded-full ${selectedCity === 'burnaby' ? 'bg-[#317039]' : 'bg-teal-600'}`}></span>
-                            <span className="font-medium text-gray-700 font-dm-sans">
-                                {cities[selectedCity]}
-                            </span>
-                            <PiCaretDown className={`w-4 h-4 text-gray-500 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-                        </button>
+                    {/* Filter and Last Updated */}
+                    <div className="flex flex-wrap items-center gap-4 mb-6">
+                        <div className="relative" ref={dropdownRef}>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsDropdownOpen(!isDropdownOpen);
+                                }}
+                                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                                aria-label="Select city"
+                                aria-expanded={isDropdownOpen}
+                            >
+                                <span className={`w-2 h-2 rounded-full ${selectedCity === 'burnaby' ? 'bg-[#317039]' : 'bg-teal-600'}`}></span>
+                                <span className="font-medium text-gray-700 font-dm-sans">
+                                    {cities[selectedCity]}
+                                </span>
+                                <PiCaretDown className={`w-4 h-4 text-gray-500 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                            </button>
 
-                        {/* Dropdown Menu */}
-                        {isDropdownOpen && (
-                            <div className="absolute top-full left-0 mt-2 w-full min-w-[150px] bg-white border border-gray-300 rounded-lg shadow-lg z-10">
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setSelectedCity('burnaby');
-                                        setIsDropdownOpen(false);
-                                    }}
-                                    className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-t-lg ${
-                                        selectedCity === 'burnaby' ? 'bg-gray-100 font-semibold' : ''
-                                    }`}
-                                >
-                                    {cities.burnaby}
-                                </button>
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setSelectedCity('courtenay');
-                                        setIsDropdownOpen(false);
-                                    }}
-                                    className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-b-lg ${
-                                        selectedCity === 'courtenay' ? 'bg-gray-100 font-semibold' : ''
-                                    }`}
-                                >
-                                    {cities.courtenay}
-                                </button>
-                            </div>
-                        )}
+                            {/* Dropdown Menu */}
+                            {isDropdownOpen && (
+                                <div className="absolute top-full left-0 mt-2 w-full min-w-[150px] bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedCity('burnaby');
+                                            setIsDropdownOpen(false);
+                                        }}
+                                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-t-lg ${selectedCity === 'burnaby' ? 'bg-gray-100 font-semibold' : ''
+                                            }`}
+                                    >
+                                        {cities.burnaby}
+                                    </button>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedCity('courtenay');
+                                            setIsDropdownOpen(false);
+                                        }}
+                                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-b-lg ${selectedCity === 'courtenay' ? 'bg-gray-100 font-semibold' : ''
+                                            }`}
+                                    >
+                                        {cities.courtenay}
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                        <div className="flex items-center gap-2 text-gray-500 text-sm">
+                            <CiCalendar className="w-4 h-4" />
+                            <span className="font-dm-sans">{currentData.lastUpdated}</span>
+                        </div>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm">
-                        <CiCalendar className="w-4 h-4" />
-                        <span className="font-dm-sans">{currentData.lastUpdated}</span>
+
+                    {/* Key Insights */}
+                    <div className={`${selectedCity === 'burnaby' ? 'bg-base-200 border-green-200' : 'bg-[#F3FDFF] border-[#DCFAFE]'} border-1 p-4 mb-8 rounded-lg`}>
+                        <p className="text-sm md:text-base text-gray-700 font-dm-sans">
+                            <span className="font-semibold text-primary">{currentData.keyInsightsLabel}</span>{" "}
+                            {currentData.keyInsights}
+                        </p>
                     </div>
-                </div>
 
-                {/* Key Insights */}
-                <div className={`${selectedCity === 'burnaby' ? 'bg-base-200 border-green-200' : 'bg-[#F3FDFF] border-[#DCFAFE]'} border-1 p-4 mb-8 rounded-lg`}>
-                    <p className="text-sm md:text-base text-gray-700 font-dm-sans">
-                        <span className="font-semibold text-primary">{currentData.keyInsightsLabel}</span>{" "}
-                        {currentData.keyInsights}
-                    </p>
-                </div>
-
-                {/* Chart */}
-                <div className="h-96 md:h-[500px]">
-                    <Bar data={chartData} options={chartOptions} />
-                </div>
-
-                {/* Y-axis label */}
-                <div className="text-center mt-4">
-                    <span className="sm:text-sm text-xs font-semibold text-gray-700 font-dm-sans">{content.chartLabel}</span>
-                </div>
+                    {/* Chart */}
+                    <div className="min-h-96 md:h-[550px] overflow-x-auto pb-4">
+                        <div className="min-w-[1200px] h-full">
+                            <Bar data={chartData} options={chartOptions} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
