@@ -157,6 +157,139 @@ export const statisticsContent = {
         }
       }
     },
+    communicationChannels: {
+      title: "Where people find out recreation activities",
+      subtitle: "How length of residency in BC influences communication channel preferences",
+      chartLabel: "Percentage (%)",
+      residencyGroups: ["Less than 1 year", "1-3 years", "4-6 years", "More than 6 years"],
+      channels: [
+        "Community/Cultural Groups",
+        "Friends/Family",
+        "Newspaper/Radio",
+        "Posters/Flyers/Signs",
+        "Recreation Centre/Website",
+        "School/Workplace",
+        "Social Media"
+      ],
+      burnaby: {
+        lastUpdated: "Last updated: 10-15-2025",
+        keyInsightsLabel: "Key Insights:",
+        keyInsights: "New residents rely more on social media, friends and community groups. While residents with longer time living in BC are more reliant through posters, schools, newspapers and city websites.",
+        data: {
+          "Less than 1 year": [8, 7, 10, 9, 14, 5, 13],
+          "1-3 years": [6, 8, 7, 8, 7, 4, 14],
+          "4-6 years": [18, 13, 15, 19, 28, 17, 18],
+          "More than 6 years": [65, 62, 67, 64, 49, 71, 50]
+        }
+      },
+      courtenay: {
+        lastUpdated: "Last updated: 10-15-2025",
+        keyInsightsLabel: "Key Insights:",
+        keyInsights: "Data for Courtenay is currently being collected and analyzed. Results will be available soon.",
+        data: {
+          "Less than 1 year": [0, 0, 0, 0, 0, 0, 0],
+          "1-3 years": [0, 0, 0, 0, 0, 0, 0],
+          "4-6 years": [0, 0, 0, 0, 0, 0, 0],
+          "More than 6 years": [0, 0, 0, 0, 0, 0, 0]
+        }
+      }
+    },
+    thoughtsOnRecreation: {
+      title: "Thoughts on Recreation",
+      subtitle: "Community perspective on recreation access and inclusivity",
+      lowestAverage: {
+        title: "Answers with lowest average",
+        charts: [
+          {
+            question: "There are enough recreation activities in my community",
+            average: 3.1,
+            ethnicities: [
+              { name: "Filipino", score: 2.5 },
+              { name: "Southeast Asian", score: 2.7 },
+              { name: "Japanese", score: 2.8 },
+              { name: "Black", score: 2.9 },
+              { name: "West Asian", score: 3.0 },
+              { name: "Korean", score: 3.1 },
+              { name: "South Asian", score: 3.2 },
+              { name: "Chinese", score: 3.3 },
+              { name: "White", score: 3.4 },
+              { name: "Arab", score: 3.5 },
+              { name: "Indigenous People", score: 3.6 },
+              { name: "Latin American", score: 3.7 }
+            ]
+          },
+          {
+            question: "There are enough recreation activities for people of all ages in my community",
+            average: 3.3,
+            ethnicities: [
+              { name: "Filipino", score: 2.8 },
+              { name: "Japanese", score: 3.0 },
+              { name: "Southeast Asian", score: 3.1 },
+              { name: "West Asian", score: 3.2 },
+              { name: "Black", score: 3.3 },
+              { name: "Korean", score: 3.4 },
+              { name: "Chinese", score: 3.5 },
+              { name: "Arab", score: 3.6 },
+              { name: "White", score: 3.7 },
+              { name: "Latin American", score: 3.8 },
+              { name: "Indigenous People", score: 3.9 },
+              { name: "South Asian", score: 4.0 }
+            ]
+          }
+        ]
+      },
+      highestAverage: {
+        title: "Answers with highest average",
+        charts: [
+          {
+            question: "I feel welcome in places like parks and community centers",
+            average: 4.3,
+            ethnicities: [
+              { name: "Japanese", score: 3.8 },
+              { name: "Arab", score: 3.9 },
+              { name: "Indigenous People", score: 4.0 },
+              { name: "West Asian", score: 4.1 },
+              { name: "South Asian", score: 4.2 },
+              { name: "Black", score: 4.3 },
+              { name: "Korean", score: 4.4 },
+              { name: "Chinese", score: 4.5 },
+              { name: "Filipino", score: 4.6 },
+              { name: "White", score: 4.7 },
+              { name: "Latin American", score: 4.8 },
+              { name: "Southeast Asian", score: 4.9 }
+            ]
+          },
+          {
+            question: "I have fun when I do recreation activities in my community",
+            average: 4.3,
+            ethnicities: [
+              { name: "Japanese", score: 3.9 },
+              { name: "Arab", score: 4.0 },
+              { name: "Indigenous People", score: 4.1 },
+              { name: "Korean", score: 4.2 },
+              { name: "South Asian", score: 4.3 },
+              { name: "Arab", score: 4.4 },
+              { name: "West Asian", score: 4.5 },
+              { name: "Black", score: 4.6 },
+              { name: "Chinese", score: 4.7 },
+              { name: "White", score: 4.8 },
+              { name: "Latin American", score: 4.9 },
+              { name: "Southeast Asian", score: 5.0 }
+            ]
+          }
+        ]
+      },
+      burnaby: {
+        lastUpdated: "Last updated: 10-15-2025",
+        keyInsightsLabel: "Key Insights:",
+        keyInsights: "Chinese, South Asian and White participants response are positive. Filipino, Japanese, West Asians have lower scores on the recreation activities available in their community."
+      },
+      courtenay: {
+        lastUpdated: "Last updated: 10-15-2025",
+        keyInsightsLabel: "Key Insights:",
+        keyInsights: "Data for Courtenay is currently being collected and analyzed. Results will be available soon."
+      }
+    },
     dotmocracy: {
       title: "Dotmocracy Results",
     },
@@ -320,6 +453,139 @@ export const statisticsContent = {
           "4-6 ans": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "Plus de 6 ans": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
+      }
+    },
+    communicationChannels: {
+      title: "Où les gens découvrent les activités récréatives",
+      subtitle: "Comment la durée de résidence en C.-B. influence les préférences des canaux de communication",
+      chartLabel: "Pourcentage (%)",
+      residencyGroups: ["Moins d'1 an", "1-3 ans", "4-6 ans", "Plus de 6 ans"],
+      channels: [
+        "Groupes Communautaires/Culturels",
+        "Amis/Famille",
+        "Journal/Radio",
+        "Affiches/Dépliants/Panneaux",
+        "Centre de Loisirs/Site Web",
+        "École/Lieu de Travail",
+        "Médias Sociaux"
+      ],
+      burnaby: {
+        lastUpdated: "Dernière mise à jour: 15-10-2025",
+        keyInsightsLabel: "Aperçus Clés:",
+        keyInsights: "Les nouveaux résidents comptent davantage sur les médias sociaux, les amis et les groupes communautaires. Alors que les résidents vivant en C.-B. depuis plus longtemps s'appuient davantage sur les affiches, les écoles, les journaux et les sites Web municipaux.",
+        data: {
+          "Moins d'1 an": [8, 7, 10, 9, 14, 5, 13],
+          "1-3 ans": [6, 8, 7, 8, 7, 4, 14],
+          "4-6 ans": [18, 13, 15, 19, 28, 17, 18],
+          "Plus de 6 ans": [65, 62, 67, 64, 49, 71, 50]
+        }
+      },
+      courtenay: {
+        lastUpdated: "Dernière mise à jour: 15-10-2025",
+        keyInsightsLabel: "Aperçus Clés:",
+        keyInsights: "Les données pour Courtenay sont actuellement collectées et analysées. Les résultats seront bientôt disponibles.",
+        data: {
+          "Moins d'1 an": [0, 0, 0, 0, 0, 0, 0],
+          "1-3 ans": [0, 0, 0, 0, 0, 0, 0],
+          "4-6 ans": [0, 0, 0, 0, 0, 0, 0],
+          "Plus de 6 ans": [0, 0, 0, 0, 0, 0, 0]
+        }
+      }
+    },
+    thoughtsOnRecreation: {
+      title: "Pensées sur les Loisirs",
+      subtitle: "Perspective communautaire sur l'accès et l'inclusivité des loisirs",
+      lowestAverage: {
+        title: "Réponses avec la moyenne la plus basse",
+        charts: [
+          {
+            question: "Il y a suffisamment d'activités récréatives dans ma communauté",
+            average: 3.1,
+            ethnicities: [
+              { name: "Philippin", score: 2.5 },
+              { name: "Asiatique du Sud-Est", score: 2.7 },
+              { name: "Japonais", score: 2.8 },
+              { name: "Noir", score: 2.9 },
+              { name: "Asie de l'Ouest", score: 3.0 },
+              { name: "Coréen", score: 3.1 },
+              { name: "Sud-Asiatique", score: 3.2 },
+              { name: "Chinois", score: 3.3 },
+              { name: "Blanc", score: 3.4 },
+              { name: "Arabe", score: 3.5 },
+              { name: "Peuples autochtones", score: 3.6 },
+              { name: "Latino-Américain", score: 3.7 }
+            ]
+          },
+          {
+            question: "Il y a suffisamment d'activités récréatives pour les personnes de tous âges dans ma communauté",
+            average: 3.3,
+            ethnicities: [
+              { name: "Philippin", score: 2.8 },
+              { name: "Japonais", score: 3.0 },
+              { name: "Asiatique du Sud-Est", score: 3.1 },
+              { name: "Asie de l'Ouest", score: 3.2 },
+              { name: "Noir", score: 3.3 },
+              { name: "Coréen", score: 3.4 },
+              { name: "Chinois", score: 3.5 },
+              { name: "Arabe", score: 3.6 },
+              { name: "Blanc", score: 3.7 },
+              { name: "Latino-Américain", score: 3.8 },
+              { name: "Peuples autochtones", score: 3.9 },
+              { name: "Sud-Asiatique", score: 4.0 }
+            ]
+          }
+        ]
+      },
+      highestAverage: {
+        title: "Réponses avec la moyenne la plus élevée",
+        charts: [
+          {
+            question: "Je me sens bienvenu dans des endroits comme les parcs et centres communautaires",
+            average: 4.3,
+            ethnicities: [
+              { name: "Japonais", score: 3.8 },
+              { name: "Arabe", score: 3.9 },
+              { name: "Peuples autochtones", score: 4.0 },
+              { name: "Asie de l'Ouest", score: 4.1 },
+              { name: "Sud-Asiatique", score: 4.2 },
+              { name: "Noir", score: 4.3 },
+              { name: "Coréen", score: 4.4 },
+              { name: "Chinois", score: 4.5 },
+              { name: "Philippin", score: 4.6 },
+              { name: "Blanc", score: 4.7 },
+              { name: "Latino-Américain", score: 4.8 },
+              { name: "Asiatique du Sud-Est", score: 4.9 }
+            ]
+          },
+          {
+            question: "Je m'amuse quand je fais des activités récréatives dans ma communauté",
+            average: 4.3,
+            ethnicities: [
+              { name: "Japonais", score: 3.9 },
+              { name: "Arabe", score: 4.0 },
+              { name: "Peuples autochtones", score: 4.1 },
+              { name: "Coréen", score: 4.2 },
+              { name: "Sud-Asiatique", score: 4.3 },
+              { name: "Arabe", score: 4.4 },
+              { name: "Asie de l'Ouest", score: 4.5 },
+              { name: "Noir", score: 4.6 },
+              { name: "Chinois", score: 4.7 },
+              { name: "Blanc", score: 4.8 },
+              { name: "Latino-Américain", score: 4.9 },
+              { name: "Asiatique du Sud-Est", score: 5.0 }
+            ]
+          }
+        ]
+      },
+      burnaby: {
+        lastUpdated: "Dernière mise à jour: 15-10-2025",
+        keyInsightsLabel: "Aperçus Clés:",
+        keyInsights: "Les participants chinois, sud-asiatiques et blancs ont des réponses positives. Les Philippins, Japonais et Asiatiques de l'Ouest ont des scores plus bas concernant les activités récréatives disponibles dans leur communauté."
+      },
+      courtenay: {
+        lastUpdated: "Dernière mise à jour: 15-10-2025",
+        keyInsightsLabel: "Aperçus Clés:",
+        keyInsights: "Les données pour Courtenay sont actuellement collectées et analysées. Les résultats seront bientôt disponibles."
       }
     },
     dotmocracy: {
