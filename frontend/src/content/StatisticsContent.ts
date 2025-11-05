@@ -588,12 +588,6 @@ export const statisticsContent = {
         keyInsights: "Les données pour Courtenay sont actuellement collectées et analysées. Les résultats seront bientôt disponibles."
       }
     },
-    dotmocracy: {
-      title: "Résultats de Dotmocratie",
-    },
-    activitySheets: {
-      title: "Feuilles d'Activités",
-    }
   }
 };
 
