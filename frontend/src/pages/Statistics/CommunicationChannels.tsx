@@ -35,6 +35,19 @@ const CommunicationChannels: React.FC = () => {
 
     const currentData = selectedCity === 'burnaby' ? content.burnaby : content.courtenay;
 
+    // Add safety check for missing content
+    if (!content || !currentData || !currentData.data) {
+        return (
+            <div className="mb-6 max-w-7xl mx-auto p-4 md:p-6">
+                <div className="rounded-xl py-6 bg-white shadow-sm border-1 border-gray-200">
+                    <div className="px-4 md:px-8">
+                        <p className="text-gray-600">Loading data...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     // Define color palettes for each communication channel
     const colorPalettes = {
         burnaby: [
@@ -65,14 +78,15 @@ const CommunicationChannels: React.FC = () => {
     const datasets = channels.map((channel: string, index: number) => {
         // Get data for this channel across all residency groups
         const channelData = residencyGroups.map((group: string) => {
-            const groupKey = language === 'en' ? group :
-                group === "Moins d'1 an" ? "Less than 1 year" :
-                    group === "1-3 ans" ? "1-3 years" :
-                        group === "4-6 ans" ? "4-6 years" :
-                            "More than 6 years";
+            // Use the group label directly as the key (data keys match the language-specific labels)
+            const dataArray = currentData.data[group as keyof typeof currentData.data];
             
-            const dataArray = currentData.data[groupKey as keyof typeof currentData.data];
-            return dataArray[index];
+            // Add null check to prevent undefined errors
+            if (!dataArray || !Array.isArray(dataArray)) {
+                return 0;
+            }
+            
+            return dataArray[index] || 0;
         });
 
         return {
