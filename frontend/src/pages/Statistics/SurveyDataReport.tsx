@@ -2,6 +2,10 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { statisticsContent } from "../../content/StatisticsContent";
 import SurveyParticipants from "./SurveyParticipants";
+import Demographics from "./Demographics";
+import RecreationBehaviors from "./RecreationBehaviors";
+import ThoughtsOnRecreation from "./ThoughtsOnRecreation";
+import CommunicationChannels from "./CommunicationChannels";
 
 const SurveyDataReport: React.FC = () => {
     const { language } = useLanguage();
@@ -16,6 +20,10 @@ const SurveyDataReport: React.FC = () => {
                 </h2>
             </div>
             <SurveyParticipants />
+            <Demographics />
+            <RecreationBehaviors />
+            <ThoughtsOnRecreation />
+            <CommunicationChannels />
         </div>
     );
 
