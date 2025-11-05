@@ -35,6 +35,19 @@ const RecreationBehaviors: React.FC = () => {
 
     const currentData = selectedCity === 'burnaby' ? content.burnaby : content.courtenay;
 
+    // Add safety check for missing content
+    if (!content || !currentData || !currentData.data) {
+        return (
+            <div className="mb-6 max-w-7xl mx-auto p-4 md:p-6">
+                <div className="rounded-xl py-6 bg-white shadow-sm border-1 border-gray-200">
+                    <div className="px-4 md:px-8">
+                        <p className="text-gray-600">Loading data...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     // Define color palettes for each residency group
     const colorPalettes = {
         burnaby: {
@@ -51,21 +64,46 @@ const RecreationBehaviors: React.FC = () => {
         }
     };
 
-    const residencyGroups = language === 'en' ? content.residencyGroups : content.residencyGroups;
+    const residencyGroups = content.residencyGroups;
     const colors = selectedCity === 'burnaby' ? colorPalettes.burnaby : colorPalettes.courtenay;
+
+    // Helper function to map language-specific labels to English keys for color lookup
+    const getColorKey = (group: string): string => {
+        if (language === 'en') return group;
+        
+        // Map French labels to English keys (only for color lookup)
+        const frenchToEnglish: { [key: string]: string } = {
+            "Moins d'1 an": "Less than 1 year",
+            "1-3 ans": "1-3 years",
+            "4-6 ans": "4-6 years",
+            "Plus de 6 ans": "More than 6 years"
+        };
+        
+        return frenchToEnglish[group] || group;
+    };
 
     // Prepare datasets for each residency group
     const datasets = residencyGroups.map((group: string) => {
-        const groupKey = language === 'en' ? group :
-            group === "Moins d'1 an" ? "Less than 1 year" :
-                group === "1-3 ans" ? "1-3 years" :
-                    group === "4-6 ans" ? "4-6 years" :
-                        "More than 6 years";
+        // Use group label directly as data key (data keys match the language-specific labels)
+        const data = currentData.data[group as keyof typeof currentData.data];
+        
+        // Get English key for color lookup
+        const colorKey = getColorKey(group);
+        
+        if (!data || !Array.isArray(data)) {
+            return {
+                label: group,
+                data: [],
+                backgroundColor: colors[colorKey as keyof typeof colors] || 'rgba(0,0,0,0.5)',
+                borderWidth: 0,
+                borderRadius: 4,
+            };
+        }
 
         return {
             label: group,
-            data: currentData.data[groupKey as keyof typeof currentData.data],
-            backgroundColor: colors[groupKey as keyof typeof colors],
+            data: data,
+            backgroundColor: colors[colorKey as keyof typeof colors],
             borderWidth: 0,
             borderRadius: 4,
         };
