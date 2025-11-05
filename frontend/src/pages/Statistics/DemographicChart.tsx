@@ -3,8 +3,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { CiCalendar } from 'react-icons/ci';
 import { useState } from "react";
-import { useLanguage } from "../../context/LanguageContext";
-import { statisticsContent } from "../../content/StatisticsContent";
 import CityDropdown from '../../components/CityDropdown';
 
 // Register Chart.js components
@@ -35,7 +33,6 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
   burnabyData,
   courtenayData
 }) => {
-  const { language } = useLanguage();
   const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
 
   const cityData = selectedCity === 'burnaby' ? burnabyData : courtenayData;
@@ -62,7 +59,7 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
 
   // Prepare data for Chart.js
   const chartData = {
-    labels: cityData.data.map(d => d.name),
+    labels: cityData.data.map(d => `${d.name} (${d.percentage}%)`),
     datasets: [
       {
         data: cityData.data.map(d => d.percentage),
@@ -80,7 +77,20 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
     cutout: '55%', // Creates the donut effect
     plugins: {
       legend: {
-        display: false,
+        display: true,
+        position: 'bottom' as const,
+        labels: {
+          boxWidth: 15,
+          boxHeight: 15,
+          padding: 12,
+          font: {
+            size: 11,
+            family: 'DM Sans, sans-serif'
+          },
+          color: '#374151',
+          usePointStyle: true,
+          pointStyle: 'circle'
+        }
       },
       tooltip: {
         callbacks: {
@@ -92,29 +102,15 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
         }
       },
       datalabels: {
-        color: selectedCity === 'burnaby' ? '#0f4c28' : '#0f766e',
-        font: {
-          weight: 'bold' as const,
-          size: 12,
-        },
-        formatter: (value: number, context: any) => {
-          const label = context.chart.data.labels[context.dataIndex];
-          return `${value}%\n${label}`;
-        },
-        textAlign: 'center' as const,
-        anchor: 'end' as const,
-        align: 'end' as const,
-        offset: 2,
-        padding: 2,
-        clip: false,
+        display: false,
       }
     },
     layout: {
       padding: {
-        top: 60,
-        bottom: 60,
-        left: 80,
-        right: 80
+        top: 20,
+        bottom: 20,
+        left: 20,
+        right: 20
       }
     }
   };
