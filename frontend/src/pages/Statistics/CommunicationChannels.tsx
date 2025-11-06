@@ -14,6 +14,7 @@ import {
     Legend
 } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { BURNABY_COLOR_PALETTE, getBurnabyColor } from "./constants/colors";
 
 // Register Chart.js components
 ChartJS.register(
@@ -50,15 +51,12 @@ const CommunicationChannels: React.FC = () => {
 
     // Define color palettes for each communication channel
     const colorPalettes = {
-        burnaby: [
-            'rgba(15, 76, 40, 0.9)',      // Community/Cultural Groups
-            'rgba(30, 90, 50, 0.9)',      // Friends/Family
-            'rgba(49, 112, 57, 0.9)',     // Newspaper/Radio
-            'rgba(80, 150, 90, 0.9)',     // Posters/Flyers/Signs
-            'rgba(112, 180, 112, 0.9)',   // Recreation Centre/Website
-            'rgba(150, 200, 150, 0.9)',   // School/Workplace
-            'rgba(180, 220, 180, 0.9)'    // Social Media
-        ],
+        burnaby: BURNABY_COLOR_PALETTE.map(color => color.replace(')', ', 0.9)').replace('#', 'rgba(').replace(/^rgba\((.{6})/, (_, hex) => {
+            const r = parseInt(hex.slice(0, 2), 16);
+            const g = parseInt(hex.slice(2, 4), 16);
+            const b = parseInt(hex.slice(4, 6), 16);
+            return `rgba(${r}, ${g}, ${b}`;
+        })),
         courtenay: [
             'rgba(13, 148, 136, 0.9)',    // Community/Cultural Groups
             'rgba(15, 160, 148, 0.9)',    // Friends/Family
