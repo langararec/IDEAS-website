@@ -4,6 +4,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { CiCalendar } from 'react-icons/ci';
 import { useState } from "react";
 import CityDropdown from '../../components/CityDropdown';
+import { generateBurnabyColors, COURTENAY_COLOR } from './constants/colors';
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
@@ -40,21 +41,10 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
   // Generate gradient colors based on city and data
   const generateColors = (data: DemographicData[], city: CityType) => {
     if (city === 'courtenay') {
-      // Courtenay uses solid teal color
-      return data.map(() => '#0d9488');
+      return data.map(() => COURTENAY_COLOR);
     }
 
-    // Burnaby: gradient from full green to lighter green
-    const maxValue = Math.max(...data.map(d => d.percentage));
-    return data.map(item => {
-      const intensity = item.percentage / maxValue;
-      const minIntensity = 0.4;
-      const adjustedIntensity = minIntensity + (intensity * (1 - minIntensity));
-      const r = Math.round(49 + (180 - 49) * (1 - adjustedIntensity));
-      const g = Math.round(112 + (220 - 112) * (1 - adjustedIntensity));
-      const b = Math.round(57 + (180 - 57) * (1 - adjustedIntensity));
-      return `rgb(${r}, ${g}, ${b})`;
-    });
+    return generateBurnabyColors(data.map(d => d.percentage));
   };
 
   // Prepare data for Chart.js
