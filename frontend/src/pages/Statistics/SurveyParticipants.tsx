@@ -14,6 +14,7 @@ import {
 } from 'chart.js';
 import CityDropdown from "../../components/CityDropdown";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { generateBurnabyColors, COURTENAY_COLOR } from "./constants/colors";
 
 // Register Chart.js components
 ChartJS.register(
@@ -39,20 +40,10 @@ const SurveyParticipants: React.FC = () => {
 
     const generateColors = (data: number[], city: CityType) => {
         if (city === 'courtenay') {
-            return data.map(() => '#0d9488');
+            return data.map(() => COURTENAY_COLOR);
         }
 
-        const maxValue = Math.max(...data);
-        return data.map(value => {
-            const intensity = value / maxValue;
-
-            const minIntensity = 0.4;
-            const adjustedIntensity = minIntensity + (intensity * (1 - minIntensity));
-            const r = Math.round(49 + (180 - 49) * (1 - adjustedIntensity));
-            const g = Math.round(112 + (220 - 112) * (1 - adjustedIntensity));
-            const b = Math.round(57 + (180 - 57) * (1 - adjustedIntensity));
-            return `rgb(${r}, ${g}, ${b})`;
-        });
+        return generateBurnabyColors(data);
     };
 
     // Prepare data for Chart.js
