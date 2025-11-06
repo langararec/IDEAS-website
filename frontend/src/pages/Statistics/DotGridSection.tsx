@@ -5,6 +5,10 @@ interface DotGridSectionProps {
     immigrantLabel: string;
     residentCount: number;
     immigrantCount: number;
+    residentDisplayValue?: string | number;
+    immigrantDisplayValue?: string | number;
+    residentDotCount?: number;
+    immigrantDotCount?: number;
 }
 
 const DotGrid: React.FC<{ count: number; isResident: boolean }> = ({ count, isResident }) => {
@@ -27,8 +31,18 @@ const DotGridSection: React.FC<DotGridSectionProps> = ({
     residentLabel,
     immigrantLabel,
     residentCount,
-    immigrantCount
+    immigrantCount,
+    residentDisplayValue,
+    immigrantDisplayValue,
+    residentDotCount,
+    immigrantDotCount
 }) => {
+    // Use custom values if provided, otherwise fall back to residentCount/immigrantCount
+    const displayResidentValue = residentDisplayValue !== undefined ? residentDisplayValue : residentCount;
+    const displayImmigrantValue = immigrantDisplayValue !== undefined ? immigrantDisplayValue : immigrantCount;
+    const actualResidentDots = residentDotCount !== undefined ? residentDotCount : residentCount;
+    const actualImmigrantDots = immigrantDotCount !== undefined ? immigrantDotCount : immigrantCount;
+
     return (
         <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
             {/* Resident Section */}
@@ -39,10 +53,10 @@ const DotGridSection: React.FC<DotGridSectionProps> = ({
                         {residentLabel}
                     </span>
                     <span className="text-sm font-bold text-gray-900 ml-auto">
-                        {residentCount}
+                        {displayResidentValue}
                     </span>
                 </div>
-                <DotGrid count={residentCount} isResident={true} />
+                <DotGrid count={actualResidentDots} isResident={true} />
             </div>
 
             {/* Immigrant Section */}
@@ -53,10 +67,10 @@ const DotGridSection: React.FC<DotGridSectionProps> = ({
                         {immigrantLabel}
                     </span>
                     <span className="text-sm font-bold text-gray-900 ml-auto">
-                        {immigrantCount}
+                        {displayImmigrantValue}
                     </span>
                 </div>
-                <DotGrid count={immigrantCount} isResident={false} />
+                <DotGrid count={actualImmigrantDots} isResident={false} />
             </div>
         </div>
     );

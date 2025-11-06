@@ -87,8 +87,8 @@ const Dotmocracy: React.FC = () => {
                     <div className="ml-auto flex gap-2">
                         <button
                             onClick={() => setViewMode('relative')}
-                            className={`px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'relative'
-                                    ? 'bg-primary text-white'
+                            className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'relative'
+                                    ? 'text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
@@ -96,8 +96,8 @@ const Dotmocracy: React.FC = () => {
                         </button>
                         <button
                             onClick={() => setViewMode('full')}
-                            className={`px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'full'
-                                    ? 'bg-primary text-white'
+                            className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'full'
+                                    ? ' text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
@@ -108,27 +108,54 @@ const Dotmocracy: React.FC = () => {
 
                 {/* Categories Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {currentData.categories.map((category, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col"
-                        >
-                            {/* Category Title */}
-                            <div className="bg-primary text-white px-4 py-3 rounded-lg mb-4 min-h-[80px] flex items-center">
-                                <h4 className="text-sm font-semibold font-dm-sans leading-tight">
-                                    {category.title}
-                                </h4>
-                            </div>
+                    {currentData.categories.map((category, index) => {
+                        // Calculate relative counts (out of 100)
+                        let residentDisplay: string | number;
+                        let immigrantDisplay: string | number;
+                        let residentDots: number;
+                        let immigrantDots: number;
 
-                            {/* Resident and Immigrant Sections */}
-                            <DotGridSection
-                                residentLabel={content.residentLabel}
-                                immigrantLabel={content.immigrantLabel}
-                                residentCount={category.resident}
-                                immigrantCount={category.immigrant}
-                            />
-                        </div>
-                    ))}
+                        if (viewMode === 'relative') {
+                            const residentRelativeExact = (category.resident / currentData.residentCount) * 100;
+                            const immigrantRelativeExact = (category.immigrant / currentData.immigrantCount) * 100;
+                            
+                            residentDisplay = `${residentRelativeExact.toFixed(1)}/100`;
+                            immigrantDisplay = `${immigrantRelativeExact.toFixed(1)}/100`;
+                            residentDots = Math.round(residentRelativeExact);
+                            immigrantDots = Math.round(immigrantRelativeExact);
+                        } else {
+                            residentDisplay = category.resident;
+                            immigrantDisplay = category.immigrant;
+                            residentDots = category.resident;
+                            immigrantDots = category.immigrant;
+                        }
+
+                        return (
+                            <div
+                                key={index}
+                                className="flex flex-col"
+                            >
+                                {/* Category Title */}
+                                <div className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} text-white px-4 py-3 rounded-lg mb-4 min-h-[80px] flex items-center`}>
+                                    <h4 className="text-sm font-semibold font-dm-sans leading-tight">
+                                        {category.title}
+                                    </h4>
+                                </div>
+
+                                {/* Resident and Immigrant Sections */}
+                                <DotGridSection
+                                    residentLabel={content.residentLabel}
+                                    immigrantLabel={content.immigrantLabel}
+                                    residentCount={category.resident}
+                                    immigrantCount={category.immigrant}
+                                    residentDisplayValue={residentDisplay}
+                                    immigrantDisplayValue={immigrantDisplay}
+                                    residentDotCount={residentDots}
+                                    immigrantDotCount={immigrantDots}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 
@@ -172,8 +199,8 @@ const Dotmocracy: React.FC = () => {
                     <div className="ml-auto flex gap-2">
                         <button
                             onClick={() => setViewMode('relative')}
-                            className={`px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'relative'
-                                    ? 'bg-primary text-white'
+                            className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'relative'
+                                    ? 'text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
@@ -181,8 +208,8 @@ const Dotmocracy: React.FC = () => {
                         </button>
                         <button
                             onClick={() => setViewMode('full')}
-                            className={`px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'full'
-                                    ? 'bg-primary text-white'
+                            className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'full'
+                                    ? ' text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
@@ -193,27 +220,54 @@ const Dotmocracy: React.FC = () => {
 
                 {/* Barriers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {currentData.barriers.map((barrier, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col"
-                        >
-                            {/* Barrier Title */}
-                            <div className="bg-primary text-white px-4 py-3 rounded-lg mb-4 min-h-[80px] flex items-center">
-                                <h4 className="text-sm font-semibold font-dm-sans leading-tight">
-                                    {barrier.title}
-                                </h4>
-                            </div>
+                    {currentData.barriers.map((barrier, index) => {
+                        // Calculate relative counts (out of 100)
+                        let residentDisplay: string | number;
+                        let immigrantDisplay: string | number;
+                        let residentDots: number;
+                        let immigrantDots: number;
 
-                            {/* Resident and Immigrant Sections */}
-                            <DotGridSection
-                                residentLabel={content.residentLabel}
-                                immigrantLabel={content.immigrantLabel}
-                                residentCount={barrier.resident}
-                                immigrantCount={barrier.immigrant}
-                            />
-                        </div>
-                    ))}
+                        if (viewMode === 'relative') {
+                            const residentRelativeExact = (barrier.resident / currentData.residentCount) * 100;
+                            const immigrantRelativeExact = (barrier.immigrant / currentData.immigrantCount) * 100;
+                            
+                            residentDisplay = `${residentRelativeExact.toFixed(1)}/100`;
+                            immigrantDisplay = `${immigrantRelativeExact.toFixed(1)}/100`;
+                            residentDots = Math.round(residentRelativeExact);
+                            immigrantDots = Math.round(immigrantRelativeExact);
+                        } else {
+                            residentDisplay = barrier.resident;
+                            immigrantDisplay = barrier.immigrant;
+                            residentDots = barrier.resident;
+                            immigrantDots = barrier.immigrant;
+                        }
+
+                        return (
+                            <div
+                                key={index + 'barrier'}
+                                className="flex flex-col"
+                            >
+                                {/* Barrier Title */}
+                                <div className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} text-white px-4 py-3 rounded-lg mb-4 min-h-[80px] flex items-center`}>
+                                    <h4 className="text-sm font-semibold font-dm-sans leading-tight">
+                                        {barrier.title}
+                                    </h4>
+                                </div>
+
+                                {/* Resident and Immigrant Sections */}
+                                <DotGridSection
+                                    residentLabel={content.residentLabel}
+                                    immigrantLabel={content.immigrantLabel}
+                                    residentCount={barrier.resident}
+                                    immigrantCount={barrier.immigrant}
+                                    residentDisplayValue={residentDisplay}
+                                    immigrantDisplayValue={immigrantDisplay}
+                                    residentDotCount={residentDots}
+                                    immigrantDotCount={immigrantDots}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
