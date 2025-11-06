@@ -14,6 +14,7 @@ import {
     Legend
 } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { BURNABY_COLOR_PALETTE } from "./constants/colors";
 
 // Register Chart.js components
 ChartJS.register(
@@ -49,12 +50,33 @@ const RecreationBehaviors: React.FC = () => {
     }
 
     // Define color palettes for each residency group
+    // Using Burnaby color palette in reverse order (lightest to darkest) for residency groups
     const colorPalettes = {
         burnaby: {
-            "Less than 1 year": 'rgba(180, 220, 180, 0.9)',
-            "1-3 years": 'rgba(112, 180, 112, 0.9)',
-            "4-6 years": 'rgba(49, 112, 57, 0.9)',
-            "More than 6 years": 'rgba(15, 76, 40, 0.9)'
+            "Less than 1 year": BURNABY_COLOR_PALETTE[5].replace(')', ', 0.9)').replace('#', 'rgba(').replace(/^rgba\((.{6})/, (_, hex) => {
+                const r = parseInt(hex.slice(0, 2), 16);
+                const g = parseInt(hex.slice(2, 4), 16);
+                const b = parseInt(hex.slice(4, 6), 16);
+                return `rgba(${r}, ${g}, ${b}`;
+            }),
+            "1-3 years": BURNABY_COLOR_PALETTE[3].replace(')', ', 0.9)').replace('#', 'rgba(').replace(/^rgba\((.{6})/, (_, hex) => {
+                const r = parseInt(hex.slice(0, 2), 16);
+                const g = parseInt(hex.slice(2, 4), 16);
+                const b = parseInt(hex.slice(4, 6), 16);
+                return `rgba(${r}, ${g}, ${b}`;
+            }),
+            "4-6 years": BURNABY_COLOR_PALETTE[1].replace(')', ', 0.9)').replace('#', 'rgba(').replace(/^rgba\((.{6})/, (_, hex) => {
+                const r = parseInt(hex.slice(0, 2), 16);
+                const g = parseInt(hex.slice(2, 4), 16);
+                const b = parseInt(hex.slice(4, 6), 16);
+                return `rgba(${r}, ${g}, ${b}`;
+            }),
+            "More than 6 years": BURNABY_COLOR_PALETTE[0].replace(')', ', 0.9)').replace('#', 'rgba(').replace(/^rgba\((.{6})/, (_, hex) => {
+                const r = parseInt(hex.slice(0, 2), 16);
+                const g = parseInt(hex.slice(2, 4), 16);
+                const b = parseInt(hex.slice(4, 6), 16);
+                return `rgba(${r}, ${g}, ${b}`;
+            })
         },
         courtenay: {
             "Less than 1 year": 'rgba(153, 246, 228, 0.9)',
