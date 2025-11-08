@@ -54,7 +54,7 @@ const ThoughtsOnRecreation: React.FC = () => {
                             {content.lowestAverage.title}
                         </h4>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            {content.lowestAverage.charts.map((chart, index) => (
+                            {currentData.lowestAverage.charts.map((chart, index) => (
                                 <AverageLineChart
                                     key={index}
                                     question={chart.question}
@@ -72,7 +72,7 @@ const ThoughtsOnRecreation: React.FC = () => {
                             {content.highestAverage.title}
                         </h4>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            {content.highestAverage.charts.map((chart, index) => (
+                            {currentData.highestAverage.charts.map((chart, index) => (
                                 <AverageLineChart
                                     key={index}
                                     question={chart.question}
