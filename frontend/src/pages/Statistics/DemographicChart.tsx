@@ -4,7 +4,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { CiCalendar } from 'react-icons/ci';
 import { useState } from "react";
 import CityDropdown from '../../components/CityDropdown';
-import { generateBurnabyColors, COURTENAY_COLOR } from './constants/colors';
+import { generateBurnabyColors, generateCourtenayColors } from './constants/colors';
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
@@ -41,7 +41,7 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
   // Generate gradient colors based on city and data
   const generateColors = (data: DemographicData[], city: CityType) => {
     if (city === 'courtenay') {
-      return data.map(() => COURTENAY_COLOR);
+      return generateCourtenayColors(data.map(d => d.percentage));
     }
 
     return generateBurnabyColors(data.map(d => d.percentage));
