@@ -96,7 +96,6 @@ const SurveyParticipants: React.FC = () => {
         scales: {
             x: {
                 beginAtZero: true,
-                max: 36,
                 ticks: {
                     stepSize: 9,
                     callback: function (value: any) {
