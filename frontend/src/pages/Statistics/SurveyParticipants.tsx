@@ -14,7 +14,7 @@ import {
 } from 'chart.js';
 import CityDropdown from "../../components/CityDropdown";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { generateBurnabyColors, COURTENAY_COLOR } from "./constants/colors";
+import { generateBurnabyColors, generateCourtenayColors } from "./constants/colors";
 
 // Register Chart.js components
 ChartJS.register(
@@ -40,7 +40,7 @@ const SurveyParticipants: React.FC = () => {
 
     const generateColors = (data: number[], city: CityType) => {
         if (city === 'courtenay') {
-            return data.map(() => COURTENAY_COLOR);
+            return generateCourtenayColors(data);
         }
 
         return generateBurnabyColors(data);
