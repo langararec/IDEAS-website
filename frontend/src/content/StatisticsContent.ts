@@ -5,19 +5,19 @@ export const statisticsContent = {
         {
           id: "component1",
           label: "SURVEY DATA REPORT",
-          shortLabel: "SURVEY"
+          shortLabel: "SURVEY",
         },
         {
           id: "component2",
           label: "DOTMOCRACY",
-          shortLabel: "DOTMOCRACY"
+          shortLabel: "DOTMOCRACY",
         },
         {
           id: "component3",
           label: "ACTIVITY SHEETS",
-          shortLabel: "ACTIVITIES"
-        }
-      ]
+          shortLabel: "ACTIVITIES",
+        },
+      ],
     },
     surveyDataReport: {
       title: "Preliminary Data - Survey Results Report",
@@ -25,17 +25,21 @@ export const statisticsContent = {
       chartLabel: "Percentage (%)",
       cities: {
         burnaby: "Burnaby",
-        courtenay: "Courtenay"
+        courtenay: "Courtenay",
       },
       burnaby: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "Chinese respondents make up the largest group of survey respondents at 32.85%, followed by White (23.36%) and Arab (16.79%).",
+        keyInsights:
+          "Chinese respondents make up the largest group of survey respondents at 32.85%, followed by White (23.36%) and Arab (16.79%).",
         ethnicities: [
           { name: "Chinese", percentage: 32.85 },
           { name: "White", percentage: 23.36 },
           { name: "Arab", percentage: 16.79 },
-          { name: "South Asian (e.g., East Indian, Pakistani, Sri Lankan)", percentage: 5.11 },
+          {
+            name: "South Asian (e.g., East Indian, Pakistani, Sri Lankan)",
+            percentage: 5.11,
+          },
           { name: "West Asian (e.g., Iranian, Afghan)", percentage: 5.11 },
           { name: "Japanese", percentage: 2.92 },
           { name: "Latin American", percentage: 2.92 },
@@ -43,20 +47,30 @@ export const statisticsContent = {
           { name: "Black", percentage: 2.19 },
           { name: "Korean", percentage: 2.19 },
           { name: "Filipino", percentage: 1.46 },
-          { name: "Southeast Asian (e.g., Vietnamese, Cambodian, Laotian, Thai)", percentage: 1.46 },
-          { name: "Indigenous peoples", percentage: 0.73 }
-        ]
+          {
+            name: "Southeast Asian (e.g., Vietnamese, Cambodian, Laotian, Thai)",
+            percentage: 1.46,
+          },
+          { name: "Indigenous peoples", percentage: 0.73 },
+        ],
       },
       courtenay: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "White respondents dominate at 58.51%, followed by Chinese (10.64%) and South Asian (5.32%).",
+        keyInsights:
+          "White respondents dominate at 58.51%, followed by Chinese (10.64%) and South Asian (5.32%).",
         ethnicities: [
           { name: "White", percentage: 57.29 },
           { name: "Chinese", percentage: 10.42 },
-          { name: "South Asian (e.g., East Indian, Pakistani, Sri Lankan)", percentage: 5.21 },
+          {
+            name: "South Asian (e.g., East Indian, Pakistani, Sri Lankan)",
+            percentage: 5.21,
+          },
           { name: "Black", percentage: 4.17 },
-          { name: "Southeast Asian (e.g., Vietnamese, Cambodian, Laotian, Thai)", percentage: 4.17 },
+          {
+            name: "Southeast Asian (e.g., Vietnamese, Cambodian, Laotian, Thai)",
+            percentage: 4.17,
+          },
           { name: "Filipino", percentage: 3.13 },
           { name: "Indigenous peoples", percentage: 3.13 },
           { name: "Korean", percentage: 3.13 },
@@ -64,9 +78,9 @@ export const statisticsContent = {
           { name: "Japanese", percentage: 2.08 },
           { name: "Prefer not to disclose", percentage: 2.08 },
           { name: "Arab", percentage: 1.04 },
-          { name: "West Asian (e.g., Iranian, Afghan)", percentage: 1.04 }
-        ]
-      }
+          { name: "West Asian (e.g., Iranian, Afghan)", percentage: 1.04 },
+        ],
+      },
     },
     demographics: {
       title: "Demographics",
@@ -79,8 +93,8 @@ export const statisticsContent = {
             { name: "Woman", percentage: 76.12 },
             { name: "Man", percentage: 22.39 },
             { name: "Non-binary", percentage: 0.75 },
-            { name: "Transgender", percentage: 0.75 }
-          ]
+            { name: "Transgender", percentage: 0.75 },
+          ],
         },
         courtenay: {
           lastUpdated: "Last updated: 10-15-2025",
@@ -88,9 +102,9 @@ export const statisticsContent = {
             { name: "Woman", percentage: 65.26 },
             { name: "Man", percentage: 32.63 },
             { name: "Non-binary", percentage: 1.05 },
-            { name: "Transgender", percentage: 1.05 }
-          ]
-        }
+            { name: "Transgender", percentage: 1.05 },
+          ],
+        },
       },
       age: {
         title: "Age",
@@ -103,8 +117,8 @@ export const statisticsContent = {
             { name: "45-54", percentage: 20.44 },
             { name: "25-34", percentage: 18.98 },
             { name: "18-24", percentage: 5.11 },
-            { name: "Under 18", percentage: 3.65 }
-          ]
+            { name: "Under 18", percentage: 3.65 },
+          ],
         },
         courtenay: {
           lastUpdated: "Last updated: 10-15-2025",
@@ -114,9 +128,9 @@ export const statisticsContent = {
             { name: "45-54", percentage: 21.05 },
             { name: "18-24", percentage: 13.68 },
             { name: "Under 18", percentage: 7.37 },
-            { name: "25-34", percentage: 6.32 }
-          ]
-        }
+            { name: "25-34", percentage: 6.32 },
+          ],
+        },
       },
       timeLivingInBC: {
         title: "Time Living in BC",
@@ -127,8 +141,8 @@ export const statisticsContent = {
             { name: "More than 6 years", percentage: 62.22 },
             { name: "1-3 years", percentage: 14.07 },
             { name: "4-6 years", percentage: 13.33 },
-            { name: "Less than 1 year", percentage: 10.37 }
-          ]
+            { name: "Less than 1 year", percentage: 10.37 },
+          ],
         },
         courtenay: {
           lastUpdated: "Last updated: 10-15-2025",
@@ -136,16 +150,22 @@ export const statisticsContent = {
             { name: "More than 6 years", percentage: 58.95 },
             { name: "1-3 years", percentage: 25.26 },
             { name: "Less than 1 year", percentage: 10.53 },
-            { name: "4-6 years", percentage: 5.26 }
-          ]
-        }
-      }
+            { name: "4-6 years", percentage: 5.26 },
+          ],
+        },
+      },
     },
     recreationBehaviors: {
       title: "Thoughts and Behaviours towards Recreation",
-      subtitle: "How length of residency in BC influences motivations for recreation participation",
+      subtitle:
+        "How length of residency in BC influences motivations for recreation participation",
       chartLabel: "Percentage (%)",
-      residencyGroups: ["Less than 1 year", "1-3 years", "4-6 years", "More than 6 years"],
+      residencyGroups: [
+        "Less than 1 year",
+        "1-3 years",
+        "4-6 years",
+        "More than 6 years",
+      ],
       motivations: [
         "To learn new skills or try new activities",
         "To relax",
@@ -156,36 +176,60 @@ export const statisticsContent = {
         "To meet new people",
         "To exercise and stay healthy",
         "To have fun",
-        "To spend time with family or friends"
+        "To spend time with family or friends",
       ],
       burnaby: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "Long-term residents (6+ years) consistently dominate across all motivations, with particularly strong representation in having fun (66.67%), connecting with community (65.91%), and cultural activities (65.22%). New residents (1-3 years) show higher engagement in enjoying nature (28.57%) and spending time with family/friends (23.53%).",
+        keyInsights:
+          "Long-term residents (6+ years) consistently dominate across all motivations, with particularly strong representation in having fun (66.67%), connecting with community (65.91%), and cultural activities (65.22%). New residents (1-3 years) show higher engagement in enjoying nature (28.57%) and spending time with family/friends (23.53%).",
         data: {
-          "Less than 1 year": [8.33, 8.64, 13.04, 7.14, 11.36, 5.00, 8.70, 11.25, 8.43, 10.71],
-          "1-3 years": [16.67, 12.35, 26.09, 21.43, 18.18, 12.50, 26.09, 13.75, 14.46, 13.10],
-          "4-6 years": [13.89, 11.11, 13.04, 21.43, 10.23, 17.50, 8.70, 11.25, 13.25, 11.90],
-          "More than 6 years": [61.11, 67.90, 47.83, 50.00, 60.23, 65.00, 56.52, 63.75, 63.86, 64.29]
-        }
+          "Less than 1 year": [
+            8.33, 8.64, 13.04, 7.14, 11.36, 5.0, 8.7, 11.25, 8.43, 10.71,
+          ],
+          "1-3 years": [
+            16.67, 12.35, 26.09, 21.43, 18.18, 12.5, 26.09, 13.75, 14.46, 13.1,
+          ],
+          "4-6 years": [
+            13.89, 11.11, 13.04, 21.43, 10.23, 17.5, 8.7, 11.25, 13.25, 11.9,
+          ],
+          "More than 6 years": [
+            61.11, 67.9, 47.83, 50.0, 60.23, 65.0, 56.52, 63.75, 63.86, 64.29,
+          ],
+        },
       },
       courtenay: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "Long-term residents (6+ years) show the highest participation across nearly all motivations, with enjoying nature (71.85%), spending time with family/friends (63.64%), and exercising/staying healthy (61.99%) leading the way. Newer residents show more interest in learning about Canadian culture (15.71%).",
+        keyInsights:
+          "Long-term residents (6+ years) show the highest participation across nearly all motivations, with enjoying nature (71.85%), spending time with family/friends (63.64%), and exercising/staying healthy (61.99%) leading the way. Newer residents show more interest in learning about Canadian culture (15.71%).",
         data: {
-          "Less than 1 year": [11.11, 8.82, 35.71, 0.00, 9.21, 13.33, 13.04, 7.69, 10.00, 7.58],
-          "1-3 years": [25.93, 30.88, 42.86, 36.36, 25.00, 33.33, 30.43, 20.00, 23.33, 27.27],
-          "4-6 years": [7.41, 2.94, 0.00, 0.00, 3.95, 3.33, 4.35, 4.62, 5.00, 1.52],
-          "More than 6 years": [55.56, 57.35, 21.43, 63.64, 61.84, 50.00, 52.17, 67.69, 61.67, 63.64]
-        }
-      }
+          "Less than 1 year": [
+            11.11, 8.82, 35.71, 0.0, 9.21, 13.33, 13.04, 7.69, 10.0, 7.58,
+          ],
+          "1-3 years": [
+            25.93, 30.88, 42.86, 36.36, 25.0, 33.33, 30.43, 20.0, 23.33, 27.27,
+          ],
+          "4-6 years": [
+            7.41, 2.94, 0.0, 0.0, 3.95, 3.33, 4.35, 4.62, 5.0, 1.52,
+          ],
+          "More than 6 years": [
+            55.56, 57.35, 21.43, 63.64, 61.84, 50.0, 52.17, 67.69, 61.67, 63.64,
+          ],
+        },
+      },
     },
     communicationChannels: {
       title: "Where people find out recreation activities",
-      subtitle: "How length of residency in BC influences communication channel preferences",
+      subtitle:
+        "How length of residency in BC influences communication channel preferences",
       chartLabel: "Percentage (%)",
-      residencyGroups: ["Less than 1 year", "1-3 years", "4-6 years", "More than 6 years"],
+      residencyGroups: [
+        "Less than 1 year",
+        "1-3 years",
+        "4-6 years",
+        "More than 6 years",
+      ],
       channels: [
         "Community/Cultural Groups",
         "Friends/Family",
@@ -193,30 +237,32 @@ export const statisticsContent = {
         "Posters/Flyers/Signs",
         "Recreation Centre/Website",
         "School/Workplace",
-        "Social Media"
+        "Social Media",
       ],
       burnaby: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "New residents rely more on social media, friends and community groups. While residents with longer time living in BC are more reliant through posters, schools, newspapers and city websites.",
+        keyInsights:
+          "New residents rely more on social media, friends and community groups. While residents with longer time living in BC are more reliant through posters, schools, newspapers and city websites.",
         data: {
           "Less than 1 year": [15, 11, 0, 11, 16, 12, 9],
           "1-3 years": [6, 9, 8, 7, 8, 6, 15],
           "4-6 years": [30, 17, 15, 11, 8, 18, 30],
-          "More than 6 years": [48, 63, 77, 71, 68, 65, 47]
-        }
+          "More than 6 years": [48, 63, 77, 71, 68, 65, 47],
+        },
       },
       courtenay: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "New residents (1-3 years) show high engagement with community groups (46%) and social media (27%). Long-term residents (6+ years) strongly prefer recreation center websites (83%), newspapers (79%), and traditional channels like posters and friends/family.",
+        keyInsights:
+          "New residents rely more on community or cultural groups, schools/workplaces and social media. Long-term residents are the most users of all sources, especially city websites, local newspapers and posters/flyers.",
         data: {
           "Less than 1 year": [4, 5, 0, 3, 2, 8, 9],
           "1-3 years": [46, 29, 7, 19, 12, 35, 27],
           "4-6 years": [4, 3, 14, 9, 2, 4, 2],
-          "More than 6 years": [46, 63, 79, 69, 83, 54, 61]
-        }
-      }
+          "More than 6 years": [46, 63, 79, 69, 83, 54, 61],
+        },
+      },
     },
     thoughtsOnRecreation: {
       title: "Thoughts on Recreation",
@@ -230,11 +276,13 @@ export const statisticsContent = {
       burnaby: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "Filipino, Southeast Asian and Japanese participants report the lowest satisfaction with recreation activities available. Indigenous People and Latin American participants show the highest levels of satisfaction and feeling welcome in community recreation spaces. Most ethnic groups report positive experiences when participating in recreation activities.",
+        keyInsights:
+          "Filipino, Southeast Asian and Japanese participants report the lowest satisfaction with recreation activities available. Indigenous People and Latin American participants show the highest levels of satisfaction and feeling welcome in community recreation spaces. Most ethnic groups report positive experiences when participating in recreation activities.",
         lowestAverage: {
           charts: [
             {
-              question: "There are enough recreation activities in my community",
+              question:
+                "There are enough recreation activities in my community",
               average: 3.1,
               ethnicities: [
                 { name: "Filipino", score: 1.5 },
@@ -248,11 +296,12 @@ export const statisticsContent = {
                 { name: "White", score: 3.6 },
                 { name: "Arab", score: 3.7 },
                 { name: "Indigenous People", score: 4.0 },
-                { name: "Latin American", score: 4.0 }
-              ]
+                { name: "Latin American", score: 4.0 },
+              ],
             },
             {
-              question: "There are enough recreation activities for people of all ages in my community",
+              question:
+                "There are enough recreation activities for people of all ages in my community",
               average: 3.3,
               ethnicities: [
                 { name: "Filipino", score: 2.5 },
@@ -266,15 +315,16 @@ export const statisticsContent = {
                 { name: "Latin American", score: 3.5 },
                 { name: "White", score: 3.7 },
                 { name: "Indigenous People", score: 4.0 },
-                { name: "South Asian", score: 4.0 }
-              ]
-            }
-          ]
+                { name: "South Asian", score: 4.0 },
+              ],
+            },
+          ],
         },
         highestAverage: {
           charts: [
             {
-              question: "I feel welcome in places like parks and community centers",
+              question:
+                "I feel welcome in places like parks and community centers",
               average: 4.3,
               ethnicities: [
                 { name: "Japanese", score: 3.0 },
@@ -288,11 +338,12 @@ export const statisticsContent = {
                 { name: "Filipino", score: 4.5 },
                 { name: "White", score: 4.6 },
                 { name: "Latin American", score: 4.8 },
-                { name: "Southeast Asian", score: 5.0 }
-              ]
+                { name: "Southeast Asian", score: 5.0 },
+              ],
             },
             {
-              question: "I have fun when I do recreation activities in my community",
+              question:
+                "I have fun when I do recreation activities in my community",
               average: 4.3,
               ethnicities: [
                 { name: "Japanese", score: 3.0 },
@@ -306,20 +357,22 @@ export const statisticsContent = {
                 { name: "White", score: 4.5 },
                 { name: "Filipino", score: 4.5 },
                 { name: "Latin American", score: 5.0 },
-                { name: "Southeast Asian", score: 5.0 }
-              ]
-            }
-          ]
-        }
+                { name: "Southeast Asian", score: 5.0 },
+              ],
+            },
+          ],
+        },
       },
       courtenay: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "White and Latin American participants response are positive. Moderate satisfaction on Chinese, Filipino and South Asian groups but has lower scores for recreation activities available in their community. Indigenous People and Koreans have lower comfort levels.",
+        keyInsights:
+          "White and Latin American participants response are positive. Moderate satisfaction on Chinese, Filipino and South Asian groups but has lower scores for recreation activities available in their community. Indigenous People and Koreans have lower comfort levels.",
         lowestAverage: {
           charts: [
             {
-              question: "There are enough recreation activities in my community",
+              question:
+                "There are enough recreation activities in my community",
               average: 3.2,
               ethnicities: [
                 { name: "Black", score: 1.5 },
@@ -332,11 +385,12 @@ export const statisticsContent = {
                 { name: "Japanese", score: 3.5 },
                 { name: "Southeast Asian", score: 3.5 },
                 { name: "Latin American", score: 4.0 },
-                { name: "West Asian", score: 5.0 }
-              ]
+                { name: "West Asian", score: 5.0 },
+              ],
             },
             {
-              question: "There are enough recreation activities for people of all ages in my community",
+              question:
+                "There are enough recreation activities for people of all ages in my community",
               average: 3.3,
               ethnicities: [
                 { name: "Korean", score: 2.0 },
@@ -349,15 +403,16 @@ export const statisticsContent = {
                 { name: "Japanese", score: 4.0 },
                 { name: "Latin American", score: 4.0 },
                 { name: "West Asian", score: 4.0 },
-                { name: "Prefer not to disclose", score: 4.5 }
-              ]
-            }
-          ]
+                { name: "Prefer not to disclose", score: 4.5 },
+              ],
+            },
+          ],
         },
         highestAverage: {
           charts: [
             {
-              question: "I feel welcome in places like parks and community centers",
+              question:
+                "I feel welcome in places like parks and community centers",
               average: 4.3,
               ethnicities: [
                 { name: "Korean", score: 3.0 },
@@ -372,11 +427,12 @@ export const statisticsContent = {
                 { name: "Arab", score: 5.0 },
                 { name: "Black", score: 5.0 },
                 { name: "Prefer not to disclose", score: 5.0 },
-                { name: "West Asian", score: 5.0 }
-              ]
+                { name: "West Asian", score: 5.0 },
+              ],
             },
             {
-              question: "I have fun when I do recreation activities in my community",
+              question:
+                "I have fun when I do recreation activities in my community",
               average: 4.3,
               ethnicities: [
                 { name: "Korean", score: 2.0 },
@@ -390,19 +446,19 @@ export const statisticsContent = {
                 { name: "Prefer not to disclose", score: 4.5 },
                 { name: "Southeast Asian", score: 4.5 },
                 { name: "Latin American", score: 4.7 },
-                { name: "Japanese", score: 5.0 }
-              ]
-            }
-          ]
-        }
-      }
+                { name: "Japanese", score: 5.0 },
+              ],
+            },
+          ],
+        },
+      },
     },
     dotmocracy: {
       title: "Dotmocracy Results",
     },
     activitySheets: {
       title: "Activity Sheets",
-    }
+    },
   },
   fr: {
     statisticsToggle: {
@@ -410,19 +466,19 @@ export const statisticsContent = {
         {
           id: "component1",
           label: "RAPPORT DE DONNÉES D'ENQUÊTE",
-          shortLabel: "ENQUÊTE"
+          shortLabel: "ENQUÊTE",
         },
         {
           id: "component2",
           label: "DOTMOCRATIE",
-          shortLabel: "DOTMOCRATIE"
+          shortLabel: "DOTMOCRATIE",
         },
         {
           id: "component3",
           label: "FEUILLES D'ACTIVITÉS",
-          shortLabel: "ACTIVITÉS"
-        }
-      ]
+          shortLabel: "ACTIVITÉS",
+        },
+      ],
     },
     surveyDataReport: {
       title: "Données Préliminaires - Rapport des Résultats du Sondage",
@@ -430,38 +486,55 @@ export const statisticsContent = {
       chartLabel: "Pourcentage (%)",
       cities: {
         burnaby: "Burnaby",
-        courtenay: "Courtenay"
+        courtenay: "Courtenay",
       },
       burnaby: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les répondants chinois constituent le plus grand groupe de répondants au sondage à 32,85%, suivis par les Blancs (23,36%) et les Arabes (16,79%).",
+        keyInsights:
+          "Les répondants chinois constituent le plus grand groupe de répondants au sondage à 32,85%, suivis par les Blancs (23,36%) et les Arabes (16,79%).",
         ethnicities: [
           { name: "Chinois", percentage: 32.85 },
           { name: "Blanc", percentage: 23.36 },
           { name: "Arabe", percentage: 16.79 },
-          { name: "Sud-Asiatique (p. ex., Indien de l'Est, Pakistanais, Sri Lankais)", percentage: 5.11 },
-          { name: "Asie de l'Ouest (p. ex., Iranien, Afghan)", percentage: 5.11 },
+          {
+            name: "Sud-Asiatique (p. ex., Indien de l'Est, Pakistanais, Sri Lankais)",
+            percentage: 5.11,
+          },
+          {
+            name: "Asie de l'Ouest (p. ex., Iranien, Afghan)",
+            percentage: 5.11,
+          },
           { name: "Japonais", percentage: 2.92 },
           { name: "Latino-Américain", percentage: 2.92 },
           { name: "Préfère ne pas divulguer", percentage: 2.92 },
           { name: "Noir", percentage: 2.19 },
           { name: "Coréen", percentage: 2.19 },
           { name: "Philippin", percentage: 1.46 },
-          { name: "Asiatique du Sud-Est (p. ex., Vietnamien, Cambodgien, Laotien, Thaïlandais)", percentage: 1.46 },
-          { name: "Peuples autochtones", percentage: 0.73 }
-        ]
+          {
+            name: "Asiatique du Sud-Est (p. ex., Vietnamien, Cambodgien, Laotien, Thaïlandais)",
+            percentage: 1.46,
+          },
+          { name: "Peuples autochtones", percentage: 0.73 },
+        ],
       },
       courtenay: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les répondants blancs dominent à 58,51%, suivis par les Chinois (10,64%) et les Sud-Asiatiques (5,32%).",
+        keyInsights:
+          "Les répondants blancs dominent à 58,51%, suivis par les Chinois (10,64%) et les Sud-Asiatiques (5,32%).",
         ethnicities: [
           { name: "Blanc", percentage: 57.29 },
           { name: "Chinois", percentage: 10.42 },
-          { name: "Sud-Asiatique (p. ex., Indien de l'Est, Pakistanais, Sri Lankais)", percentage: 5.21 },
+          {
+            name: "Sud-Asiatique (p. ex., Indien de l'Est, Pakistanais, Sri Lankais)",
+            percentage: 5.21,
+          },
           { name: "Noir", percentage: 4.17 },
-          { name: "Asiatique du Sud-Est (p. ex., Vietnamien, Cambodgien, Laotien, Thaïlandais)", percentage: 4.17 },
+          {
+            name: "Asiatique du Sud-Est (p. ex., Vietnamien, Cambodgien, Laotien, Thaïlandais)",
+            percentage: 4.17,
+          },
           { name: "Philippin", percentage: 3.13 },
           { name: "Peuples autochtones", percentage: 3.13 },
           { name: "Coréen", percentage: 3.13 },
@@ -469,9 +542,12 @@ export const statisticsContent = {
           { name: "Japonais", percentage: 2.08 },
           { name: "Préfère ne pas divulguer", percentage: 2.08 },
           { name: "Arabe", percentage: 1.04 },
-          { name: "Asie de l'Ouest (p. ex., Iranien, Afghan)", percentage: 1.04 }
-        ]
-      }
+          {
+            name: "Asie de l'Ouest (p. ex., Iranien, Afghan)",
+            percentage: 1.04,
+          },
+        ],
+      },
     },
     demographics: {
       title: "Démographie",
@@ -484,8 +560,8 @@ export const statisticsContent = {
             { name: "Femme", percentage: 76.12 },
             { name: "Homme", percentage: 22.39 },
             { name: "Non-binaire", percentage: 0.75 },
-            { name: "Transgenre", percentage: 0.75 }
-          ]
+            { name: "Transgenre", percentage: 0.75 },
+          ],
         },
         courtenay: {
           lastUpdated: "Dernière mise à jour: 15-10-2025",
@@ -493,9 +569,9 @@ export const statisticsContent = {
             { name: "Femme", percentage: 65.26 },
             { name: "Homme", percentage: 32.63 },
             { name: "Non-binaire", percentage: 1.05 },
-            { name: "Transgenre", percentage: 1.05 }
-          ]
-        }
+            { name: "Transgenre", percentage: 1.05 },
+          ],
+        },
       },
       age: {
         title: "Âge",
@@ -508,8 +584,8 @@ export const statisticsContent = {
             { name: "45-54", percentage: 20.44 },
             { name: "25-34", percentage: 18.98 },
             { name: "18-24", percentage: 5.11 },
-            { name: "Moins de 18", percentage: 3.65 }
-          ]
+            { name: "Moins de 18", percentage: 3.65 },
+          ],
         },
         courtenay: {
           lastUpdated: "Dernière mise à jour: 15-10-2025",
@@ -519,9 +595,9 @@ export const statisticsContent = {
             { name: "45-54", percentage: 21.05 },
             { name: "18-24", percentage: 13.68 },
             { name: "Moins de 18", percentage: 7.37 },
-            { name: "25-34", percentage: 6.32 }
-          ]
-        }
+            { name: "25-34", percentage: 6.32 },
+          ],
+        },
       },
       timeLivingInBC: {
         title: "Temps Vécu en C.-B.",
@@ -532,8 +608,8 @@ export const statisticsContent = {
             { name: "Plus de 6 ans", percentage: 62.22 },
             { name: "1-3 ans", percentage: 14.07 },
             { name: "4-6 ans", percentage: 13.33 },
-            { name: "Moins d'1 an", percentage: 10.37 }
-          ]
+            { name: "Moins d'1 an", percentage: 10.37 },
+          ],
         },
         courtenay: {
           lastUpdated: "Dernière mise à jour: 15-10-2025",
@@ -541,14 +617,15 @@ export const statisticsContent = {
             { name: "Plus de 6 ans", percentage: 58.95 },
             { name: "1-3 ans", percentage: 25.26 },
             { name: "Moins d'1 an", percentage: 10.53 },
-            { name: "4-6 ans", percentage: 5.26 }
-          ]
-        }
-      }
+            { name: "4-6 ans", percentage: 5.26 },
+          ],
+        },
+      },
     },
     recreationBehaviors: {
       title: "Pensées et Comportements envers les Loisirs",
-      subtitle: "Comment la durée de résidence en C.-B. influence les motivations pour la participation aux loisirs",
+      subtitle:
+        "Comment la durée de résidence en C.-B. influence les motivations pour la participation aux loisirs",
       chartLabel: "Pourcentage (%)",
       residencyGroups: ["Moins d'1 an", "1-3 ans", "4-6 ans", "Plus de 6 ans"],
       motivations: [
@@ -561,34 +638,51 @@ export const statisticsContent = {
         "Rencontrer de nouvelles personnes",
         "Faire de l'exercice et rester en santé",
         "S'amuser",
-        "Passer du temps avec la famille ou les amis"
+        "Passer du temps avec la famille ou les amis",
       ],
       burnaby: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les résidents de longue date (6+ ans) dominent constamment dans toutes les motivations, avec une représentation particulièrement forte pour s'amuser (66,67%), se connecter avec la communauté (65,91%) et les activités culturelles (65,22%). Les nouveaux résidents (1–3 ans) montrent un engagement plus élevé pour profiter de la nature (28,57%) et passer du temps avec la famille/les amis (23,53%).",
+        keyInsights:
+          "Les résidents de longue date (6+ ans) dominent constamment dans toutes les motivations, avec une représentation particulièrement forte pour s'amuser (66,67%), se connecter avec la communauté (65,91%) et les activités culturelles (65,22%). Les nouveaux résidents (1–3 ans) montrent un engagement plus élevé pour profiter de la nature (28,57%) et passer du temps avec la famille/les amis (23,53%).",
         data: {
-          "Moins d'1 an": [8.33, 8.64, 13.04, 7.14, 11.36, 5.00, 8.70, 11.25, 8.43, 10.71],
-          "1-3 ans": [16.67, 12.35, 26.09, 21.43, 18.18, 12.50, 26.09, 13.75, 14.46, 13.10],
-          "4-6 ans": [13.89, 11.11, 13.04, 21.43, 10.23, 17.50, 8.70, 11.25, 13.25, 11.90],
-          "Plus de 6 ans": [61.11, 67.90, 47.83, 50.00, 60.23, 65.00, 56.52, 63.75, 63.86, 64.29]
-        }
+          "Moins d'1 an": [
+            8.33, 8.64, 13.04, 7.14, 11.36, 5.0, 8.7, 11.25, 8.43, 10.71,
+          ],
+          "1-3 ans": [
+            16.67, 12.35, 26.09, 21.43, 18.18, 12.5, 26.09, 13.75, 14.46, 13.1,
+          ],
+          "4-6 ans": [
+            13.89, 11.11, 13.04, 21.43, 10.23, 17.5, 8.7, 11.25, 13.25, 11.9,
+          ],
+          "Plus de 6 ans": [
+            61.11, 67.9, 47.83, 50.0, 60.23, 65.0, 56.52, 63.75, 63.86, 64.29,
+          ],
+        },
       },
       courtenay: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les résidents de longue date (6+ ans) montrent la plus haute participation dans presque toutes les motivations, avec profiter de la nature (71,85%), passer du temps avec la famille/les amis (63,64%) et faire de l'exercice/rester en santé (61,99%) en tête. Les nouveaux résidents montrent plus d'intérêt pour découvrir la culture canadienne (15,71%).",
+        keyInsights:
+          "Les résidents de longue date (6+ ans) montrent la plus haute participation dans presque toutes les motivations, avec profiter de la nature (71,85%), passer du temps avec la famille/les amis (63,64%) et faire de l'exercice/rester en santé (61,99%) en tête. Les nouveaux résidents montrent plus d'intérêt pour découvrir la culture canadienne (15,71%).",
         data: {
-          "Moins d'1 an": [11.11, 8.82, 35.71, 0.00, 9.21, 13.33, 13.04, 7.69, 10.00, 7.58],
-          "1-3 ans": [25.93, 30.88, 42.86, 36.36, 25.00, 33.33, 30.43, 20.00, 23.33, 27.27],
-          "4-6 ans": [7.41, 2.94, 0.00, 0.00, 3.95, 3.33, 4.35, 4.62, 5.00, 1.52],
-          "Plus de 6 ans": [55.56, 57.35, 21.43, 63.64, 61.84, 50.00, 52.17, 67.69, 61.67, 63.64]
-        }
-      }
+          "Moins d'1 an": [
+            11.11, 8.82, 35.71, 0.0, 9.21, 13.33, 13.04, 7.69, 10.0, 7.58,
+          ],
+          "1-3 ans": [
+            25.93, 30.88, 42.86, 36.36, 25.0, 33.33, 30.43, 20.0, 23.33, 27.27,
+          ],
+          "4-6 ans": [7.41, 2.94, 0.0, 0.0, 3.95, 3.33, 4.35, 4.62, 5.0, 1.52],
+          "Plus de 6 ans": [
+            55.56, 57.35, 21.43, 63.64, 61.84, 50.0, 52.17, 67.69, 61.67, 63.64,
+          ],
+        },
+      },
     },
     communicationChannels: {
       title: "Où les gens découvrent les activités récréatives",
-      subtitle: "Comment la durée de résidence en C.-B. influence les préférences des canaux de communication",
+      subtitle:
+        "Comment la durée de résidence en C.-B. influence les préférences des canaux de communication",
       chartLabel: "Pourcentage (%)",
       residencyGroups: ["Moins d'1 an", "1-3 ans", "4-6 ans", "Plus de 6 ans"],
       channels: [
@@ -598,34 +692,37 @@ export const statisticsContent = {
         "Affiches/Dépliants/Panneaux",
         "Centre de Loisirs/Site Web",
         "École/Lieu de Travail",
-        "Médias Sociaux"
+        "Médias Sociaux",
       ],
       burnaby: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les nouveaux résidents comptent davantage sur les médias sociaux, les amis et les groupes communautaires. Alors que les résidents vivant en C.-B. depuis plus longtemps s'appuient davantage sur les affiches, les écoles, les journaux et les sites Web municipaux.",
+        keyInsights:
+          "Les nouveaux résidents comptent davantage sur les médias sociaux, les amis et les groupes communautaires. Alors que les résidents vivant en C.-B. depuis plus longtemps s'appuient davantage sur les affiches, les écoles, les journaux et les sites Web municipaux.",
         data: {
           "Moins d'1 an": [15, 11, 0, 11, 16, 12, 9],
           "1-3 ans": [6, 9, 8, 7, 8, 6, 15],
           "4-6 ans": [30, 17, 15, 11, 8, 18, 30],
-          "Plus de 6 ans": [48, 63, 77, 71, 68, 65, 47]
-        }
+          "Plus de 6 ans": [48, 63, 77, 71, 68, 65, 47],
+        },
       },
       courtenay: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les nouveaux résidents (1-3 ans) montrent un fort engagement avec les groupes communautaires (46%) et les médias sociaux (27%). Les résidents de longue date (6+ ans) préfèrent fortement les sites Web des centres de loisirs (83%), les journaux (79%) et les canaux traditionnels comme les affiches et les amis/famille.",
+        keyInsights:
+          "Les nouveaux résidents comptent davantage sur les groupes communautaires ou culturels, les écoles/lieux de travail et les médias sociaux. Les résidents de longue date sont les plus grands utilisateurs de toutes les sources, en particulier les sites Web municipaux, les journaux locaux et les affiches/dépliants.",
         data: {
           "Moins d'1 an": [4, 5, 0, 3, 2, 8, 9],
           "1-3 ans": [46, 29, 7, 19, 12, 35, 27],
           "4-6 ans": [4, 3, 14, 9, 2, 4, 2],
-          "Plus de 6 ans": [46, 63, 79, 69, 83, 54, 61]
-        }
-      }
+          "Plus de 6 ans": [46, 63, 79, 69, 83, 54, 61],
+        },
+      },
     },
     thoughtsOnRecreation: {
       title: "Pensées sur les Loisirs",
-      subtitle: "Perspective communautaire sur l'accès et l'inclusivité des loisirs",
+      subtitle:
+        "Perspective communautaire sur l'accès et l'inclusivité des loisirs",
       lowestAverage: {
         title: "Réponses avec la moyenne la plus basse",
       },
@@ -635,11 +732,13 @@ export const statisticsContent = {
       burnaby: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les participants philippins, asiatiques du Sud-Est et japonais signalent la satisfaction la plus faible concernant les activités récréatives disponibles. Les participants autochtones et latino-américains montrent les niveaux de satisfaction les plus élevés et se sentent les bienvenus dans les espaces récréatifs communautaires. La plupart des groupes ethniques rapportent des expériences positives lors de la participation à des activités récréatives.",
+        keyInsights:
+          "Les participants philippins, asiatiques du Sud-Est et japonais signalent la satisfaction la plus faible concernant les activités récréatives disponibles. Les participants autochtones et latino-américains montrent les niveaux de satisfaction les plus élevés et se sentent les bienvenus dans les espaces récréatifs communautaires. La plupart des groupes ethniques rapportent des expériences positives lors de la participation à des activités récréatives.",
         lowestAverage: {
           charts: [
             {
-              question: "Il y a suffisamment d'activités récréatives dans ma communauté",
+              question:
+                "Il y a suffisamment d'activités récréatives dans ma communauté",
               average: 3.1,
               ethnicities: [
                 { name: "Philippin", score: 1.5 },
@@ -653,11 +752,12 @@ export const statisticsContent = {
                 { name: "Blanc", score: 3.6 },
                 { name: "Arabe", score: 3.7 },
                 { name: "Peuples autochtones", score: 4.0 },
-                { name: "Latino-Américain", score: 4.0 }
-              ]
+                { name: "Latino-Américain", score: 4.0 },
+              ],
             },
             {
-              question: "Il y a suffisamment d'activités récréatives pour les personnes de tous âges dans ma communauté",
+              question:
+                "Il y a suffisamment d'activités récréatives pour les personnes de tous âges dans ma communauté",
               average: 3.3,
               ethnicities: [
                 { name: "Philippin", score: 2.5 },
@@ -671,15 +771,16 @@ export const statisticsContent = {
                 { name: "Latino-Américain", score: 3.5 },
                 { name: "Blanc", score: 3.7 },
                 { name: "Peuples autochtones", score: 4.0 },
-                { name: "Sud-Asiatique", score: 4.0 }
-              ]
-            }
-          ]
+                { name: "Sud-Asiatique", score: 4.0 },
+              ],
+            },
+          ],
         },
         highestAverage: {
           charts: [
             {
-              question: "Je me sens bienvenu dans des endroits comme les parcs et centres communautaires",
+              question:
+                "Je me sens bienvenu dans des endroits comme les parcs et centres communautaires",
               average: 4.3,
               ethnicities: [
                 { name: "Japonais", score: 3.0 },
@@ -693,11 +794,12 @@ export const statisticsContent = {
                 { name: "Philippin", score: 4.5 },
                 { name: "Blanc", score: 4.6 },
                 { name: "Latino-Américain", score: 4.8 },
-                { name: "Asiatique du Sud-Est", score: 5.0 }
-              ]
+                { name: "Asiatique du Sud-Est", score: 5.0 },
+              ],
             },
             {
-              question: "Je m'amuse quand je fais des activités récréatives dans ma communauté",
+              question:
+                "Je m'amuse quand je fais des activités récréatives dans ma communauté",
               average: 4.3,
               ethnicities: [
                 { name: "Japonais", score: 3.0 },
@@ -711,20 +813,22 @@ export const statisticsContent = {
                 { name: "Blanc", score: 4.5 },
                 { name: "Philippin", score: 4.5 },
                 { name: "Latino-Américain", score: 5.0 },
-                { name: "Asiatique du Sud-Est", score: 5.0 }
-              ]
-            }
-          ]
-        }
+                { name: "Asiatique du Sud-Est", score: 5.0 },
+              ],
+            },
+          ],
+        },
       },
       courtenay: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les participants blancs et latino-américains répondent positivement. Satisfaction modérée pour les groupes chinois, philippins et sud-asiatiques, mais scores plus faibles pour les activités récréatives disponibles dans leur communauté. Les peuples autochtones et les Coréens ont des niveaux de confort plus faibles.",
+        keyInsights:
+          "Les participants blancs et latino-américains répondent positivement. Satisfaction modérée pour les groupes chinois, philippins et sud-asiatiques, mais scores plus faibles pour les activités récréatives disponibles dans leur communauté. Les peuples autochtones et les Coréens ont des niveaux de confort plus faibles.",
         lowestAverage: {
           charts: [
             {
-              question: "Il y a suffisamment d'activités récréatives dans ma communauté",
+              question:
+                "Il y a suffisamment d'activités récréatives dans ma communauté",
               average: 3.2,
               ethnicities: [
                 { name: "Noir", score: 1.5 },
@@ -737,11 +841,12 @@ export const statisticsContent = {
                 { name: "Japonais", score: 3.5 },
                 { name: "Asiatique du Sud-Est", score: 3.5 },
                 { name: "Latino-Américain", score: 4.0 },
-                { name: "Asie de l'Ouest", score: 5.0 }
-              ]
+                { name: "Asie de l'Ouest", score: 5.0 },
+              ],
             },
             {
-              question: "Il y a suffisamment d'activités récréatives pour les personnes de tous âges dans ma communauté",
+              question:
+                "Il y a suffisamment d'activités récréatives pour les personnes de tous âges dans ma communauté",
               average: 3.3,
               ethnicities: [
                 { name: "Coréen", score: 2.0 },
@@ -754,15 +859,16 @@ export const statisticsContent = {
                 { name: "Japonais", score: 4.0 },
                 { name: "Latino-Américain", score: 4.0 },
                 { name: "Asie de l'Ouest", score: 4.0 },
-                { name: "Préfère ne pas divulguer", score: 4.5 }
-              ]
-            }
-          ]
+                { name: "Préfère ne pas divulguer", score: 4.5 },
+              ],
+            },
+          ],
         },
         highestAverage: {
           charts: [
             {
-              question: "Je me sens bienvenu dans des endroits comme les parcs et centres communautaires",
+              question:
+                "Je me sens bienvenu dans des endroits comme les parcs et centres communautaires",
               average: 4.3,
               ethnicities: [
                 { name: "Coréen", score: 3.0 },
@@ -777,11 +883,12 @@ export const statisticsContent = {
                 { name: "Arabe", score: 5.0 },
                 { name: "Noir", score: 5.0 },
                 { name: "Préfère ne pas divulguer", score: 5.0 },
-                { name: "Asie de l'Ouest", score: 5.0 }
-              ]
+                { name: "Asie de l'Ouest", score: 5.0 },
+              ],
             },
             {
-              question: "Je m'amuse quand je fais des activités récréatives dans ma communauté",
+              question:
+                "Je m'amuse quand je fais des activités récréatives dans ma communauté",
               average: 4.3,
               ethnicities: [
                 { name: "Coréen", score: 2.0 },
@@ -795,14 +902,14 @@ export const statisticsContent = {
                 { name: "Préfère ne pas divulguer", score: 4.5 },
                 { name: "Asiatique du Sud-Est", score: 4.5 },
                 { name: "Latino-Américain", score: 4.7 },
-                { name: "Japonais", score: 5.0 }
-              ]
-            }
-          ]
-        }
-      }
+                { name: "Japonais", score: 5.0 },
+              ],
+            },
+          ],
+        },
+      },
     },
-  }
+  },
 };
 
 export type StatisticsContentType = typeof statisticsContent.en;
