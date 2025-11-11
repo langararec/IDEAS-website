@@ -62,13 +62,13 @@ const Dotmocracy: React.FC = () => {
                             <div className="flex items-center gap-1.5">
                                 <div className="w-3 h-3 rounded-full bg-[#0f4c28]"></div>
                                 <span className="font-dm-sans text-gray-600">
-                                    {currentData.residentCount} {content.residentLabel}
+                                    {currentData.question1.residentCount} {content.residentLabel}
                                 </span>
                             </div>
                             <div className="flex items-center gap-1.5">
                                 <div className="w-3 h-3 rounded-full bg-gray-500"></div>
                                 <span className="font-dm-sans text-gray-600">
-                                    {currentData.immigrantCount} {content.immigrantLabel}
+                                    {currentData.question1.immigrantCount} {content.immigrantLabel}
                                 </span>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ const Dotmocracy: React.FC = () => {
 
                 {/* Categories Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {currentData.categories.map((category, index) => {
+                    {currentData.question1.categories.map((category, index) => {
                         // Calculate relative counts (out of 100)
                         let residentDisplay: string | number;
                         let immigrantDisplay: string | number;
@@ -116,8 +116,8 @@ const Dotmocracy: React.FC = () => {
                         let immigrantDots: number;
 
                         if (viewMode === 'relative') {
-                            const residentRelativeExact = (category.resident / currentData.residentCount) * 100;
-                            const immigrantRelativeExact = (category.immigrant / currentData.immigrantCount) * 100;
+                            const residentRelativeExact = (category.resident / currentData.question1.residentCount) * 100;
+                            const immigrantRelativeExact = (category.immigrant / currentData.question1.immigrantCount) * 100;
                             
                             residentDisplay = `${residentRelativeExact.toFixed(1)}/100`;
                             immigrantDisplay = `${immigrantRelativeExact.toFixed(1)}/100`;
@@ -174,13 +174,13 @@ const Dotmocracy: React.FC = () => {
                             <div className="flex items-center gap-1.5">
                                 <div className="w-3 h-3 rounded-full bg-[#0f4c28]"></div>
                                 <span className="font-dm-sans text-gray-600">
-                                    {currentData.residentCount} {content.residentLabel}
+                                    {currentData.question2.residentCount} {content.residentLabel}
                                 </span>
                             </div>
                             <div className="flex items-center gap-1.5">
                                 <div className="w-3 h-3 rounded-full bg-gray-500"></div>
                                 <span className="font-dm-sans text-gray-600">
-                                    {currentData.immigrantCount} {content.immigrantLabel}
+                                    {currentData.question2.immigrantCount} {content.immigrantLabel}
                                 </span>
                             </div>
                         </div>
@@ -220,7 +220,7 @@ const Dotmocracy: React.FC = () => {
 
                 {/* Barriers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {currentData.barriers.map((barrier, index) => {
+                    {currentData.question2.barriers.map((barrier, index) => {
                         // Calculate relative counts (out of 100)
                         let residentDisplay: string | number;
                         let immigrantDisplay: string | number;
@@ -228,8 +228,8 @@ const Dotmocracy: React.FC = () => {
                         let immigrantDots: number;
 
                         if (viewMode === 'relative') {
-                            const residentRelativeExact = (barrier.resident / currentData.residentCount) * 100;
-                            const immigrantRelativeExact = (barrier.immigrant / currentData.immigrantCount) * 100;
+                            const residentRelativeExact = (barrier.resident / currentData.question2.residentCount) * 100;
+                            const immigrantRelativeExact = (barrier.immigrant / currentData.question2.immigrantCount) * 100;
                             
                             residentDisplay = `${residentRelativeExact.toFixed(1)}/100`;
                             immigrantDisplay = `${immigrantRelativeExact.toFixed(1)}/100`;
