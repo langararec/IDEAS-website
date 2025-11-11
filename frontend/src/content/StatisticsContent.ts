@@ -200,21 +200,21 @@ export const statisticsContent = {
         keyInsightsLabel: "Key Insights:",
         keyInsights: "New residents rely more on social media, friends and community groups. While residents with longer time living in BC are more reliant through posters, schools, newspapers and city websites.",
         data: {
-          "Less than 1 year": [8, 7, 10, 9, 14, 5, 13],
-          "1-3 years": [6, 8, 7, 8, 7, 4, 14],
-          "4-6 years": [18, 13, 15, 19, 28, 17, 18],
-          "More than 6 years": [65, 62, 67, 64, 49, 71, 50]
+          "Less than 1 year": [15, 11, 0, 11, 16, 12, 9],
+          "1-3 years": [6, 9, 8, 7, 8, 6, 15],
+          "4-6 years": [30, 17, 15, 11, 8, 18, 30],
+          "More than 6 years": [48, 63, 77, 71, 68, 65, 47]
         }
       },
       courtenay: {
         lastUpdated: "Last updated: 10-15-2025",
         keyInsightsLabel: "Key Insights:",
-        keyInsights: "Data for Courtenay is currently being collected and analyzed. Results will be available soon.",
+        keyInsights: "New residents (1-3 years) show high engagement with community groups (46%) and social media (27%). Long-term residents (6+ years) strongly prefer recreation center websites (83%), newspapers (79%), and traditional channels like posters and friends/family.",
         data: {
-          "Less than 1 year": [0, 0, 0, 0, 0, 0, 0],
-          "1-3 years": [0, 0, 0, 0, 0, 0, 0],
-          "4-6 years": [0, 0, 0, 0, 0, 0, 0],
-          "More than 6 years": [0, 0, 0, 0, 0, 0, 0]
+          "Less than 1 year": [4, 5, 0, 3, 2, 8, 9],
+          "1-3 years": [46, 29, 7, 19, 12, 35, 27],
+          "4-6 years": [4, 3, 14, 9, 2, 4, 2],
+          "More than 6 years": [46, 63, 79, 69, 83, 54, 61]
         }
       }
     },
@@ -605,21 +605,21 @@ export const statisticsContent = {
         keyInsightsLabel: "Aperçus Clés:",
         keyInsights: "Les nouveaux résidents comptent davantage sur les médias sociaux, les amis et les groupes communautaires. Alors que les résidents vivant en C.-B. depuis plus longtemps s'appuient davantage sur les affiches, les écoles, les journaux et les sites Web municipaux.",
         data: {
-          "Moins d'1 an": [8, 7, 10, 9, 14, 5, 13],
-          "1-3 ans": [6, 8, 7, 8, 7, 4, 14],
-          "4-6 ans": [18, 13, 15, 19, 28, 17, 18],
-          "Plus de 6 ans": [65, 62, 67, 64, 49, 71, 50]
+          "Moins d'1 an": [15, 11, 0, 11, 16, 12, 9],
+          "1-3 ans": [6, 9, 8, 7, 8, 6, 15],
+          "4-6 ans": [30, 17, 15, 11, 8, 18, 30],
+          "Plus de 6 ans": [48, 63, 77, 71, 68, 65, 47]
         }
       },
       courtenay: {
         lastUpdated: "Dernière mise à jour: 15-10-2025",
         keyInsightsLabel: "Aperçus Clés:",
-        keyInsights: "Les données pour Courtenay sont actuellement collectées et analysées. Les résultats seront bientôt disponibles.",
+        keyInsights: "Les nouveaux résidents (1-3 ans) montrent un fort engagement avec les groupes communautaires (46%) et les médias sociaux (27%). Les résidents de longue date (6+ ans) préfèrent fortement les sites Web des centres de loisirs (83%), les journaux (79%) et les canaux traditionnels comme les affiches et les amis/famille.",
         data: {
-          "Moins d'1 an": [0, 0, 0, 0, 0, 0, 0],
-          "1-3 ans": [0, 0, 0, 0, 0, 0, 0],
-          "4-6 ans": [0, 0, 0, 0, 0, 0, 0],
-          "Plus de 6 ans": [0, 0, 0, 0, 0, 0, 0]
+          "Moins d'1 an": [4, 5, 0, 3, 2, 8, 9],
+          "1-3 ans": [46, 29, 7, 19, 12, 35, 27],
+          "4-6 ans": [4, 3, 14, 9, 2, 4, 2],
+          "Plus de 6 ans": [46, 63, 79, 69, 83, 54, 61]
         }
       }
     },
