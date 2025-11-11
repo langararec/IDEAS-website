@@ -1,6 +1,5 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { statisticsContent } from "../../content/StatisticsContent";
 
 const ActivitySheets: React.FC = () => {
     const { language } = useLanguage();
