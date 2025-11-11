@@ -14,7 +14,7 @@ import {
     Legend
 } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { BURNABY_COLOR_PALETTE, getBurnabyColor } from "./constants/colors";
+import { BURNABY_COLOR_PALETTE, COURTENAY_COLOR_PALETTE } from "./constants/colors";
 
 // Register Chart.js components
 ChartJS.register(
@@ -57,15 +57,12 @@ const CommunicationChannels: React.FC = () => {
             const b = parseInt(hex.slice(4, 6), 16);
             return `rgba(${r}, ${g}, ${b}`;
         })),
-        courtenay: [
-            'rgba(13, 148, 136, 0.9)',    // Community/Cultural Groups
-            'rgba(15, 160, 148, 0.9)',    // Friends/Family
-            'rgba(20, 184, 166, 0.9)',    // Newspaper/Radio
-            'rgba(45, 200, 180, 0.9)',    // Posters/Flyers/Signs
-            'rgba(94, 234, 212, 0.9)',    // Recreation Centre/Website
-            'rgba(125, 240, 220, 0.9)',   // School/Workplace
-            'rgba(153, 246, 228, 0.9)'    // Social Media
-        ]
+        courtenay: COURTENAY_COLOR_PALETTE.slice(0, 7).map(color => color.replace(')', ', 0.9)').replace('#', 'rgba(').replace(/^rgba\((.{6})/, (_, hex) => {
+            const r = parseInt(hex.slice(0, 2), 16);
+            const g = parseInt(hex.slice(2, 4), 16);
+            const b = parseInt(hex.slice(4, 6), 16);
+            return `rgba(${r}, ${g}, ${b}`;
+        }))
     };
 
     const channels = content.channels;
