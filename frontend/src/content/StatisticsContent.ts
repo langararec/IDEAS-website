@@ -28,7 +28,7 @@ export const statisticsContent = {
         courtenay: "Courtenay",
       },
       burnaby: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "Chinese respondents make up the largest group of survey respondents at 32.85%, followed by White (23.36%) and Arab (16.79%).",
@@ -55,7 +55,7 @@ export const statisticsContent = {
         ],
       },
       courtenay: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "White respondents dominate at 58.51%, followed by Chinese (10.64%) and South Asian (5.32%).",
@@ -88,7 +88,7 @@ export const statisticsContent = {
         title: "Gender Identity",
         subtitle: "How respondents describe themselves",
         burnaby: {
-          lastUpdated: "Last updated: 10-15-2025",
+          lastUpdated: "Last updated: 11-11-2025",
           data: [
             { name: "Woman", percentage: 76.12 },
             { name: "Man", percentage: 22.39 },
@@ -97,7 +97,7 @@ export const statisticsContent = {
           ],
         },
         courtenay: {
-          lastUpdated: "Last updated: 10-15-2025",
+          lastUpdated: "Last updated: 11-11-2025",
           data: [
             { name: "Woman", percentage: 65.26 },
             { name: "Man", percentage: 32.63 },
@@ -110,7 +110,7 @@ export const statisticsContent = {
         title: "Age",
         subtitle: "Respondents age group",
         burnaby: {
-          lastUpdated: "Last updated: 10-15-2025",
+          lastUpdated: "Last updated: 11-11-2025",
           data: [
             { name: "35-44", percentage: 26.28 },
             { name: "55 and above", percentage: 25.55 },
@@ -121,7 +121,7 @@ export const statisticsContent = {
           ],
         },
         courtenay: {
-          lastUpdated: "Last updated: 10-15-2025",
+          lastUpdated: "Last updated: 11-11-2025",
           data: [
             { name: "55 and above", percentage: 27.37 },
             { name: "35-44", percentage: 24.21 },
@@ -136,7 +136,7 @@ export const statisticsContent = {
         title: "Time Living in BC",
         subtitle: "Years of living in British Columbia",
         burnaby: {
-          lastUpdated: "Last updated: 10-15-2025",
+          lastUpdated: "Last updated: 11-11-2025",
           data: [
             { name: "More than 6 years", percentage: 62.22 },
             { name: "1-3 years", percentage: 14.07 },
@@ -145,7 +145,7 @@ export const statisticsContent = {
           ],
         },
         courtenay: {
-          lastUpdated: "Last updated: 10-15-2025",
+          lastUpdated: "Last updated: 11-11-2025",
           data: [
             { name: "More than 6 years", percentage: 58.95 },
             { name: "1-3 years", percentage: 25.26 },
@@ -179,7 +179,7 @@ export const statisticsContent = {
         "To spend time with family or friends",
       ],
       burnaby: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "Long-term residents (6+ years) consistently dominate across all motivations, with particularly strong representation in having fun (66.67%), connecting with community (65.91%), and cultural activities (65.22%). New residents (1-3 years) show higher engagement in enjoying nature (28.57%) and spending time with family/friends (23.53%).",
@@ -199,7 +199,7 @@ export const statisticsContent = {
         },
       },
       courtenay: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "Long-term residents (6+ years) show the highest participation across nearly all motivations, with enjoying nature (71.85%), spending time with family/friends (63.64%), and exercising/staying healthy (61.99%) leading the way. Newer residents show more interest in learning about Canadian culture (15.71%).",
@@ -240,7 +240,7 @@ export const statisticsContent = {
         "Social Media",
       ],
       burnaby: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "New residents rely more on social media, friends and community groups. While residents with longer time living in BC are more reliant through posters, schools, newspapers and city websites.",
@@ -252,7 +252,7 @@ export const statisticsContent = {
         },
       },
       courtenay: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "New residents rely more on community or cultural groups, schools/workplaces and social media. Long-term residents are the most users of all sources, especially city websites, local newspapers and posters/flyers.",
@@ -274,7 +274,7 @@ export const statisticsContent = {
         title: "Answers with highest average",
       },
       burnaby: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "Filipino, Southeast Asian and Japanese participants report the lowest satisfaction with recreation activities available. Indigenous People and Latin American participants show the highest levels of satisfaction and feeling welcome in community recreation spaces. Most ethnic groups report positive experiences when participating in recreation activities.",
@@ -364,7 +364,7 @@ export const statisticsContent = {
         },
       },
       courtenay: {
-        lastUpdated: "Last updated: 10-15-2025",
+        lastUpdated: "Last updated: 11-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
           "White and Latin American participants response are positive. Moderate satisfaction on Chinese, Filipino and South Asian groups but has lower scores for recreation activities available in their community. Indigenous People and Koreans have lower comfort levels.",

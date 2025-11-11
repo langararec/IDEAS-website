@@ -18,7 +18,7 @@ export const dotmocracyContent = {
     subtitle2: "Is it easy or hard for you to take part in recreation activities or programs?",
     
     burnaby: {
-      lastUpdated: "Last updated: 10-15-2025",
+      lastUpdated: "Last updated: 11-11-2025",
       question1: {
         totalResponses: 568,
         residentCount: 381,
@@ -105,7 +105,7 @@ export const dotmocracyContent = {
       }
     },
     courtenay: {
-      lastUpdated: "Last updated: 10-15-2025",
+      lastUpdated: "Last updated: 11-11-2025",
       question1: {
         totalResponses: 514,
         residentCount: 397,
