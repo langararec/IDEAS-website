@@ -238,7 +238,7 @@ const RecreationBehaviors: React.FC = () => {
                     </div>
 
                     {/* Chart */}
-                    <div className="min-h-96 md:h-[550px] overflow-x-auto pb-4">
+                    <div className="h-[400px] md:h-[550px] overflow-x-auto pb-4">
                         <div className="min-w-[1200px] h-full">
                             <Bar data={chartData} options={chartOptions} />
                         </div>
