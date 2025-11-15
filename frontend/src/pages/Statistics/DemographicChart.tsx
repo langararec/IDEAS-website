@@ -63,24 +63,12 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
 
   const chartOptions = {
     responsive: true,
-    maintainAspectRatio: true,
-    cutout: '55%', // Creates the donut effect
+    radius: 120,
+    maintainAspectRatio: false,
+    cutout: '55%', 
     plugins: {
       legend: {
-        display: true,
-        position: 'bottom' as const,
-        labels: {
-          boxWidth: 15,
-          boxHeight: 15,
-          padding: 12,
-          font: {
-            size: 11,
-            family: 'DM Sans, sans-serif'
-          },
-          color: '#374151',
-          usePointStyle: true,
-          pointStyle: 'circle'
-        }
+        display: false
       },
       tooltip: {
         callbacks: {
@@ -97,12 +85,13 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
     },
     layout: {
       padding: {
-        top: 20,
-        bottom: 20,
-        left: 20,
-        right: 20
+        top: 0,
+        bottom: 40,
+        left: 40,
+        right: 40
       }
     }
+  
   };
 
   return (
@@ -132,12 +121,28 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
       </div>
 
       {/* Chart Container */}
-      <div className="relative w-full max-w-md mx-auto mb-6 overflow-visible">
-        <Doughnut 
-          data={chartData} 
-          options={chartOptions}
-
-        />
+      <div className="relative w-full h-[400px] max-w-md mx-auto mb-6">
+        <div className="relative h-96">
+          <Doughnut
+            data={chartData} 
+            options={chartOptions}
+          />
+        </div>
+        
+        {/* Custom Legend */}
+        <div className="absolute bottom-0 left-0 right-0 flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-4">
+          {cityData.data.map((item, index) => (
+            <div key={index} className="flex items-center gap-1.5">
+              <div 
+                className="w-3 h-3 rounded-full" 
+                style={{ backgroundColor: generateColors(cityData.data, selectedCity)[index] }}
+              />
+              <span className="text-xs text-gray-700 font-dm-sans">
+                {item.name} ({item.percentage}%)
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
