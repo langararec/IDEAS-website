@@ -48,7 +48,7 @@ const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange 
                 aria-label="Select city"
                 aria-expanded={isDropdownOpen}
             >
-                <span className={`w-2 h-2 rounded-full ${selectedCity === 'burnaby' ? 'bg-[#317039]' : 'bg-teal-600'}`}></span>
+                <span className={`w-2 h-2 rounded-full ${selectedCity === 'burnaby' ? 'bg-[#0f4c28]' : 'bg-[#034F59]'}`}></span>
                 <span className="font-medium text-gray-700 font-dm-sans">
                     {cities[selectedCity]}
                 </span>
