@@ -7,7 +7,7 @@ const Demographics: React.FC = () => {
   const content = statisticsContent[language].demographics;
 
   return (
-    <div className="mb-6 max-w-7xl mx-auto p-4 md:p-6">
+    <div className="mb-6 max-w-7xl  mx-auto">
 
 
       {/* Demographics Charts Grid */}

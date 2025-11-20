@@ -114,7 +114,9 @@ const CommunicationChannels: React.FC = () => {
                 display: true,
                 position: 'bottom' as const,
                 labels: {
-                    usePointStyle: true,
+                    usePointStyle: false,
+                    boxWidth: 15,
+                    boxHeight: 15,
                     padding: 15,
                     font: {
                         size: 11,
@@ -178,7 +180,7 @@ const CommunicationChannels: React.FC = () => {
     };
 
     return (
-        <div className="mb-6 max-w-7xl mx-auto p-4 md:p-6">
+        <div className="mb-6 max-w-7xl mx-auto">
             <div className="rounded-xl py-6 bg-white border-1 border-gray-200">
                 <div className="px-4 md:px-8">
                     {/* Section Title */}
