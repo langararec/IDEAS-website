@@ -60,13 +60,13 @@ const Dotmocracy: React.FC = () => {
                         <span className="font-dm-sans text-gray-700">{content.chartLabel}</span>
                         <div className="flex items-center gap-3">
                             <div className="flex items-center gap-1.5">
-                                <div className="w-3 h-3 rounded-full bg-[#0f4c28]"></div>
+                                <div className={`w-3 h-3 rounded-full ${selectedCity === "burnaby" ? "bg-[#0f4c28]" : "bg-[#034F59]"}`}></div>
                                 <span className="font-dm-sans text-gray-600">
                                     {currentData.question1.residentCount} {content.residentLabel}
                                 </span>
                             </div>
                             <div className="flex items-center gap-1.5">
-                                <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+                                <div className={`w-3 h-3 rounded-full ${selectedCity === "burnaby" ? "bg-[#75A37B]" : "bg-[#398F9A]"}`}></div>
                                 <span className="font-dm-sans text-gray-600">
                                     {currentData.question1.immigrantCount} {content.immigrantLabel}
                                 </span>
@@ -88,8 +88,8 @@ const Dotmocracy: React.FC = () => {
                         <button
                             onClick={() => setViewMode('relative')}
                             className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'relative'
-                                    ? 'text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                ? 'text-white'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
                             Relative Count
@@ -97,8 +97,8 @@ const Dotmocracy: React.FC = () => {
                         <button
                             onClick={() => setViewMode('full')}
                             className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'full'
-                                    ? ' text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                ? ' text-white'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
                             Full Count
@@ -118,7 +118,7 @@ const Dotmocracy: React.FC = () => {
                         if (viewMode === 'relative') {
                             const residentRelativeExact = (category.resident / currentData.question1.residentCount) * 100;
                             const immigrantRelativeExact = (category.immigrant / currentData.question1.immigrantCount) * 100;
-                            
+
                             residentDisplay = `${residentRelativeExact.toFixed(1)}/100`;
                             immigrantDisplay = `${immigrantRelativeExact.toFixed(1)}/100`;
                             residentDots = Math.round(residentRelativeExact);
@@ -152,6 +152,7 @@ const Dotmocracy: React.FC = () => {
                                     immigrantDisplayValue={immigrantDisplay}
                                     residentDotCount={residentDots}
                                     immigrantDotCount={immigrantDots}
+                                    selectedCity={selectedCity}
                                 />
                             </div>
                         );
@@ -172,13 +173,13 @@ const Dotmocracy: React.FC = () => {
                         <span className="font-dm-sans text-gray-700">{content.chartLabel}</span>
                         <div className="flex items-center gap-3">
                             <div className="flex items-center gap-1.5">
-                                <div className="w-3 h-3 rounded-full bg-[#0f4c28]"></div>
+                                <div className={`w-3 h-3 rounded-full ${selectedCity === "burnaby" ? "bg-[#0f4c28]" : "bg-[#034F59]"}`}></div>
                                 <span className="font-dm-sans text-gray-600">
                                     {currentData.question2.residentCount} {content.residentLabel}
                                 </span>
                             </div>
                             <div className="flex items-center gap-1.5">
-                                <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+                                <div className={`w-3 h-3 rounded-full ${selectedCity === "burnaby" ? "bg-[#75A37B]" : "bg-[#398F9A]"}`}></div>
                                 <span className="font-dm-sans text-gray-600">
                                     {currentData.question2.immigrantCount} {content.immigrantLabel}
                                 </span>
@@ -200,8 +201,8 @@ const Dotmocracy: React.FC = () => {
                         <button
                             onClick={() => setViewMode('relative')}
                             className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'relative'
-                                    ? 'text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                ? 'text-white'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
                             Relative Count
@@ -209,8 +210,8 @@ const Dotmocracy: React.FC = () => {
                         <button
                             onClick={() => setViewMode('full')}
                             className={`${selectedCity === 'burnaby' ? 'bg-[#275A2E]' : 'bg-[#034F59]'} px-4 py-2 rounded-lg text-sm font-dm-sans transition-colors ${viewMode === 'full'
-                                    ? ' text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                ? ' text-white'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
                             Full Count
@@ -230,7 +231,7 @@ const Dotmocracy: React.FC = () => {
                         if (viewMode === 'relative') {
                             const residentRelativeExact = (barrier.resident / currentData.question2.residentCount) * 100;
                             const immigrantRelativeExact = (barrier.immigrant / currentData.question2.immigrantCount) * 100;
-                            
+
                             residentDisplay = `${residentRelativeExact.toFixed(1)}/100`;
                             immigrantDisplay = `${immigrantRelativeExact.toFixed(1)}/100`;
                             residentDots = Math.round(residentRelativeExact);
@@ -264,6 +265,8 @@ const Dotmocracy: React.FC = () => {
                                     immigrantDisplayValue={immigrantDisplay}
                                     residentDotCount={residentDots}
                                     immigrantDotCount={immigrantDots}
+                                    selectedCity={selectedCity}
+
                                 />
                             </div>
                         );
