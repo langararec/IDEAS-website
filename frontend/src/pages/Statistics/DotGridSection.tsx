@@ -44,9 +44,9 @@ const DotGridSection: React.FC<DotGridSectionProps> = ({
     const actualImmigrantDots = immigrantDotCount !== undefined ? immigrantDotCount : immigrantCount;
 
     return (
-        <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+        <div className="bg-white border border-gray-200 rounded-lg p-4 ">
             {/* Resident Section */}
-            <div className="mb-4 bg-base-100 border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div className="mb-4 bg-base-100 border border-gray-200 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#0f4c28]"></div>
                     <span className="text-sm font-semibold text-gray-700 font-dm-sans">
@@ -60,7 +60,7 @@ const DotGridSection: React.FC<DotGridSectionProps> = ({
             </div>
 
             {/* Immigrant Section */}
-            <div className="bg-base-100 border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div className="bg-base-100 border border-gray-200 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                     <div className="w-2.5 h-2.5 rounded-full bg-gray-500"></div>
                     <span className="text-sm font-semibold text-gray-700 font-dm-sans">
