@@ -95,7 +95,7 @@ const DemographicChart: React.FC<DemographicChartProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-0">
+    <div className="bg-white rounded-xl border border-gray-200 p-0">
 
       <div className='pt-6 px-6'>
       {/* Title */}
