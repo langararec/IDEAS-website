@@ -122,7 +122,7 @@ const SurveyParticipants: React.FC = () => {
     };
 
     return (
-        <div className="mb-6 rounded-xl py-6 px-2 bg-white shadow-sm border-1 border-gray-200">
+        <div className="mb-6 rounded-xl py-6 px-2 bg-white border-1 border-gray-200">
             <div className="px-4 md:px-8">
                 {/* Section Title */}
                 <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6 font-dm-sans">

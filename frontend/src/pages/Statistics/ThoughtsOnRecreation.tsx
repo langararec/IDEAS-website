@@ -16,7 +16,7 @@ const ThoughtsOnRecreation: React.FC = () => {
 
     return (
         <div className="mb-6 max-w-7xl mx-auto p-4 md:p-6">
-            <div className="rounded-xl py-6 bg-white shadow-sm border-1 border-gray-200">
+            <div className="rounded-xl py-6 bg-white border-1 border-gray-200">
                 <div className="px-4 md:px-8">
                     {/* Section Title */}
                     <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2 font-dm-sans">
