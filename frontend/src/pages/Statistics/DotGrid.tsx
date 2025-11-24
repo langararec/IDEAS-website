@@ -11,6 +11,7 @@ const DotGrid: React.FC<{ count: number; isResident: boolean, selectedCity: 'bur
 
     return (
         <div className="flex flex-wrap gap-1 min-h-[60px]">
+            <div className="hidden bg-[#317039]"></div>
             {Array.from({ length: count }).map((_, index) => (
                 <div
                     key={index}
