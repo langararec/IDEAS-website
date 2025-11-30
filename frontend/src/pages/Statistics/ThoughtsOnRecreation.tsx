@@ -48,11 +48,15 @@ const ThoughtsOnRecreation: React.FC = () => {
                         </p>
                     </div>
 
+                    {/* Scale Label */}
+                    <div className="mb-6 text-center">
+                        <p className="text-xs md:text-sm text-black font-dm-sans">
+                            {content.scaleLabel}
+                        </p>
+                    </div>
+
                     {/* Lowest Average Section */}
                     <div className="mb-10">
-                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-6 font-dm-sans">
-                            {content.lowestAverage.title}
-                        </h4>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {currentData.lowestAverage.charts.map((chart, index) => (
                                 <AverageLineChart
@@ -68,9 +72,6 @@ const ThoughtsOnRecreation: React.FC = () => {
 
                     {/* Highest Average Section */}
                     <div>
-                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-6 font-dm-sans">
-                            {content.highestAverage.title}
-                        </h4>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {currentData.highestAverage.charts.map((chart, index) => (
                                 <AverageLineChart
