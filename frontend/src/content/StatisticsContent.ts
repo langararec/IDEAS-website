@@ -267,17 +267,12 @@ export const statisticsContent = {
     thoughtsOnRecreation: {
       title: "Thoughts on Recreation",
       subtitle: "Community perspective on recreation access and inclusivity",
-      lowestAverage: {
-        title: "Answers with lowest average",
-      },
-      highestAverage: {
-        title: "Answers with highest average",
-      },
+      scaleLabel: "1 = Strongly Disagree, 3 = Neutral, 5 = Strongly Agree",
       burnaby: {
-        lastUpdated: "Last updated: 11-11-2025",
+        lastUpdated: "Last updated: 30-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
-          "Filipino, Southeast Asian and Japanese participants report the lowest satisfaction with recreation activities available. Indigenous People and Latin American participants show the highest levels of satisfaction and feeling welcome in community recreation spaces. Most ethnic groups report positive experiences when participating in recreation activities.",
+          "Survey responses indicate that there are differences in how strongly they agreed with each statement presented to them. More work needs to be done to understand the mechanisms behind these differences.",
         lowestAverage: {
           charts: [
             {
@@ -364,10 +359,10 @@ export const statisticsContent = {
         },
       },
       courtenay: {
-        lastUpdated: "Last updated: 11-11-2025",
+        lastUpdated: "Last updated: 30-11-2025",
         keyInsightsLabel: "Key Insights:",
         keyInsights:
-          "White and Latin American participants response are positive. Moderate satisfaction on Chinese, Filipino and South Asian groups but has lower scores for recreation activities available in their community. Indigenous People and Koreans have lower comfort levels.",
+          "Survey responses indicate that there are differences in how strongly they agreed with each statement presented to them. More work needs to be done to understand the mechanisms behind these differences.",
         lowestAverage: {
           charts: [
             {
@@ -723,17 +718,12 @@ export const statisticsContent = {
       title: "Pensées sur les Loisirs",
       subtitle:
         "Perspective communautaire sur l'accès et l'inclusivité des loisirs",
-      lowestAverage: {
-        title: "Réponses avec la moyenne la plus basse",
-      },
-      highestAverage: {
-        title: "Réponses avec la moyenne la plus élevée",
-      },
+      scaleLabel: "1 = Fortement en désaccord, 3 = Neutre, 5 = Fortement d'accord",
       burnaby: {
-        lastUpdated: "Dernière mise à jour: 15-10-2025",
+        lastUpdated: "Dernière mise à jour: 30-11-2025",
         keyInsightsLabel: "Aperçus Clés:",
         keyInsights:
-          "Les participants philippins, asiatiques du Sud-Est et japonais signalent la satisfaction la plus faible concernant les activités récréatives disponibles. Les participants autochtones et latino-américains montrent les niveaux de satisfaction les plus élevés et se sentent les bienvenus dans les espaces récréatifs communautaires. La plupart des groupes ethniques rapportent des expériences positives lors de la participation à des activités récréatives.",
+          "Les réponses au sondage indiquent qu'il existe des différences dans la force avec laquelle les participants ont approuvé chaque énoncé qui leur a été présenté. Davantage de travail est nécessaire pour comprendre les mécanismes derrière ces différences.",
         lowestAverage: {
           charts: [
             {
@@ -820,10 +810,10 @@ export const statisticsContent = {
         },
       },
       courtenay: {
-        lastUpdated: "Dernière mise à jour: 15-10-2025",
+        lastUpdated: "Dernière mise à jour: 30-11-2025",
         keyInsightsLabel: "Aperçus Clés:",
         keyInsights:
-          "Les participants blancs et latino-américains répondent positivement. Satisfaction modérée pour les groupes chinois, philippins et sud-asiatiques, mais scores plus faibles pour les activités récréatives disponibles dans leur communauté. Les peuples autochtones et les Coréens ont des niveaux de confort plus faibles.",
+          "Les réponses au sondage indiquent qu'il existe des différences dans la force avec laquelle les participants ont approuvé chaque énoncé qui leur a été présenté. Davantage de travail est nécessaire pour comprendre les mécanismes derrière ces différences.",
         lowestAverage: {
           charts: [
             {
