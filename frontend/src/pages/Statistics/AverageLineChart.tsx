@@ -105,6 +105,7 @@ const AverageLineChart: React.FC<AverageLineChartProps> = ({
             x: {
                 beginAtZero: true,
                 max: 5,
+                min: 1,
                 ticks: {
                     stepSize: 1,
                     font: {
