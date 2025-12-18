@@ -96,7 +96,7 @@ export const projectContent = {
         },
         {
           title: "Sustainable Cities and Communities",
-          description: "By enhancing access to recreation services, the project supports physical activity and social engagement, which are vital for physical and mental health.",
+          description: "By co-creating initiatives with communities, the project enhances the inclusivity and accessibility of public spaces for recreation.",
           image: "/11_Sustainable_English.png"
         },
         {
@@ -258,7 +258,7 @@ export const projectContent = {
         },
         {
           title: "Villes et Communautés Durables",
-          description: "En améliorant l'accès aux services de loisirs, le projet soutient l'activité physique et l'engagement social, qui sont vitaux pour la santé physique et mentale.",
+          description: "En co-créant des initiatives avec les communautés, le projet renforce l'inclusivité et l'accessibilité des espaces publics dédiés aux loisirs.",
           image: "/11_Sustainable_French.png"
         },
         {
