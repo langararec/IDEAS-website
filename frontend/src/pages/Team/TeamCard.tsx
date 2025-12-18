@@ -17,27 +17,15 @@ export const TeamCard = (info: MemberInfo) => {
 
     const [isExtended, setIsExtended] = useState(false);
 
-    const [isTransitioning, setIsTransitioning] = useState(false);
-
-    const handleCloseExtended = () => {
-        setIsTransitioning(true);
-        setTimeout(() => {
-            setIsExtended(false);
-            setIsTransitioning(false);
-        }, 500);
-    };
-
     if (isExtended) {
         return (
             <div 
                 className="fixed inset-0 z-[9999] bg-black/80 overflow-y-auto animate-fadeIn"
                 style={{ backdropFilter: 'blur(10px)' }}
-                onClick={handleCloseExtended}
             >
                 <ExtendedMemberDescription
                     member={info}
-                    onClose={handleCloseExtended}
-                    isTransitioning={isTransitioning}
+                    onClose={() => setIsExtended(false)}
                 />
             </div>
         );
