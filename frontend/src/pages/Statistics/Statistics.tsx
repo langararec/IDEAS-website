@@ -3,7 +3,7 @@ import StatisticsToggle from "./StatisticsToggle";
 const Statistics = () => {
 
     return (
-        <div>
+        <div className="bg-base-100">
             <StatisticsToggle />
         </div>
     );
