@@ -1,5 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
+import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
+import { MdClose } from "react-icons/md";
+
+
 interface BentoGridProps {
     images: {
         src: string;
@@ -121,12 +124,39 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
 
             <div className="hidden lg:col-span-1 lg:col-span-2 lg:col-span-3 lg:col-span-4 lg:col-span-5 lg:col-span-6 lg:row-span-1 lg:row-span-2 lg:row-span-3 lg:row-span-4 lg:row-span-5 lg:row-span-6 col-span-1 col-span-2 col-span-3 col-span-4 row-span-1 row-span-2 auto-rows-[20rem]"></div>
 
-            {modalOpen &&
-                <div className={` h-full fixed inset-0 bg-black/90 z-50 items-center justify-center flex flex-row gap-x-4`}>
-                    <FaCaretLeft className='text-white hover:cursor-pointer size-8 lg:size-12' onClick={(e) => { e.stopPropagation(); goToPrevImage(); }} />
-                    <div className=' max-w-1/2 lg:max-w-1/3 my-auto justify-center'>
+            {modalOpen && (
+                <div 
+                    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 animate-fadeIn"
+                    style={{ backdropFilter: 'blur(10px)' }}
+                    onClick={() => setModalOpen(false)}
+                >
+                    {/* Close Button */}
+                    <button
+                        onClick={() => setModalOpen(false)}
+                        className="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200"
+                        aria-label="Close"
+                    >
+                        <MdClose className="w-8 h-8" />
+                    </button>
+
+                    {/* Previous Button */}
+                    {currentImage > 0 && (
+                        <button
+                            onClick={(e) => { e.stopPropagation(); goToPrevImage(); }}
+                            className="absolute left-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white duration-200 hover:scale-110"
+                            aria-label="Previous"
+                        >
+                            <RxCaretLeft className="w-6 h-6" />
+                        </button>
+                    )}
+
+                    {/* Image Container */}
+                    <div 
+                        className="relative lg:max-w-2xl w-2/3 max-h-[70vh] animate-scaleIn"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <img 
-                            className="w-full object-contain max-h-[90vh]" 
+                            className="w-full h-auto max-h-[70vh] object-contain rounded-2xl" 
                             src={currentImages[currentImage].src} 
                             alt={currentImages[currentImage].alt}
                             width={1200}
@@ -134,8 +164,24 @@ const BentoGrid: React.FC<BentoGridProps> = ({ images, currentPage, setCurrentPa
                             loading='eager'
                         />
                     </div>
-                    <FaCaretRight className='text-white hover:cursor-pointer size-8 lg:size-12' onClick={(e) => { e.stopPropagation(); goToNextImage(); }} />
-                </div>}
+
+                    {/* Next Button */}
+                    {currentImage < currentImages.length - 1 && (
+                        <button
+                            onClick={(e) => { e.stopPropagation(); goToNextImage(); }}
+                            className="absolute right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 hover:scale-110"
+                            aria-label="Next"
+                        >
+                            <RxCaretRight className="w-8 h-8" />
+                        </button>
+                    )}
+
+                    {/* Image Counter */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium">
+                        {currentImage + 1} / {currentImages.length}
+                    </div>
+                </div>
+            )}
 
             <div className={`max-w-7xl w-full grid ${layoutChange ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ' : 'grid-cols-4'} auto-rows-[${rowHeight}] gap-4 mb-8`}>
                 {currentImages.map((image, index) => (
