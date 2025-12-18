@@ -18,7 +18,7 @@ const Dotmocracy: React.FC = () => {
     if (!content || !currentData) {
         return (
             <div className="mb-6 max-w-7xl mx-auto p-4 md:p-6">
-                <div className="rounded-xl py-6 bg-white shadow-sm border-1 border-gray-200">
+                <div className="rounded-xl py-6 bg-white border-1 border-gray-200">
                     <div className="px-4 md:px-8">
                         <p className="text-gray-600">Loading data...</p>
                     </div>
@@ -30,15 +30,15 @@ const Dotmocracy: React.FC = () => {
     return (
         <div key={`dotmocracy-${language}`}>
 
-            <div className="mb-6 rounded-xl bg-white shadow-sm border-1 border-gray-200 max-w-7xl p-4 md:p-6">
+            <div className="mb-6 rounded-xl bg-white border-1 border-gray-200  max-w-7xl p-4 md:p-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary font-dm-sans text-center my-auto">
                     {content.title}
                 </h2>
             </div>
 
-            <div className="mb-6 rounded-xl bg-white shadow-sm border border-gray-200 max-w-7xl mx-auto p-4 md:p-6">
+            <div className="mb-6 rounded-xl bg-white border-1 border-gray-200 max-w-7xl mx-auto p-4 md:p-6">
                 {/* Subtitle */}
-                <h3 className="text-lg md:text-xl font-semibold text-gray-700 font-dm-sans mb-4">
+                <h3 className="text-lg md:text-xl font-semibold text-primary font-dm-sans mb-4">
                     {content.subtitle}
                 </h3>
 
@@ -161,9 +161,9 @@ const Dotmocracy: React.FC = () => {
             </div>
 
             {/* Second Section - Barriers Question */}
-            <div className="mb-6 rounded-xl bg-white shadow-sm border border-gray-200 max-w-7xl mx-auto p-4 md:p-6">
+            <div className="mb-6 rounded-xl bg-white border-1 border-gray-200 max-w-7xl mx-auto p-4 md:p-6">
                 {/* Subtitle */}
-                <h3 className="text-lg md:text-xl font-semibold text-gray-700 font-dm-sans mb-4">
+                <h3 className="text-lg md:text-xl font-semibold text-primary font-dm-sans mb-4">
                     {content.subtitle2}
                 </h3>
 
