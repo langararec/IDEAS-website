@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
                         {/* Resources Column */}
                         <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-gray-800 font-dm-sans">{footerData.resources}</h3>
+                            <h3 className="text-lg font-bold text-primary font-dm-sans">{footerData.resources}</h3>
                             <div className="space-y-3">
                                 <Link to="/references" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
                                     {footerData.references}
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
 
                         {/* About Us Column */}
                         <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-gray-800 font-dm-sans">{content.about}</h3>
+                            <h3 className="text-lg font-bold text-primary font-dm-sans">{content.about}</h3>
                             <div className="space-y-3">
                                 <Link to="/project" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
                                     {modalContent.aboutUs.links[0].text}
