@@ -9,7 +9,7 @@ interface ExtendedMemberDescriptionProps {
     isTransitioning?: boolean;
 }
 
-const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ member, onClose, isTransitioning }) => {
+const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ member, onClose }) => {
     const handleClose = () => {
         // Restore scrolling
         document.body.style.overflow = 'auto';
