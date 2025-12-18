@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { FaLinkedin, FaTimes } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import type { MemberInfo } from "./TeamCard";
+import { MdClose } from "react-icons/md";
 
 interface ExtendedMemberDescriptionProps {
     member: MemberInfo;
@@ -27,27 +28,21 @@ const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ m
 
     return (
         <div 
-            className={`min-h-screen ${
-                isTransitioning 
-                    ? 'animate-out scale-0 lg:scale-50 fade-out duration-300 lg:duration-500' 
-                    : 'animate-in scale-100 fade-in duration-500'
-            }`}
-            style={{
-                animationTimingFunction: isTransitioning 
-                    ? 'cubic-bezier(0.4, 0.0, 1, 1)' // Ease-in for exit
-                    : 'cubic-bezier(0.0, 0.0, 0.2, 1)' // Ease-out for entrance
-            }}
+            className="w-[95vw] max-w-7xl h-[90vh] bg-white rounded-2xl mx-auto my-[5vh] animate-scaleIn overflow-hidden relative flex flex-col"
+            onClick={(e) => e.stopPropagation()}
         >
+            <div className="overflow-y-auto flex-1 rounded-2xl " style={{scrollbarWidth: 'none'}}>
             <button
                 onClick={handleClose}
-                className="absolute top-8 sm:top-4 right-4 hover:cursor-pointer z-[10000] text-gray-500 hover:text-gray-700 transition-all duration-200 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100"
+                className="absolute top-4 right-4 hover:cursor-pointer z-[10000] w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-all duration-200 hover:scale-110"
+                aria-label="Close"
             >
-                <FaTimes size={16} />
+                <MdClose className="w-6 h-6" />
             </button>
             
-            <div className="py-8 lg:py-16 px-4 ">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="pt-16 pb-8 px-4 sm:px-6 lg:py-16 lg:px-12">
+                <div className="max-w-full mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                         {/* Left Content */}
                         <div className="space-y-6">
                             {/* Name and LinkedIn */}
@@ -114,6 +109,7 @@ const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ m
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );
