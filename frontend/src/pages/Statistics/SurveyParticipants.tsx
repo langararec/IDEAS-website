@@ -15,6 +15,7 @@ import {
 import CityDropdown from "../../components/CityDropdown";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { generateBurnabyColors, generateCourtenayColors } from "./constants/colors";
+import type { SurveyDataReportType } from "../../content/Statistics/SurveyDataReport";
 
 // Register Chart.js components
 ChartJS.register(
@@ -32,7 +33,7 @@ type CityType = 'burnaby' | 'courtenay';
 const SurveyParticipants: React.FC = () => {
 
     const { language } = useLanguage();
-    const content = statisticsContent[language].surveyDataReport;
+    const content: SurveyDataReportType = statisticsContent[language].surveyDataReport;
     const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
  
 
