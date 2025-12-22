@@ -35,7 +35,7 @@ const SurveyParticipants: React.FC = () => {
     const { language } = useLanguage();
     const content: SurveyDataReportType = statisticsContent[language].surveyDataReport;
     const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
- 
+
 
     const currentData = selectedCity === 'burnaby' ? content.burnaby : content.courtenay;
 
@@ -47,8 +47,25 @@ const SurveyParticipants: React.FC = () => {
         return generateBurnabyColors(data);
     };
 
-    // Prepare data for Chart.js
-    const chartData = {
+    // Prepare census data for Chart.js
+    const censusChartData = {
+        labels: currentData.censusEthnicities.map(e => e.name),
+        datasets: [
+            {
+                label: content.chartLabel,
+                data: currentData.censusEthnicities.map(e => e.percentage),
+                backgroundColor: generateColors(
+                    currentData.censusEthnicities.map(e => e.percentage),
+                    selectedCity
+                ),
+                borderWidth: 0,
+                borderRadius: 8,
+            }
+        ]
+    };
+
+    // Prepare survey data for Chart.js
+    const surveyChartData = {
         labels: currentData.ethnicities.map(e => e.name),
         datasets: [
             {
@@ -81,17 +98,8 @@ const SurveyParticipants: React.FC = () => {
             },
 
             datalabels: {
-                color: '#ffffff',
-                visible: false,
-                font: {
-                    weight: 'bold' as const,
-                    size: 8,
-                },
-                formatter: (value: number) => {
-                    return `${value}%`;
-                },
-                anchor: 'center' as const,
-                align: 'center' as const,
+                display: false,
+
             }
         },
         scales: {
@@ -151,14 +159,33 @@ const SurveyParticipants: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Chart */}
-                <div className="h-96">
-                    <Bar data={chartData} options={chartOptions} />
-                </div>
+                {/* Charts Container */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Census Data Chart */}
+                    <div>
+                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans text-center">
+                            {content.censusComparisonTitle}
+                        </h4>
+                        <div className="h-96">
+                            <Bar data={censusChartData} options={chartOptions} />
+                        </div>
+                        <div className="text-center mt-4">
+                            <span className="sm:text-sm text-xs font-semibold text-primary font-dm-sans">{content.chartLabel}</span>
+                        </div>
+                    </div>
 
-                {/* X-axis label */}
-                <div className="text-center mt-4">
-                    <span className="sm:text-sm text-xs font-semibold text-primary font-dm-sans">{content.chartLabel}</span>
+                    {/* Survey Data Chart */}
+                    <div>
+                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans text-center">
+                            {content.characteristicsTitle}
+                        </h4>
+                        <div className="h-96">
+                            <Bar data={surveyChartData} options={chartOptions} />
+                        </div>
+                        <div className="text-center mt-4">
+                            <span className="sm:text-sm text-xs font-semibold text-primary font-dm-sans">{content.chartLabel}</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
