@@ -97,15 +97,25 @@ export const teamContent = {
       },
       {
         name: "Axel Velasquez",
-        role: "Web Developer",
+        role: "Junior Research Assistant",
         program: "Associate of Science Computer Science",
         image: "/team/axel.webp",
-        shortDescription: "Axel Velasquez is a Computer Science student at Langara College with a passion for software development and community engagement.",
-        longDescription: "Axel Velasquez is currently pursuing an Associate's Degree in Computer Science at Langara College. He has hands-on experience in software development, creating engaging user experiences for both complex and simple products. Axel enjoys new challenges and embraces working with the latest technology to provide the best possible results.\n" +
+        shortDescription: "Axel Velasquez is a recent graduate from Langara College with a passion for software development and community engagement.",
+        longDescription: "Axel Velasquez recently graduated with an Associate's Degree in Computer Science from Langara College. He has hands-on experience in software development, creating engaging user experiences for both complex and simple products. Axel enjoys new challenges and embraces working with the latest technology to provide the best possible results.\n" +
             "\n" +
             "He is passionate about working with non-profits and connecting with the community, both through his work and his daily walks around the city. Axel enjoys discovering new places and meeting new people; if there's a beautiful park or a quiet library nearby, you just might find him there.\n",
-        programLink: "https://langara.ca/programs-courses/computer-science-associate-science-degree-co-op",
+        programLink: "https://langara.ca/programs-courses/marketing-management-post-degree-diploma-post-degree-diploma-we",
         linkedin: "https://www.linkedin.com/in/axel-gael-velasquez-castaneda-1a4075323/"
+      },
+       {
+        name: "Micaela Abalos",
+        role: "Student Research Assistant",
+        program: "Post Degree Diploma in Marketing Management",
+        image: "/team/micaela.webp",
+        shortDescription: "Micaela is a law graduate pursuing a Post-Degree Diploma in Marketing Management. She enjoys working on research, especially when it supports inclusion and equity, fostering a sense of belonging and justice for everyone.",
+        longDescription: "Micaela is a law graduate pursuing a Post-Degree Diploma in Marketing Management. She enjoys working on research, especially when it supports inclusion and equity, fostering a sense of belonging and justice for everyone.\n" ,
+        programLink: "https://langara.ca/programs-courses/marketing-management-post-degree-diploma-post-degree-diploma-we",
+        linkedin: "https://www.linkedin.com/in/micaelaabalos/"
       },
       {
         name: "Dmitrii Zubarev",
@@ -126,7 +136,8 @@ export const teamContent = {
         longDescription: "Moana is a multi-disciplined professional in urban planning and engineering who thrives to shape inclusive, resilient and accessible communities across British Columbia.",
         programLink: "https://langara.ca/programs-courses/applied-planning-post-degree-diploma-we",
         linkedin: "https://www.linkedin.com/in/moana-mudekereza/"
-      }
+      },
+
     ]
   },
   fr: {
@@ -227,15 +238,25 @@ export const teamContent = {
       },
       {
         name: "Axel Velasquez",
-        role: "Développeur Web",
+        role: "Assistant de Recherche Junior",
         program: "Associé en Sciences Informatiques",
         image: "/team/axel.webp",
-        shortDescription: "Axel Velasquez est un étudiant en Sciences Informatiques au Collège Langara avec une passion pour le développement logiciel et l'engagement communautaire.",
-        longDescription: "Axel Velasquez poursuit actuellement un Diplôme d'Associé en Sciences Informatiques au Collège Langara. Il a une expérience pratique en développement logiciel, créant des expériences utilisateur engageantes pour des produits complexes et simples. Axel apprécie les nouveaux défis et embrasse le travail avec la dernière technologie pour fournir les meilleurs résultats possibles.\n" +
+        shortDescription: "Axel Velasquez est un récent diplômé du Collège Langara avec une passion pour le développement logiciel et l'engagement communautaire.",
+        longDescription: "Axel Velasquez a récemment obtenu un Diplôme d'Associé en Sciences Informatiques du Collège Langara. Il a une expérience pratique en développement logiciel, créant des expériences utilisateur engageantes pour des produits complexes et simples. Axel apprécie les nouveaux défis et embrasse le travail avec la dernière technologie pour fournir les meilleurs résultats possibles.\n" +
             "\n" +
             "Il est passionné de travailler avec des organisations sans but lucratif et de se connecter avec la communauté, à travers son travail et ses promenades quotidiennes dans la ville. Axel aime découvrir de nouveaux endroits et rencontrer de nouvelles personnes; s'il y a un beau parc ou une bibliothèque tranquille à proximité, vous pourriez bien l'y trouver.\n",
         programLink: "https://langara.ca/programs-courses/computer-science-associate-science-degree-co-op",
         linkedin: "https://www.linkedin.com/in/axel-gael-velasquez-castaneda-1a4075323/"
+      },
+       {
+        name: "Micaela Abalos",
+        role: "Assistante de Recherche Étudiante",
+        program: "Diplôme Post-Diplôme en Gestion Marketing",
+        image: "/team/micaela.webp",
+        shortDescription: "Micaela est diplômée en droit poursuivant un Diplôme Post-Diplôme en Gestion Marketing. Elle aime travailler sur la recherche, surtout lorsqu'elle soutient l'inclusion et l'équité, favorisant un sentiment d'appartenance et de justice pour tous.",
+        longDescription: "Micaela est diplômée en droit poursuivant un Diplôme Post-Diplôme en Gestion Marketing. Elle aime travailler sur la recherche, surtout lorsqu'elle soutient l'inclusion et l'équité, favorisant un sentiment d'appartenance et de justice pour tous.\n" ,
+        programLink: "https://langara.ca/programs-courses/marketing-management-post-degree-diploma-post-degree-diploma-we",
+        linkedin: "https://www.linkedin.com/in/micaelaabalos/"
       },
       {
         name: "Dmitrii Zubarev",
