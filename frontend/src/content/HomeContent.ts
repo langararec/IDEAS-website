@@ -80,6 +80,13 @@ export const homeContent = {
           ariaLabel: "Visit Mosaic BC website (opens in new tab)",
         },
         {
+          image: "OpenDoor-logo-cropped.png",
+          name: "Open Door Language & Culture Society",
+          url: "https://www.opendoorlanguage.com/",
+          ariaLabel:
+            "Visit Open Door Language & Culture Society website (opens in new tab)",
+        },
+        {
           image: "partner5.webp",
           name: "Recreation Studies Langara",
           url: "https://langara.ca/programs-and-courses/programs/recreation-studies/",
@@ -186,7 +193,15 @@ export const homeContent = {
           image: "mosaic-logo.png",
           name: "Mosaic BC",
           url: "https://mosaicbc.org/",
-          ariaLabel: "Visiter le site web de Mosaic BC (s'ouvre dans un nouvel onglet)",
+          ariaLabel:
+            "Visiter le site web de Mosaic BC (s'ouvre dans un nouvel onglet)",
+        },
+        {
+          image: "OpenDoor-logo-cropped.png",
+          name: "Open Door Language & Culture Society",
+          url: "https://www.opendoorlanguage.com/",
+          ariaLabel:
+            "Visiter le site web de Open Door Language & Culture Society (s'ouvre dans un nouvel onglet)",
         },
         {
           image: "partner5.webp",
