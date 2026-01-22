@@ -45,7 +45,7 @@ export const teamContent = {
       {
         name: "Jennifer Mallari",
         role: "Junior Research Assistant",
-        image: "/team/peng.webp",
+        image: "/team/jennifer.webp",
         shortDescription: "Jennifer, also called as Peng, is a creative designer and researcher, currently applying her expertise to support recreation projects at Langara College.",
         longDescription: "Jennifer, also known as Peng, is a creative designer and researcher with a unique background in the satellite industry. After working for five years as a satellite controller, she made a bold career shift to follow her passion for designing intuitive digital platforms, studying Web Design and Development at Langara College. Her journey into recreation design began by supporting the Langara Recreation Department through lecture capture for recreation classes. This involvement evolved into more in-depth research work, including projects like Exploring How Recreation Organizations are Using Artificial Intelligence. \n\n" +
             "Over the past year, Jennifer has deepened her expertise in recreation research—giving her a unique lens for designing digital experiences that meet the needs of both users and staff in the recreation field. She is passionate about modernizing recreation websites and platforms to be more intuitive, inclusive, accessible, and user-centered. With skills in user research, usability testing, wireframing, prototyping, design systems, and front-end development, Jennifer creates experiences that are not only functional but also engaging and easy to navigate. \n\n" +
@@ -186,7 +186,7 @@ export const teamContent = {
       {
         name: "Jennifer Mallari",
         role: "Assistante de Recherche Junior",
-        image: "/team/peng.webp",
+        image: "/team/jennifer.webp",
         shortDescription: "Jennifer, aussi appelée Peng, est une conceptrice créative et chercheuse, appliquant actuellement son expertise pour soutenir les projets de loisirs au Collège Langara.",
         longDescription: "Jennifer, aussi connue sous le nom de Peng, est une conceptrice créative et chercheuse avec une formation unique dans l'industrie satellitaire. Après avoir travaillé pendant cinq ans comme contrôleuse de satellites, elle a fait un changement de carrière audacieux pour suivre sa passion de concevoir des plateformes numériques intuitives, étudiant la Conception et Développement Web au Collège Langara. Son parcours dans la conception de loisirs a commencé en soutenant le Département de Loisirs de Langara par la capture de conférences pour les cours de loisirs. Cette implication a évolué vers des travaux de recherche plus approfondis, incluant des projets comme Explorer Comment les Organisations de Loisirs Utilisent l'Intelligence Artificielle. \n\n" +
             "Au cours de la dernière année, Jennifer a approfondi son expertise en recherche de loisirs—lui donnant une perspective unique pour concevoir des expériences numériques qui répondent aux besoins des utilisateurs et du personnel dans le domaine des loisirs. Elle est passionnée de moderniser les sites web et plateformes de loisirs pour être plus intuitifs, inclusifs, accessibles et centrés sur l'utilisateur. Avec des compétences en recherche utilisateur, tests d'utilisabilité, wireframing, prototypage, systèmes de conception et développement front-end, Jennifer crée des expériences qui sont non seulement fonctionnelles mais aussi engageantes et faciles à naviguer. \n\n" +
