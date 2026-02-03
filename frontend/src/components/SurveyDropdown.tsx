@@ -88,14 +88,32 @@ const surveyData: City[] = [
 const SurveyDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
+  const [clickedCity, setClickedCity] = useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsTouchDevice(window.innerWidth < 1024); // Touch behavior for tablet and mobile
+      setIsSmallMobile(window.innerWidth < 768); // Mobile-only styling
+    };
+    
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+
+    return () => {
+      window.removeEventListener('resize', checkDevice);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
         setHoveredCity(null);
+        setClickedCity(null);
       }
     };
 
@@ -115,31 +133,47 @@ const SurveyDropdown: React.FC = () => {
     setIsOpen(!isOpen);
     if (isOpen) {
       setHoveredCity(null);
+      setClickedCity(null);
+    }
+  };
+
+  const handleCityClick = (cityName: string) => {
+    if (isTouchDevice) {
+      setClickedCity(clickedCity === cityName ? null : cityName);
+      setHoveredCity(null);
     }
   };
 
   const handleCityMouseEnter = (cityName: string) => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
+    if (!isTouchDevice) {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      setHoveredCity(cityName);
     }
-    setHoveredCity(cityName);
   };
 
   const handleCityMouseLeave = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setHoveredCity(null);
-    }, 200);
+    if (!isTouchDevice) {
+      hoverTimeoutRef.current = setTimeout(() => {
+        setHoveredCity(null);
+      }, 200);
+    }
   };
 
   const handleSubmenuMouseEnter = () => {
-    if (hoverTimeoutRef.current) {
+    if (!isTouchDevice && hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
     }
   };
 
   const handleSubmenuMouseLeave = () => {
-    setHoveredCity(null);
+    if (!isTouchDevice) {
+      setHoveredCity(null);
+    }
   };
+
+  const activeCity = isTouchDevice ? clickedCity : hoveredCity;
 
   return (
     <div className="relative inline-block" ref={dropdownRef}>
@@ -156,7 +190,8 @@ const SurveyDropdown: React.FC = () => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 overflow-visible z-50 min-w-[280px]">
+        <div className={`absolute top-full mt-2 bg-white rounded-xl shadow-xl border border-gray-200 overflow-visible z-50 
+          ${isSmallMobile ? 'left-0 right-0 mx-2 w-auto' : 'left-1/2 -translate-x-1/2 min-w-[280px]'}`}>
           {/* City Section */}
           <div className="py-2">
             <div className="px-4 py-2 text-sm font-medium text-gray-500 text-left">
@@ -170,34 +205,42 @@ const SurveyDropdown: React.FC = () => {
                 onMouseLeave={handleCityMouseLeave}
               >
                 <button
+                  onClick={() => handleCityClick(city.name)}
                   className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors flex items-center justify-between group"
                   aria-label={`Select ${city.name}`}
                 >
                   <span className="font-medium text-gray-900">{city.name}</span>
-                  <FiChevronRight className="text-gray-400 group-hover:text-gray-600" />
+                  <FiChevronRight className={`text-gray-400 group-hover:text-gray-600 transition-transform ${
+                    isTouchDevice && activeCity === city.name ? 'rotate-90' : ''
+                  }`} />
                 </button>
 
                 {/* Language Submenu */}
-                {hoveredCity === city.name && (
+                {activeCity === city.name && (
                   <div 
-                    className="absolute left-full top-0 ml-1 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden min-w-[240px] z-50"
+                    className={`bg-white sm:rounded-xl sm:shadow-xl border border-gray-200 overflow-hidden z-50
+                      ${isSmallMobile 
+                        ? 'relative left-0 w-full mt-1 mb-2' 
+                        : 'absolute left-full top-0 ml-1 min-w-[240px]'
+                      }`}
                     onMouseEnter={handleSubmenuMouseEnter}
                     onMouseLeave={handleSubmenuMouseLeave}
                   >
-                    <div className="px-4 py-2 text-sm font-medium text-gray-500 border-b border-gray-100 text-left">
+                    <div className="px-4 py-2 text-sm font-medium text-gray-500 border-gray-100 text-left">
                       Language
                     </div>
-                    <div className="py-2">
+                    <div className="py-1">
                       {city.surveys.map((survey) => (
                         <a
                           key={survey.language}
                           href={survey.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-3 hover:bg-gray-50 transition-colors text-left"
+                          className="block px-4 py-2 hover:bg-gray-50 transition-colors text-left"
                           onClick={() => {
                             setIsOpen(false);
                             setHoveredCity(null);
+                            setClickedCity(null);
                           }}
                         >
                           <div className="flex items-center gap-2">
