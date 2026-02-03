@@ -2,6 +2,7 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { homeContent } from "../../content/HomeContent";
 import Carousel from "./Carousel";
+import SurveyDropdown from "../../components/SurveyDropdown";
 
 const Hero: React.FC = () => {
     const { language } = useLanguage();
@@ -22,15 +23,7 @@ const Hero: React.FC = () => {
                 </p>
 
                 <div className="flex justify-center mb-14 mt-2">
-                    <a 
-                        href={content.surveyUrl}
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        aria-label={content.surveyAriaLabel}
-                        className="inline-block bg-primary font-dm-sans hover:bg-primary/80 text-white border-3 px-8 py-3 rounded-xl mt-4  focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all font-medium text-center duration-300  hover:scale-105"
-                    >
-                        {content.surveyButton}
-                    </a>
+                    <SurveyDropdown />
                 </div>
 
             </div>
