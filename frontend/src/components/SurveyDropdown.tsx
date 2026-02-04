@@ -92,7 +92,7 @@ const SurveyDropdown: React.FC = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [isSmallMobile, setIsSmallMobile] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const checkDevice = () => {
