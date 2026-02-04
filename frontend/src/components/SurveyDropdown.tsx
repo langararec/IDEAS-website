@@ -17,6 +17,11 @@ const surveyData: City[] = [
     name: "Burnaby",
     surveys: [
       {
+        language: "English",
+        languageNative: "English",
+        url: "https://ca.research.net/r/RecreationSurveyWeb"
+      },
+      {
         language: "Chinese",
         languageNative: "中文",
         url: "https://ca.research.net/r/OnlineBurnabyChinese",
@@ -51,6 +56,11 @@ const surveyData: City[] = [
   {
     name: "Courtenay",
     surveys: [
+      {
+        language: "English",
+        languageNative: "English",
+        url: "https://ca.research.net/r/RecreationSurveyWeb"
+      },
       {
         language: "Chinese",
         languageNative: "中文",
@@ -99,7 +109,7 @@ const SurveyDropdown: React.FC = () => {
       setIsTouchDevice(window.innerWidth < 1024); // Touch behavior for tablet and mobile
       setIsSmallMobile(window.innerWidth < 768); // Mobile-only styling
     };
-    
+
     checkDevice();
     window.addEventListener('resize', checkDevice);
 
@@ -210,17 +220,16 @@ const SurveyDropdown: React.FC = () => {
                   aria-label={`Select ${city.name}`}
                 >
                   <span className="font-medium text-gray-900">{city.name}</span>
-                  <FiChevronRight className={`text-gray-400 group-hover:text-gray-600 transition-transform ${
-                    isTouchDevice && activeCity === city.name ? 'rotate-90' : ''
-                  }`} />
+                  <FiChevronRight className={`text-gray-400 group-hover:text-gray-600 transition-transform ${isTouchDevice && activeCity === city.name ? 'rotate-90' : ''
+                    }`} />
                 </button>
 
                 {/* Language Submenu */}
                 {activeCity === city.name && (
-                  <div 
+                  <div
                     className={`bg-white sm:rounded-xl sm:shadow-xl border border-gray-200 overflow-hidden z-50
-                      ${isSmallMobile 
-                        ? 'relative left-0 w-full mt-1 mb-2' 
+                      ${isSmallMobile
+                        ? 'relative left-0 w-full mt-1 mb-2'
                         : 'absolute left-full top-0 ml-1 min-w-[240px]'
                       }`}
                     onMouseEnter={handleSubmenuMouseEnter}
