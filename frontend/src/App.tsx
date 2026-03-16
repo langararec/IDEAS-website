@@ -9,6 +9,7 @@ import EngagementSchedule from './pages/EngagementSchedule/EngagementSchedule'
 import Gallery from './pages/Gallery/Gallery'
 import References from './pages/References/References'
 import Statistics from './pages/Statistics/Statistics'
+import Staff from './pages/Staff/Staff'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -32,6 +33,7 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/references' element={<References />} />
         <Route path='/statistics' element={<Statistics />} />
+        <Route path='/staff' element={<Staff />} />
         <Route path='*' element={<NotFound />} />
 
       </Routes>

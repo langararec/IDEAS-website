@@ -1,3 +1,29 @@
+const BurnabyData = {
+  "Less than 1 year": [
+    7.69, 10.71, 14.81, 6.25, 13.33, 6.0, 14.29, 12.96, 11.82, 11.71,
+  ],
+  "1-3 years": [
+    17.31, 12.5, 25.93, 18.75, 16.67, 10.0, 21.43, 12.96, 15.45, 12.61,
+  ],
+  "4-6 years": [
+    13.46, 11.61, 14.81, 25.0, 10.83, 14.0, 10.71, 12.04, 11.82, 13.51,
+  ],
+  "More than 6 years": [
+    61.54, 65.18, 44.44, 50.0, 59.17, 70.0, 53.57, 62.04, 60.91, 62.16,
+  ],
+};
+
+const CourtenayData = {
+  "Less than 1 year": [9.38, 7.41, 33.33, 0.0, 7.45, 10.81, 11.11, 5.81, 7.89, 6.49],
+  "1-3 years": [
+    21.88, 28.4, 40.0, 28.57, 20.21, 27.03, 25.93, 16.28, 21.05, 24.68,
+  ],
+  "4-6 years": [6.25, 2.47, 0.0, 0.0, 4.26, 2.7, 3.7, 4.65, 3.95, 1.3],
+  "More than 6 years": [
+    62.5, 61.73, 26.67, 71.43, 68.09, 59.46, 59.26, 73.26, 67.11, 67.53,
+  ],
+};
+
 export const en = {
   title: "Thoughts and Behaviours towards Recreation",
   subtitle:
@@ -22,42 +48,18 @@ export const en = {
     "To spend time with family or friends",
   ],
   burnaby: {
-    lastUpdated: "Last updated: 19-12-2025",
+    lastUpdated: "Last updated: 22/02/2026",
     keyInsightsLabel: "Key Insights:",
     keyInsights:
       "Long-term residents (6+ years) tend to identify with many of the motivators simultaneously compared to respondents who have lived in BC for less than 6 years. \nRelaxing, having fun, and connecting with community were the most commonly identified motivators for long-term residents.\nRespondents who have lived in BC for less time seem to discern more between the motivators, and only selecting some (rather than many) motivators.",
-    data: {
-      "Less than 1 year": [
-        8.33, 8.64, 13.04, 7.14, 11.36, 5.0, 8.7, 11.25, 8.43, 10.71,
-      ],
-      "1-3 years": [
-        16.67, 12.35, 26.09, 21.43, 18.18, 12.5, 26.09, 13.75, 14.46, 13.1,
-      ],
-      "4-6 years": [
-        13.89, 11.11, 13.04, 21.43, 10.23, 17.5, 8.7, 11.25, 13.25, 11.9,
-      ],
-      "More than 6 years": [
-        61.11, 67.9, 47.83, 50.0, 60.23, 65.0, 56.52, 63.75, 63.86, 64.29,
-      ],
-    },
+    data: BurnabyData,
   },
   courtenay: {
-    lastUpdated: "Last updated: 19-12-2025",
+    lastUpdated: "Last updated: 22/02/2026",
     keyInsightsLabel: "Key Insights:",
     keyInsights:
-    "Long-term residents (6+ years) tend to identify with many of the motivators simultaneously compared to respondents who have lived in BC for less than 6 years.\nExercising/health, spending time with family/friends and cultural/traditional motivators were the most common for long-term residents.\nAlmost half of respondents who have lived in BC between 1-3 years participate in recreation to learn about Canadian culture, with over a third of respondents in this category motivated by connection to community and cultural reasons.\nRespondents who have lived in BC for less time seem to discern more between the motivators, and only selecting some (rather than many) motivators.",
-    data: {
-      "Less than 1 year": [
-        11.11, 8.82, 35.71, 0.0, 9.21, 13.33, 13.04, 7.69, 10.0, 7.58,
-      ],
-      "1-3 years": [
-        25.93, 30.88, 42.86, 36.36, 25.0, 33.33, 30.43, 20.0, 23.33, 27.27,
-      ],
-      "4-6 years": [7.41, 2.94, 0.0, 0.0, 3.95, 3.33, 4.35, 4.62, 5.0, 1.52],
-      "More than 6 years": [
-        55.56, 57.35, 21.43, 63.64, 61.84, 50.0, 52.17, 67.69, 61.67, 63.64,
-      ],
-    },
+      "Long-term residents (6+ years) tend to identify with many of the motivators simultaneously compared to respondents who have lived in BC for less than 6 years.\nExercising/health, spending time with family/friends and cultural/traditional motivators were the most common for long-term residents.\nAlmost half of respondents who have lived in BC between 1-3 years participate in recreation to learn about Canadian culture, with over a third of respondents in this category motivated by connection to community and cultural reasons.\nRespondents who have lived in BC for less time seem to discern more between the motivators, and only selecting some (rather than many) motivators.",
+    data: CourtenayData
   },
 };
 
@@ -80,41 +82,27 @@ export const fr = {
     "Passer du temps avec la famille ou les amis",
   ],
   burnaby: {
-    lastUpdated: "Dernière mise à jour: 19-12-2025",
+    lastUpdated: "Dernière mise à jour: 22/02/2026",
     keyInsightsLabel: "Aperçus Clés:",
     keyInsights:
       "Les résidents de longue date (6+ ans) ont tendance à s'identifier avec plusieurs des motivateurs simultanément comparé aux répondants qui ont vécu en C.-B. pour moins de 6 ans. \nSe détendre, s'amuser, et se connecter avec la communauté étaient les motivateurs les plus communément identifiés pour les résidents de longue date.\nLes répondants avec qui ont vécu en C.-B. pour moins de temps semblent discerner plus entre les motivateurs, et seulement sélectionner quelques (plutôt que plusieurs) motivateurs.",
     data: {
-      "Moins d'1 an": [
-        8.33, 8.64, 13.04, 7.14, 11.36, 5.0, 8.7, 11.25, 8.43, 10.71,
-      ],
-      "1-3 ans": [
-        16.67, 12.35, 26.09, 21.43, 18.18, 12.5, 26.09, 13.75, 14.46, 13.1,
-      ],
-      "4-6 ans": [
-        13.89, 11.11, 13.04, 21.43, 10.23, 17.5, 8.7, 11.25, 13.25, 11.9,
-      ],
-      "Plus de 6 ans": [
-        61.11, 67.9, 47.83, 50.0, 60.23, 65.0, 56.52, 63.75, 63.86, 64.29,
-      ],
+      "Moins d'1 an": BurnabyData["Less than 1 year"],
+      "1-3 ans": BurnabyData["1-3 years"],
+      "4-6 ans": BurnabyData["4-6 years"],
+      "Plus de 6 ans": BurnabyData["More than 6 years"],
     },
   },
   courtenay: {
-    lastUpdated: "Dernière mise à jour: 19-12-2025",
+    lastUpdated: "Dernière mise à jour: 22/02/2026",
     keyInsightsLabel: "Aperçus Clés:",
     keyInsights:
       "Les résidents de longue date (6+ ans) ont tendance à s'identifier avec plusieurs des motivateurs simultanément comparé aux répondants qui ont vécu en C.-B. pour moins de 6 ans.\nFaire de l'exercice/santé, passer du temps avec la famille/les amis et les motivateurs culturels/traditionnels étaient les plus communs pour les résidents de longue date.\nPresque la moitié des répondants qui ont vécu en C.-B. entre 1-3 ans participent aux loisirs pour découvrir la culture canadienne, avec plus d'un tiers des répondants dans cette catégorie motivés par la connexion à la communauté et les raisons culturelles.\nLes répondants avec qui ont vécu en C.-B. pour moins de temps semblent discerner plus entre les motivateurs, et seulement sélectionner quelques (plutôt que plusieurs) motivateurs.",
     data: {
-      "Moins d'1 an": [
-        11.11, 8.82, 35.71, 0.0, 9.21, 13.33, 13.04, 7.69, 10.0, 7.58,
-      ],
-      "1-3 ans": [
-        25.93, 30.88, 42.86, 36.36, 25.0, 33.33, 30.43, 20.0, 23.33, 27.27,
-      ],
-      "4-6 ans": [7.41, 2.94, 0.0, 0.0, 3.95, 3.33, 4.35, 4.62, 5.0, 1.52],
-      "Plus de 6 ans": [
-        55.56, 57.35, 21.43, 63.64, 61.84, 50.0, 52.17, 67.69, 61.67, 63.64,
-      ],
+      "Moins d'1 an": CourtenayData['Less than 1 year'],
+      "1-3 ans": CourtenayData['1-3 years'],
+      "4-6 ans": CourtenayData['4-6 years'],
+      "Plus de 6 ans": CourtenayData['More than 6 years'],
     },
   },
 };

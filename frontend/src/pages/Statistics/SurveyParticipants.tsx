@@ -106,9 +106,9 @@ const SurveyParticipants: React.FC = () => {
             x: {
                 beginAtZero: true,
                 ticks: {
-                    stepSize: 9,
+                    stepSize: 10,
                     callback: function (value: any) {
-                        return value;
+                        return `${value}%`;
                     }
                 },
                 grid: {
@@ -151,13 +151,14 @@ const SurveyParticipants: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Key Insights */}
+                {/* Key Insights 
                 <div className={`${selectedCity === 'burnaby' ? 'bg-base-200 border-green-200' : 'bg-[#F3FDFF] border-[#DCFAFE]'} border-1  p-4 mb-8 rounded-lg`}>
                     <p className="text-sm md:text-base text-gray-700 font-dm-sans">
                         <span className="font-semibold text-primary">{currentData.keyInsightsLabel}</span>{" "}
                         {currentData.keyInsights}
                     </p>
                 </div>
+                */}
 
                 {/* Charts Container */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -169,9 +170,6 @@ const SurveyParticipants: React.FC = () => {
                         <div className="h-96">
                             <Bar data={censusChartData} options={chartOptions} />
                         </div>
-                        <div className="text-center mt-4">
-                            <span className="sm:text-sm text-xs font-semibold text-primary font-dm-sans">{content.chartLabel}</span>
-                        </div>
                     </div>
 
                     {/* Survey Data Chart */}
@@ -181,9 +179,6 @@ const SurveyParticipants: React.FC = () => {
                         </h4>
                         <div className="h-96">
                             <Bar data={surveyChartData} options={chartOptions} />
-                        </div>
-                        <div className="text-center mt-4">
-                            <span className="sm:text-sm text-xs font-semibold text-primary font-dm-sans">{content.chartLabel}</span>
                         </div>
                     </div>
                 </div>
