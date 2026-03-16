@@ -231,13 +231,14 @@ const RecreationBehaviors: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Key Insights */}
+                    {/* Key Insights 
                     <div className={`${selectedCity === 'burnaby' ? 'bg-base-200 border-green-200' : 'bg-[#F3FDFF] border-[#DCFAFE]'} border-1 p-4 mb-8 rounded-lg`}>
                         <p className="text-sm md:text-base text-gray-700 font-dm-sans">
                             <span className="font-semibold text-primary">{currentData.keyInsightsLabel}</span>{" "}
                             {currentData.keyInsights}
                         </p>
                     </div>
+                    */}
 
                     {/* Chart */}
                     <div className="h-[400px] md:h-[550px] overflow-x-auto pb-4">
