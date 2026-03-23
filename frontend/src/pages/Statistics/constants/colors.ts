@@ -25,6 +25,17 @@ export const COURTENAY_COLOR_PALETTE = [
 
 export const COURTENAY_COLOR = "#0d9488"; // Teal (legacy, use palette instead)
 
+export const TOTAL_COLOR_PALETTE = [
+  "#3730A3", // Darkest indigo
+  "#4338CA",
+  "#4F46E5",
+  "#6366F1",
+  "#818CF8",
+  "#A5B4FC",
+  "#C7D2FE",
+  "#E0E7FF", // Lightest indigo
+];
+
 // Helper function to assign colors based on data intensity
 export const generateBurnabyColors = (data: number[]): string[] => {
   // Sort data with indices to maintain original order
@@ -103,6 +114,39 @@ export const getCourtenayColorPalette = (count: number): string[] => {
   const result: string[] = [];
   for (let i = 0; i < count; i++) {
     result.push(COURTENAY_COLOR_PALETTE[i % COURTENAY_COLOR_PALETTE.length]);
+  }
+  return result;
+};
+
+export const generateTotalColors = (data: number[]): string[] => {
+  const sortedIndices = data
+    .map((value, index) => ({ value, index }))
+    .sort((a, b) => b.value - a.value)
+    .map((item, sortedIndex) => ({ ...item, sortedIndex }));
+
+  const colors = new Array(data.length);
+  sortedIndices.forEach((item) => {
+    const colorIndex = Math.floor(
+      item.sortedIndex / Math.ceil(data.length / TOTAL_COLOR_PALETTE.length)
+    );
+    colors[item.index] =
+      TOTAL_COLOR_PALETTE[Math.min(colorIndex, TOTAL_COLOR_PALETTE.length - 1)];
+  });
+
+  return colors;
+};
+
+export const getTotalColor = (index: number): string => {
+  return TOTAL_COLOR_PALETTE[index % TOTAL_COLOR_PALETTE.length];
+};
+
+export const getTotalColorPalette = (count: number): string[] => {
+  if (count <= TOTAL_COLOR_PALETTE.length) {
+    return TOTAL_COLOR_PALETTE.slice(0, count);
+  }
+  const result: string[] = [];
+  for (let i = 0; i < count; i++) {
+    result.push(TOTAL_COLOR_PALETTE[i % TOTAL_COLOR_PALETTE.length]);
   }
   return result;
 };

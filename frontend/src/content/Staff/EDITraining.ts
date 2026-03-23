@@ -2,17 +2,24 @@ const LAST_UPDATED_EN = "Last updated: 15-03-2026";
 const LAST_UPDATED_FR = "Dernière mise à jour: 15-03-2026";
 
 const burnabyData = {
-  coordinator:         { yes: 92,  no: 8  },
-  frontLine:           { yes: 69,  no: 31 },
-  frontLineSupervisor: { yes: 73,  no: 27 },
+  coordinator:         { yes: 91.67,  no: 8.33  },
+  frontLine:           { yes: 68.75,  no: 31.25 },
+  frontLineSupervisor: { yes: 72.72,  no: 27.28 },
   manager:             { yes: 100, no: 0  },
 };
 
 const courtenayData = {
   coordinator:         { yes: 100, no: 0  },
-  frontLine:           { yes: 38,  no: 63 },
+  frontLine:           { yes: 37.5,  no: 62.5 },
   frontLineSupervisor: { yes: 50,  no: 50 },
   manager:             { yes: 100, no: 0  },
+};
+
+const totalData = {
+  coordinator:         { yes: 92.3,  no: 7.69 },
+  frontLine:           { yes: 62.5,  no: 37.5  },
+  frontLineSupervisor: { yes: 69.23,  no: 30.77  },
+  manager:             { yes: 100,  no: 0  },
 };
 
 export const en = {
@@ -21,28 +28,28 @@ export const en = {
   burnaby: {
     lastUpdated: LAST_UPDATED_EN,
     areas: [
-      "Coordinator",
-      "Front-line",
-      "Front-line Supervisor",
       "Manager",
+      "Coordinator",
+      "Front-line Supervisor",
+      "Front-line",
     ],
     series: [
       {
         name: "Yes",
         data: [
-          burnabyData.coordinator.yes,
-          burnabyData.frontLine.yes,
-          burnabyData.frontLineSupervisor.yes,
           burnabyData.manager.yes,
+          burnabyData.coordinator.yes,
+          burnabyData.frontLineSupervisor.yes,
+          burnabyData.frontLine.yes,
         ],
       },
       {
         name: "No",
         data: [
-          burnabyData.coordinator.no,
-          burnabyData.frontLine.no,
-          burnabyData.frontLineSupervisor.no,
           burnabyData.manager.no,
+          burnabyData.coordinator.no,
+          burnabyData.frontLineSupervisor.no,
+          burnabyData.frontLine.no,
         ],
       },
     ],
@@ -50,28 +57,57 @@ export const en = {
   courtenay: {
     lastUpdated: LAST_UPDATED_EN,
     areas: [
-      "Coordinator",
-      "Front-line",
-      "Front-line Supervisor",
       "Manager",
+      "Coordinator",
+      "Front-line Supervisor",
+      "Front-line",
     ],
     series: [
       {
         name: "Yes",
         data: [
-          courtenayData.coordinator.yes,
-          courtenayData.frontLine.yes,
-          courtenayData.frontLineSupervisor.yes,
           courtenayData.manager.yes,
+          courtenayData.coordinator.yes,
+          courtenayData.frontLineSupervisor.yes,
+          courtenayData.frontLine.yes,
         ],
       },
       {
         name: "No",
         data: [
-          courtenayData.coordinator.no,
-          courtenayData.frontLine.no,
-          courtenayData.frontLineSupervisor.no,
           courtenayData.manager.no,
+          courtenayData.coordinator.no,
+          courtenayData.frontLineSupervisor.no,
+          courtenayData.frontLine.no,
+        ],
+      },
+    ],
+  },
+  total: {
+    lastUpdated: LAST_UPDATED_EN,
+    areas: [
+      "Manager",
+      "Coordinator",
+      "Front-line Supervisor",
+      "Front-line",
+    ],
+    series: [
+      {
+        name: "Yes",
+        data: [
+          totalData.manager.yes,
+          totalData.coordinator.yes,
+          totalData.frontLineSupervisor.yes,
+          totalData.frontLine.yes,
+        ],
+      },
+      {
+        name: "No",
+        data: [
+          totalData.manager.no,
+          totalData.coordinator.no,
+          totalData.frontLineSupervisor.no,
+          totalData.frontLine.no,
         ],
       },
     ],
@@ -84,28 +120,28 @@ export const fr = {
   burnaby: {
     lastUpdated: LAST_UPDATED_FR,
     areas: [
-      "Coordinateur/trice",
-      "Première ligne",
-      "Superviseur/euse de première ligne",
       "Gestionnaire",
+      "Coordinateur/trice",
+      "Superviseur/euse de première ligne",
+      "Première ligne",
     ],
     series: [
       {
         name: "Oui",
         data: [
-          burnabyData.coordinator.yes,
-          burnabyData.frontLine.yes,
-          burnabyData.frontLineSupervisor.yes,
           burnabyData.manager.yes,
+          burnabyData.coordinator.yes,
+          burnabyData.frontLineSupervisor.yes,
+          burnabyData.frontLine.yes,
         ],
       },
       {
         name: "Non",
         data: [
-          burnabyData.coordinator.no,
-          burnabyData.frontLine.no,
-          burnabyData.frontLineSupervisor.no,
           burnabyData.manager.no,
+          burnabyData.coordinator.no,
+          burnabyData.frontLineSupervisor.no,
+          burnabyData.frontLine.no,
         ],
       },
     ],
@@ -113,28 +149,57 @@ export const fr = {
   courtenay: {
     lastUpdated: LAST_UPDATED_FR,
     areas: [
-      "Coordinateur/trice",
-      "Première ligne",
-      "Superviseur/euse de première ligne",
       "Gestionnaire",
+      "Coordinateur/trice",
+      "Superviseur/euse de première ligne",
+      "Première ligne",
     ],
     series: [
       {
         name: "Oui",
         data: [
-          courtenayData.coordinator.yes,
-          courtenayData.frontLine.yes,
-          courtenayData.frontLineSupervisor.yes,
           courtenayData.manager.yes,
+          courtenayData.coordinator.yes,
+          courtenayData.frontLineSupervisor.yes,
+          courtenayData.frontLine.yes,
         ],
       },
       {
         name: "Non",
         data: [
-          courtenayData.coordinator.no,
-          courtenayData.frontLine.no,
-          courtenayData.frontLineSupervisor.no,
           courtenayData.manager.no,
+          courtenayData.coordinator.no,
+          courtenayData.frontLineSupervisor.no,
+          courtenayData.frontLine.no,
+        ],
+      },
+    ],
+  },
+  total: {
+    lastUpdated: LAST_UPDATED_FR,
+    areas: [
+      "Gestionnaire",
+      "Coordinateur/trice",
+      "Superviseur/euse de première ligne",
+      "Première ligne",
+    ],
+    series: [
+      {
+        name: "Oui",
+        data: [
+          totalData.manager.yes,
+          totalData.coordinator.yes,
+          totalData.frontLineSupervisor.yes,
+          totalData.frontLine.yes,
+        ],
+      },
+      {
+        name: "Non",
+        data: [
+          totalData.manager.no,
+          totalData.coordinator.no,
+          totalData.frontLineSupervisor.no,
+          totalData.frontLine.no,
         ],
       },
     ],

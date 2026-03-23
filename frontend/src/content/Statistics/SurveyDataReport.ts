@@ -6,6 +6,7 @@ export const en = {
   cities: {
     burnaby: "Burnaby",
     courtenay: "Courtenay",
+    total: "Total",
   },
   burnaby: {
     lastUpdated: "Last updated: 18-02-2026",
@@ -103,6 +104,7 @@ export const fr: SurveyDataReportType = {
   cities: {
     burnaby: "Burnaby",
     courtenay: "Courtenay",
+    total: "Total",
   },
   burnaby: {
     lastUpdated: "Dernière mise à jour: 18-02-2026",
