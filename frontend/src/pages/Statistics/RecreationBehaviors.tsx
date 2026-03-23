@@ -2,7 +2,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { statisticsContent } from "../../content/StatisticsContent";
 import { useState } from "react";
 import { CiCalendar } from "react-icons/ci";
-import CityDropdown from "../../components/CityDropdown";
+import CityDropdown, { type CityType } from "../../components/CityDropdown";
 import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -27,7 +27,7 @@ ChartJS.register(
     ChartDataLabels
 );
 
-type CityType = 'burnaby' | 'courtenay';
+
 
 const RecreationBehaviors: React.FC = () => {
     const { language } = useLanguage();

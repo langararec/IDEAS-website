@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { dotmocracyContent } from "../../content/DotmocracyContent";
 import { CiCalendar } from "react-icons/ci";
-import CityDropdown from "../../components/CityDropdown";
+import CityDropdown, { type CityType } from "../../components/CityDropdown";
 import DotGridSection from "./DotGridSection";
 
-type CityType = 'burnaby' | 'courtenay';
+
 
 const Dotmocracy: React.FC = () => {
     const { language } = useLanguage();

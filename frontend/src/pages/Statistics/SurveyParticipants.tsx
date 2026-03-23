@@ -12,7 +12,7 @@ import {
     Tooltip,
     Legend
 } from 'chart.js';
-import CityDropdown from "../../components/CityDropdown";
+import CityDropdown, { type CityType } from "../../components/CityDropdown";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { generateBurnabyColors, generateCourtenayColors } from "./constants/colors";
 import type { SurveyDataReportType } from "../../content/Statistics/SurveyDataReport";
@@ -28,7 +28,7 @@ ChartJS.register(
     ChartDataLabels
 );
 
-type CityType = 'burnaby' | 'courtenay';
+
 
 const SurveyParticipants: React.FC = () => {
 

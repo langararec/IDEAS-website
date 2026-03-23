@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import type { ChartOptions } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import type { CityType } from '../../components/CityDropdown';
 
 ChartJS.register(
     CategoryScale,
@@ -30,7 +31,7 @@ interface AverageLineChartProps {
     question: string;
     average: number;
     ethnicities: EthnicityScore[];
-    selectedCity: 'burnaby' | 'courtenay';
+    selectedCity: CityType;
 }
 
 const AverageLineChart: React.FC<AverageLineChartProps> = ({
@@ -40,7 +41,7 @@ const AverageLineChart: React.FC<AverageLineChartProps> = ({
     selectedCity
 }) => {
     // Generate gradient colors based on score relative to average
-    const generateColors = (scores: number[], city: 'burnaby' | 'courtenay') => {
+    const generateColors = (scores: number[], city: CityType) => {
         return scores.map(score => {
             const isAboveAverage = score >= average;
             

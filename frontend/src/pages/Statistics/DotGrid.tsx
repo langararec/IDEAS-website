@@ -1,5 +1,7 @@
 
-const DotGrid: React.FC<{ count: number; isResident: boolean, selectedCity: 'burnaby' | 'courtenay' }> = ({ count, isResident, selectedCity }) => {
+import type { CityType } from '../../components/CityDropdown';
+
+const DotGrid: React.FC<{ count: number; isResident: boolean, selectedCity: CityType }> = ({ count, isResident, selectedCity }) => {
 
     let dotColor = '#ffffff';
 

@@ -1,13 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import { PiCaretDown } from "react-icons/pi";
 import { useLanguage } from "../context/LanguageContext";
 import { statisticsContent } from "../content/StatisticsContent";
 
-type CityType = 'burnaby' | 'courtenay' | 'total';
+export type CityType = 'burnaby' | 'courtenay' | 'total';
 
 interface CityDropdownProps {
     selectedCity: CityType;
-    onCityChange: (city: CityType) => void;
+    onCityChange: Dispatch<SetStateAction<CityType>>;
     showTotal?: boolean;
 }
 

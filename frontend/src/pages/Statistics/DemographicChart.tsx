@@ -3,13 +3,13 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { CiCalendar } from 'react-icons/ci';
 import { useState } from "react";
-import CityDropdown from '../../components/CityDropdown';
+import CityDropdown, { type CityType } from '../../components/CityDropdown';
 import { generateBurnabyColors, generateCourtenayColors } from './constants/colors';
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-type CityType = 'burnaby' | 'courtenay';
+
 
 interface DemographicData {
   name: string;

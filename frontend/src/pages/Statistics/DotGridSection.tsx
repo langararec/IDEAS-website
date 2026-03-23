@@ -1,5 +1,6 @@
 import React from "react";
 import DotGrid from "./DotGrid";
+import type { CityType } from "../../components/CityDropdown";
 
 interface DotGridSectionProps {
     residentLabel: string;
@@ -10,7 +11,7 @@ interface DotGridSectionProps {
     immigrantDisplayValue?: string | number;
     residentDotCount?: number;
     immigrantDotCount?: number;
-    selectedCity: 'burnaby' | 'courtenay';
+    selectedCity: CityType;
 }
 
 const DotGridSection: React.FC<DotGridSectionProps> = ({

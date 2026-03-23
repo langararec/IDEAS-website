@@ -2,10 +2,10 @@ import { useLanguage } from "../../context/LanguageContext";
 import { statisticsContent } from "../../content/StatisticsContent";
 import { useState } from "react";
 import { CiCalendar } from "react-icons/ci";
-import CityDropdown from "../../components/CityDropdown";
+import CityDropdown, { type CityType } from "../../components/CityDropdown";
 import AverageLineChart from "./AverageLineChart";
 
-type CityType = 'burnaby' | 'courtenay';
+
 
 const ThoughtsOnRecreation: React.FC = () => {
     const { language } = useLanguage();
