@@ -16,7 +16,7 @@ import { BURNABY_COLOR_PALETTE, COURTENAY_COLOR_PALETTE } from '../pages/Statist
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend, ChartDataLabels);
 
-type CityType = 'burnaby' | 'courtenay';
+type CityType = 'burnaby' | 'courtenay' | 'total';
 
 export interface StackedSeries {
   name: string;
@@ -34,6 +34,7 @@ export interface StackedColumnChartProps {
   subtitle?: string;
   burnaby: CityStackedData;
   courtenay: CityStackedData;
+  total?: CityStackedData;
   /** Render as horizontal stacked bars instead of vertical columns */
   horizontal?: boolean;
   /** Override chart height in px (default 384) */
@@ -45,12 +46,13 @@ const StackedColumnChart: React.FC<StackedColumnChartProps> = ({
   subtitle,
   burnaby,
   courtenay,
+  total,
   horizontal = false,
   chartHeight = 384,
 }) => {
   const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
-  const cityData = selectedCity === 'burnaby' ? burnaby : courtenay;
-  const palette = selectedCity === 'burnaby' ? BURNABY_COLOR_PALETTE : COURTENAY_COLOR_PALETTE;
+  const cityData = selectedCity === 'burnaby' ? burnaby : selectedCity === 'courtenay' ? courtenay : (total ?? burnaby);
+  const palette = selectedCity === 'courtenay' ? COURTENAY_COLOR_PALETTE : BURNABY_COLOR_PALETTE;
 
   // Pick evenly spaced colors from the palette for each series
   const seriesColors = cityData.series.map((_, i) => {
@@ -131,7 +133,7 @@ const StackedColumnChart: React.FC<StackedColumnChartProps> = ({
           <p className="text-sm text-gray-600 mb-4 font-dm-sans">{subtitle}</p>
         )}
         <div className="flex flex-wrap items-center gap-4 mb-6">
-          <CityDropdown selectedCity={selectedCity} onCityChange={setSelectedCity} />
+          <CityDropdown selectedCity={selectedCity} onCityChange={setSelectedCity} showTotal={true} />
           <div className="flex items-center gap-2 text-gray-500 text-sm">
             <CiCalendar className="w-4 h-4" />
             <span className="font-dm-sans">{cityData.lastUpdated}</span>

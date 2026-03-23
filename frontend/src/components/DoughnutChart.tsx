@@ -8,7 +8,7 @@ import { generateBurnabyColors, generateCourtenayColors } from '../pages/Statist
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-type CityType = 'burnaby' | 'courtenay';
+type CityType = 'burnaby' | 'courtenay' | 'total';
 
 export interface DoughnutEntry {
   name: string;
@@ -25,6 +25,7 @@ export interface DoughnutChartProps {
   subtitle?: string;
   burnaby: CityDoughnutData;
   courtenay: CityDoughnutData;
+  total?: CityDoughnutData;
 }
 
 const DoughnutChart: React.FC<DoughnutChartProps> = ({
@@ -32,14 +33,15 @@ const DoughnutChart: React.FC<DoughnutChartProps> = ({
   subtitle,
   burnaby,
   courtenay,
+  total,
 }) => {
   const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
-  const cityData = selectedCity === 'burnaby' ? burnaby : courtenay;
+  const cityData = selectedCity === 'burnaby' ? burnaby : selectedCity === 'courtenay' ? courtenay : (total ?? burnaby);
 
   const colors =
-    selectedCity === 'burnaby'
-      ? generateBurnabyColors(cityData.data.map(d => d.percentage))
-      : generateCourtenayColors(cityData.data.map(d => d.percentage));
+    selectedCity === 'courtenay'
+      ? generateCourtenayColors(cityData.data.map(d => d.percentage))
+      : generateBurnabyColors(cityData.data.map(d => d.percentage));
 
   const chartData = {
     labels: cityData.data.map(d => `${d.name} (${d.percentage}%)`),
@@ -87,7 +89,7 @@ const DoughnutChart: React.FC<DoughnutChartProps> = ({
           <p className="text-sm text-gray-600 mb-4 font-dm-sans">{subtitle}</p>
         )}
         <div className="flex flex-wrap items-center gap-3 mb-0">
-          <CityDropdown selectedCity={selectedCity} onCityChange={setSelectedCity} />
+          <CityDropdown selectedCity={selectedCity} onCityChange={setSelectedCity} showTotal={true} />
           <div className="flex items-center gap-2 text-gray-500 text-xs">
             <CiCalendar className="w-4 h-4" />
             <span className="font-dm-sans">{cityData.lastUpdated}</span>

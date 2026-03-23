@@ -23,7 +23,7 @@ ChartJS.register(
   ChartDataLabels
 );
 
-type CityType = 'burnaby' | 'courtenay';
+type CityType = 'burnaby' | 'courtenay' | 'total';
 
 export interface EthnicityEntry {
   name: string;
@@ -40,6 +40,7 @@ export interface HorizontalBarChartProps {
   subtitle?: string;
   burnaby: CityEthnicityData;
   courtenay: CityEthnicityData;
+  total?: CityEthnicityData;
   /** Optional bottom label shown below the chart */
   chartLabel?: string;
 }
@@ -82,15 +83,16 @@ const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
   subtitle,
   burnaby,
   courtenay,
+  total,
   chartLabel,
 }) => {
   const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
-  const cityData = selectedCity === 'burnaby' ? burnaby : courtenay;
+  const cityData = selectedCity === 'burnaby' ? burnaby : selectedCity === 'courtenay' ? courtenay : (total ?? burnaby);
 
   const colors =
-    selectedCity === 'burnaby'
-      ? generateBurnabyColors(cityData.data.map(d => d.percentage))
-      : generateCourtenayColors(cityData.data.map(d => d.percentage));
+    selectedCity === 'courtenay'
+      ? generateCourtenayColors(cityData.data.map(d => d.percentage))
+      : generateBurnabyColors(cityData.data.map(d => d.percentage));
 
   const data = {
     labels: cityData.data.map(d => d.name),
@@ -115,7 +117,7 @@ const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
           <p className="text-sm text-gray-600 mb-4 font-dm-sans">{subtitle}</p>
         )}
         <div className="flex flex-wrap items-center gap-4 mb-6">
-          <CityDropdown selectedCity={selectedCity} onCityChange={setSelectedCity} />
+          <CityDropdown selectedCity={selectedCity} onCityChange={setSelectedCity} showTotal={true} />
           <div className="flex items-center gap-2 text-gray-500 text-sm">
             <CiCalendar className="w-4 h-4" />
             <span className="font-dm-sans">{cityData.lastUpdated}</span>
