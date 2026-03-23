@@ -3,14 +3,15 @@ import { PiCaretDown } from "react-icons/pi";
 import { useLanguage } from "../context/LanguageContext";
 import { statisticsContent } from "../content/StatisticsContent";
 
-type CityType = 'burnaby' | 'courtenay';
+type CityType = 'burnaby' | 'courtenay' | 'total';
 
 interface CityDropdownProps {
     selectedCity: CityType;
     onCityChange: (city: CityType) => void;
+    showTotal?: boolean;
 }
 
-const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange }) => {
+const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange, showTotal = false }) => {
     const { language } = useLanguage();
     const cities = statisticsContent[language].surveyDataReport.cities;
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -48,7 +49,7 @@ const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange 
                 aria-label="Select city"
                 aria-expanded={isDropdownOpen}
             >
-                <span className={`w-2 h-2 rounded-full ${selectedCity === 'burnaby' ? 'bg-[#0f4c28]' : 'bg-[#034F59]'}`}></span>
+                <span className={`w-2 h-2 rounded-full ${selectedCity === 'courtenay' ? 'bg-[#034F59]' : 'bg-[#0f4c28]'}`}></span>
                 <span className="font-medium text-gray-700 font-dm-sans">
                     {cities[selectedCity]}
                 </span>
@@ -73,11 +74,23 @@ const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange 
                             e.stopPropagation();
                             handleCitySelect('courtenay');
                         }}
-                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-b-lg ${selectedCity === 'courtenay' ? 'bg-gray-100 font-semibold' : ''
+                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans ${showTotal ? '' : 'rounded-b-lg'} ${selectedCity === 'courtenay' ? 'bg-gray-100 font-semibold' : ''
                             }`}
                     >
                         {cities.courtenay}
                     </button>
+                    {showTotal && (
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleCitySelect('total');
+                            }}
+                            className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-b-lg ${selectedCity === 'total' ? 'bg-gray-100 font-semibold' : ''
+                                }`}
+                        >
+                            {cities.total}
+                        </button>
+                    )}
                 </div>
             )}
         </div>
