@@ -14,6 +14,7 @@ const StaffYearsWorked: React.FC = () => {
           subtitle={content.subtitle}
           burnaby={content.burnaby}
           courtenay={content.courtenay}
+          total={content.total}
         />
       </div>
     </div>

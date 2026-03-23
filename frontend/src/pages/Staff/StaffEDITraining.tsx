@@ -12,6 +12,7 @@ const StaffEDITraining: React.FC = () => {
       subtitle={content.subtitle}
       burnaby={content.burnaby}
       courtenay={content.courtenay}
+      total={content.total}
       horizontal
       chartHeight={280}
     />
