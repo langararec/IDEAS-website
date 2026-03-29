@@ -13,11 +13,6 @@ const CareerRow: React.FC<{ listing: CareerListing; content: typeof careersConte
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const formatDate = (iso: string) => {
-        const d = new Date(iso);
-        return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-    };
-
     const mailtoHref = listing.applyCC
         ? `mailto:${listing.applyEmail}?cc=${listing.applyCC}&subject=${encodeURIComponent(listing.applySubject ?? listing.title)}`
         : `mailto:${listing.applyEmail}?subject=${encodeURIComponent(listing.applySubject ?? listing.title)}`;
@@ -40,7 +35,7 @@ const CareerRow: React.FC<{ listing: CareerListing; content: typeof careersConte
                 </span>
                 <span className="flex items-center gap-1.5">
                     <BsCalendar3 className="size-3.5 text-accent flex-shrink-0" />
-                    {content.posted}: {formatDate(listing.postedDate)}
+                    {content.posted}: {listing.postedDate}
                 </span>
             </div>
 
