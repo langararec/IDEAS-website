@@ -10,6 +10,7 @@ import Gallery from './pages/Gallery/Gallery'
 import References from './pages/References/References'
 import Statistics from './pages/Statistics/Statistics'
 import Staff from './pages/Staff/Staff'
+import Careers from './pages/Team/Careers'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -34,6 +35,7 @@ function App() {
         <Route path='/references' element={<References />} />
         <Route path='/statistics' element={<Statistics />} />
         <Route path='/staff' element={<Staff />} />
+        <Route path='/careers' element={<Careers />} />
         <Route path='*' element={<NotFound />} />
 
       </Routes>

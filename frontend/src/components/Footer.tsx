@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer key={`footer-${language}`} >
-            <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="max-w-7xl mx-auto px-4 lg:px-0 py-8">
                 <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
 
                     {/* Left Column - Logo & Contact Info */}

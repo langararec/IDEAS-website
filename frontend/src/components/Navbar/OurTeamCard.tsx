@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { navModalContent } from '../../content/NavModalContent';
+import { careerListings } from '../../content/CareersContent';
+import { navContent } from '../../content/NavContent';
 
 type AboutUsCardProps = {
     setCurrentNav?: (value: string | null) => void;
@@ -44,8 +46,13 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                     <div className="flex-1  py-2 space-y-2">
                         {content.links.map((link, index) => (
                             <Link key={`${language}-team-link-${index}`} to={link.path} className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
-                                <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
+                                <div className="flex items-center gap-2 text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
                                     {link.text}
+                                    {link.path === '/careers' && careerListings.length > 0 && (
+                                        <span className="bg-accent text-white text-[10px] font-bold font-dm-sans px-2 py-0.5 rounded-full whitespace-nowrap ">
+                                            {navContent[language].hiringBadge}
+                                        </span>
+                                    )}
                                 </div>
                             </Link>
                         ))}
