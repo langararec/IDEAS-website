@@ -133,7 +133,7 @@ const Careers: React.FC = () => {
     return (
         <div key={`careers-${language}`} className="bg-base-100 min-h-[65vh]">
             {/* Content */}
-            <div className="px-4 sm:px-6 lg:px-0 max-w-7xl mx-auto relative">
+            <div className="px-4 sm:px-6 lg:px-0 max-w-7xl mx-auto relative py-4">
                 <h1 className="text-4xl font-bold font-dm-sans text-primary my-4">{content.pageTitle}</h1>
                 {careerListings.length === 0 ? (
                     <p className="text-gray-500 font-dm-sans border-t-2 border-t-gray-200 pt-8 text-center py-16">
