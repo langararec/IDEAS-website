@@ -43,6 +43,10 @@ export const navModalContent = {
         {
           path: "/team",
           text: "Student Research Assistants"
+        },
+        {
+          path: "/careers",
+          text: "Join Us"
         }
       ]
     },
@@ -104,6 +108,10 @@ export const navModalContent = {
         {
           path: "/team",
           text: "Assistants de Recherche Étudiants"
+        },
+        {
+          path: "/careers",
+          text: "Rejoindre"
         }
       ]
     },
