@@ -2,7 +2,7 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { homeContent } from "../../content/HomeContent";
 import Carousel from "./Carousel";
-import SurveyDropdown from "../../components/SurveyDropdown";
+//import SurveyDropdown from "../../components/SurveyDropdown";
 
 const Hero: React.FC = () => {
     const { language } = useLanguage();
@@ -18,13 +18,13 @@ const Hero: React.FC = () => {
                     {content.description}
                 </p>
                 <Carousel />
-                <p className="text-lg lg:text-3xl leading-relaxed tracking-wide font-medium font-dm-sans text-primary mt-4">
+                {/* <p className="text-lg lg:text-3xl leading-relaxed tracking-wide font-medium font-dm-sans text-primary mt-4">
                     {content.surveyCall}
                 </p>
 
                 <div className="flex justify-center mb-14 mt-2">
                     <SurveyDropdown />
-                </div>
+                </div> */}
 
             </div>
         </div>
