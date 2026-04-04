@@ -57,7 +57,7 @@ const CareerRow: React.FC<{ listing: CareerListing; content: typeof careersConte
                     isExpanded ? "opacity-100" : "max-h-0 opacity-0"
                 }`}
             >
-                <div className="space-y-8 pt-6">
+                <div className="space-y-6 pt-6">
                     {/* Description */}
                     <div className="space-y-3 text-gray-600 leading-relaxed text-sm font-dm-sans">
                         {listing.description.split("\n\n").map((para, i) => (
@@ -65,9 +65,33 @@ const CareerRow: React.FC<{ listing: CareerListing; content: typeof careersConte
                         ))}
                     </div>
 
+                    {/* About the Project */}
+                    {listing.aboutProject && (
+                        <div>
+                            <h4 className="text-base font-semibold text-gray-900 mb-2 font-dm-sans">{content.aboutProject}</h4>
+                            <div className="space-y-3 text-gray-600 leading-relaxed text-sm font-dm-sans">
+                                {listing.aboutProject.split("\n\n").map((para, i) => (
+                                    <p key={i}>{para}</p>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* About the Applied Research Centre */}
+                    {listing.aboutARC && (
+                        <div>
+                            <h4 className="text-base font-semibold text-gray-900 mb-2 font-dm-sans">{content.aboutARC}</h4>
+                            <div className="space-y-3 text-gray-600 leading-relaxed text-sm font-dm-sans">
+                                {listing.aboutARC.split("\n\n").map((para, i) => (
+                                    <p key={i}>{para}</p>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {/* Responsibilities */}
                     <div>
-                        <h4 className="text-base font-semibold text-gray-900 mb-3 font-dm-sans">{content.responsibilities}</h4>
+                        <h4 className="text-base font-semibold text-gray-900 mb-2 font-dm-sans">{content.responsibilities}</h4>
                         <ul className="list-disc list-inside space-y-1.5 text-gray-600 text-sm font-dm-sans">
                             {listing.responsibilities.map((item, i) => (
                                 <li key={i}>{item}</li>
@@ -77,7 +101,7 @@ const CareerRow: React.FC<{ listing: CareerListing; content: typeof careersConte
 
                     {/* Qualifications */}
                     <div>
-                        <h4 className="text-base font-semibold text-gray-900 mb-3 font-dm-sans">{content.qualifications}</h4>
+                        <h4 className="text-base font-semibold text-gray-900 mb-2 font-dm-sans">{content.qualifications}</h4>
                         <ul className="list-disc list-inside space-y-1.5 text-gray-600 text-sm font-dm-sans">
                             {listing.qualifications.map((item, i) => (
                                 <li key={i}>{item}</li>
@@ -89,11 +113,11 @@ const CareerRow: React.FC<{ listing: CareerListing; content: typeof careersConte
                     {listing.additionalDetails && listing.additionalDetails.length > 0 && (
                         <div>
                             <h4 className="text-base font-semibold text-gray-900 mb-4 font-dm-sans">{content.additionalDetails}</h4>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 w-fit rounded-md border-l-accent border-l-4 px-4">
                                 {listing.additionalDetails.map((detail, i) => (
-                                    <div key={i} className="bg-gray-200/40 border border-gray-200 rounded-xl px-4 py-3">
-                                            <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-widest block mb-1 font-dm-sans">{detail.label}</span>
-                                            <p className="text-gray-700 text-sm font-medium font-dm-sans">{detail.value}</p>
+                                    <div key={i} className=" py-3">
+                                            <span className="text-[11px] font-semibold text-accent uppercase tracking-widest block mb-1 font-dm-sans">{detail.label}</span>
+                                            <p className="text-black text-sm font-medium font-dm-sans">{detail.value}</p>
                                     </div>
                                 ))}
                             </div>
