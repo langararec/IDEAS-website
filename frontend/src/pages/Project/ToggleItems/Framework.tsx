@@ -21,7 +21,7 @@ const Framework: React.FC = () => {
                 {content.personCenteredDescription}
             </p>
             <div className="w-full mx-auto py-4">
-                <img src="/RJC.webp" alt={content.rjcImageAlt} className="mt-4 mb-8" />
+                <img src="/recreation-for-joyful-communities-no-bg.png" alt={content.rjcImageAlt} className="mt-4 mb-8" />
                 <h2 className="text-2xl font-semibold text-primary mb-4 font-dm-sans">
                     {content.researchPosterTitle}
                 </h2>
