@@ -16,13 +16,13 @@ const ItemToggle: React.FC = () => {
     const renderActiveComponent = () => {
         switch (activeTab) {
             case 'component1':
-                return <UNSDG />;
-            case 'component2':
                 return <Framework />;
+            case 'component2':
+                return <UNSDG />;
             case 'component3':
                 return <Outcomes />;
             default:
-                return <UNSDG />;
+                return <Framework />;
         }
     };
 
