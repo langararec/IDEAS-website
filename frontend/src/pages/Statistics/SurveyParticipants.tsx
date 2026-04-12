@@ -14,7 +14,7 @@ import {
 } from 'chart.js';
 import CityDropdown, { type CityType } from "../../components/CityDropdown";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { generateBurnabyColors, generateCourtenayColors } from "./constants/colors";
+import { COURTENAY_COLOR_PALETTE } from "./constants/colors";
 import type { SurveyDataReportType } from "../../content/Statistics/SurveyDataReport";
 
 // Register Chart.js components
@@ -37,14 +37,10 @@ const SurveyParticipants: React.FC = () => {
     const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
 
 
-    const currentData = selectedCity === 'burnaby' ? content.burnaby : content.courtenay;
+    const currentData = selectedCity === 'burnaby' ? content.burnaby : selectedCity === 'courtenay' ? content.courtenay : content.total;
 
-    const generateColors = (data: number[], city: CityType) => {
-        if (city === 'courtenay') {
-            return generateCourtenayColors(data);
-        }
-
-        return generateBurnabyColors(data);
+    const generateColors = (data: number[]) => {
+        return data.map(() => COURTENAY_COLOR_PALETTE[0]);
     };
 
     // Prepare census data for Chart.js
@@ -55,8 +51,7 @@ const SurveyParticipants: React.FC = () => {
                 label: content.chartLabel,
                 data: currentData.censusEthnicities.map(e => e.percentage),
                 backgroundColor: generateColors(
-                    currentData.censusEthnicities.map(e => e.percentage),
-                    selectedCity
+                    currentData.censusEthnicities.map(e => e.percentage)
                 ),
                 borderWidth: 0,
                 borderRadius: 8,
@@ -72,8 +67,7 @@ const SurveyParticipants: React.FC = () => {
                 label: content.chartLabel,
                 data: currentData.ethnicities.map(e => e.percentage),
                 backgroundColor: generateColors(
-                    currentData.ethnicities.map(e => e.percentage),
-                    selectedCity
+                    currentData.ethnicities.map(e => e.percentage)
                 ),
                 borderWidth: 0,
                 borderRadius: 8,
@@ -140,11 +134,10 @@ const SurveyParticipants: React.FC = () => {
 
                 {/* Filter and Last Updated */}
                 <div className="flex flex-wrap items-center gap-4 mb-6">
-                    <div className="relative">
-                        <CityDropdown
-                            selectedCity={selectedCity}
-                            onCityChange={setSelectedCity} />
-                    </div>
+                    <CityDropdown
+                        selectedCity={selectedCity}
+                        onCityChange={setSelectedCity}
+                        showTotal={true} />
                     <div className="flex items-center gap-2 text-gray-500 text-sm">
                         <CiCalendar className="w-4 h-4" />
                         <span className="font-dm-sans">{currentData.lastUpdated}</span>
@@ -161,16 +154,18 @@ const SurveyParticipants: React.FC = () => {
                 */}
 
                 {/* Charts Container */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Census Data Chart */}
-                    <div>
-                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans text-center">
-                            {content.censusComparisonTitle}
-                        </h4>
-                        <div className="h-96">
-                            <Bar data={censusChartData} options={chartOptions} />
+                <div className={`grid grid-cols-1 gap-8 ${selectedCity !== 'total' ? 'lg:grid-cols-2' : ''}`}>
+                    {/* Census Data Chart — hidden for combined/total view */}
+                    {selectedCity !== 'total' && (
+                        <div>
+                            <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans text-center">
+                                {content.censusComparisonTitle}
+                            </h4>
+                            <div className="h-96">
+                                <Bar data={censusChartData} options={chartOptions} />
+                            </div>
                         </div>
-                    </div>
+                    )}
 
                     {/* Survey Data Chart */}
                     <div>
