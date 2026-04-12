@@ -3,6 +3,10 @@ import {
   fr as thoughtsOnRecreationFR,
 } from "./Statistics/ThoughtsOnRecreation";
 import {
+  en as belongingDignityJusticeEN,
+  fr as belongingDignityJusticeFR,
+} from "./Statistics/BelongingDignityJustice";
+import {
   en as surveyDataReportEN,
   fr as surveyDataReportFR,
 } from "./Statistics/SurveyDataReport";
@@ -45,6 +49,7 @@ export const statisticsContent = {
     recreationBehaviors: recreationBehaviorsEN,
     communicationChannels: communicationChannelsEN,
     thoughtsOnRecreation: thoughtsOnRecreationEN,
+    belongingDignityJustice: belongingDignityJusticeEN,
     dotmocracy: {
       title: "Dotmocracy Results",
     },
@@ -77,6 +82,7 @@ export const statisticsContent = {
     recreationBehaviors: recreationBehaviorsFR,
     communicationChannels: communicationChannelsFR,
     thoughtsOnRecreation: thoughtsOnRecreationFR,
+    belongingDignityJustice: belongingDignityJusticeFR,
   },
 };
 
