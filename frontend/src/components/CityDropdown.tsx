@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import { PiCaretDown } from "react-icons/pi";
 import { useLanguage } from "../context/LanguageContext";
 import { statisticsContent } from "../content/StatisticsContent";
 
@@ -15,87 +13,33 @@ interface CityDropdownProps {
 const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange, showTotal = false }) => {
     const { language } = useLanguage();
     const cities = statisticsContent[language].surveyDataReport.cities;
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsDropdownOpen(false);
-            }
-        };
-
-        if (isDropdownOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [isDropdownOpen]);
-
-    const handleCitySelect = (city: CityType) => {
-        onCityChange(city);
-        setIsDropdownOpen(false);
-    };
+    const buttons: [CityType, string][] = showTotal
+        ? [['total', cities.total], ['burnaby', cities.burnaby], ['courtenay', cities.courtenay]]
+        : [['burnaby', cities.burnaby], ['courtenay', cities.courtenay]];
 
     return (
-        <div className="relative" ref={dropdownRef}>
-            <button
-                onClick={(e) => {
-                    e.stopPropagation();
-                    setIsDropdownOpen(!isDropdownOpen);
-                }}
-                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                aria-label="Select city"
-                aria-expanded={isDropdownOpen}
-            >
-                <span className={`w-2 h-2 rounded-full ${selectedCity === 'courtenay' ? 'bg-[#034F59]' : 'bg-[#0f4c28]'}`}></span>
-                <span className="font-medium text-gray-700 font-dm-sans">
-                    {cities[selectedCity]}
-                </span>
-                <PiCaretDown className={`w-4 h-4 text-gray-500 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+        <div className="flex">
+            {buttons.map(([city, label], i) => {
+                const isActive = selectedCity === city;
 
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-full min-w-[150px] bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+                return (
                     <button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            handleCitySelect('burnaby');
-                        }}
-                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-t-lg ${selectedCity === 'burnaby' ? 'bg-gray-100 font-semibold' : ''
+                        key={city}
+                        onClick={() => onCityChange(city)}
+                        className={`px-2 py-1 text-sm font-medium font-dm-sans border transition-colors mr-2 rounded-md
+                            ${isActive
+                                ? 'bg-primary text-white border-primary z-10'
+                                : 'bg-transparent text-neutral-500 border-neutral-500 hover:bg-neutral-50'
                             }`}
                     >
-                        {cities.burnaby}
+                        {label}
                     </button>
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            handleCitySelect('courtenay');
-                        }}
-                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans ${showTotal ? '' : 'rounded-b-lg'} ${selectedCity === 'courtenay' ? 'bg-gray-100 font-semibold' : ''
-                            }`}
-                    >
-                        {cities.courtenay}
-                    </button>
-                    {showTotal && (
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                handleCitySelect('total');
-                            }}
-                            className={`w-full text-left px-4 py-2 hover:bg-gray-50 font-dm-sans rounded-b-lg ${selectedCity === 'total' ? 'bg-gray-100 font-semibold' : ''
-                                }`}
-                        >
-                            {cities.total}
-                        </button>
-                    )}
-                </div>
-            )}
+                );
+            })}
         </div>
     );
 };
 
 export default CityDropdown;
+
