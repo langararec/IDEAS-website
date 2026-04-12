@@ -4,7 +4,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { CiCalendar } from 'react-icons/ci';
 import { useState } from 'react';
 import CityDropdown from './CityDropdown';
-import { generateBurnabyColors, generateCourtenayColors } from '../pages/Statistics/constants/colors';
+import { generateCourtenayColors } from '../pages/Statistics/constants/colors';
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
@@ -38,10 +38,7 @@ const DoughnutChart: React.FC<DoughnutChartProps> = ({
   const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
   const cityData = selectedCity === 'burnaby' ? burnaby : selectedCity === 'courtenay' ? courtenay : (total ?? burnaby);
 
-  const colors =
-    selectedCity === 'courtenay'
-      ? generateCourtenayColors(cityData.data.map(d => d.percentage))
-      : generateBurnabyColors(cityData.data.map(d => d.percentage));
+  const colors = generateCourtenayColors(cityData.data.map(d => d.percentage));
 
   const chartData = {
     labels: cityData.data.map(d => `${d.name} (${d.percentage}%)`),

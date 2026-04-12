@@ -12,7 +12,7 @@ import {
 import { useState } from 'react';
 import { CiCalendar } from 'react-icons/ci';
 import CityDropdown from './CityDropdown';
-import { generateBurnabyColors, generateCourtenayColors } from '../pages/Statistics/constants/colors';
+import { generateCourtenayColors } from '../pages/Statistics/constants/colors';
 
 ChartJS.register(
   CategoryScale,
@@ -89,10 +89,7 @@ const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
   const [selectedCity, setSelectedCity] = useState<CityType>('burnaby');
   const cityData = selectedCity === 'burnaby' ? burnaby : selectedCity === 'courtenay' ? courtenay : (total ?? burnaby);
 
-  const colors =
-    selectedCity === 'courtenay'
-      ? generateCourtenayColors(cityData.data.map(d => d.percentage))
-      : generateBurnabyColors(cityData.data.map(d => d.percentage));
+  const colors = generateCourtenayColors(cityData.data.map(d => d.percentage));
 
   const data = {
     labels: cityData.data.map(d => d.name),
