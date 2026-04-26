@@ -3,6 +3,9 @@ import { useLanguage } from "../../context/LanguageContext";
 import { statisticsContent } from "../../content/StatisticsContent";
 import Demography from "./Demography";
 import BelongingDignityJustice from "./BelongingDignityJustice";
+import WhyParks from "./WhyParks";
+import BarriersToRecreation from "./BarriersToRecreation";
+import RecreationInfoSources from "./RecreationInfoSources";
 
 
 const SurveyDataReport: React.FC = () => {
@@ -19,6 +22,9 @@ const SurveyDataReport: React.FC = () => {
             </div>
             <Demography />
             <BelongingDignityJustice />
+            <WhyParks />
+            <BarriersToRecreation />
+            <RecreationInfoSources />
  
         </div>
     );
