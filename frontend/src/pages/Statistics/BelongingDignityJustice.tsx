@@ -17,6 +17,14 @@ const BelongingDignityJustice: React.FC = () => {
     const welcomeData   = belonging.welcome[selectedCity];
     const peopleLikeMe  = belonging.peopleLikeMe[selectedCity];
 
+    const belongingPlusDignity = content.belongingPlusDignity;
+    const fitInData       = belongingPlusDignity.fitIn[selectedCity];
+    const sharingIdeasData = belongingPlusDignity.sharingIdeas[selectedCity];
+
+    const belongingPlusJustice = content.belongingPlusJustice;
+    const enoughActivitiesData = belongingPlusJustice.enoughActivities[selectedCity];
+    const rightActivitiesData  = belongingPlusJustice.rightActivities[selectedCity];
+
     return (
         <div className="mb-6 max-w-7xl mx-auto">
             <div className="rounded-xl py-6 bg-white border-1 border-gray-200">
@@ -57,6 +65,48 @@ const BelongingDignityJustice: React.FC = () => {
                                 data={peopleLikeMe}
                                 rowLabels={belonging.rowLabels}
                                 responseLabels={belonging.responseLabels}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Belonging + Dignity subsection */}
+                    <div className="mb-8">
+                        <h4 className="text-lg md:text-xl font-semibold text-primary mb-4 font-dm-sans">
+                            {belongingPlusDignity.title}
+                        </h4>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <HorizontalStackedBar
+                                question={belongingPlusDignity.fitIn.question}
+                                data={fitInData}
+                                rowLabels={belongingPlusDignity.rowLabels}
+                                responseLabels={belongingPlusDignity.responseLabels}
+                            />
+                            <HorizontalStackedBar
+                                question={belongingPlusDignity.sharingIdeas.question}
+                                data={sharingIdeasData}
+                                rowLabels={belongingPlusDignity.rowLabels}
+                                responseLabels={belongingPlusDignity.responseLabels}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Belonging + Justice subsection */}
+                    <div className="mb-8">
+                        <h4 className="text-lg md:text-xl font-semibold text-primary mb-4 font-dm-sans">
+                            {belongingPlusJustice.title}
+                        </h4>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <HorizontalStackedBar
+                                question={belongingPlusJustice.enoughActivities.question}
+                                data={enoughActivitiesData}
+                                rowLabels={belongingPlusJustice.rowLabels}
+                                responseLabels={belongingPlusJustice.responseLabels}
+                            />
+                            <HorizontalStackedBar
+                                question={belongingPlusJustice.rightActivities.question}
+                                data={rightActivitiesData}
+                                rowLabels={belongingPlusJustice.rowLabels}
+                                responseLabels={belongingPlusJustice.responseLabels}
                             />
                         </div>
                     </div>
