@@ -20,7 +20,7 @@ const CityDropdown: React.FC<CityDropdownProps> = ({ selectedCity, onCityChange,
 
     return (
         <div className="flex">
-            {buttons.map(([city, label], i) => {
+            {buttons.map(([city, label]) => {
                 const isActive = selectedCity === city;
 
                 return (
