@@ -22,6 +22,18 @@ import {
   en as communicationChannelsEN,
   fr as communicationChannelsFR,
 } from "./Statistics/CommunicationChannels";
+import {
+  en as whyParksEN,
+  fr as whyParksFR,
+} from "./Statistics/WhyParks";
+import {
+  en as barriersToRecreationEN,
+  fr as barriersToRecreationFR,
+} from "./Statistics/BarriersToRecreation";
+import {
+  en as recreationInfoSourcesEN,
+  fr as recreationInfoSourcesFR,
+} from "./Statistics/RecreationInfoSources";
 
 export const statisticsContent = {
   en: {
@@ -42,6 +54,11 @@ export const statisticsContent = {
           label: "ACTIVITY SHEETS",
           shortLabel: "ACTIVITIES",
         },
+        {
+          id: "component4",
+          label: "STAFF DATA",
+          shortLabel: "STAFF",
+        },
       ],
     },
     surveyDataReport: surveyDataReportEN,
@@ -50,6 +67,9 @@ export const statisticsContent = {
     communicationChannels: communicationChannelsEN,
     thoughtsOnRecreation: thoughtsOnRecreationEN,
     belongingDignityJustice: belongingDignityJusticeEN,
+    whyParks: whyParksEN,
+    barriersToRecreation: barriersToRecreationEN,
+    recreationInfoSources: recreationInfoSourcesEN,
     dotmocracy: {
       title: "Dotmocracy Results",
     },
@@ -75,6 +95,11 @@ export const statisticsContent = {
           label: "FEUILLES D'ACTIVITÉS",
           shortLabel: "ACTIVITÉS",
         },
+        {
+          id: "component4",
+          label: "DONNÉES DU PERSONNEL",
+          shortLabel: "PERSONNEL",
+        },
       ],
     },
     surveyDataReport: surveyDataReportFR,
@@ -83,6 +108,9 @@ export const statisticsContent = {
     communicationChannels: communicationChannelsFR,
     thoughtsOnRecreation: thoughtsOnRecreationFR,
     belongingDignityJustice: belongingDignityJusticeFR,
+    whyParks: whyParksFR,
+    barriersToRecreation: barriersToRecreationFR,
+    recreationInfoSources: recreationInfoSourcesFR,
   },
 };
 
