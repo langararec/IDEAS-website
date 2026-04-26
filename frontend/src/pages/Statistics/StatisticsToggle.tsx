@@ -4,7 +4,8 @@ import { statisticsContent } from "../../content/StatisticsContent";
 import SurveyDataReport from "./SurveyDataReport";
 import Dotmocracy from "./Dotmocracy";
 import ActivitySheets from "./ActivitySheets";
-type ItemType = 'component1' | 'component2' | 'component3';
+import StaffData from "./StaffData";
+type ItemType = 'component1' | 'component2' | 'component3' | 'component4';
 
 
 const StatisticsToggle: React.FC = () => {
@@ -21,6 +22,8 @@ const StatisticsToggle: React.FC = () => {
                 return <Dotmocracy />;
             case 'component3':
                 return <ActivitySheets />;
+            case 'component4':
+                return <StaffData />;
             default:
                 return <SurveyDataReport />;
         }
