@@ -13,11 +13,11 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend, ChartD
 
 // Left to right: strong red → light red → grey → light green → dark green
 const RESPONSE_COLORS = [
-    "#991B1B", // Strongly Disagree — dark red
-    "#B91C1C", // Disagree         — red-700
-    "#D1D5DB", // Neutral          — grey
-    "#15803D", // Agree            — green-700
-    "#166534", // Strongly Agree   — dark green
+    "#C0392B", // Strongly Disagree — dark red
+    "#E9857B", // Disagree         — red-700
+    "#C4C4C4", // Neutral          — grey
+    "#2E8A52", // Agree            — green-700
+    "#1C6B3A", // Strongly Agree   — dark green
 ];
 
 interface StackedRowData {
@@ -100,12 +100,8 @@ const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = ({
                 {question}
             </h5>
 
-            <div className="h-32">
-                <Bar key={`${data.sixYearsOrLess.join()}-${data.moreThan6Years.join()}`} data={chartData} options={options} />
-            </div>
-
             {/* Legend */}
-            <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-4">
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-4 justify-center">
                 {responseLabels.map((label, i) => (
                     <div key={i} className="flex items-center gap-1.5">
                         <div
@@ -115,6 +111,10 @@ const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = ({
                         <span className="text-xs text-gray-600 font-dm-sans">{label}</span>
                     </div>
                 ))}
+            </div>
+
+            <div className="h-32">
+                <Bar key={`${data.sixYearsOrLess.join()}-${data.moreThan6Years.join()}`} data={chartData} options={options} />
             </div>
         </div>
     );
