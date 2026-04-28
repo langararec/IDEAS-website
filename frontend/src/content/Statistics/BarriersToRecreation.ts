@@ -36,17 +36,17 @@ const ALL_DATA: HeatmapData = {
 };
 
 const BURNABY_DATA: HeatmapData = {
-    lessThan1:  { noInfo: 17.65, noKnowledge: 20.59, tooCostly: 14.71, noTime:  8.82, notWelcome:  5.88, hardToGet:  5.88, noEnglish: 20.59, noCompanion: 11.76, disability: 0.00, dontKnowSignUp: 14.71, notInteresting:  2.94 },
-    oneToThree: { noInfo: 12.07, noKnowledge: 12.07, tooCostly: 12.07, noTime:  8.62, notWelcome:  1.72, hardToGet:  0.00, noEnglish:  6.90, noCompanion:  6.90, disability: 0.00, dontKnowSignUp:  8.62, notInteresting:  3.45 },
-    fourToSix:  { noInfo: 12.12, noKnowledge: 15.15, tooCostly:  9.09, noTime: 12.12, notWelcome:  0.00, hardToGet:  0.00, noEnglish: 15.15, noCompanion:  6.06, disability: 3.03, dontKnowSignUp:  0.00, notInteresting:  6.06 },
-    moreThan6:  { noInfo:  3.52, noKnowledge:  5.53, tooCostly: 19.60, noTime: 11.56, notWelcome:  1.51, hardToGet:  8.04, noEnglish:  1.01, noCompanion:  8.04, disability: 3.52, dontKnowSignUp:  1.51, notInteresting:  4.02 },
+    lessThan1:  { noInfo: 25.00, noKnowledge: 29.17, tooCostly: 20.83, noTime: 12.50, notWelcome:  8.33, hardToGet:  8.33, noEnglish: 29.17, noCompanion: 16.67, disability: 0.00, dontKnowSignUp: 20.83, notInteresting:  4.17 },
+    oneToThree: { noInfo: 25.93, noKnowledge: 25.93, tooCostly: 25.93, noTime: 18.52, notWelcome:  3.70, hardToGet:  0.00, noEnglish: 14.81, noCompanion: 14.81, disability: 0.00, dontKnowSignUp: 18.52, notInteresting:  7.41 },
+    fourToSix:  { noInfo: 14.81, noKnowledge: 18.52, tooCostly: 11.11, noTime: 14.81, notWelcome:  0.00, hardToGet:  0.00, noEnglish: 18.52, noCompanion:  7.41, disability: 3.70, dontKnowSignUp:  0.00, notInteresting:  7.41 },
+    moreThan6:  { noInfo:  5.93, noKnowledge:  9.32, tooCostly: 33.05, noTime: 19.49, notWelcome:  2.54, hardToGet: 13.56, noEnglish:  1.69, noCompanion: 13.56, disability: 5.93, dontKnowSignUp:  2.54, notInteresting:  6.78 },
 };
 
 const COURTENAY_DATA: HeatmapData = {
-    lessThan1:  { noInfo:  5.88, noKnowledge:  5.88, tooCostly:  2.94, noTime:  8.82, notWelcome:  0.00, hardToGet:  5.88, noEnglish: 11.76, noCompanion:  2.94, disability: 0.00, dontKnowSignUp:  2.94, notInteresting:  0.00 },
-    oneToThree: { noInfo: 18.97, noKnowledge: 10.34, tooCostly: 13.79, noTime: 17.24, notWelcome:  5.17, hardToGet:  5.17, noEnglish: 15.52, noCompanion: 12.07, disability: 1.72, dontKnowSignUp:  5.17, notInteresting:  3.45 },
+    lessThan1:  { noInfo: 20.00, noKnowledge: 20.00, tooCostly: 10.00, noTime: 30.00, notWelcome:  0.00, hardToGet: 20.00, noEnglish: 40.00, noCompanion: 10.00, disability: 0.00, dontKnowSignUp: 10.00, notInteresting:  0.00 },
+    oneToThree: { noInfo: 35.48, noKnowledge: 19.35, tooCostly: 25.81, noTime: 32.26, notWelcome:  9.68, hardToGet:  9.68, noEnglish: 29.03, noCompanion: 22.58, disability: 3.23, dontKnowSignUp:  9.68, notInteresting:  6.45 },
     fourToSix:  { noInfo:  0.00, noKnowledge:  0.00, tooCostly:  0.00, noTime:  0.00, notWelcome:  0.00, hardToGet:  0.00, noEnglish:  0.00, noCompanion:  0.00, disability: 0.00, dontKnowSignUp:  0.00, notInteresting:  0.00 },
-    moreThan6:  { noInfo:  4.02, noKnowledge:  5.53, tooCostly: 12.56, noTime:  8.54, notWelcome:  2.01, hardToGet:  7.04, noEnglish:  1.51, noCompanion:  3.52, disability: 4.52, dontKnowSignUp:  3.02, notInteresting:  1.01 },
+    moreThan6:  { noInfo:  9.88, noKnowledge: 13.58, tooCostly: 30.86, noTime: 20.99, notWelcome:  4.94, hardToGet: 17.28, noEnglish:  3.70, noCompanion:  8.64, disability: 11.11, dontKnowSignUp:  7.41, notInteresting:  2.47 },
 };
 
 // ─── English content ──────────────────────────────────────────────────────────

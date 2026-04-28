@@ -34,17 +34,17 @@ const ALL_DATA: HeatmapData = {
 };
 
 const BURNABY_DATA: HeatmapData = {
-    lessThan1:  { relax: 35.29, fun: 38.24, family: 38.24, exercise: 41.18, newPeople: 11.76, nature: 47.06, newSkills: 11.76, culture:  2.94, community:  8.82, canadianCulture: 11.76 },
-    oneToThree: { relax: 27.59, fun: 32.76, family: 25.86, exercise: 25.86, newPeople: 10.34, nature: 36.21, newSkills: 15.52, culture:  5.17, community:  8.62, canadianCulture: 12.07 },
-    fourToSix:  { relax: 42.42, fun: 42.42, family: 48.48, exercise: 42.42, newPeople: 12.12, nature: 42.42, newSkills: 21.21, culture: 12.12, community: 21.21, canadianCulture: 12.12 },
-    moreThan6:  { relax: 38.19, fun: 35.68, family: 35.68, exercise: 35.18, newPeople:  8.04, nature: 37.69, newSkills: 16.08, culture:  4.52, community: 18.09, canadianCulture:  6.03 },
+    lessThan1:  { relax: 50.00, fun: 54.17, family: 54.17, exercise: 58.33, newPeople: 16.67, nature: 66.67, newSkills: 16.67, culture:  4.17, community: 12.50, canadianCulture: 16.67 },
+    oneToThree: { relax: 59.26, fun: 70.37, family: 55.56, exercise: 55.56, newPeople: 22.22, nature: 77.78, newSkills: 33.33, culture: 11.11, community: 18.52, canadianCulture: 25.93 },
+    fourToSix:  { relax: 51.85, fun: 51.85, family: 59.26, exercise: 51.85, newPeople: 14.81, nature: 51.85, newSkills: 25.93, culture: 14.81, community: 25.93, canadianCulture: 14.81 },
+    moreThan6:  { relax: 64.41, fun: 60.17, family: 60.17, exercise: 59.32, newPeople: 13.56, nature: 63.56, newSkills: 27.12, culture:  7.63, community: 30.51, canadianCulture: 10.17 },
 };
 
 const COURTENAY_DATA: HeatmapData = {
-    lessThan1:  { relax: 17.65, fun: 17.65, family: 14.71, exercise: 14.71, newPeople:  8.82, nature: 20.59, newSkills:  8.82, culture:  0.00, community: 11.76, canadianCulture: 14.71 },
-    oneToThree: { relax: 44.83, fun: 32.76, family: 36.21, exercise: 29.31, newPeople: 15.52, nature: 37.93, newSkills: 15.52, culture: 10.34, community: 18.97, canadianCulture: 12.07 },
-    fourToSix:  { relax:  6.06, fun:  9.09, family:  3.03, exercise: 12.12, newPeople:  3.03, nature: 12.12, newSkills:  6.06, culture:  0.00, community:  3.03, canadianCulture:  0.00 },
-    moreThan6:  { relax: 26.13, fun: 26.63, family: 27.14, exercise: 32.16, newPeople:  8.04, nature: 33.17, newSkills: 10.05, culture:  5.03, community: 12.06, canadianCulture:  2.01 },
+    lessThan1:  { relax: 60.00, fun: 60.00, family: 50.00, exercise: 50.00, newPeople: 30.00, nature: 70.00, newSkills: 30.00, culture:  0.00, community: 40.00, canadianCulture: 50.00 },
+    oneToThree: { relax: 83.87, fun: 61.29, family: 67.74, exercise: 54.84, newPeople: 29.03, nature: 70.97, newSkills: 29.03, culture: 19.35, community: 35.48, canadianCulture: 22.58 },
+    fourToSix:  { relax: 33.33, fun: 50.00, family: 16.67, exercise: 66.67, newPeople: 16.67, nature: 66.67, newSkills: 33.33, culture:  0.00, community: 16.67, canadianCulture:  0.00 },
+    moreThan6:  { relax: 64.20, fun: 65.43, family: 66.67, exercise: 79.01, newPeople: 19.75, nature: 81.48, newSkills: 24.69, culture: 12.35, community: 29.63, canadianCulture:  4.94 },
 };
 
 // ─── English content ──────────────────────────────────────────────────────────
@@ -54,6 +54,10 @@ export const en = {
         "Percentage of respondents (by years of residency) who selected each motivation for visiting parks and participating in recreation activities",
     heatmapTitle: "Participation by Residency Length",
     top3Title: "Top 3 Motivators",
+    trendsTitle: "Trends Across Residency Length",
+    trendsSubtitle: "How motivation rates shift as respondents spend more years in their community (Less than 1 year → More than 6 years)",
+    risingTitle: "Rising ↑",
+    decliningTitle: "Declining ↓",
 
     rows: [
         "Less than 1 year",
@@ -98,6 +102,10 @@ export const fr = {
         "Pourcentage de répondants (par années de résidence) ayant sélectionné chaque motivation pour visiter les parcs et participer aux activités récréatives",
     heatmapTitle: "Participation par durée de résidence",
     top3Title: "Top 3 motivateurs",
+    trendsTitle: "Tendances selon la durée de résidence",
+    trendsSubtitle: "Évolution des taux de motivation au fil des années de résidence dans la communauté (Moins d'1 an → Plus de 6 ans)",
+    risingTitle: "En hausse ↑",
+    decliningTitle: "En baisse ↓",
 
     rows: [
         "Moins d'1 an",

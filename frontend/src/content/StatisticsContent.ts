@@ -22,10 +22,7 @@ import {
   en as communicationChannelsEN,
   fr as communicationChannelsFR,
 } from "./Statistics/CommunicationChannels";
-import {
-  en as whyParksEN,
-  fr as whyParksFR,
-} from "./Statistics/WhyParks";
+import { en as whyParksEN, fr as whyParksFR } from "./Statistics/WhyParks";
 import {
   en as barriersToRecreationEN,
   fr as barriersToRecreationFR,
@@ -41,7 +38,7 @@ export const statisticsContent = {
       tabs: [
         {
           id: "component1",
-          label: "SURVEY DATA REPORT",
+          label: "COMMUNITY SURVEY REPORT",
           shortLabel: "SURVEY",
         },
         {
@@ -54,11 +51,11 @@ export const statisticsContent = {
           label: "ACTIVITY SHEETS",
           shortLabel: "ACTIVITIES",
         },
-        {
-          id: "component4",
-          label: "STAFF DATA",
-          shortLabel: "STAFF",
-        },
+        // {
+        //   id: "component4",
+        //   label: "STAFF SURVEY REPORT",
+        //   shortLabel: "STAFF",
+        // },
       ],
     },
     surveyDataReport: surveyDataReportEN,
@@ -82,7 +79,7 @@ export const statisticsContent = {
       tabs: [
         {
           id: "component1",
-          label: "RAPPORT DE DONNÉES D'ENQUÊTE",
+          label: "RAPPORT D'ENQUÊTE COMMUNAUTAIRE",
           shortLabel: "ENQUÊTE",
         },
         {
@@ -95,11 +92,11 @@ export const statisticsContent = {
           label: "FEUILLES D'ACTIVITÉS",
           shortLabel: "ACTIVITÉS",
         },
-        {
-          id: "component4",
-          label: "DONNÉES DU PERSONNEL",
-          shortLabel: "PERSONNEL",
-        },
+        // {
+        //   id: "component4",
+        //   label: "RAPPORT D'ENQUÊTE DU PERSONNEL",
+        //   shortLabel: "PERSONNEL",
+        // },
       ],
     },
     surveyDataReport: surveyDataReportFR,
@@ -111,6 +108,12 @@ export const statisticsContent = {
     whyParks: whyParksFR,
     barriersToRecreation: barriersToRecreationFR,
     recreationInfoSources: recreationInfoSourcesFR,
+    dotmocracy: {
+      title: "Résultats de la Dotmocratie",
+    },
+    activitySheets: {
+      title: "Feuilles d'Activités",
+    },
   },
 };
 
