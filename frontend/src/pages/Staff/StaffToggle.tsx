@@ -1,9 +1,9 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { staffContent } from "../../content/StaffContent";
-import StaffEthnicity from "./StaffEthnicity";
-import StaffYearsWorked from "./StaffYearsWorked";
-import StaffYearsWorkedByArea from "./StaffYearsWorkedByArea";
-import StaffEDITraining from "./StaffEDITraining";
+// import StaffEthnicity from "./StaffEthnicity";
+// import StaffYearsWorked from "./StaffYearsWorked";
+// import StaffYearsWorkedByArea from "./StaffYearsWorkedByArea";
+// import StaffEDITraining from "./StaffEDITraining";
 
 const StaffToggle: React.FC = () => {
   const { language } = useLanguage();
@@ -19,10 +19,11 @@ const StaffToggle: React.FC = () => {
       </div>
 
       {/* Content */}
-      <StaffEthnicity />
-      <StaffYearsWorked />
-      <StaffYearsWorkedByArea />
-      <StaffEDITraining />
+      {/* TODO: Temporarily hidden until data is ready */}
+      {/* <StaffEthnicity /> */}
+      {/* <StaffYearsWorked /> */}
+      {/* <StaffYearsWorkedByArea /> */}
+      {/* <StaffEDITraining /> */}
     </div>
   );
 };

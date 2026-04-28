@@ -32,6 +32,25 @@ function topColumnIndices(values: number[][], n: number): number[] {
         .map(({ ci }) => ci);
 }
 
+/**
+ * Returns indices of the top-N rising and top-N declining columns,
+ * measured as (lastRow - firstRow) for each column.
+ */
+function trendIndices(values: number[][]): { rising: number[]; declining: number[] } {
+    if (values.length < 2) return { rising: [], declining: [] };
+    const numCols = values[0].length;
+    const rising: number[] = [];
+    const declining: number[] = [];
+    for (let ci = 0; ci < numCols; ci++) {
+        const col = values.map((row) => row[ci]);
+        const isRising   = col.every((v, i) => i === 0 || v >= col[i - 1]);
+        const isDeclining = col.every((v, i) => i === 0 || v <= col[i - 1]);
+        if (isRising)   rising.push(ci);
+        if (isDeclining) declining.push(ci);
+    }
+    return { rising, declining };
+}
+
 const WhyParks: React.FC = () => {
     const { language } = useLanguage();
     const content = statisticsContent[language].whyParks;
@@ -52,6 +71,10 @@ const WhyParks: React.FC = () => {
     }, 0);
     const sharedMax = Math.ceil(top3Max / 10) * 10 + 10;
 
+    // ── Trends ───────────────────────────────────────────────────────────────
+    const { rising: risingIndices, declining: decliningIndices } =
+        trendIndices(currentData.values);
+
     const makeBarData = (ci: number) => {
         const barValues = currentData.values.map((row) => row[ci]);
         return {
@@ -68,7 +91,7 @@ const WhyParks: React.FC = () => {
         };
     };
 
-    const makeBarOptions = () => ({
+    const makeBarOptions = (max: number) => ({
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
@@ -98,7 +121,7 @@ const WhyParks: React.FC = () => {
             },
             y: {
                 beginAtZero: true,
-                max: sharedMax,
+                max: max,
                 ticks: {
                     callback: (v: any) => `${v}%`,
                     font: { size: 10 },
@@ -158,10 +181,53 @@ const WhyParks: React.FC = () => {
                                         {content.columns[ci]}
                                     </p>
                                     <div className="h-[240px]">
-                                        <Bar data={makeBarData(ci)} options={makeBarOptions()} />
+                                        <Bar data={makeBarData(ci)} options={makeBarOptions(sharedMax)} />
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* Trends section */}
+                    <div className="mt-8">
+                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
+                            {content.trendsTitle}
+                        </h4>
+
+                        {/* Rising */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            {risingIndices.map((ci) => {
+                                const colMax = Math.max(...currentData.values.map((row) => row[ci]));
+                                const colSharedMax = Math.ceil(colMax / 10) * 10 + 10;
+                                return (
+                                <div key={ci} className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                                    <p className="text-sm font-semibold text-primary font-dm-sans mb-3">
+                                        {content.columns[ci]}
+                                    </p>
+                                    <div className="h-[240px]">
+                                        <Bar data={makeBarData(ci)} options={makeBarOptions(colSharedMax)} />
+                                    </div>
+                                </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Declining */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {decliningIndices.map((ci) => {
+                                const colMax = Math.max(...currentData.values.map((row) => row[ci]));
+                                const colSharedMax = Math.ceil(colMax / 10) * 10 + 10;
+                                return (
+                                <div key={ci} className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                                    <p className="text-sm font-semibold text-primary font-dm-sans mb-3">
+                                        {content.columns[ci]}
+                                    </p>
+                                    <div className="h-[240px]">
+                                        <Bar data={makeBarData(ci)} options={makeBarOptions(colSharedMax)} />
+                                    </div>
+                                </div>
+                                );
+                            })}
                         </div>
                     </div>
 

@@ -1,6 +1,6 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { staffContent } from "../../content/StaffContent";
-import StaffEthnicity from "../Staff/StaffEthnicity";
+import StaffDemography from "../Staff/StaffDemography";
 import StaffYearsWorked from "../Staff/StaffYearsWorked";
 import StaffYearsWorkedByArea from "../Staff/StaffYearsWorkedByArea";
 import StaffEDITraining from "../Staff/StaffEDITraining";
@@ -19,7 +19,7 @@ const StaffData: React.FC = () => {
             </div>
 
             {/* Content */}
-            <StaffEthnicity />
+            <StaffDemography />
             <StaffYearsWorked />
             <StaffYearsWorkedByArea />
             <StaffEDITraining />
