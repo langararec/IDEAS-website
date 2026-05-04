@@ -1,9 +1,9 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { staffContent } from "../../content/StaffContent";
 import StaffDemography from "../Staff/StaffDemography";
-import StaffYearsWorked from "../Staff/StaffYearsWorked";
-import StaffYearsWorkedByArea from "../Staff/StaffYearsWorkedByArea";
-import StaffEDITraining from "../Staff/StaffEDITraining";
+import StaffBelongingDignityJustice from "../Staff/StaffBelongingDignityJustice";
+import StaffFrontlineGap from "../Staff/StaffFrontlineGap";
+import StaffWhyParks from "../Staff/StaffWhyParks";
 
 const StaffData: React.FC = () => {
     const { language } = useLanguage();
@@ -20,9 +20,10 @@ const StaffData: React.FC = () => {
 
             {/* Content */}
             <StaffDemography />
-            <StaffYearsWorked />
-            <StaffYearsWorkedByArea />
-            <StaffEDITraining />
+
+            <StaffFrontlineGap />
+            <StaffBelongingDignityJustice />
+            <StaffWhyParks />
         </div>
     );
 };
