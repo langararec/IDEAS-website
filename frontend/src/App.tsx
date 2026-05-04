@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Project from './pages/Project/Project'
 import Updates from './pages/Updates/Updates'
@@ -33,6 +33,7 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/references' element={<References />} />
         <Route path='/statistics' element={<Statistics />} />
+        <Route path='/staff' element={<Navigate to="/statistics" replace />} />
         <Route path='/careers' element={<Careers />} />
         <Route path='*' element={<NotFound />} />
 
