@@ -3,6 +3,9 @@ import { en as yearsWorkedEN, fr as yearsWorkedFR } from "./Staff/YearsWorked";
 import { en as yearsWorkedByAreaEN, fr as yearsWorkedByAreaFR } from "./Staff/YearsWorkedByArea";
 import { en as ediTrainingEN, fr as ediTrainingFR } from "./Staff/EDITraining";
 import { en as demographyEN, fr as demographyFR } from "./Staff/Demography";
+import { en as frontlineGapEN, fr as frontlineGapFR } from "./Staff/FrontlineGap";
+import { en as staffWhyParksEN, fr as staffWhyParksFR } from "./Staff/StaffWhyParks";
+import { en as belongingDignityJusticeEN, fr as belongingDignityJusticeFR } from "./Staff/BelongingDignityJustice";
 
 export const staffContent = {
   en: {
@@ -12,6 +15,9 @@ export const staffContent = {
     yearsWorkedByArea: yearsWorkedByAreaEN,
     ediTraining: ediTrainingEN,
     demography: demographyEN,
+    frontlineGap: frontlineGapEN,
+    staffWhyParks: staffWhyParksEN,
+    belongingDignityJustice: belongingDignityJusticeEN,
   },
   fr: {
     pageTitle: "Rapport de l'enquête sur le personnel",
@@ -20,6 +26,9 @@ export const staffContent = {
     yearsWorkedByArea: yearsWorkedByAreaFR,
     ediTraining: ediTrainingFR,
     demography: demographyFR,
+    frontlineGap: frontlineGapFR,
+    staffWhyParks: staffWhyParksFR,
+    belongingDignityJustice: belongingDignityJusticeFR,
   },
 };
 

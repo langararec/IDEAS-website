@@ -51,11 +51,11 @@ export const statisticsContent = {
           label: "ACTIVITY SHEETS",
           shortLabel: "ACTIVITIES",
         },
-        // {
-        //   id: "component4",
-        //   label: "STAFF SURVEY REPORT",
-        //   shortLabel: "STAFF",
-        // },
+        {
+          id: "component4",
+          label: "STAFF SURVEY REPORT",
+          shortLabel: "STAFF",
+        },
       ],
     },
     surveyDataReport: surveyDataReportEN,
@@ -92,11 +92,11 @@ export const statisticsContent = {
           label: "FEUILLES D'ACTIVITÉS",
           shortLabel: "ACTIVITÉS",
         },
-        // {
-        //   id: "component4",
-        //   label: "RAPPORT D'ENQUÊTE DU PERSONNEL",
-        //   shortLabel: "PERSONNEL",
-        // },
+        {
+          id: "component4",
+          label: "RAPPORT D'ENQUÊTE DU PERSONNEL",
+          shortLabel: "PERSONNEL",
+        },
       ],
     },
     surveyDataReport: surveyDataReportFR,
