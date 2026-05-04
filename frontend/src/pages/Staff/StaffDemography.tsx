@@ -95,9 +95,10 @@ const StaffDemography: React.FC = () => {
 
                     {/* Ethnicity horizontal bar chart */}
                     <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6 mb-6">
-                        <h4 className="text-base font-semibold text-primary mb-4 font-dm-sans">
+                        <h4 className="text-lg md:text-xl font-semibold text-primary mb-4 font-dm-sans">
                             {content.ethnicity.title}
                         </h4>
+
                         <p className="text-sm text-gray-500 mb-4 font-dm-sans">
                             {content.ethnicity.subtitle}
                         </p>
