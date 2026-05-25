@@ -140,6 +140,11 @@ const BarriersToRecreation: React.FC = () => {
                             values={currentData.values}
                             unit="%"
                         />
+                        {selectedCity === "courtenay" && (
+                            <p className="mt-4 text-xs text-gray-500 italic font-dm-sans">
+                                {content.zeroRowDisclaimer}
+                            </p>
+                        )}
                     </div>
 
                     {/* Top 3 Barriers — three individual bar charts */}

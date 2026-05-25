@@ -56,6 +56,7 @@ export const en = {
         "Percentage of respondents (by years of residency) who identified each barrier to recreation participation",
     heatmapTitle: "Barriers by Residency Length",
     top3Title: "Top 3 Barriers",
+    zeroRowDisclaimer: "Note: The \"4–6 years\" residency row shows all zeros for Courtenay. We are aware of this, unfortunately we did not receive enough survey participation from respondents in that residency length to report meaningful data.",
 
     rows: [
         "Less than 1 year",
@@ -101,6 +102,7 @@ export const fr = {
         "Pourcentage de répondants (par années de résidence) ayant identifié chaque obstacle à la participation aux loisirs",
     heatmapTitle: "Obstacles par durée de résidence",
     top3Title: "Top 3 obstacles",
+    zeroRowDisclaimer: "Remarque : La ligne de résidence \"4–6 ans\" affiche des zéros pour Courtenay. Nous en sommes conscients — malheureusement, nous n'avons pas reçu suffisamment de participation au sondage de la part des répondants de cette durée de résidence pour rapporter des données significatives.",
 
     rows: [
         "Moins d'1 an",
