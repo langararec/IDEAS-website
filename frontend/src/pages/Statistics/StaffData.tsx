@@ -3,6 +3,7 @@ import { staffContent } from "../../content/StaffContent";
 import StaffDemography from "../Staff/StaffDemography";
 import StaffBelongingDignityJustice from "../Staff/StaffBelongingDignityJustice";
 import StaffFrontlineGap from "../Staff/StaffFrontlineGap";
+import StaffPerception from "../Staff/StaffPerception";
 import StaffWhyParks from "../Staff/StaffWhyParks";
 
 const StaffData: React.FC = () => {
@@ -22,6 +23,7 @@ const StaffData: React.FC = () => {
             <StaffDemography />
 
             <StaffFrontlineGap />
+            <StaffPerception />
             <StaffBelongingDignityJustice />
             <StaffWhyParks />
         </div>

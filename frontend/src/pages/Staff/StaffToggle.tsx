@@ -4,6 +4,7 @@ import StaffEthnicity from "./StaffEthnicity";
 import StaffYearsWorked from "./StaffYearsWorked";
 import StaffYearsWorkedByArea from "./StaffYearsWorkedByArea";
 import StaffEDITraining from "./StaffEDITraining";
+import StaffPerception from "./StaffPerception";
 import StaffBelongingDignityJustice from "./StaffBelongingDignityJustice";
 
 const StaffToggle: React.FC = () => {
@@ -24,6 +25,7 @@ const StaffToggle: React.FC = () => {
       <StaffYearsWorked />
       <StaffYearsWorkedByArea />
       <StaffEDITraining />
+      <StaffPerception />
       <StaffBelongingDignityJustice />
     </div>
   );

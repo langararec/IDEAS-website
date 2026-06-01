@@ -4,6 +4,7 @@ import { en as yearsWorkedByAreaEN, fr as yearsWorkedByAreaFR } from "./Staff/Ye
 import { en as ediTrainingEN, fr as ediTrainingFR } from "./Staff/EDITraining";
 import { en as demographyEN, fr as demographyFR } from "./Staff/Demography";
 import { en as frontlineGapEN, fr as frontlineGapFR } from "./Staff/FrontlineGap";
+import { en as staffPerceptionEN, fr as staffPerceptionFR } from "./Staff/StaffPerception";
 import { en as staffWhyParksEN, fr as staffWhyParksFR } from "./Staff/StaffWhyParks";
 import { en as belongingDignityJusticeEN, fr as belongingDignityJusticeFR } from "./Staff/BelongingDignityJustice";
 
@@ -16,6 +17,7 @@ export const staffContent = {
     ediTraining: ediTrainingEN,
     demography: demographyEN,
     frontlineGap: frontlineGapEN,
+    staffPerception: staffPerceptionEN,
     staffWhyParks: staffWhyParksEN,
     belongingDignityJustice: belongingDignityJusticeEN,
   },
@@ -27,6 +29,7 @@ export const staffContent = {
     ediTraining: ediTrainingFR,
     demography: demographyFR,
     frontlineGap: frontlineGapFR,
+    staffPerception: staffPerceptionFR,
     staffWhyParks: staffWhyParksFR,
     belongingDignityJustice: belongingDignityJusticeFR,
   },
