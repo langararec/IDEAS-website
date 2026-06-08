@@ -42,6 +42,24 @@ const RecreationInfoSources: React.FC = () => {
         : selectedCity === "total"   ? content.total
         : content.burnaby;
 
+    const currentActivityData =
+        selectedCity === "courtenay" ? content.activitiesCourtenay
+        : selectedCity === "total"   ? content.activitiesTotal
+        : content.activitiesBurnaby;
+
+    // Sort activity columns by descending average across all rows
+    const activityColOrder = content.activitiesColumns
+        .map((_, ci) => ({
+            ci,
+            avg: currentActivityData.values.reduce((sum, row) => sum + (row[ci] ?? 0), 0) / currentActivityData.values.length,
+        }))
+        .sort((a, b) => b.avg - a.avg)
+        .map(({ ci }) => ci);
+
+    const sortedActivityColumns = activityColOrder.map(ci => content.activitiesColumns[ci]);
+    const sortedActivityValues  = currentActivityData.values.map(row => activityColOrder.map(ci => row[ci]));
+    const sortedActivityData    = { ...currentActivityData, values: sortedActivityValues };
+
     // ── Top 3 bar charts (one per source) ───────────────────────────────────
     const top3Indices = topColumnIndices(currentData.values, 3);
 
@@ -51,6 +69,15 @@ const RecreationInfoSources: React.FC = () => {
         return Math.max(max, colMax);
     }, 0);
     const sharedMax = Math.ceil(top3Max / 10) * 10 + 10;
+
+    // ── Top 3 bar charts for activities ─────────────────────────────────────
+    const top3ActivityIndices = topColumnIndices(currentActivityData.values, 3);
+
+    const activityTop3Max = top3ActivityIndices.reduce((max, ci) => {
+        const colMax = Math.max(...currentActivityData.values.map((row) => row[ci] ?? 0));
+        return Math.max(max, colMax);
+    }, 0);
+    const activitySharedMax = Math.ceil(activityTop3Max / 10) * 10 + 10;
 
     const makeBarData = (ci: number) => {
         const barValues = currentData.values.map((row) => row[ci]);
@@ -68,7 +95,23 @@ const RecreationInfoSources: React.FC = () => {
         };
     };
 
-    const makeBarOptions = () => ({
+    const makeActivityBarData = (ci: number) => {
+        const barValues = currentActivityData.values.map((row) => row[ci]);
+        return {
+            labels: content.rows,
+            datasets: [
+                {
+                    label: content.activitiesColumns[ci],
+                    data: barValues,
+                    backgroundColor: generateCourtenayColors(barValues),
+                    borderWidth: 0,
+                    borderRadius: 4,
+                },
+            ],
+        };
+    };
+
+    const makeBarOptions = (max: number = sharedMax) => ({
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
@@ -98,7 +141,7 @@ const RecreationInfoSources: React.FC = () => {
             },
             y: {
                 beginAtZero: true,
-                max: sharedMax,
+                max: max,
                 ticks: {
                     callback: (v: any) => `${v}%`,
                     font: { size: 10 },
@@ -147,7 +190,7 @@ const RecreationInfoSources: React.FC = () => {
                     </div>
 
                     {/* Top 3 Sources — three individual bar charts */}
-                    <div>
+                    <div className="mb-8">
                         <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
                             {content.top3Title}
                         </h4>
@@ -158,7 +201,39 @@ const RecreationInfoSources: React.FC = () => {
                                         {content.columns[ci]}
                                     </p>
                                     <div className="h-[240px]">
-                                        <Bar data={makeBarData(ci)} options={makeBarOptions()} />
+                                        <Bar data={makeBarData(ci)} options={makeBarOptions(sharedMax)} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Activities Heatmap */}
+                    <div className="mb-8 bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
+                        <h4 className="text-base font-semibold text-primary mb-4 font-dm-sans">
+                            {content.activitiesHeatmapTitle}
+                        </h4>
+                        <Heatmap
+                            rows={content.rows}
+                            columns={sortedActivityColumns}
+                            values={sortedActivityData.values}
+                            unit="%"
+                        />
+                    </div>
+
+                    {/* Top 3 Activities — three individual bar charts */}
+                    <div>
+                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
+                            {content.activitiesTop3Title}
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {top3ActivityIndices.map((ci) => (
+                                <div key={ci} className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                                    <p className="text-sm font-semibold text-primary font-dm-sans mb-3">
+                                        {content.activitiesColumns[ci]}
+                                    </p>
+                                    <div className="h-[240px]">
+                                        <Bar data={makeActivityBarData(ci)} options={makeBarOptions(activitySharedMax)} />
                                     </div>
                                 </div>
                             ))}
