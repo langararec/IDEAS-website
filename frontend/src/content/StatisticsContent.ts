@@ -31,6 +31,9 @@ import {
   en as recreationInfoSourcesEN,
   fr as recreationInfoSourcesFR,
 } from "./Statistics/RecreationInfoSources";
+import { en as swimmingAbilityEN, fr as swimmingAbilityFR } from "./Statistics/SwimmingAbility";
+import { en as swimmingComfortEN, fr as swimmingComfortFR } from "./Statistics/SwimmingComfort";
+import { en as swimmingBarriersEN, fr as swimmingBarriersFR } from "./Statistics/SwimmingBarriers";
 
 export const statisticsContent = {
   en: {
@@ -67,6 +70,9 @@ export const statisticsContent = {
     whyParks: whyParksEN,
     barriersToRecreation: barriersToRecreationEN,
     recreationInfoSources: recreationInfoSourcesEN,
+    swimmingAbility: swimmingAbilityEN,
+    swimmingComfort: swimmingComfortEN,
+    swimmingBarriers: swimmingBarriersEN,
     dotmocracy: {
       title: "Dotmocracy Results",
     },
@@ -108,6 +114,9 @@ export const statisticsContent = {
     whyParks: whyParksFR,
     barriersToRecreation: barriersToRecreationFR,
     recreationInfoSources: recreationInfoSourcesFR,
+    swimmingAbility: swimmingAbilityFR,
+    swimmingComfort: swimmingComfortFR,
+    swimmingBarriers: swimmingBarriersFR,
     dotmocracy: {
       title: "Résultats de la Dotmocratie",
     },
