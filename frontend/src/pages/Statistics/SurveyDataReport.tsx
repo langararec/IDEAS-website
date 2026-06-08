@@ -6,6 +6,7 @@ import BelongingDignityJustice from "./BelongingDignityJustice";
 import WhyParks from "./WhyParks";
 import BarriersToRecreation from "./BarriersToRecreation";
 import RecreationInfoSources from "./RecreationInfoSources";
+import SwimmingAbility from "./SwimmingAbility";
 
 
 const SurveyDataReport: React.FC = () => {
@@ -25,6 +26,7 @@ const SurveyDataReport: React.FC = () => {
             <WhyParks />
             <BarriersToRecreation />
             <RecreationInfoSources />
+            <SwimmingAbility />
  
         </div>
     );
