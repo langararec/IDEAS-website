@@ -47,13 +47,71 @@ const COURTENAY_DATA: HeatmapData = {
     moreThan6:  { friendsFamily: 62.96, communityGroups: 19.75, socialMedia: 46.91, posters: 34.57, schoolWork: 18.52, newspaper: 14.81, recCenter: 62.96 },
 };
 
+// ─── Recreation Activities data ─────────────────────────────────────────────
+// Cols: Sports, Swimming, Skating, Arts/Music/Dance, Parks/Playgrounds,
+//       Fitness Classes, Community Events, Drop-in at Rec Center
+
+type ActivityKey =
+    | "sports" | "swimming" | "skating" | "arts"
+    | "parks" | "fitness" | "communityEvents" | "dropIn";
+
+const ACTIVITY_ORDER: ActivityKey[] = [
+    "sports", "swimming", "skating", "arts",
+    "parks", "fitness", "communityEvents", "dropIn",
+];
+
+type ActivityRow = Record<ActivityKey, number>;
+type ActivityData = Record<ResidencyKey, ActivityRow>;
+
+function toActivityValues(data: ActivityData): number[][] {
+    return RESIDENCY_ORDER.map((row) =>
+        ACTIVITY_ORDER.map((col) => data[row][col])
+    );
+}
+
+const ALL_ACTIVITY_DATA: ActivityData = {
+    lessThan1:  { sports: 32.4, swimming: 44.1, skating: 23.5, arts: 26.5, parks: 73.5, fitness: 23.5, communityEvents: 29.4, dropIn: 14.7 },
+    oneToThree: { sports: 22.4, swimming: 48.3, skating: 19.0, arts: 32.8, parks: 65.5, fitness: 24.1, communityEvents: 39.7, dropIn: 27.6 },
+    fourToSix:  { sports: 39.4, swimming: 51.5, skating: 24.2, arts: 24.2, parks: 60.6, fitness: 39.4, communityEvents: 51.5, dropIn: 27.3 },
+    moreThan6:  { sports: 40.7, swimming: 60.8, skating: 27.1, arts: 35.2, parks: 77.9, fitness: 45.7, communityEvents: 59.8, dropIn: 49.2 },
+};
+
+const BURNABY_ACTIVITY_DATA: ActivityData = {
+    lessThan1:  { sports: 29.2, swimming: 41.7, skating: 20.8, arts: 29.2, parks: 79.2, fitness: 25.0, communityEvents: 29.2, dropIn: 16.7 },
+    oneToThree: { sports: 14.8, swimming: 55.6, skating: 22.2, arts: 29.6, parks: 66.7, fitness: 25.9, communityEvents: 37.0, dropIn: 37.0 },
+    fourToSix:  { sports: 37.0, swimming: 51.9, skating: 18.5, arts: 29.6, parks: 59.3, fitness: 37.0, communityEvents: 51.9, dropIn: 22.2 },
+    moreThan6:  { sports: 40.7, swimming: 54.2, skating: 23.7, arts: 33.1, parks: 76.3, fitness: 40.7, communityEvents: 59.3, dropIn: 44.9 },
+};
+
+const COURTENAY_ACTIVITY_DATA: ActivityData = {
+    lessThan1:  { sports: 40.0, swimming: 50.0, skating: 30.0, arts: 20.0, parks: 60.0, fitness: 20.0, communityEvents: 30.0, dropIn: 10.0 },
+    oneToThree: { sports: 29.0, swimming: 41.9, skating: 16.1, arts: 35.5, parks: 64.5, fitness: 22.6, communityEvents: 41.9, dropIn: 19.4 },
+    fourToSix:  { sports: 50.0, swimming: 50.0, skating: 50.0, arts:  0.0, parks: 66.7, fitness: 50.0, communityEvents: 50.0, dropIn: 50.0 },
+    moreThan6:  { sports: 40.7, swimming: 70.4, skating: 32.1, arts: 38.3, parks: 80.2, fitness: 53.1, communityEvents: 60.5, dropIn: 55.6 },
+};
+
 // ─── English content ──────────────────────────────────────────────────────────
 export const en = {
-    title: "Where do people find recreation information?",
+    title: "Recreation Engagement: How people find out about recreation activities and what did people/family participated in?",
     subtitle:
         "Percentage of respondents (by years of residency) who use each channel to find recreation information",
     heatmapTitle: "Information Sources by Residency Length",
     top3Title: "Top 3 Information Sources",
+    activitiesHeatmapTitle: "What recreation activities have people participated?",
+    activitiesTop3Title: "Top 3 Recreation Activities",
+    activitiesColumns: [
+        "Sports",
+        "Swimming",
+        "Skating",
+        "Arts, Music and Dance Classes",
+        "Visiting Parks and Playgrounds",
+        "Fitness Classes (e.g. yoga, cycling)",
+        "Attended Community Events or Festivals",
+        "Drop-in Activities at a Recreation Center",
+    ],
+    activitiesTotal:    { lastUpdated: "Last updated: 25/04/2026", values: toActivityValues(ALL_ACTIVITY_DATA) },
+    activitiesBurnaby:  { lastUpdated: "Last updated: 25/04/2026", values: toActivityValues(BURNABY_ACTIVITY_DATA) },
+    activitiesCourtenay: { lastUpdated: "Last updated: 25/04/2026", values: toActivityValues(COURTENAY_ACTIVITY_DATA) },
 
     rows: [
         "Less than 1 year",
@@ -90,11 +148,26 @@ export const en = {
 
 // ─── French content ───────────────────────────────────────────────────────────
 export const fr = {
-    title: "Où les gens trouvent-ils des informations sur les loisirs?",
+    title: "Engagement récréatif : Comment les gens découvrent les activités récréatives et à quoi ont participé les gens/famille ?",
     subtitle:
         "Pourcentage de répondants (par années de résidence) utilisant chaque canal pour trouver des informations sur les loisirs",
     heatmapTitle: "Sources d'information par durée de résidence",
     top3Title: "Top 3 sources d'information",
+    activitiesHeatmapTitle: "À quelles activités récréatives les gens ont-ils participé?",
+    activitiesTop3Title: "Top 3 activités récréatives",
+    activitiesColumns: [
+        "Sports",
+        "Natation",
+        "Patinage",
+        "Cours d'arts, musique et danse",
+        "Visites de parcs et terrains de jeux",
+        "Cours de conditionnement physique (p. ex. yoga, vélo)",
+        "Événements ou festivals communautaires",
+        "Activités libres dans un centre de loisirs",
+    ],
+    activitiesTotal:    { lastUpdated: "Dernière mise à jour: 25/04/2026", values: toActivityValues(ALL_ACTIVITY_DATA) },
+    activitiesBurnaby:  { lastUpdated: "Dernière mise à jour: 25/04/2026", values: toActivityValues(BURNABY_ACTIVITY_DATA) },
+    activitiesCourtenay: { lastUpdated: "Dernière mise à jour: 25/04/2026", values: toActivityValues(COURTENAY_ACTIVITY_DATA) },
 
     rows: [
         "Moins d'1 an",
