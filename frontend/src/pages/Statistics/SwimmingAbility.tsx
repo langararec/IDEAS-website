@@ -158,10 +158,10 @@ const SwimmingAbility: React.FC = () => {
 
                     {/* ── Ability subsection ─────────────────────────────── */}
                     <div className="mb-10">
-                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
-                            {ability.abilityHeatmapTitle}
-                        </h4>
                         <div className="mb-8 bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
+                            <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
+                                {ability.abilityHeatmapTitle}
+                            </h4>
                             <Heatmap
                                 rows={ability.rows}
                                 columns={ability.abilityColumns}
@@ -196,10 +196,10 @@ const SwimmingAbility: React.FC = () => {
 
                     {/* ── Comfort subsection ─────────────────────────────── */}
                     <div>
-                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
-                            {comfort.sectionTitle}
-                        </h4>
                         <div className="mb-8 bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
+                            <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
+                                {comfort.sectionTitle}
+                            </h4>
                             <Heatmap
                                 rows={comfort.rows}
                                 columns={comfort.comfortColumns}
@@ -234,10 +234,10 @@ const SwimmingAbility: React.FC = () => {
 
                     {/* ── Barriers subsection ────────────────────────────── */}
                     <div className="mt-10">
-                        <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
-                            What stops people from going swimming?
-                        </h4>
                         <div className="mb-8 bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
+                            <h4 className="text-lg font-semibold text-primary mb-4 font-dm-sans">
+                                What stops people from going swimming?
+                            </h4>
                             <Heatmap
                                 rows={barriers.rows}
                                 columns={barriers.barrierColumns}
