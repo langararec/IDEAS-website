@@ -13,6 +13,7 @@ import Careers from './pages/Team/Careers'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       {/* Spacer to prevent content from being hidden behind the fixed navbar */}
       <div className='mt-20'></div>
