@@ -3,15 +3,19 @@ import { useEffect, useRef, useState } from "react";
 let shared: IntersectionObserver | null = null;
 const handlers = new Map<Element, () => void>();
 
+const settle = (target: Element) => {
+    handlers.get(target)?.();
+    handlers.delete(target);
+    shared?.unobserve(target);
+};
+
 const getObserver = () => {
     if (!shared) {
         shared = new IntersectionObserver(
             (entries) => {
                 for (const entry of entries) {
-                    if (!entry.isIntersecting) continue;
-                    handlers.get(entry.target)?.();
-                    handlers.delete(entry.target);
-                    shared?.unobserve(entry.target);
+                    const scrolledPast = entry.boundingClientRect.bottom <= (entry.rootBounds?.top ?? 0);
+                    if (entry.isIntersecting || scrolledPast) settle(entry.target);
                 }
             },
             { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
@@ -30,6 +34,11 @@ export const useReveal = <T extends Element>() => {
 
         const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (still || !("IntersectionObserver" in window)) {
+            setRevealed(true);
+            return;
+        }
+
+        if (element.getBoundingClientRect().bottom <= 0) {
             setRevealed(true);
             return;
         }
