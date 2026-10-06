@@ -11,6 +11,7 @@ const en = {
         voices: "What newcomers told us",
         download: "Download the poster",
     },
+    voices: { pause: "Pause", play: "Play" },
     charts: {
         ethnicity: "Ethnic background",
         ethnicityUnit: "% of respondents",
@@ -36,6 +37,14 @@ const en = {
         intro: [
             "Burnaby is home to people from many cultures and backgrounds. The City of Burnaby wants to make sure everyone can enjoy public recreation, like swimming pools, parks, and community centres. But there has not been much research on how immigrant and racialized families experience these spaces in British Columbia. This project helps fill that gap.",
             "We talked to immigrant and newcomer families in Burnaby about public recreation such as parks, recreation programs, community centers like swimming pools. Many people shared their experiences through surveys, interviews, and small group conversations. This handout shares what we have heard so far.",
+        ],
+        quotes: [
+            "they need somebody in between to make this connecting point because of their language barrier",
+            "So, I'm a newcomer, I have been living in Vancouver not very long. So actually, I haven't actually been to a community center to use any recreation",
+            "I don't know where to look for what",
+            "you want to do like an exercise like dance and zumba classes, but you see that there is only children care (to drop them off) from 9 to 12, but that's it… When you want to go, it's already over and it is an hour max.",
+            "when I started being a mom, I didn't know that all of this existed",
+            "it's very interesting for me to learn that such services or centers are available because we don't have such a thing in our country.",
         ],
         who: "We heard from {total} people in total through our survey. This data is from the {newcomers} respondents who have lived in BC for 6 years or less.",
         ethnicity: {
@@ -145,6 +154,13 @@ const en = {
         intro: [
             "Courtenay is home to people from many cultures and backgrounds. The City of Courtenay wants to make sure everyone can enjoy public recreation — like swimming pools, parks, and community centres. But there has not been much research on how immigrant and racialized families experience these spaces in British Columbia. This project helps fill that gap.",
             "We talked to immigrant and newcomer families in Courtenay about public recreation such as parks, recreation programs, community centers like swimming pools. Many people shared their experiences through surveys, interviews, and small group conversations. This handout shares what we have heard so far.",
+        ],
+        quotes: [
+            "Recreation is like… activities that help me relax and have fun. Also, it's connecting with others. So I really enjoy spending time outdoors, like walking, bird watching, and spend time with my family, friends, doing some games. Yeah, so it really helped me be happy and refreshed.",
+            "Because the information is like only English, right? So, actually, she didn't get the right information. It will be great (to have) the translated information.",
+            "I want to try [swimming], I don't know where, or when",
+            "it would be nice for more flexible hours, so she can join more because she's currently running her own business so it's hard to choose the time.",
+            "people don't work with regular nine to five anymore, so there's like lots of classes that people want to take… but they don't offer it later in the day, or the classes are too late.",
         ],
         who: "We heard from {total} people in total through our survey. This data is from the {newcomers} respondents who have lived in BC for 6 years or less.",
         ethnicity: {
@@ -264,6 +280,7 @@ const fr: typeof en = {
         voices: "Ce que les nouveaux arrivants nous ont dit",
         download: "Télécharger l'affiche",
     },
+    voices: { pause: "Pause", play: "Lecture" },
     charts: {
         ethnicity: "Origine ethnique",
         ethnicityUnit: "% des répondants",
@@ -289,6 +306,14 @@ const fr: typeof en = {
         intro: [
             "Burnaby accueille des personnes de nombreuses cultures et origines. La Ville de Burnaby veut s'assurer que tout le monde peut profiter des loisirs publics, comme les piscines, les parcs et les centres communautaires. Pourtant, peu de recherches ont porté sur la façon dont les familles immigrantes et racialisées vivent ces espaces en Colombie-Britannique. Ce projet contribue à combler cette lacune.",
             "Nous avons parlé avec des familles immigrantes et des familles de nouveaux arrivants qui vivent à Burnaby au sujet des loisirs publics, comme les parcs, les programmes de loisirs et les centres communautaires, y compris les piscines. De nombreuses personnes nous ont fait part de leur expérience dans le cadre de sondages, d'entrevues et de discussions en petits groupes. Ce document présente ce que nous avons entendu jusqu'à présent.",
+        ],
+        quotes: [
+            "ils ont besoin de quelqu'un entre les deux pour faire ce point de contact, à cause de leur barrière linguistique",
+            "Alors, je viens d'arriver, je vis à Vancouver depuis peu de temps. Alors en fait, je ne suis jamais allé dans un centre communautaire pour faire des loisirs",
+            "je ne sais pas où chercher quoi",
+            "tu veux faire de l'exercice, comme des cours de danse ou de zumba, mais tu vois qu'il y a seulement la garde d'enfants (pour les déposer) de 9 h à 12 h, et c'est tout… Quand tu veux y aller, c'est déjà fini, et c'est une heure au maximum.",
+            "quand je suis devenue mère, je ne savais pas que tout ça existait",
+            "c'est très intéressant pour moi d'apprendre que de tels services ou centres existent, parce que nous n'avons pas ça dans notre pays.",
         ],
         who: "Au total, {total} personnes ont répondu à notre sondage. Ces données proviennent des {newcomers} répondants qui vivent en C.-B. depuis 6 ans ou moins.",
         ethnicity: {
@@ -398,6 +423,13 @@ const fr: typeof en = {
         intro: [
             "Courtenay accueille des personnes de nombreuses cultures et origines. La Ville de Courtenay veut s'assurer que tout le monde peut profiter des loisirs publics, comme les piscines, les parcs et les centres communautaires. Pourtant, peu de recherches ont porté sur la façon dont les familles immigrantes et racialisées vivent ces espaces en Colombie-Britannique. Ce projet contribue à combler cette lacune.",
             "Nous avons parlé avec des familles immigrantes et des familles de nouveaux arrivants qui vivent à Courtenay au sujet des loisirs publics, comme les parcs, les programmes de loisirs et les centres communautaires, y compris les piscines. De nombreuses personnes nous ont fait part de leur expérience dans le cadre de sondages, d'entrevues et de discussions en petits groupes. Ce document présente ce que nous avons entendu jusqu'à présent.",
+        ],
+        quotes: [
+            "Les loisirs, c'est comme… des activités qui m'aident à me détendre et à avoir du plaisir. Aussi, c'est entrer en contact avec les autres. Alors j'aime vraiment passer du temps dehors, comme marcher, observer les oiseaux, et passer du temps avec ma famille, mes amis, jouer à des jeux. Oui, alors ça m'a vraiment fait du bien et ça m'a donné de l'énergie.",
+            "Parce que l'information est seulement en anglais, non? Alors, en fait, elle n'a pas eu la bonne information. Ce serait super (d'avoir) l'information traduite.",
+            "Je veux essayer [la natation], je ne sais pas où, ni quand",
+            "ce serait bien d'avoir des heures plus flexibles, pour qu'elle puisse participer davantage, parce qu'elle gère sa propre entreprise en ce moment, alors c'est difficile de choisir le moment.",
+            "les gens ne travaillent plus de neuf à cinq, alors il y a plein de cours que les gens veulent suivre… mais ils ne les offrent pas plus tard dans la journée, ou les cours sont trop tard.",
         ],
         who: "Au total, {total} personnes ont répondu à notre sondage. Ces données proviennent des {newcomers} répondants qui vivent en C.-B. depuis 6 ans ou moins.",
         ethnicity: {
