@@ -20,9 +20,9 @@ const CityTabs: React.FC<CityTabsProps> = ({ city, setCity, label, names }) => (
                 type="button"
                 onClick={() => setCity(id)}
                 aria-pressed={city === id}
-                className={`flex-1 cursor-pointer rounded-xl px-[1.125rem] py-3 font-dm-sans font-medium tracking-wide transition duration-300 ${city === id ? "bg-primary text-white shadow-md" : "text-gray-500 hover:text-primary"}`}
+                className={`flex-1 cursor-pointer rounded-xl px-[1.125rem] py-3 font-dm-sans font-medium tracking-wide uppercase transition duration-300 ${city === id ? "bg-primary text-white shadow-md" : "text-gray-500 hover:text-primary"}`}
             >
-                {names[id].toUpperCase()}
+                {names[id]}
             </button>
         ))}
     </div>

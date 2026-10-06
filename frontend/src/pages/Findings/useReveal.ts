@@ -18,7 +18,7 @@ const getObserver = () => {
                     if (entry.isIntersecting || scrolledPast) settle(entry.target);
                 }
             },
-            { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
+            { threshold: 0, rootMargin: "0px 0px -12% 0px" }
         );
     }
     return shared;
