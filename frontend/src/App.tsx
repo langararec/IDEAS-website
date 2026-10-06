@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
 const Statistics = lazy(() => import('./pages/Statistics/Statistics'))
+const Findings = lazy(() => import('./pages/Findings/Findings'))
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/references' element={<References />} />
         <Route path='/statistics' element={<Suspense fallback={null}><Statistics /></Suspense>} />
         <Route path='/staff' element={<Navigate to="/statistics" replace />} />
+        <Route path='/findings' element={<Suspense fallback={null}><Findings /></Suspense>} />
         <Route path='/careers' element={<Careers />} />
         <Route path='*' element={<NotFound />} />
 
