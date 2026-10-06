@@ -16,6 +16,16 @@
   --color-base-100: #f8fcf8;
   --color-base-200: #e9f5eb;
 
+  --color-data: #317039;
+  --color-data-dark: #275a2e;
+  --color-data-mid: #75a37b;
+  --color-data-soft: #c9e2cd;
+  --color-data-faint: #dde9df;
+  --color-ink: #14231f;
+  --color-body: #3f4c48;
+  --color-muted: #76817c;
+  --color-rule: #dbe7de;
+
   --font-dm-sans: 'DM Sans', sans-serif;
 
   
