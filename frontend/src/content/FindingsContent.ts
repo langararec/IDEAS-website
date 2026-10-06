@@ -24,6 +24,11 @@ const en = {
         intro: "Available in seven languages. Choose one to preview its first page.",
         action: "Download",
         format: "PDF",
+        sizeUnit: "MB",
+        viewLarger: "View larger",
+        close: "Close",
+        preview: "Preview",
+        thumbAlt: "First page of the poster, {language} version",
         languages: {
             en: "English",
             zh: "Chinese",
@@ -294,6 +299,11 @@ const fr: typeof en = {
         intro: "Offerte en sept langues. Choisissez-en une pour voir un aperçu de la première page.",
         action: "Télécharger",
         format: "PDF",
+        sizeUnit: "Mo",
+        viewLarger: "Agrandir",
+        close: "Fermer",
+        preview: "Aperçu",
+        thumbAlt: "Première page de l'affiche, version {language}",
         languages: {
             en: "Anglais",
             zh: "Chinois",

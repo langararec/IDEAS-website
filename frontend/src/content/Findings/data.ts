@@ -2,6 +2,16 @@ export type City = 'burnaby' | 'courtenay';
 
 export const cities: City[] = ['burnaby', 'courtenay'];
 
+export const posters = [
+    { id: "en", file: "en", native: "English", hreflang: "en", bytes: 459958 },
+    { id: "zh", file: "zh-hans", native: "中文", hreflang: "zh-Hans", bytes: 859789 },
+    { id: "ti", file: "ti", native: "ትግርኛ", hreflang: "ti", bytes: 521154 },
+    { id: "pa", file: "pa", native: "ਪੰਜਾਬੀ", hreflang: "pa", bytes: 487854 },
+    { id: "ko", file: "ko", native: "한국어", hreflang: "ko", bytes: 666957 },
+    { id: "fa", file: "fa", native: "فارسی", hreflang: "fa", bytes: 471687, rtl: true },
+    { id: "uk", file: "uk", native: "Українська", hreflang: "uk", bytes: 504360 },
+] as const;
+
 export const findingsData = {
     burnaby: {
         n: { total: 196, newcomers: 78 },

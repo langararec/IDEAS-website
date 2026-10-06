@@ -10,6 +10,7 @@ import FeelingsSection from "./FeelingsSection";
 import TakePartSection from "./TakePartSection";
 import SwimmingSection from "./SwimmingSection";
 import VoicesSection from "./VoicesSection";
+import DownloadSection from "./DownloadSection";
 
 const Findings: React.FC = () => {
     const { language } = useLanguage();
@@ -51,6 +52,7 @@ const Findings: React.FC = () => {
             <TakePartSection city={city} content={content} formatPercent={formatPercent} />
             <SwimmingSection city={city} content={content} formatPercent={formatPercent} />
             <VoicesSection city={city} content={content} />
+            <DownloadSection content={content} language={language} />
         </main>
     );
 };
