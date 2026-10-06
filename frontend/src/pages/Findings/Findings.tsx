@@ -5,6 +5,7 @@ import { type City } from "../../content/Findings/data";
 import CityTabs from "./CityTabs";
 import Reveal from "./Reveal";
 import WhoSection from "./WhoSection";
+import FeelingsSection from "./FeelingsSection";
 
 const Findings: React.FC = () => {
     const { language } = useLanguage();
@@ -41,6 +42,7 @@ const Findings: React.FC = () => {
             </section>
 
             <WhoSection city={city} content={content} />
+            <FeelingsSection city={city} content={content} />
         </main>
     );
 };

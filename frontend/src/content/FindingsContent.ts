@@ -4,7 +4,6 @@ const en = {
     cityTabsLabel: "Choose a city",
     cityNames: { burnaby: "Burnaby", courtenay: "Courtenay" },
     outOfSix: "out of 6",
-    peopleOutOfSix: "out of 6 people",
     sections: {
         who: "Who did we hear from?",
         feelings: "How do newcomers feel about recreation?",
@@ -258,7 +257,6 @@ const fr: typeof en = {
     cityTabsLabel: "Choisir une ville",
     cityNames: { burnaby: "Burnaby", courtenay: "Courtenay" },
     outOfSix: "sur 6",
-    peopleOutOfSix: "personnes sur 6",
     sections: {
         who: "Qui avons-nous consulté?",
         feelings: "Comment les nouveaux arrivants perçoivent-ils les loisirs?",
