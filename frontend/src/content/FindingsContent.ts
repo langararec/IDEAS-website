@@ -280,7 +280,7 @@ const fr: typeof en = {
         voices: "Ce que les nouveaux arrivants nous ont dit",
         download: "Télécharger l'affiche",
     },
-    voices: { pause: "Pause", play: "Lecture" },
+    voices: { pause: "Pause", play: "Reprendre" },
     charts: {
         ethnicity: "Origine ethnique",
         ethnicityUnit: "% des répondants",
@@ -309,11 +309,11 @@ const fr: typeof en = {
         ],
         quotes: [
             "ils ont besoin de quelqu'un entre les deux pour faire ce point de contact, à cause de leur barrière linguistique",
-            "Alors, je viens d'arriver, je vis à Vancouver depuis peu de temps. Alors en fait, je ne suis jamais allé dans un centre communautaire pour faire des loisirs",
+            "Alors, je viens d'arriver, je vis à Vancouver depuis peu de temps. Alors en fait, je n'ai pas vraiment fréquenté de centre communautaire pour faire des loisirs",
             "je ne sais pas où chercher quoi",
-            "tu veux faire de l'exercice, comme des cours de danse ou de zumba, mais tu vois qu'il y a seulement la garde d'enfants (pour les déposer) de 9 h à 12 h, et c'est tout… Quand tu veux y aller, c'est déjà fini, et c'est une heure au maximum.",
-            "quand je suis devenue mère, je ne savais pas que tout ça existait",
-            "c'est très intéressant pour moi d'apprendre que de tels services ou centres existent, parce que nous n'avons pas ça dans notre pays.",
+            "tu veux faire genre de l'exercice, comme des cours de danse et de zumba, mais tu vois qu'il y a seulement la garde d'enfants (pour les déposer) de 9 h à 12 h, et c'est tout… Quand tu veux y aller, c'est déjà fini, et c'est une heure max.",
+            "quand je suis devenue maman, je ne savais pas que tout ça existait",
+            "c'est très intéressant pour moi d'apprendre que des services ou des centres comme ça sont offerts, parce qu'on n'a pas ça dans notre pays.",
         ],
         who: "Au total, {total} personnes ont répondu à notre sondage. Ces données proviennent des {newcomers} répondants qui vivent en C.-B. depuis 6 ans ou moins.",
         ethnicity: {
@@ -425,11 +425,11 @@ const fr: typeof en = {
             "Nous avons parlé avec des familles immigrantes et des familles de nouveaux arrivants qui vivent à Courtenay au sujet des loisirs publics, comme les parcs, les programmes de loisirs et les centres communautaires, y compris les piscines. De nombreuses personnes nous ont fait part de leur expérience dans le cadre de sondages, d'entrevues et de discussions en petits groupes. Ce document présente ce que nous avons entendu jusqu'à présent.",
         ],
         quotes: [
-            "Les loisirs, c'est comme… des activités qui m'aident à me détendre et à avoir du plaisir. Aussi, c'est entrer en contact avec les autres. Alors j'aime vraiment passer du temps dehors, comme marcher, observer les oiseaux, et passer du temps avec ma famille, mes amis, jouer à des jeux. Oui, alors ça m'a vraiment fait du bien et ça m'a donné de l'énergie.",
-            "Parce que l'information est seulement en anglais, non? Alors, en fait, elle n'a pas eu la bonne information. Ce serait super (d'avoir) l'information traduite.",
-            "Je veux essayer [la natation], je ne sais pas où, ni quand",
+            "Les loisirs, c'est comme… des activités qui m'aident à me détendre et à avoir du plaisir. Aussi, c'est entrer en contact avec les autres. Alors j'aime vraiment passer du temps dehors, comme marcher, observer les oiseaux, et passer du temps avec ma famille, mes amis, jouer à des jeux. Oui, alors ça m'a vraiment apporté du bonheur et de l'énergie.",
+            "Parce que l'information est genre seulement en anglais, non? Alors, en fait, elle n'a pas eu la bonne information. Ce serait super (d'avoir) l'information traduite.",
+            "je veux essayer [la natation], je ne sais pas où, ni quand",
             "ce serait bien d'avoir des heures plus flexibles, pour qu'elle puisse participer davantage, parce qu'elle gère sa propre entreprise en ce moment, alors c'est difficile de choisir le moment.",
-            "les gens ne travaillent plus de neuf à cinq, alors il y a plein de cours que les gens veulent suivre… mais ils ne les offrent pas plus tard dans la journée, ou les cours sont trop tard.",
+            "les gens ne travaillent plus selon un horaire régulier de neuf à cinq, alors il y a genre plein de cours que les gens veulent suivre… mais ils ne les offrent pas plus tard dans la journée, ou les cours sont trop tard.",
         ],
         who: "Au total, {total} personnes ont répondu à notre sondage. Ces données proviennent des {newcomers} répondants qui vivent en C.-B. depuis 6 ans ou moins.",
         ethnicity: {
