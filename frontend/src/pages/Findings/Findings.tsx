@@ -6,6 +6,7 @@ import CityTabs from "./CityTabs";
 import Reveal from "./Reveal";
 import WhoSection from "./WhoSection";
 import FeelingsSection from "./FeelingsSection";
+import TakePartSection from "./TakePartSection";
 
 const Findings: React.FC = () => {
     const { language } = useLanguage();
@@ -43,6 +44,7 @@ const Findings: React.FC = () => {
 
             <WhoSection city={city} content={content} />
             <FeelingsSection city={city} content={content} />
+            <TakePartSection city={city} content={content} />
         </main>
     );
 };
