@@ -41,12 +41,14 @@ const Donut: React.FC<DonutProps> = ({ items, colors }) => {
             <dl className="grid w-full gap-2">
                 {items.map((item, index) => (
                     <div key={item.id} className="flex items-center gap-2.5 text-[0.88rem] text-ink">
-                        <span
-                            aria-hidden="true"
-                            style={{ background: colors[index] }}
-                            className="size-2.5 shrink-0 rounded-full"
-                        />
-                        <dt className="min-w-0 whitespace-nowrap">{item.label}</dt>
+                        <dt className="flex min-w-0 items-center gap-2.5">
+                            <span
+                                aria-hidden="true"
+                                style={{ background: colors[index] }}
+                                className="size-2.5 shrink-0 rounded-full"
+                            />
+                            {item.label}
+                        </dt>
                         <dd className="ml-auto font-semibold tabular-nums">{item.value}%</dd>
                     </div>
                 ))}

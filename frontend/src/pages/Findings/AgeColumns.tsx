@@ -10,32 +10,31 @@ const AgeColumns: React.FC<AgeColumnsProps> = ({ items }) => {
     const max = Math.max(...items.map((item) => item.value));
 
     return (
-        <dl
-            ref={ref}
-            className="grid flex-1 grid-cols-6 grid-rows-[190px_auto] gap-x-0"
-        >
+        <dl ref={ref} className="grid flex-1 grid-cols-6 grid-rows-[12rem_auto] gap-x-0">
             {items.map((item, index) => (
                 <div
                     key={item.id}
-                    className="row-span-full grid grid-rows-subgrid text-center min-w-0"
+                    className="row-span-full grid min-w-0 grid-rows-subgrid text-center"
                 >
-                    <div className="flex h-full min-h-0 flex-col items-end justify-end border-b border-ink">
-                        <dd
+                    <dt className="row-start-2 px-0.5 pt-2 text-[0.72rem] leading-tight text-body">
+                        {item.label}
+                    </dt>
+                    <dd className="row-start-1 flex h-full min-h-0 flex-col items-center justify-end border-b border-ink">
+                        <span
                             style={{ transitionDelay: `${index * 60 + 500}ms` }}
-                            className={`mb-1.5 w-full text-[0.8rem] font-semibold tabular-nums text-ink transition-opacity duration-400 motion-reduce:transition-none ${revealed ? "opacity-100" : "opacity-0"}`}
+                            className={`mb-1.5 text-[0.8rem] font-semibold tabular-nums text-ink transition-opacity duration-400 motion-reduce:transition-none ${revealed ? "opacity-100" : "opacity-0"}`}
                         >
                             {item.value}%
-                        </dd>
-                        <div
+                        </span>
+                        <span
                             aria-hidden="true"
                             style={{
-                                height: revealed ? `calc((100% - 26px) * ${item.value / max})` : 0,
+                                height: revealed ? `calc((100% - 1.75rem) * ${item.value / max})` : 0,
                                 transitionDelay: `${index * 60}ms`,
                             }}
-                            className="mx-auto w-[56%] max-w-[34px] rounded-t-sm bg-data transition-[height] duration-900 ease-[cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:transition-none"
+                            className="w-[56%] max-w-[34px] rounded-t-sm bg-data transition-[height] duration-900 ease-[cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:transition-none"
                         />
-                    </div>
-                    <dt className="px-0.5 pt-2 text-[0.72rem] leading-tight text-body">{item.label}</dt>
+                    </dd>
                 </div>
             ))}
         </dl>

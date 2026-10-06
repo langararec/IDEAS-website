@@ -15,15 +15,17 @@ const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items }) => {
         <div ref={ref} className="grid gap-3.5">
             <dl className="flex gap-1">
                 {items.map((item) => (
-                    <div key={item.id} style={{ flex: `0 0 calc(${item.value}% - 3px)` }}>
-                        <div className="grid gap-0.5 pb-2.5">
-                            <dd
-                                className={`font-semibold leading-none tracking-tight tabular-nums text-primary ${tight ? "text-[clamp(1.05rem,1.9vw,1.45rem)]" : "text-[clamp(1.5rem,2.4vw,1.9rem)]"}`}
-                            >
-                                {item.value}%
-                            </dd>
-                            <dt className="text-[0.86rem] text-body">{item.label}</dt>
-                        </div>
+                    <div
+                        key={item.id}
+                        style={{ flex: `0 0 calc(${item.value}% - 3px)` }}
+                        className="grid gap-0.5 pb-2.5"
+                    >
+                        <dt className="order-2 text-[0.86rem] text-body">{item.label}</dt>
+                        <dd
+                            className={`order-1 font-semibold leading-none tracking-tight tabular-nums text-primary ${tight ? "text-[clamp(1.05rem,1.9vw,1.45rem)]" : "text-[clamp(1.5rem,2.4vw,1.9rem)]"}`}
+                        >
+                            {item.value}%
+                        </dd>
                     </div>
                 ))}
             </dl>

@@ -34,22 +34,24 @@ const BarList: React.FC<BarListProps> = ({ items, variant }) => {
                         {item.icon}
                         <span>{item.label}</span>
                     </dt>
-                    <div
-                        className={`relative ${ethnicity ? "h-3" : "h-2 overflow-hidden rounded bg-data-faint"}`}
-                        aria-hidden="true"
-                    >
+                    <dd className="col-span-2 grid grid-cols-subgrid items-center">
                         <div
-                            style={{
-                                width: revealed ? `${(item.value / max) * 100}%` : 0,
-                                transitionDelay: `${index * 45}ms`,
-                            }}
-                            className={`absolute inset-y-0 left-0 bg-data transition-[width] duration-900 ease-[cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:transition-none ${ethnicity ? "rounded-sm" : "rounded"}`}
-                        />
-                    </div>
-                    <dd
-                        className={`text-right font-semibold tabular-nums text-ink ${ethnicity ? "text-base" : "text-[0.95rem]"}`}
-                    >
-                        {item.value}%
+                            className={`relative ${ethnicity ? "h-3" : "h-2 overflow-hidden rounded bg-data-faint"}`}
+                            aria-hidden="true"
+                        >
+                            <div
+                                style={{
+                                    width: revealed ? `${(item.value / max) * 100}%` : 0,
+                                    transitionDelay: `${index * 45}ms`,
+                                }}
+                                className={`absolute inset-y-0 left-0 bg-data transition-[width] duration-900 ease-[cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:transition-none ${ethnicity ? "rounded-sm" : "rounded"}`}
+                            />
+                        </div>
+                        <span
+                            className={`text-right font-semibold tabular-nums text-ink ${ethnicity ? "text-base" : "text-[0.95rem]"}`}
+                        >
+                            {item.value}%
+                        </span>
                     </dd>
                 </div>
             ))}
