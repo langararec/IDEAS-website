@@ -11,9 +11,10 @@ import Section from "./Section";
 type SwimmingSectionProps = {
     city: City;
     content: FindingsContentType;
+    formatPercent: (value: number) => string;
 };
 
-const SwimmingSection: React.FC<SwimmingSectionProps> = ({ city, content }) => {
+const SwimmingSection: React.FC<SwimmingSectionProps> = ({ city, content, formatPercent }) => {
     const data = findingsData[city];
     const cityContent = content[city];
 
@@ -43,6 +44,7 @@ const SwimmingSection: React.FC<SwimmingSectionProps> = ({ city, content }) => {
                             {cityContent.swimBarriers.title}
                         </h3>
                         <BarList
+                            formatPercent={formatPercent}
                             variant="question"
                             items={toItems(data.swimBarriers, cityContent.swimBarriers.items).map((item) => ({
                                 ...item,

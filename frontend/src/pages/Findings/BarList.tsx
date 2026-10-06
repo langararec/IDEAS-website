@@ -11,9 +11,10 @@ export type BarItem = {
 type BarListProps = {
     items: BarItem[];
     variant: "ethnicity" | "question";
+    formatPercent: (value: number) => string;
 };
 
-const BarList: React.FC<BarListProps> = ({ items, variant }) => {
+const BarList: React.FC<BarListProps> = ({ items, variant, formatPercent }) => {
     const { ref, revealed } = useReveal<HTMLDListElement>();
     const ethnicity = variant === "ethnicity";
     const max = ethnicity ? Math.max(...items.map((item) => item.value)) : 100;
@@ -50,7 +51,7 @@ const BarList: React.FC<BarListProps> = ({ items, variant }) => {
                         <span
                             className={`text-right font-semibold tabular-nums text-ink ${ethnicity ? "text-base" : "text-[0.95rem]"}`}
                         >
-                            {item.value}%
+                            {formatPercent(item.value)}
                         </span>
                     </dd>
                 </div>

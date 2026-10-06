@@ -12,6 +12,7 @@ const en = {
         download: "Download the poster",
     },
     voices: { pause: "Pause", play: "Play" },
+    quoteMarks: { open: "\u201C", close: "\u201D" },
     charts: {
         ethnicity: "Ethnic background",
         ethnicityUnit: "% of respondents",
@@ -281,6 +282,7 @@ const fr: typeof en = {
         download: "Télécharger l'affiche",
     },
     voices: { pause: "Pause", play: "Reprendre" },
+    quoteMarks: { open: "\u00AB\u202F", close: "\u202F\u00BB" },
     charts: {
         ethnicity: "Origine ethnique",
         ethnicityUnit: "% des répondants",

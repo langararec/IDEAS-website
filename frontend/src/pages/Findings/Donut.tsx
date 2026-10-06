@@ -4,11 +4,12 @@ import { useReveal } from "./useReveal";
 type DonutProps = {
     items: { id: string; label: string; value: number }[];
     colors: string[];
+    formatPercent: (value: number) => string;
 };
 
 const CIRCUMFERENCE = 2 * Math.PI * 40;
 
-const Donut: React.FC<DonutProps> = ({ items, colors }) => {
+const Donut: React.FC<DonutProps> = ({ items, colors, formatPercent }) => {
     const { ref, revealed } = useReveal<HTMLDivElement>();
     let offset = 0;
 
@@ -49,7 +50,7 @@ const Donut: React.FC<DonutProps> = ({ items, colors }) => {
                             />
                             {item.label}
                         </dt>
-                        <dd className="ml-auto font-semibold tabular-nums">{item.value}%</dd>
+                        <dd className="ml-auto font-semibold tabular-nums">{formatPercent(item.value)}</dd>
                     </div>
                 ))}
             </dl>

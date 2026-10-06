@@ -15,14 +15,14 @@ const quoteWidth = (quote: string) => {
     return "min(38rem, 78vw)";
 };
 
-const Quote: React.FC<{ quote: string; hidden?: boolean }> = ({ quote, hidden = false }) => (
+const Quote: React.FC<{ quote: string; marks: { open: string; close: string }; hidden?: boolean }> = ({ quote, marks, hidden = false }) => (
     <figure
         aria-hidden={hidden || undefined}
         style={{ width: quoteWidth(quote) }}
         className="mr-[clamp(1.75rem,3vw,2.75rem)] shrink-0 border-r border-white/20 py-1 pr-[clamp(1.75rem,3vw,2.75rem)]"
     >
         <blockquote className="text-[clamp(1.1rem,1.6vw,1.3rem)] leading-[1.55] text-white">
-            {`“${quote}”`}
+            {`${marks.open}${quote}${marks.close}`}
         </blockquote>
     </figure>
 );
@@ -56,7 +56,7 @@ const VoicesSection: React.FC<VoicesSectionProps> = ({ city, content }) => {
                     {quotes.map((quote) => (
                         <figure key={quote}>
                             <blockquote className="text-[clamp(1.1rem,1.6vw,1.3rem)] leading-[1.55] text-white">
-                                {`“${quote}”`}
+                                {`${content.quoteMarks.open}${quote}${content.quoteMarks.close}`}
                             </blockquote>
                         </figure>
                     ))}
@@ -67,10 +67,10 @@ const VoicesSection: React.FC<VoicesSectionProps> = ({ city, content }) => {
                         className={`flex w-max animate-marquee focus-within:[animation-play-state:paused] ${playing ? "[animation-play-state:running] hover:[animation-play-state:paused]" : "[animation-play-state:paused]"}`}
                     >
                         {quotes.map((quote) => (
-                            <Quote key={quote} quote={quote} />
+                            <Quote key={quote} quote={quote} marks={content.quoteMarks} />
                         ))}
                         {quotes.map((quote) => (
-                            <Quote key={`echo-${quote}`} quote={quote} hidden />
+                            <Quote key={`echo-${quote}`} quote={quote} marks={content.quoteMarks} hidden />
                         ))}
                     </div>
                 </div>

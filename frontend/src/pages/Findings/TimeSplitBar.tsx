@@ -3,11 +3,12 @@ import { useReveal } from "./useReveal";
 
 type TimeSplitBarProps = {
     items: { id: string; label: string; value: number }[];
+    formatPercent: (value: number) => string;
 };
 
 const COLORS = ["var(--color-data)", "var(--color-data-mid)", "var(--color-data-soft)"];
 
-const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items }) => {
+const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items, formatPercent }) => {
     const { ref, revealed } = useReveal<HTMLDivElement>();
     const tight = Math.min(...items.map((item) => item.value)) < 22;
 
@@ -24,7 +25,7 @@ const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items }) => {
                         <dd
                             className={`order-1 font-semibold leading-none tracking-tight tabular-nums text-primary ${tight ? "text-[clamp(1.05rem,1.9vw,1.45rem)]" : "text-[clamp(1.5rem,2.4vw,1.9rem)]"}`}
                         >
-                            {item.value}%
+                            {formatPercent(item.value)}
                         </dd>
                     </div>
                 ))}

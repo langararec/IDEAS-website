@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { findingsContent } from "../../content/FindingsContent";
 import { type City } from "../../content/Findings/data";
+import { percentFormatter } from "./items";
 import CityTabs from "./CityTabs";
 import Reveal from "./Reveal";
 import WhoSection from "./WhoSection";
@@ -15,6 +16,7 @@ const Findings: React.FC = () => {
     const [city, setCity] = useState<City>("burnaby");
     const content = findingsContent[language];
     const cityContent = content[city];
+    const formatPercent = percentFormatter(language);
 
     return (
         <main className="bg-base-100 font-dm-sans" key={`findings-${language}`}>
@@ -44,10 +46,10 @@ const Findings: React.FC = () => {
                 </div>
             </section>
 
-            <WhoSection city={city} content={content} />
+            <WhoSection city={city} content={content} formatPercent={formatPercent} />
             <FeelingsSection city={city} content={content} />
-            <TakePartSection city={city} content={content} />
-            <SwimmingSection city={city} content={content} />
+            <TakePartSection city={city} content={content} formatPercent={formatPercent} />
+            <SwimmingSection city={city} content={content} formatPercent={formatPercent} />
             <VoicesSection city={city} content={content} />
         </main>
     );

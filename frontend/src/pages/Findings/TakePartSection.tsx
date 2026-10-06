@@ -10,9 +10,10 @@ import Section from "./Section";
 type TakePartSectionProps = {
     city: City;
     content: FindingsContentType;
+    formatPercent: (value: number) => string;
 };
 
-const TakePartSection: React.FC<TakePartSectionProps> = ({ city, content }) => {
+const TakePartSection: React.FC<TakePartSectionProps> = ({ city, content, formatPercent }) => {
     const groups = findingsData[city].questions;
     const labels = content[city].questions;
 
@@ -36,6 +37,7 @@ const TakePartSection: React.FC<TakePartSectionProps> = ({ city, content }) => {
                                 {labels[group.id].title}
                             </h3>
                             <BarList
+                                formatPercent={formatPercent}
                                 variant="question"
                                 items={toItems(group.items, labels[group.id].items).map((item) => ({
                                     ...item,

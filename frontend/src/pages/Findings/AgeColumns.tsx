@@ -3,9 +3,10 @@ import { useReveal } from "./useReveal";
 
 type AgeColumnsProps = {
     items: { id: string; label: string; value: number }[];
+    formatPercent: (value: number) => string;
 };
 
-const AgeColumns: React.FC<AgeColumnsProps> = ({ items }) => {
+const AgeColumns: React.FC<AgeColumnsProps> = ({ items, formatPercent }) => {
     const { ref, revealed } = useReveal<HTMLDListElement>();
     const max = Math.max(...items.map((item) => item.value));
 
@@ -24,7 +25,7 @@ const AgeColumns: React.FC<AgeColumnsProps> = ({ items }) => {
                             style={{ transitionDelay: `${index * 60 + 500}ms` }}
                             className={`mb-1.5 text-[0.8rem] font-semibold tabular-nums text-ink transition-opacity duration-400 motion-reduce:transition-none ${revealed ? "opacity-100" : "opacity-0"}`}
                         >
-                            {item.value}%
+                            {formatPercent(item.value)}
                         </span>
                         <span
                             aria-hidden="true"

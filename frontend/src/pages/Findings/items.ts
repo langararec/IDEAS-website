@@ -5,3 +5,10 @@ export const toItems = (
 
 export const fillCounts = (text: string, total: number, newcomers: number) =>
     text.replace("{total}", String(total)).replace("{newcomers}", String(newcomers));
+
+export const percentFormatter = (language: "en" | "fr") => {
+    const numbers = new Intl.NumberFormat(language === "fr" ? "fr-CA" : "en-CA", {
+        maximumFractionDigits: 2,
+    });
+    return (value: number) => `${numbers.format(value)}${language === "fr" ? " %" : "%"}`;
+};
