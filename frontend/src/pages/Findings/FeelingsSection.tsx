@@ -18,7 +18,7 @@ const FeelingsSection: React.FC<FeelingsSectionProps> = ({ city, content }) => {
     return (
         <Section>
             <div className="grid grid-cols-12 gap-x-[clamp(1rem,2.6vw,2.25rem)] gap-y-12 max-[900px]:grid-cols-1">
-                <Reveal className="col-span-4 self-start max-[900px]:col-span-full lg:sticky lg:top-8">
+                <Reveal className="col-span-4 self-start max-[900px]:col-span-full lg:sticky lg:top-28">
                     <h2 className="text-[clamp(1.65rem,2.9vw,2.3rem)] font-semibold leading-[1.12] tracking-[-0.012em] text-pretty text-primary">
                         {content.sections.feelings}
                     </h2>
