@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import type { FindingsContentType } from "../../content/FindingsContent";
 import { type City } from "../../content/Findings/data";
 import Reveal from "./Reveal";
@@ -28,24 +28,17 @@ const Quote: React.FC<{ quote: string; marks: { open: string; close: string }; h
 const VoicesSection: React.FC<VoicesSectionProps> = ({ city, content }) => {
     const quotes = content[city].quotes;
     const still = usePrefersReducedMotion();
-    const [playing, setPlaying] = useState(true);
 
     return (
         <section className="bg-primary py-[clamp(3.5rem,7vw,6rem)]">
             <div className="px-[clamp(1.25rem,4vw,3.5rem)]">
                 <Reveal className="mx-auto grid max-w-[1160px] gap-4">
-                    <h2 className="text-[clamp(1.65rem,2.9vw,2.3rem)] font-semibold leading-[1.12] tracking-[-0.012em] text-pretty text-white">
+                    <h2
+                        id="findings-voices"
+                        className="text-[clamp(1.65rem,2.9vw,2.3rem)] font-semibold leading-[1.12] tracking-[-0.012em] text-pretty text-white"
+                    >
                         {content.sections.voices}
                     </h2>
-                    {still ? null : (
-                        <button
-                            type="button"
-                            onClick={() => setPlaying((value) => !value)}
-                            className="w-fit cursor-pointer rounded-lg border border-white/40 px-4 py-1.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-white/10"
-                        >
-                            {playing ? content.voices.pause : content.voices.play}
-                        </button>
-                    )}
                 </Reveal>
             </div>
 
@@ -58,10 +51,13 @@ const VoicesSection: React.FC<VoicesSectionProps> = ({ city, content }) => {
                     ))}
                 </div>
             ) : (
-                <div className="mt-10 overflow-hidden [mask-image:linear-gradient(90deg,#000_0,#000_92%,transparent)] px-[clamp(1.25rem,4vw,3.5rem)]">
-                    <div
-                        className={`flex w-max animate-marquee motion-reduce:animate-none ${playing ? "[animation-play-state:running] hover:[animation-play-state:paused]" : "[animation-play-state:paused]"}`}
-                    >
+                <div
+                    tabIndex={0}
+                    role="group"
+                    aria-labelledby="findings-voices"
+                    className="group mt-10 overflow-hidden [mask-image:linear-gradient(90deg,#000_0,#000_92%,transparent)] px-[clamp(1.25rem,4vw,3.5rem)]"
+                >
+                    <div className="flex w-max animate-marquee motion-reduce:animate-none group-hover:[animation-play-state:paused] group-focus-visible:[animation-play-state:paused]">
                         {quotes.map((quote) => (
                             <Quote key={quote} quote={quote} marks={content.quoteMarks} />
                         ))}
