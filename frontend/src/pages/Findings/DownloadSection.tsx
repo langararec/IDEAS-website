@@ -79,7 +79,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) 
                     <button
                         type="button"
                         onClick={show}
-                        className="group grid cursor-pointer gap-2 text-left"
+                        className="group grid cursor-pointer gap-2 pt-3 text-left"
                     >
                         <img
                             src={`/posters/findings-burnaby-${poster.file}.avif`}
@@ -88,7 +88,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) 
                             height={THUMB_HEIGHT}
                             loading="lazy"
                             decoding="async"
-                            className="w-[clamp(12rem,22vw,20rem)] rounded-sm shadow-[0_1px_2px_rgba(20,35,31,0.08),0_18px_40px_-18px_rgba(20,35,31,0.28)] transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+                            className="w-[clamp(12rem,22vw,20rem)] rounded-sm shadow-[0_1px_2px_rgba(20,35,31,0.08),0_18px_40px_-18px_rgba(20,35,31,0.28)] transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_1px_2px_rgba(20,35,31,0.08),0_26px_50px_-18px_rgba(20,35,31,0.36)] motion-reduce:transition-none"
                         />
                         <span className="text-[0.82rem] font-semibold text-primary underline-offset-2 group-hover:underline">
                             {labels.viewLarger}
@@ -99,7 +99,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) 
                         {posters.map((entry, index) => (
                             <li
                                 key={entry.id}
-                                className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-rule py-3 ${index === posters.length - 1 ? "border-b" : ""}`}
+                                className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-rule py-3 pr-2 transition-[background-color,padding,box-shadow] duration-200 motion-reduce:transition-none ${index === selected ? "bg-white pl-3.5 shadow-[inset_3px_0_0_var(--color-accent)]" : "hover:bg-white hover:pl-2.5"} ${index === posters.length - 1 ? "border-b" : ""}`}
                             >
                                 <button
                                     type="button"
