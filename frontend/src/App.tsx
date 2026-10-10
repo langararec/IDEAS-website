@@ -39,7 +39,7 @@ function App() {
         <Route path='/references' element={<References />} />
         <Route path='/statistics' element={<Suspense fallback={null}><Statistics /></Suspense>} />
         <Route path='/staff' element={<Navigate to="/statistics" replace />} />
-        <Route path='/findings' element={<Suspense fallback={null}><Findings /></Suspense>} />
+        <Route path='/findings' element={<Suspense fallback={<main className='min-h-screen bg-base-100' />}><Findings /></Suspense>} />
         <Route path='/careers' element={<Careers />} />
         <Route path='*' element={<NotFound />} />
 

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import type { FindingsContentType } from "../../content/FindingsContent";
 import { type City } from "../../content/Findings/data";
 import Reveal from "./Reveal";
+import { Container } from "./Section";
 import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
 
 type VoicesSectionProps = {
@@ -10,60 +11,64 @@ type VoicesSectionProps = {
 };
 
 const quoteWidth = (quote: string) => {
-    if (quote.length < 60) return "min(22rem, 78vw)";
-    if (quote.length < 130) return "min(30rem, 78vw)";
-    return "min(38rem, 78vw)";
+    if (quote.length < 60) return "w-88";
+    if (quote.length < 130) return "w-120";
+    return "w-152";
 };
 
-const Quote: React.FC<{ quote: string; marks: { open: string; close: string }; hidden?: boolean }> = ({ quote, marks, hidden = false }) => (
-    <blockquote
-        aria-hidden={hidden || undefined}
-        style={{ width: quoteWidth(quote) }}
-        className="mr-[clamp(1.75rem,3vw,2.75rem)] shrink-0 border-r border-white/20 py-1 pr-[clamp(1.75rem,3vw,2.75rem)] text-[clamp(1.1rem,1.6vw,1.3rem)] leading-[1.55] text-white"
-    >
-        {`${marks.open}${quote}${marks.close}`}
-    </blockquote>
-);
+const quoteText = "text-lg leading-relaxed text-white md:text-xl";
 
 const VoicesSection: React.FC<VoicesSectionProps> = ({ city, content }) => {
     const quotes = content[city].quotes;
     const still = usePrefersReducedMotion();
+    const [paused, setPaused] = useState(false);
+    const quote = (text: string) => `${content.quoteMarks.open}${text}${content.quoteMarks.close}`;
 
     return (
-        <section className="bg-primary py-[clamp(3.5rem,7vw,6rem)]">
-            <div className="px-[clamp(1.25rem,4vw,3.5rem)]">
-                <Reveal className="mx-auto grid max-w-[1160px] gap-4">
+        <section aria-labelledby="findings-voices" className="bg-primary py-16 md:py-24">
+            <Container>
+                <Reveal>
                     <h2
                         id="findings-voices"
-                        className="text-[clamp(1.65rem,2.9vw,2.3rem)] font-semibold leading-[1.12] tracking-[-0.012em] text-pretty text-white"
+                        className="text-3xl font-semibold tracking-tight text-balance text-white md:text-4xl"
                     >
                         {content.sections.voices}
                     </h2>
                 </Reveal>
-            </div>
+            </Container>
 
             {still ? (
-                <div className="mx-auto mt-10 grid max-w-[1160px] gap-8 px-[clamp(1.25rem,4vw,3.5rem)] md:grid-cols-2">
-                    {quotes.map((quote) => (
-                        <blockquote key={quote} className="text-[clamp(1.1rem,1.6vw,1.3rem)] leading-[1.55] text-white">
-                            {`${content.quoteMarks.open}${quote}${content.quoteMarks.close}`}
+                <Container className="mt-10 grid gap-8 md:grid-cols-2">
+                    {quotes.map((text) => (
+                        <blockquote key={text} className={quoteText}>
+                            {quote(text)}
                         </blockquote>
                     ))}
-                </div>
+                </Container>
             ) : (
                 <div
                     tabIndex={0}
                     role="group"
                     aria-labelledby="findings-voices"
-                    className="group mt-10 overflow-hidden [mask-image:linear-gradient(90deg,#000_0,#000_92%,transparent)] px-[clamp(1.25rem,4vw,3.5rem)]"
+                    onPointerUp={(event) => {
+                        if (event.pointerType === "touch") setPaused(!paused);
+                    }}
+                    className="group mt-10"
                 >
-                    <div className="flex w-max animate-marquee motion-reduce:animate-none group-hover:[animation-play-state:paused] group-focus-visible:[animation-play-state:paused]">
-                        {quotes.map((quote) => (
-                            <Quote key={quote} quote={quote} marks={content.quoteMarks} />
-                        ))}
-                        {quotes.map((quote) => (
-                            <Quote key={`echo-${quote}`} quote={quote} marks={content.quoteMarks} hidden />
-                        ))}
+                    <div className="overflow-hidden pl-[calc(max(0px,50%-var(--container-7xl)/2)+--spacing(4))] [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)]">
+                        <div
+                            className={`flex w-max animate-marquee group-hover:[animation-play-state:paused] group-focus-visible:[animation-play-state:paused] ${paused ? "max-lg:[animation-play-state:paused] pointer-coarse:[animation-play-state:paused]" : ""}`}
+                        >
+                            {[...quotes, ...quotes].map((text, index) => (
+                                <blockquote
+                                    key={index}
+                                    aria-hidden={index >= quotes.length || undefined}
+                                    className={`mr-10 max-w-[78vw] shrink-0 border-r border-white/20 py-1 pr-10 ${quoteWidth(text)} ${quoteText}`}
+                                >
+                                    {quote(text)}
+                                </blockquote>
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}

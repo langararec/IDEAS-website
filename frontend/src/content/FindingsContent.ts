@@ -1,6 +1,7 @@
 const en = {
     title: "How newcomers experience",
     titleHighlight: "recreation",
+    intro: "Swimming pools, parks, and community centres are meant for everyone, and the cities that run them want to make sure everyone can enjoy them. But there has not been much research on how immigrant and racialized families experience these spaces in British Columbia. We talked with newcomer and immigrant families who shared their experiences through surveys, interviews, and small group conversations. Here is what we heard.",
     cityTabsLabel: "Choose a city",
     cityNames: { burnaby: "Burnaby", courtenay: "Courtenay" },
     outOfSix: "out of 6",
@@ -12,6 +13,12 @@ const en = {
         download: "Download the poster",
     },
     quoteMarks: { open: "\u201C", close: "\u201D" },
+    questionTitles: {
+        infoSources: "How people find out about recreation activities?",
+        reasons: "Why do newcomers participate?",
+        activities: "Which activities did people participate in the most?",
+        barriers: "What stops people from joining recreation?",
+    },
     charts: {
         ethnicity: "Ethnic background",
         ethnicityUnit: "% of respondents",
@@ -23,7 +30,6 @@ const en = {
         intro: "Available in seven languages. Choose one to preview its first page.",
         action: "Download",
         format: "PDF",
-        sizeUnit: "MB",
         viewLarger: "View larger",
         close: "Close",
         preview: "Preview",
@@ -39,10 +45,6 @@ const en = {
         },
     },
     burnaby: {
-        intro: [
-            "Burnaby is home to people from many cultures and backgrounds. The City of Burnaby wants to make sure everyone can enjoy public recreation, like swimming pools, parks, and community centres. But there has not been much research on how immigrant and racialized families experience these spaces in British Columbia. This project helps fill that gap.",
-            "We talked to immigrant and newcomer families in Burnaby about public recreation such as parks, recreation programs, community centers like swimming pools. Many people shared their experiences through surveys, interviews, and small group conversations. This handout shares what we have heard so far.",
-        ],
         quotes: [
             "they need somebody in between to make this connecting point because of their language barrier",
             "So, I'm a newcomer, I have been living in Vancouver not very long. So actually, I haven't actually been to a community center to use any recreation",
@@ -84,36 +86,24 @@ const en = {
         },
         questions: {
             infoSources: {
-                title: "How people find out about recreation activities?",
-                items: {
-                    friendsFamily: "Friends or family",
-                    socialMedia: "Social media",
-                    cityWebsite: "Recreation Centres or City Website",
-                },
+                friendsFamily: "Friends or family",
+                socialMedia: "Social media",
+                cityWebsite: "Recreation Centres or City Website",
             },
             reasons: {
-                title: "Why do newcomers participate?",
-                items: {
-                    enjoyNature: "To enjoy nature",
-                    haveFun: "To have fun",
-                    familyFriends: "To spend time with family & friends",
-                },
+                enjoyNature: "To enjoy nature",
+                haveFun: "To have fun",
+                familyFriends: "To spend time with family & friends",
             },
             activities: {
-                title: "Which activities did people participate in the most?",
-                items: {
-                    parks: "Parks and playgrounds",
-                    swimming: "Swimming and pool activities",
-                    events: "Community events or festivals",
-                },
+                parks: "Parks and playgrounds",
+                swimming: "Swimming and pool activities",
+                events: "Community events or festivals",
             },
             barriers: {
-                title: "What stops people from joining recreation?",
-                items: {
-                    lackAwareness: "Lack of awareness",
-                    lackInformation: "Lack of information",
-                    language: "Language barrier",
-                },
+                lackAwareness: "Lack of awareness",
+                lackInformation: "Lack of information",
+                language: "Language barrier",
             },
         },
         feelings: {
@@ -156,10 +146,6 @@ const en = {
         },
     },
     courtenay: {
-        intro: [
-            "Courtenay is home to people from many cultures and backgrounds. The City of Courtenay wants to make sure everyone can enjoy public recreation — like swimming pools, parks, and community centres. But there has not been much research on how immigrant and racialized families experience these spaces in British Columbia. This project helps fill that gap.",
-            "We talked to immigrant and newcomer families in Courtenay about public recreation such as parks, recreation programs, community centers like swimming pools. Many people shared their experiences through surveys, interviews, and small group conversations. This handout shares what we have heard so far.",
-        ],
         quotes: [
             "Recreation is like… activities that help me relax and have fun. Also, it's connecting with others. So I really enjoy spending time outdoors, like walking, bird watching, and spend time with my family, friends, doing some games. Yeah, so it really helped me be happy and refreshed.",
             "Because the information is like only English, right? So, actually, she didn't get the right information. It will be great (to have) the translated information.",
@@ -199,36 +185,24 @@ const en = {
         },
         questions: {
             infoSources: {
-                title: "How do newcomers find out about recreation opportunities?",
-                items: {
-                    friendsFamily: "Friends or family",
-                    socialMedia: "Social media",
-                    culturalGroups: "Community or cultural groups",
-                },
+                friendsFamily: "Friends or family",
+                socialMedia: "Social media",
+                culturalGroups: "Community or cultural groups",
             },
             reasons: {
-                title: "Why do newcomers participate?",
-                items: {
-                    relax: "To relax",
-                    enjoyNature: "To enjoy nature",
-                    haveFun: "To have fun",
-                },
+                relax: "To relax",
+                enjoyNature: "To enjoy nature",
+                haveFun: "To have fun",
             },
             activities: {
-                title: "What recreation activities do newcomers participate in the most?",
-                items: {
-                    parks: "Parks and playgrounds",
-                    swimming: "Swimming and pool activities",
-                    events: "Community events or festivals",
-                },
+                parks: "Parks and playgrounds",
+                swimming: "Swimming and pool activities",
+                events: "Community events or festivals",
             },
             barriers: {
-                title: "What stops newcomers from joining recreation opportunities?",
-                items: {
-                    lackInformation: "Lack of information",
-                    language: "Language barrier",
-                    lackTime: "Lack of time",
-                },
+                lackInformation: "Lack of information",
+                language: "Language barrier",
+                lackTime: "Lack of time",
             },
         },
         feelings: {
@@ -275,6 +249,7 @@ const en = {
 const fr: typeof en = {
     title: "Comment les nouveaux arrivants vivent les",
     titleHighlight: "loisirs",
+    intro: "Les piscines, les parcs et les centres communautaires sont faits pour tout le monde, et les villes qui les gèrent veulent s'assurer que chacun peut en profiter. Pourtant, peu de recherches ont porté sur la façon dont les familles immigrantes et racialisées vivent ces espaces en Colombie-Britannique. Nous avons parlé avec des familles immigrantes et des familles de nouveaux arrivants, qui nous ont fait part de leur expérience dans le cadre de sondages, d'entrevues et de discussions en petits groupes. Voici ce que nous avons entendu.",
     cityTabsLabel: "Choisir une ville",
     cityNames: { burnaby: "Burnaby", courtenay: "Courtenay" },
     outOfSix: "sur 6",
@@ -286,6 +261,12 @@ const fr: typeof en = {
         download: "Télécharger l'affiche",
     },
     quoteMarks: { open: "\u00AB\u202F", close: "\u202F\u00BB" },
+    questionTitles: {
+        infoSources: "Comment les gens découvrent-ils les activités de loisirs?",
+        reasons: "Pourquoi les nouveaux arrivants participent-ils?",
+        activities: "À quelles activités les gens ont-ils le plus participé?",
+        barriers: "Qu'est-ce qui empêche les gens de participer aux loisirs?",
+    },
     charts: {
         ethnicity: "Origine ethnique",
         ethnicityUnit: "% des répondants",
@@ -297,7 +278,6 @@ const fr: typeof en = {
         intro: "Offerte en sept langues. Choisissez-en une pour voir un aperçu de la première page.",
         action: "Télécharger",
         format: "PDF",
-        sizeUnit: "Mo",
         viewLarger: "Agrandir",
         close: "Fermer",
         preview: "Aperçu",
@@ -313,10 +293,6 @@ const fr: typeof en = {
         },
     },
     burnaby: {
-        intro: [
-            "Burnaby accueille des personnes de nombreuses cultures et origines. La Ville de Burnaby veut s'assurer que tout le monde peut profiter des loisirs publics, comme les piscines, les parcs et les centres communautaires. Pourtant, peu de recherches ont porté sur la façon dont les familles immigrantes et racialisées vivent ces espaces en Colombie-Britannique. Ce projet contribue à combler cette lacune.",
-            "Nous avons parlé avec des familles immigrantes et des familles de nouveaux arrivants qui vivent à Burnaby au sujet des loisirs publics, comme les parcs, les programmes de loisirs et les centres communautaires, y compris les piscines. De nombreuses personnes nous ont fait part de leur expérience dans le cadre de sondages, d'entrevues et de discussions en petits groupes. Ce document présente ce que nous avons entendu jusqu'à présent.",
-        ],
         quotes: [
             "ils ont besoin de quelqu'un entre les deux pour faire ce point de contact, à cause de leur barrière linguistique",
             "Alors, je viens d'arriver, je vis à Vancouver depuis peu de temps. Alors en fait, je n'ai pas vraiment fréquenté de centre communautaire pour faire des loisirs",
@@ -358,36 +334,24 @@ const fr: typeof en = {
         },
         questions: {
             infoSources: {
-                title: "Comment les gens découvrent-ils les activités de loisirs?",
-                items: {
-                    friendsFamily: "Amis ou famille",
-                    socialMedia: "Médias sociaux",
-                    cityWebsite: "Centres de loisirs ou site Web de la Ville",
-                },
+                friendsFamily: "Amis ou famille",
+                socialMedia: "Médias sociaux",
+                cityWebsite: "Centres de loisirs ou site Web de la Ville",
             },
             reasons: {
-                title: "Pourquoi les nouveaux arrivants participent-ils?",
-                items: {
-                    enjoyNature: "Pour profiter de la nature",
-                    haveFun: "Pour s'amuser",
-                    familyFriends: "Pour passer du temps en famille et entre amis",
-                },
+                enjoyNature: "Pour profiter de la nature",
+                haveFun: "Pour s'amuser",
+                familyFriends: "Pour passer du temps en famille et entre amis",
             },
             activities: {
-                title: "À quelles activités les gens ont-ils le plus participé?",
-                items: {
-                    parks: "Parcs et terrains de jeux",
-                    swimming: "Natation et activités en piscine",
-                    events: "Événements communautaires ou festivals",
-                },
+                parks: "Parcs et terrains de jeux",
+                swimming: "Natation et activités en piscine",
+                events: "Événements communautaires ou festivals",
             },
             barriers: {
-                title: "Qu'est-ce qui empêche les gens de participer aux loisirs?",
-                items: {
-                    lackAwareness: "Méconnaissance de l'offre",
-                    lackInformation: "Manque d'information",
-                    language: "Barrière linguistique",
-                },
+                lackAwareness: "Méconnaissance de l'offre",
+                lackInformation: "Manque d'information",
+                language: "Barrière linguistique",
             },
         },
         feelings: {
@@ -430,10 +394,6 @@ const fr: typeof en = {
         },
     },
     courtenay: {
-        intro: [
-            "Courtenay accueille des personnes de nombreuses cultures et origines. La Ville de Courtenay veut s'assurer que tout le monde peut profiter des loisirs publics, comme les piscines, les parcs et les centres communautaires. Pourtant, peu de recherches ont porté sur la façon dont les familles immigrantes et racialisées vivent ces espaces en Colombie-Britannique. Ce projet contribue à combler cette lacune.",
-            "Nous avons parlé avec des familles immigrantes et des familles de nouveaux arrivants qui vivent à Courtenay au sujet des loisirs publics, comme les parcs, les programmes de loisirs et les centres communautaires, y compris les piscines. De nombreuses personnes nous ont fait part de leur expérience dans le cadre de sondages, d'entrevues et de discussions en petits groupes. Ce document présente ce que nous avons entendu jusqu'à présent.",
-        ],
         quotes: [
             "Les loisirs, c'est comme… des activités qui m'aident à me détendre et à avoir du plaisir. Aussi, c'est entrer en contact avec les autres. Alors j'aime vraiment passer du temps dehors, comme marcher, observer les oiseaux, et passer du temps avec ma famille, mes amis, jouer à des jeux. Oui, alors ça m'a vraiment apporté du bonheur et de l'énergie.",
             "Parce que l'information est genre seulement en anglais, non? Alors, en fait, elle n'a pas eu la bonne information. Ce serait super (d'avoir) l'information traduite.",
@@ -473,36 +433,24 @@ const fr: typeof en = {
         },
         questions: {
             infoSources: {
-                title: "Comment les nouveaux arrivants découvrent-ils les possibilités de loisirs?",
-                items: {
-                    friendsFamily: "Amis ou famille",
-                    socialMedia: "Médias sociaux",
-                    culturalGroups: "Groupes communautaires ou culturels",
-                },
+                friendsFamily: "Amis ou famille",
+                socialMedia: "Médias sociaux",
+                culturalGroups: "Groupes communautaires ou culturels",
             },
             reasons: {
-                title: "Pourquoi les nouveaux arrivants participent-ils?",
-                items: {
-                    relax: "Pour se détendre",
-                    enjoyNature: "Pour profiter de la nature",
-                    haveFun: "Pour s'amuser",
-                },
+                relax: "Pour se détendre",
+                enjoyNature: "Pour profiter de la nature",
+                haveFun: "Pour s'amuser",
             },
             activities: {
-                title: "À quelles activités de loisirs les nouveaux arrivants participent-ils le plus?",
-                items: {
-                    parks: "Parcs et terrains de jeux",
-                    swimming: "Natation et activités en piscine",
-                    events: "Événements communautaires ou festivals",
-                },
+                parks: "Parcs et terrains de jeux",
+                swimming: "Natation et activités en piscine",
+                events: "Événements communautaires ou festivals",
             },
             barriers: {
-                title: "Qu'est-ce qui empêche les nouveaux arrivants de participer aux activités de loisirs?",
-                items: {
-                    lackInformation: "Manque d'information",
-                    language: "Barrière linguistique",
-                    lackTime: "Manque de temps",
-                },
+                lackInformation: "Manque d'information",
+                language: "Barrière linguistique",
+                lackTime: "Manque de temps",
             },
         },
         feelings: {

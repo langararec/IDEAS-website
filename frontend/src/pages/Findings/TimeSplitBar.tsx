@@ -1,16 +1,18 @@
 import React from "react";
+import type { ChartItem } from "./items";
 import { useReveal } from "./useReveal";
 
 type TimeSplitBarProps = {
-    items: { id: string; label: string; value: number }[];
+    items: ChartItem[];
     formatPercent: (value: number) => string;
 };
 
 const COLORS = ["var(--color-data)", "var(--color-data-mid)", "var(--color-data-soft)"];
+const NARROW_SHARE = 22;
 
 const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items, formatPercent }) => {
     const { ref, revealed } = useReveal<HTMLDivElement>();
-    const tight = Math.min(...items.map((item) => item.value)) < 22;
+    const narrow = Math.min(...items.map((item) => item.value)) < NARROW_SHARE;
 
     return (
         <div ref={ref} className="grid gap-3.5">
@@ -19,11 +21,11 @@ const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items, formatPercent }) => 
                     <div
                         key={item.id}
                         style={{ flex: `0 0 calc(${item.value}% - 3px)` }}
-                        className="grid gap-0.5 pb-2.5"
+                        className={`grid gap-0.5 pb-2.5 ${narrow ? "max-sm:last:text-right" : ""}`}
                     >
-                        <dt className="order-2 text-[0.86rem] text-body">{item.label}</dt>
+                        <dt className="order-2 text-xs text-body sm:text-sm">{item.label}</dt>
                         <dd
-                            className={`order-1 font-semibold leading-none tracking-tight tabular-nums text-primary ${tight ? "text-[clamp(1.05rem,1.9vw,1.45rem)]" : "text-[clamp(1.5rem,2.4vw,1.9rem)]"}`}
+                            className={`order-1 leading-none font-semibold tracking-tight tabular-nums text-primary ${narrow ? "text-xl sm:text-2xl" : "text-3xl"}`}
                         >
                             {formatPercent(item.value)}
                         </dd>
@@ -34,12 +36,8 @@ const TimeSplitBar: React.FC<TimeSplitBarProps> = ({ items, formatPercent }) => 
                 {items.map((item, index) => (
                     <div key={item.id} style={{ flex: `0 0 calc(${item.value}% - 3px)` }}>
                         <div
-                            style={{
-                                background: COLORS[index],
-                                transitionDelay: `${index * 120}ms`,
-                                transform: revealed ? "scaleX(1)" : "scaleX(0)",
-                            }}
-                            className="h-2 origin-left rounded transition-transform duration-900 ease-[cubic-bezier(0.22,0.61,0.36,1)] motion-reduce:transition-none"
+                            style={{ background: COLORS[index], transitionDelay: `${index * 120}ms` }}
+                            className={`h-2 origin-left rounded transition-transform duration-900 ease-reveal motion-reduce:transition-none ${revealed ? "scale-x-100" : "scale-x-0"}`}
                         />
                     </div>
                 ))}

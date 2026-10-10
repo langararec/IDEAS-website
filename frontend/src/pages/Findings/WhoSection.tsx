@@ -15,19 +15,15 @@ type WhoSectionProps = {
     formatPercent: (value: number) => string;
 };
 
-const GENDER_COLORS = [
-    "var(--color-data)",
-    "var(--color-data-soft)",
-    "#8f9a95",
-    "#c8cdc8",
-];
+type AreaTitleProps = {
+    title: string;
+    meta?: string;
+};
 
-const AreaTitle: React.FC<{ title: string; meta?: string }> = ({ title, meta }) => (
-    <div className="mb-5 flex items-baseline justify-between gap-3 border-b border-rule pb-3.5">
-        <h3 className="text-[1.12rem] font-semibold leading-tight tracking-[-0.005em] text-balance text-ink">
-            {title}
-        </h3>
-        {meta ? <span className="text-[0.8rem] text-muted">{meta}</span> : null}
+const AreaTitle: React.FC<AreaTitleProps> = ({ title, meta }) => (
+    <div className="mb-5 flex items-baseline justify-between gap-3 border-b border-rule pb-3">
+        <h3 className="text-lg leading-tight font-semibold text-balance text-ink">{title}</h3>
+        {meta ? <span className="text-sm whitespace-nowrap text-muted">{meta}</span> : null}
     </div>
 );
 
@@ -37,42 +33,39 @@ const WhoSection: React.FC<WhoSectionProps> = ({ city, content, formatPercent })
     const area = "flex min-w-0 flex-col @container";
 
     return (
-        <Section tone>
-            <div className="grid gap-9">
-                <Reveal className="grid gap-3.5">
-                    <h2 className="text-[clamp(1.65rem,2.9vw,2.3rem)] font-semibold leading-[1.12] tracking-[-0.012em] text-pretty text-primary">
-                        {content.sections.who}
-                    </h2>
-                    <p className="max-w-[70ch] text-[1.02rem] leading-[1.75] text-body">
-                        {fillCounts(cityContent.who, data.n.total, data.n.newcomers)}
-                    </p>
+        <Section
+            tone="fromHero"
+            title={content.sections.who}
+            intro={
+                <p aria-live="polite" className="max-w-[70ch] leading-relaxed text-body md:text-lg">
+                    {fillCounts(cityContent.who, data.n.total, data.n.newcomers)}
+                </p>
+            }
+        >
+            <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[10fr_7fr_7fr] lg:gap-x-12">
+                <Reveal className={`${area} sm:col-span-full lg:col-span-1 lg:row-span-2`}>
+                    <AreaTitle title={content.charts.ethnicity} meta={content.charts.ethnicityUnit} />
+                    <BarList formatPercent={formatPercent} items={toItems(data.ethnicity, cityContent.ethnicity)} variant="ethnicity" />
                 </Reveal>
 
-                <div className="grid grid-cols-[minmax(0,5fr)_minmax(0,3.5fr)_minmax(0,3.5fr)] gap-x-[clamp(1.5rem,3.4vw,3.25rem)] gap-y-[clamp(2.25rem,4vw,3.5rem)] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
-                    <Reveal className={`${area} [grid-column:1] [grid-row:1/span_2] max-[960px]:[grid-column:1/-1] max-[960px]:[grid-row:auto]`}>
-                        <AreaTitle title={content.charts.ethnicity} meta={content.charts.ethnicityUnit} />
-                        <BarList formatPercent={formatPercent} items={toItems(data.ethnicity, cityContent.ethnicity)} variant="ethnicity" />
-                    </Reveal>
+                <Reveal delay={1} className={area}>
+                    <AreaTitle title={content.charts.gender} />
+                    <div className="my-auto">
+                        <Donut formatPercent={formatPercent} items={toItems(data.gender, cityContent.gender)} />
+                    </div>
+                </Reveal>
 
-                    <Reveal delay={1} className={area}>
-                        <AreaTitle title={content.charts.gender} />
-                        <div className="my-auto">
-                            <Donut formatPercent={formatPercent} items={toItems(data.gender, cityContent.gender)} colors={GENDER_COLORS} />
-                        </div>
-                    </Reveal>
+                <Reveal delay={2} className={area}>
+                    <AreaTitle title={content.charts.age} />
+                    <AgeColumns formatPercent={formatPercent} items={toItems(data.age, cityContent.age)} />
+                </Reveal>
 
-                    <Reveal delay={2} className={area}>
-                        <AreaTitle title={content.charts.age} />
-                        <AgeColumns formatPercent={formatPercent} items={toItems(data.age, cityContent.age)} />
-                    </Reveal>
-
-                    <Reveal delay={3} className={`${area} [grid-column:2/span_2] max-[960px]:[grid-column:1/-1]`}>
-                        <AreaTitle title={content.charts.timeInBC} />
-                        <div className="my-auto">
-                            <TimeSplitBar formatPercent={formatPercent} items={toItems(data.timeInBC, cityContent.timeInBC)} />
-                        </div>
-                    </Reveal>
-                </div>
+                <Reveal delay={3} className={`${area} sm:col-span-full lg:col-span-2 lg:col-start-2`}>
+                    <AreaTitle title={content.charts.timeInBC} />
+                    <div className="my-auto">
+                        <TimeSplitBar formatPercent={formatPercent} items={toItems(data.timeInBC, cityContent.timeInBC)} />
+                    </div>
+                </Reveal>
             </div>
         </Section>
     );

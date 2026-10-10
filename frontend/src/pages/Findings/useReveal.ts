@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { REDUCED_MOTION_QUERY } from "./usePrefersReducedMotion";
 
 let shared: IntersectionObserver | null = null;
 const handlers = new Map<Element, () => void>();
@@ -32,13 +33,8 @@ export const useReveal = <T extends Element>() => {
         const element = ref.current;
         if (!element) return;
 
-        const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (still || !("IntersectionObserver" in window)) {
-            setRevealed(true);
-            return;
-        }
-
-        if (element.getBoundingClientRect().bottom <= 0) {
+        const still = window.matchMedia(REDUCED_MOTION_QUERY).matches;
+        if (still || element.getBoundingClientRect().bottom <= 0) {
             setRevealed(true);
             return;
         }

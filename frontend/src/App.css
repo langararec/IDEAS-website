@@ -17,16 +17,21 @@
   --color-base-200: #e9f5eb;
 
   --color-data: #317039;
-  --color-data-dark: #275a2e;
   --color-data-mid: #75a37b;
   --color-data-soft: #c9e2cd;
   --color-data-faint: #dde9df;
+  --color-data-grey: #8f9a95;
+  --color-data-grey-soft: #c8cdc8;
   --color-ink: #14231f;
   --color-body: #3f4c48;
   --color-muted: #656f6a;
   --color-rule: #dbe7de;
 
   --font-dm-sans: 'DM Sans', sans-serif;
+
+  --ease-reveal: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --shadow-poster: 0 1px 2px rgb(20 35 31 / 0.08), 0 18px 40px -18px rgb(20 35 31 / 0.28);
 
   
   --breakpoint-3xl:2560px;

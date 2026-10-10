@@ -16,37 +16,25 @@ const FeelingsSection: React.FC<FeelingsSectionProps> = ({ city, content }) => {
     const labels = content[city].feelings;
 
     return (
-        <Section>
-            <div className="grid grid-cols-12 gap-x-[clamp(1rem,2.6vw,2.25rem)] gap-y-12 max-[900px]:grid-cols-1">
-                <Reveal className="col-span-4 self-start max-[900px]:col-span-full lg:sticky lg:top-28">
-                    <h2 className="text-[clamp(1.65rem,2.9vw,2.3rem)] font-semibold leading-[1.12] tracking-[-0.012em] text-pretty text-primary">
-                        {content.sections.feelings}
-                    </h2>
-                </Reveal>
-
-                <div className="[grid-column:6/-1] max-[900px]:[grid-column:1/-1]">
-                    {groups.map((group, index) => (
-                        <Reveal
-                            key={group.id}
-                            delay={index}
-                            className={`grid gap-[1.375rem] py-[2.125rem] ${index === 0 ? "border-0 pt-1.5" : "border-t border-rule"} ${index === groups.length - 1 ? "pb-0" : ""}`}
-                        >
-                            <h3 className="text-[1.12rem] font-semibold leading-tight tracking-[-0.005em] text-balance text-ink">
-                                {labels[group.id].title}
-                            </h3>
-                            <div className="grid grid-cols-2 gap-x-12 gap-y-8 max-[640px]:grid-cols-1">
-                                {toItems(group.items, labels[group.id].items).map((item) => (
-                                    <PeopleRatio
-                                        key={item.id}
-                                        value={item.value}
-                                        outOfSix={content.outOfSix}
-                                        statement={item.label}
-                                    />
-                                ))}
-                            </div>
-                        </Reveal>
-                    ))}
-                </div>
+        <Section tone="tint" title={content.sections.feelings}>
+            <div className="grid gap-12">
+                {groups.map((group, index) => (
+                    <Reveal key={group.id} delay={index} className="grid gap-6 lg:grid-cols-12 lg:gap-x-12">
+                        <h3 className="text-lg leading-tight font-semibold text-balance text-ink lg:col-span-4 lg:pt-2">
+                            {labels[group.id].title}
+                        </h3>
+                        <div className="grid gap-x-12 gap-y-8 sm:grid-cols-2 lg:col-span-8">
+                            {toItems(group.items, labels[group.id].items).map((item) => (
+                                <PeopleRatio
+                                    key={item.id}
+                                    value={item.value}
+                                    outOfSix={content.outOfSix}
+                                    statement={item.label}
+                                />
+                            ))}
+                        </div>
+                    </Reveal>
+                ))}
             </div>
         </Section>
     );
