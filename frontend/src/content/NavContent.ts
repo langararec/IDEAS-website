@@ -2,6 +2,7 @@ export const navContent = {
   en: {
     home: "Home",
     about: "About Us",
+    findings: "Findings",
     project: "The Project",
     timeline: "Timeline & Updates",
     schedule: "Engagement Schedule",
@@ -16,6 +17,7 @@ export const navContent = {
   fr: {
     home: "Accueil",
     about: "À Propos",
+    findings: "Résultats",
     project: "Le Projet",
     timeline: "Chronologie et Mises à Jour",
     schedule: "Calendrier d'Engagement",

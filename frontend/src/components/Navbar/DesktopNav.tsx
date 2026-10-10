@@ -20,6 +20,10 @@ const DesktopNav = ({ currentNav, setCurrentNav }: DesktopNavProps) => {
                     <Link to="/project" className="text-primary text-xl font-medium font-dm-sans">{navContent[language].about}</Link>
                         <span className={`block h-0.5 ${currentNav === navContent[language].about ? "w-full" : "w-0"} bg-accent mt-0.5 transition-all duration-200`}></span>
                     </div>
+                <div className="group" onMouseEnter={() => setCurrentNav(null)} >
+                    <Link to="/findings" className="text-primary text-xl font-medium font-dm-sans">{navContent[language].findings}</Link>
+                    <span className="block h-0.5 w-0 bg-accent mt-0.5 transition-all duration-200 group-hover:w-full"></span>
+                </div>
                 <div onMouseEnter={() => setCurrentNav(navContent[language].team)} >
                     <Link to="/team" className="text-primary text-xl font-medium font-dm-sans">{navContent[language].team}</Link>
                     <span className={`block h-0.5 ${currentNav === navContent[language].team ? "w-full" : "w-0"} bg-accent mt-0.5 transition-all duration-200`}></span>
