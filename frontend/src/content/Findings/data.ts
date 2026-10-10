@@ -2,15 +2,20 @@ export type City = 'burnaby' | 'courtenay';
 
 export const cities: City[] = ['burnaby', 'courtenay'];
 
-export const posters = [
-    { id: "en", file: "en", native: "English", hreflang: "en", bytes: 459958 },
-    { id: "zh", file: "zh-hans", native: "中文", hreflang: "zh-Hans", bytes: 859789 },
-    { id: "ti", file: "ti", native: "ትግርኛ", hreflang: "ti", bytes: 521154 },
-    { id: "pa", file: "pa", native: "ਪੰਜਾਬੀ", hreflang: "pa", bytes: 487854 },
-    { id: "ko", file: "ko", native: "한국어", hreflang: "ko", bytes: 666957 },
-    { id: "fa", file: "fa", native: "فارسی", hreflang: "fa", bytes: 471687, rtl: true },
-    { id: "uk", file: "uk", native: "Українська", hreflang: "uk", bytes: 504360 },
+export const posterLanguages = [
+    { id: "en", file: "en", native: "English", hreflang: "en" },
+    { id: "zh", file: "zh-hans", native: "中文", hreflang: "zh-Hans" },
+    { id: "ti", file: "ti", native: "ትግርኛ", hreflang: "ti" },
+    { id: "pa", file: "pa", native: "ਪੰਜਾਬੀ", hreflang: "pa" },
+    { id: "ko", file: "ko", native: "한국어", hreflang: "ko" },
+    { id: "fa", file: "fa", native: "فارسی", hreflang: "fa", rtl: true },
+    { id: "uk", file: "uk", native: "Українська", hreflang: "uk" },
 ] as const;
+
+export const posterBytes: Record<City, Record<(typeof posterLanguages)[number]["id"], number>> = {
+    burnaby: { en: 459958, zh: 859789, ti: 521154, pa: 487854, ko: 666957, fa: 471687, uk: 504360 },
+    courtenay: { en: 427849, zh: 852333, ti: 476830, pa: 453500, ko: 655640, fa: 427055, uk: 472931 },
+};
 
 export const findingsData = {
     burnaby: {

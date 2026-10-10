@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import type { FindingsContentType } from "../../content/FindingsContent";
-import { posters } from "../../content/Findings/data";
+import { posterBytes, posterLanguages, type City } from "../../content/Findings/data";
 import { localeFor, type Language } from "./items";
 import Reveal from "./Reveal";
 import Section from "./Section";
 
 type DownloadSectionProps = {
+    city: City;
     content: FindingsContentType;
     language: Language;
 };
@@ -13,12 +14,12 @@ type DownloadSectionProps = {
 const THUMB_WIDTH = 900;
 const THUMB_HEIGHT = 1165;
 
-const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) => {
+const DownloadSection: React.FC<DownloadSectionProps> = ({ city, content, language }) => {
     const [selected, setSelected] = useState(0);
     const dialog = useRef<HTMLDialogElement>(null);
     const labels = content.download;
-    const poster = posters[selected];
-    const thumb = `/posters/findings-burnaby-${poster.file}.avif`;
+    const poster = posterLanguages[selected];
+    const thumb = `/posters/findings-${city}-${poster.file}.avif`;
     const thumbAlt = labels.thumbAlt.replace("{language}", labels.languages[poster.id]);
 
     const megabytes = new Intl.NumberFormat(localeFor(language), {
@@ -73,7 +74,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) 
                 </button>
 
                 <ul className="grid max-w-160">
-                    {posters.map((entry, index) => (
+                    {posterLanguages.map((entry, index) => (
                         <li
                             key={entry.id}
                             className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-rule py-3 pr-2 transition-[background-color,padding] duration-200 last:border-b motion-reduce:transition-none ${index === selected ? "bg-white pl-3.5 shadow-[inset_2px_0_0_var(--color-accent)]" : "hover:bg-white hover:pl-2.5"}`}
@@ -90,7 +91,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) 
                                 <span className="ml-1 text-sm font-normal text-muted">{labels.languages[entry.id]}</span>
                             </button>
                             <a
-                                href={`/posters/findings-burnaby-${entry.file}.pdf`}
+                                href={`/posters/findings-${city}-${entry.file}.pdf`}
                                 download
                                 type="application/pdf"
                                 hrefLang={entry.hreflang}
@@ -98,7 +99,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ content, language }) 
                             >
                                 {labels.action}{" "}
                                 <span className="ml-1 font-normal whitespace-nowrap text-muted">
-                                    {labels.format}, {megabytes.format(entry.bytes / 1_000_000)}
+                                    {labels.format}, {megabytes.format(posterBytes[city][entry.id] / 1_000_000)}
                                 </span>
                             </a>
                         </li>

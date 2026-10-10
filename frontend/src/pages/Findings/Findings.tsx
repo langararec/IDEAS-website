@@ -42,7 +42,7 @@ const Findings: React.FC = () => {
                 <TakePartSection city={city} content={content} formatPercent={formatPercent} />
                 <SwimmingSection city={city} content={content} formatPercent={formatPercent} />
                 <VoicesSection city={city} content={content} />
-                <DownloadSection content={content} language={language} />
+                <DownloadSection city={city} content={content} language={language} />
             </div>
         </main>
     );
