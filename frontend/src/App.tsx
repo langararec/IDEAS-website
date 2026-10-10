@@ -10,7 +10,6 @@ import EngagementSchedule from './pages/EngagementSchedule/EngagementSchedule'
 import Gallery from './pages/Gallery/Gallery'
 import References from './pages/References/References'
 import Findings from './pages/Findings/Findings'
-import Careers from './pages/Team/Careers'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -40,7 +39,6 @@ function App() {
         <Route path='/statistics' element={<Suspense fallback={null}><Statistics /></Suspense>} />
         <Route path='/staff' element={<Navigate to="/statistics" replace />} />
         <Route path='/findings' element={<Findings />} />
-        <Route path='/careers' element={<Careers />} />
         <Route path='*' element={<NotFound />} />
 
       </Routes>

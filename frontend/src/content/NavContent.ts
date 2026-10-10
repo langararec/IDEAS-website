@@ -9,8 +9,6 @@ export const navContent = {
     team: "Our Team",
     gallery: "Gallery",
     getInvolved: "Get Involved",
-    careers: "Join Us",
-    hiringBadge: "We're Hiring",
     language: "EN",
     languageFull: "English",
   },
@@ -24,8 +22,6 @@ export const navContent = {
     team: "Notre Équipe",
     gallery: "Galerie",
     getInvolved: "S'Impliquer",
-    careers: "Rejoindre",
-    hiringBadge: "Nous Recrutons",
     language: "FR",
     languageFull: "Français",
   }
