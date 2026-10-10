@@ -14,7 +14,7 @@ const en = {
     },
     quoteMarks: { open: "\u201C", close: "\u201D" },
     questionTitles: {
-        infoSources: "How people find out about recreation activities?",
+        infoSources: "How do people find out about recreation activities?",
         reasons: "Why do newcomers participate?",
         activities: "Which activities did people participate in the most?",
         barriers: "What stops people from joining recreation?",
@@ -46,12 +46,12 @@ const en = {
     },
     burnaby: {
         quotes: [
-            "they need somebody in between to make this connecting point because of their language barrier",
+            "They need somebody in between to make this connecting point because of their language barrier",
             "So, I'm a newcomer, I have been living in Vancouver not very long. So actually, I haven't actually been to a community center to use any recreation",
             "I don't know where to look for what",
-            "you want to do like an exercise like dance and zumba classes, but you see that there is only children care (to drop them off) from 9 to 12, but that's it… When you want to go, it's already over and it is an hour max.",
-            "when I started being a mom, I didn't know that all of this existed",
-            "it's very interesting for me to learn that such services or centers are available because we don't have such a thing in our country.",
+            "You want to do like an exercise like dance and zumba classes, but you see that there is only children care (to drop them off) from 9 to 12, but that's it… When you want to go, it's already over and it is an hour max.",
+            "When I started being a mom, I didn't know that all of this existed",
+            "It's very interesting for me to learn that such services or centers are available because we don't have such a thing in our country.",
         ],
         who: "We heard from {total} people in total through our survey. This data is from the {newcomers} respondents who have lived in BC for 6 years or less.",
         ethnicity: {
@@ -130,7 +130,7 @@ const en = {
             },
         },
         swimming: {
-            title: "Swimming in Burnaby",
+            title: "Swimming",
             items: {
                 canSwim: "can swim.",
                 comfortable: "feel comfortable swimming.",
@@ -150,8 +150,8 @@ const en = {
             "Recreation is like… activities that help me relax and have fun. Also, it's connecting with others. So I really enjoy spending time outdoors, like walking, bird watching, and spend time with my family, friends, doing some games. Yeah, so it really helped me be happy and refreshed.",
             "Because the information is like only English, right? So, actually, she didn't get the right information. It will be great (to have) the translated information.",
             "I want to try [swimming], I don't know where, or when",
-            "it would be nice for more flexible hours, so she can join more because she's currently running her own business so it's hard to choose the time.",
-            "people don't work with regular nine to five anymore, so there's like lots of classes that people want to take… but they don't offer it later in the day, or the classes are too late.",
+            "It would be nice for more flexible hours, so she can join more because she's currently running her own business so it's hard to choose the time.",
+            "People don't work with regular nine to five anymore, so there's like lots of classes that people want to take… but they don't offer it later in the day, or the classes are too late.",
         ],
         who: "We heard from {total} people in total through our survey. This data is from the {newcomers} respondents who have lived in BC for 6 years or less.",
         ethnicity: {
@@ -229,7 +229,7 @@ const en = {
             },
         },
         swimming: {
-            title: "Swimming in Courtenay",
+            title: "Swimming",
             items: {
                 canSwim: "can swim.",
                 comfortable: "feel comfortable swimming.",
@@ -281,7 +281,7 @@ const fr: typeof en = {
         viewLarger: "Agrandir",
         close: "Fermer",
         preview: "Aperçu",
-        thumbAlt: "Première page de l'affiche, version {language}",
+        thumbAlt: "Première page de l'affiche — {language}",
         languages: {
             en: "Anglais",
             zh: "Chinois",
@@ -294,12 +294,12 @@ const fr: typeof en = {
     },
     burnaby: {
         quotes: [
-            "ils ont besoin de quelqu'un entre les deux pour faire ce point de contact, à cause de leur barrière linguistique",
+            "Ils ont besoin de quelqu'un entre les deux pour faire ce point de contact, à cause de leur barrière linguistique",
             "Alors, je viens d'arriver, je vis à Vancouver depuis peu de temps. Alors en fait, je n'ai pas vraiment fréquenté de centre communautaire pour faire des loisirs",
-            "je ne sais pas où chercher quoi",
-            "tu veux faire genre de l'exercice, comme des cours de danse et de zumba, mais tu vois qu'il y a seulement la garde d'enfants (pour les déposer) de 9 h à 12 h, et c'est tout… Quand tu veux y aller, c'est déjà fini, et c'est une heure max.",
-            "quand je suis devenue maman, je ne savais pas que tout ça existait",
-            "c'est très intéressant pour moi d'apprendre que des services ou des centres comme ça sont offerts, parce qu'on n'a pas ça dans notre pays.",
+            "Je ne sais pas où chercher quoi",
+            "Tu veux faire genre de l'exercice, comme des cours de danse et de zumba, mais tu vois qu'il y a seulement la garde d'enfants (pour les déposer) de 9 h à 12 h, et c'est tout… Quand tu veux y aller, c'est déjà fini, et c'est une heure max.",
+            "Quand je suis devenue maman, je ne savais pas que tout ça existait",
+            "C'est très intéressant pour moi d'apprendre que des services ou des centres comme ça sont offerts, parce qu'on n'a pas ça dans notre pays.",
         ],
         who: "Au total, {total} personnes ont répondu à notre sondage. Ces données proviennent des {newcomers} répondants qui vivent en C.-B. depuis 6 ans ou moins.",
         ethnicity: {
@@ -378,7 +378,7 @@ const fr: typeof en = {
             },
         },
         swimming: {
-            title: "La natation à Burnaby",
+            title: "La natation",
             items: {
                 canSwim: "savent nager.",
                 comfortable: "se sentent à l'aise pour nager.",
@@ -397,9 +397,9 @@ const fr: typeof en = {
         quotes: [
             "Les loisirs, c'est comme… des activités qui m'aident à me détendre et à avoir du plaisir. Aussi, c'est entrer en contact avec les autres. Alors j'aime vraiment passer du temps dehors, comme marcher, observer les oiseaux, et passer du temps avec ma famille, mes amis, jouer à des jeux. Oui, alors ça m'a vraiment apporté du bonheur et de l'énergie.",
             "Parce que l'information est genre seulement en anglais, non? Alors, en fait, elle n'a pas eu la bonne information. Ce serait super (d'avoir) l'information traduite.",
-            "je veux essayer [la natation], je ne sais pas où, ni quand",
-            "ce serait bien d'avoir des heures plus flexibles, pour qu'elle puisse participer davantage, parce qu'elle gère sa propre entreprise en ce moment, alors c'est difficile de choisir le moment.",
-            "les gens ne travaillent plus selon un horaire régulier de neuf à cinq, alors il y a genre plein de cours que les gens veulent suivre… mais ils ne les offrent pas plus tard dans la journée, ou les cours sont trop tard.",
+            "Je veux essayer [la natation], je ne sais pas où, ni quand",
+            "Ce serait bien d'avoir des heures plus flexibles, pour qu'elle puisse participer davantage, parce qu'elle gère sa propre entreprise en ce moment, alors c'est difficile de choisir le moment.",
+            "Les gens ne travaillent plus selon un horaire régulier de neuf à cinq, alors il y a genre plein de cours que les gens veulent suivre… mais ils ne les offrent pas plus tard dans la journée, ou les cours sont trop tard.",
         ],
         who: "Au total, {total} personnes ont répondu à notre sondage. Ces données proviennent des {newcomers} répondants qui vivent en C.-B. depuis 6 ans ou moins.",
         ethnicity: {
@@ -477,7 +477,7 @@ const fr: typeof en = {
             },
         },
         swimming: {
-            title: "La natation à Courtenay",
+            title: "La natation",
             items: {
                 canSwim: "savent nager.",
                 comfortable: "se sentent à l'aise pour nager.",
