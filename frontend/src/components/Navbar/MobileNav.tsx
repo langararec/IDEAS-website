@@ -59,6 +59,15 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                             </div>
                         </div>
 
+                        {/* Findings */}
+                        <div className="py-3 border-b border-gray-100">
+                            <Link to="/findings">
+                                <span className="text-primary text-xl font-medium font-dm-sans">
+                                    {navContent[language].findings}
+                                </span>
+                            </Link>
+                        </div>
+
                         {/* Our Team */}
                         <div className="py-3 border-b border-gray-100">
                             <div

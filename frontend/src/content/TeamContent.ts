@@ -137,6 +137,25 @@ export const teamContent = {
         programLink: "https://langara.ca/programs-courses/applied-planning-post-degree-diploma-we",
         linkedin: "https://www.linkedin.com/in/moana-mudekereza/"
       },
+      {
+        name: "Kenn Ali",
+        role: "Student Research Assistant",
+        program: "Post Degree Diploma in Recreation Leadership",
+        image: "/team/kenn.webp",
+        shortDescription: "Kenn is a Recreation Leadership student at Langara College. As an immigrant and a research assistant on this project, he is excited to build hands-on research experience while contributing to work that supports more accessible recreation for immigrant and racialized communities in British Columbia. He hopes to build a career in community recreation and make programs that are welcoming for everyone.",
+        longDescription: "Kenn is a Recreation Leadership student at Langara College. As an immigrant and a research assistant on this project, he is excited to build hands-on research experience while contributing to work that supports more accessible recreation for immigrant and racialized communities in British Columbia. He hopes to build a career in community recreation and make programs that are welcoming for everyone.",
+        programLink: "https://langara.ca/programs-courses/recreation-leadership-diploma-we",
+        linkedin: "https://www.linkedin.com/in/kennali/"
+      },
+      {
+        name: "Avneet Kaur",
+        role: "Student Research Assistant",
+        program: "Bachelor of Business Administration",
+        image: "/team/avneet.webp",
+        shortDescription: "Avneet is a Bachelor of Business Administration student at Langara who is passionate about community engagement, accessibility, and creating positive recreational experiences. She is committed to supporting research that helps make public recreation more accessible and inclusive for everyone.",
+        longDescription: "Avneet is a Bachelor of Business Administration student at Langara who is passionate about community engagement, accessibility, and creating positive recreational experiences. She is committed to supporting research that helps make public recreation more accessible and inclusive for everyone.",
+        programLink: "https://langara.ca/programs-courses/business-administration-bba-baccalaureate-degree-co-op"
+      },
 
     ]
   },
@@ -277,6 +296,25 @@ export const teamContent = {
         longDescription: "Moana est une professionnelle multidisciplinaire en planification urbaine et ingénierie qui s'épanouit à façonner des communautés inclusives, résilientes et accessibles à travers la Colombie-Britannique.",
         programLink: "https://langara.ca/programs-courses/applied-planning-post-degree-diploma-we",
         linkedin: "https://www.linkedin.com/in/moana-mudekereza/"
+      },
+      {
+        name: "Kenn Ali",
+        role: "Assistant de Recherche Étudiant",
+        program: "Diplôme Post-Diplôme en Leadership Récréatif",
+        image: "/team/kenn.webp",
+        shortDescription: "Kenn est étudiant en Leadership Récréatif au Collège Langara. En tant qu'immigrant et assistant de recherche sur ce projet, il est enthousiaste à l'idée d'acquérir une expérience pratique en recherche tout en contribuant à un travail qui favorise des loisirs plus accessibles pour les communautés immigrantes et racialisées en Colombie-Britannique. Il espère bâtir une carrière dans les loisirs communautaires et créer des programmes accueillants pour tous.",
+        longDescription: "Kenn est étudiant en Leadership Récréatif au Collège Langara. En tant qu'immigrant et assistant de recherche sur ce projet, il est enthousiaste à l'idée d'acquérir une expérience pratique en recherche tout en contribuant à un travail qui favorise des loisirs plus accessibles pour les communautés immigrantes et racialisées en Colombie-Britannique. Il espère bâtir une carrière dans les loisirs communautaires et créer des programmes accueillants pour tous.",
+        programLink: "https://langara.ca/programs-courses/recreation-leadership-diploma-we",
+        linkedin: "https://www.linkedin.com/in/kennali/"
+      },
+      {
+        name: "Avneet Kaur",
+        role: "Assistante de Recherche Étudiante",
+        program: "Baccalauréat en Administration des Affaires",
+        image: "/team/avneet.webp",
+        shortDescription: "Avneet est étudiante au Baccalauréat en Administration des Affaires au Collège Langara, passionnée par l'engagement communautaire, l'accessibilité et la création d'expériences récréatives positives. Elle s'engage à soutenir la recherche qui contribue à rendre les loisirs publics plus accessibles et inclusifs pour tous.",
+        longDescription: "Avneet est étudiante au Baccalauréat en Administration des Affaires au Collège Langara, passionnée par l'engagement communautaire, l'accessibilité et la création d'expériences récréatives positives. Elle s'engage à soutenir la recherche qui contribue à rendre les loisirs publics plus accessibles et inclusifs pour tous.",
+        programLink: "https://langara.ca/programs-courses/business-administration-bba-baccalaureate-degree-co-op"
       }
     ]
   }

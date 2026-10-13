@@ -14,8 +14,7 @@ const Mission: React.FC = () => {
                 alt={content.imageAlt}
                 width={1920}
                 height={800}
-                loading="eager" // Above fold
-                fetchPriority="high"
+                loading="lazy"
                 className="hidden lg:block absolute 3xl:-top-11/12 lg:-top-1/3 xl:-top-2/3 w-full"
             />
             
@@ -28,7 +27,7 @@ const Mission: React.FC = () => {
                             alt={content.imageAlt}
                             width={800}
                             height={600}
-                            loading="eager"
+                            loading="lazy"
                             className="w-full h-auto shadow-xl"
                         />
                     </div>

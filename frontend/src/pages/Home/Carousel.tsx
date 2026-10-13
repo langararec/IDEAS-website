@@ -28,7 +28,6 @@ const Carousel: React.FC = () => {
                             alt={`Carousel Image ${index + 1}`}
                             width={320}
                             height={240}
-                            loading="lazy"
                             decoding="async"
                             className={`h-60 xl:h-72 w-auto object-cover rounded-lg shadow-lg mx-4 ${index % 2 === 0 ? 'mt-16' : ''}`}
                         />
