@@ -3,7 +3,7 @@ export const navModalContent = {
     aboutUs: {
       header: "KNOW MORE ABOUT",
       image: {
-        src: "/holdinghands.webp",
+        src: "/holdinghands-nav.webp",
         alt: "Community engagement - hands coming together"
       },
       links: [
@@ -24,7 +24,7 @@ export const navModalContent = {
     team: {
       header: "MEET OUR TEAM",
       image: {
-        src: "/team-nav-image.webp",
+        src: "/team-nav-thumbnail.webp",
         alt: "Community engagement - People in a photo"
       },
       links: [
@@ -49,7 +49,7 @@ export const navModalContent = {
     gallery: {
       header: "CHECK OUT OUR GALLERY",
       image: {
-        src: "/gallery-nav-image.webp",
+        src: "/gallery-nav-thumbnail.webp",
         alt: "Community engagement - Team"
       },
       links: [
@@ -64,7 +64,7 @@ export const navModalContent = {
     aboutUs: {
       header: "EN SAVOIR PLUS SUR",
       image: {
-        src: "/holdinghands.webp",
+        src: "/holdinghands-nav.webp",
         alt: "Engagement communautaire - mains qui se rassemblent"
       },
       links: [
@@ -85,7 +85,7 @@ export const navModalContent = {
     team: {
       header: "RENCONTREZ NOTRE ÉQUIPE",
       image: {
-        src: "/team-nav-image.webp",
+        src: "/team-nav-thumbnail.webp",
         alt: "Engagement communautaire - Personnes dans une photo"
       },
       links: [
@@ -110,7 +110,7 @@ export const navModalContent = {
     gallery: {
       header: "DÉCOUVREZ NOTRE GALERIE",
       image: {
-        src: "/gallery-nav-image.webp",
+        src: "/gallery-nav-thumbnail.webp",
         alt: "Engagement communautaire - Équipe"
       },
       links: [

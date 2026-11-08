@@ -1,6 +1,21 @@
 export const teamContent = {
   en: {
-    title: "Meet Our Team",
+    title: "The people behind IDEAs",
+    subtitle: "The researchers, collaborators and students working with newcomer communities and municipal recreation partners on this project.",
+    sections: {
+      researchTeam: {
+        title: "Research Team",
+        subtitle: "Leading the research program and its community partnerships.",
+      },
+      researchStaff: {
+        title: "Research Staff",
+        subtitle: "Research assistants supporting engagement, data and analysis.",
+      },
+      students: {
+        title: "Student Research Assistants",
+        subtitle: "Students and assistants supporting engagement, data and analysis.",
+      },
+    },
     members: [
       {
         name: "Yue-Ching Cheng",
@@ -160,7 +175,22 @@ export const teamContent = {
     ]
   },
   fr: {
-    title: "Rencontrez Notre Équipe",
+    title: "Les personnes derrière IDEAs",
+    subtitle: "Les chercheurs, collaborateurs et étudiants qui travaillent avec les communautés nouvellement arrivées et les partenaires municipaux en loisirs sur ce projet.",
+    sections: {
+      researchTeam: {
+        title: "Équipe de recherche",
+        subtitle: "À la tête du programme de recherche et de ses partenariats communautaires.",
+      },
+      researchStaff: {
+        title: "Personnel de recherche",
+        subtitle: "Des assistants de recherche qui soutiennent l'engagement, les données et l'analyse.",
+      },
+      students: {
+        title: "Assistants de recherche étudiants",
+        subtitle: "Des étudiants et assistants qui soutiennent l'engagement, les données et l'analyse.",
+      },
+    },
     members: [
       {
         name: "Yue-Ching Cheng",
