@@ -15,22 +15,22 @@ const DesktopNav = ({ currentNav, setCurrentNav }: DesktopNavProps) => {
     return (
 
         <div className="hidden lg:block max-w-7xl" >
-            <div className="flex space-x-8 p-4">
+            <div className="flex space-x-8 p-5">
                 <div onMouseEnter={() => setCurrentNav(navContent[language].about)} >
-                    <Link to="/project" className="text-primary text-xl font-medium font-dm-sans">{navContent[language].about}</Link>
+                    <Link to="/project" className="text-white text-lg font-medium font-dm-sans">{navContent[language].about}</Link>
                         <span className={`block h-0.5 ${currentNav === navContent[language].about ? "w-full" : "w-0"} bg-accent mt-0.5 transition-all duration-200`}></span>
                     </div>
-                <div className="group" onMouseEnter={() => setCurrentNav(null)} >
-                    <Link to="/findings" className="text-primary text-xl font-medium font-dm-sans">{navContent[language].findings}</Link>
-                    <span className="block h-0.5 w-0 bg-accent mt-0.5 transition-all duration-200 group-hover:w-full"></span>
-                </div>
                 <div onMouseEnter={() => setCurrentNav(navContent[language].team)} >
-                    <Link to="/team" className="text-primary text-xl font-medium font-dm-sans">{navContent[language].team}</Link>
+                    <Link to="/team" className="text-white text-lg font-medium font-dm-sans">{navContent[language].team}</Link>
                     <span className={`block h-0.5 ${currentNav === navContent[language].team ? "w-full" : "w-0"} bg-accent mt-0.5 transition-all duration-200`}></span>
                 </div>
                 <div onMouseEnter={() => setCurrentNav(navContent[language].gallery)} >
-                    <Link to="/gallery" className="text-primary font-medium text-xl font-dm-sans">{navContent[language].gallery}</Link>
+                    <Link to="/gallery" className="text-white font-medium text-lg font-dm-sans">{navContent[language].gallery}</Link>
                     <span className={`block h-0.5 ${currentNav === navContent[language].gallery ? "w-full" : "w-0"} bg-accent mt-0.5 transition-all duration-200`}></span>
+                </div>
+                <div className="group" onMouseEnter={() => setCurrentNav(null)} >
+                    <Link to="/findings" className="text-white text-lg font-medium font-dm-sans">{navContent[language].findings}</Link>
+                    <span className="block h-0.5 w-0 bg-accent mt-0.5 transition-all duration-200 group-hover:w-full"></span>
                 </div>
             </div>
         </div >

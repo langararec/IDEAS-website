@@ -9,13 +9,10 @@ import OurTeamCard from "./OurTeamCard";
 import GalleryCard from "./GalleryCard";
 
 type MobileNavProps = {
-    isMobileMenuOpen: boolean;
-    isMobileAboutOpen: boolean;
     setIsMobileMenuOpen: (value: boolean) => void;
-    setIsMobileAboutOpen: (value: boolean) => void;
 }
 
-const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) => {
+const MobileNav = ({ setIsMobileMenuOpen }: MobileNavProps) => {
     const [isGalleryExpanded, setIsGalleryExpanded] = useState(false);
     const [isAboutExpanded, setIsAboutExpanded] = useState(false);
     const [isTeamExpanded, setIsTeamExpanded] = useState(false);
@@ -31,12 +28,11 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
     }, [location.pathname, setIsMobileMenuOpen]);
 
     return (
-        <div className={`${isMobileMenuOpen ? 'max-h-[85dvh] opacity-100' : 'max-h-0 opacity-0'} 
-                lg:hidden overflow-x-hidden transition-all duration-300 ease-in-out`}>
+        <div className="lg:hidden max-h-[calc(100dvh-7rem)] overflow-y-auto overflow-x-hidden">
 
             {/* Separated Menu Container with blur and rounded borders */}
             <div className="p-4 ">
-                <div className="bg-white backdrop-blur-sm rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
                     <div className="px-6 py-4 space-y-4">
                         {/* About Us */}
                         <div className="py-3 border-b border-gray-100">
@@ -53,19 +49,11 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                             </div>
 
                             {/* About Us Expanded Content */}
-                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isAboutExpanded ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
-                                }`}>
-                                <AboutUsCard />
-                            </div>
-                        </div>
-
-                        {/* Findings */}
-                        <div className="py-3 border-b border-gray-100">
-                            <Link to="/findings">
-                                <span className="text-primary text-xl font-medium font-dm-sans">
-                                    {navContent[language].findings}
-                                </span>
-                            </Link>
+                            {isAboutExpanded && (
+                                <div className="mt-4">
+                                    <AboutUsCard />
+                                </div>
+                            )}
                         </div>
 
                         {/* Our Team */}
@@ -83,10 +71,11 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                             </div>
 
                             {/* Our Team Expanded Content */}
-                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isTeamExpanded ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
-                                }`}>
-                                <OurTeamCard />
-                            </div>
+                            {isTeamExpanded && (
+                                <div className="mt-4">
+                                    <OurTeamCard />
+                                </div>
+                            )}
                         </div>
 
                         {/* Gallery */}
@@ -103,12 +92,21 @@ const MobileNav = ({ isMobileMenuOpen, setIsMobileMenuOpen }: MobileNavProps) =>
                                 <RxCaretDown className={`text-primary text-xl transition-transform duration-200 ${isGalleryExpanded ? 'rotate-180' : ''}`} />                            </div>
 
                             {/* Gallery Expanded Content */}
-                            <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isGalleryExpanded ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
-                                }`}>
-                                <GalleryCard />
-                            </div>
+                            {isGalleryExpanded && (
+                                <div className="mt-4">
+                                    <GalleryCard />
+                                </div>
+                            )}
                         </div>
 
+                                                {/* Findings */}
+                        <div className="py-3 border-b border-gray-100">
+                            <Link to="/findings">
+                                <span className="text-primary text-xl font-medium font-dm-sans">
+                                    {navContent[language].findings}
+                                </span>
+                            </Link>
+                        </div>
                         {/* Get Involved Button */}
                         <div className="pt-4">
                             <Link to="/get-involved">
