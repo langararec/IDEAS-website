@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { navModalContent } from '../../content/NavModalContent';
+import NavLinkList from './NavLinkList';
 
 type AboutUsCardProps = {
     setCurrentNav?: (value: string | null) => void;
@@ -15,7 +15,6 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
         <div 
             key={`team-card-${language}`}
             className="w-full lg:w-fit lg:mx-auto bg-white lg:p-6 rounded-lg lg:justify-between lg:gap-x-12 overflow-hidden lg:shadow-md flex flex-col lg:flex-row justify-start" 
-            onMouseLeave={() => setCurrentNav && setCurrentNav(null)}
         >
             <div className="flex flex-col lg:block">
                 {/* Header Section */}
@@ -41,20 +40,12 @@ const OurTeamCard: React.FC<AboutUsCardProps> = ({ setCurrentNav }) => {
                 {/* Content Section - Shows last on mobile */}
                 <div className="flex flex-col md:flex-row order-3">
                     {/* Content */}
-                    <div className="flex-1  py-2 space-y-2">
-                        {content.links.map((link, index) => (
-                            <Link key={`${language}-team-link-${index}`} to={link.path} className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
-                                <div className="flex items-center gap-2 text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
-                                    {link.text}
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
+                    <NavLinkList links={content.links} onNavigate={() => setCurrentNav?.(null)} className="flex-1 py-2" />
                 </div>
             </div>
 
             {/* Left Image - Only shows on XL screens */}
-            <div className="hidden lg:block lg:h-48 w-full lg:w-fit m-auto p-0">
+            <div className="hidden lg:block lg:h-48 w-full lg:w-[400px] shrink-0 m-auto p-0">
                 <img
                     src={content.image.src}
                     alt={content.image.alt}

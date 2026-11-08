@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { navModalContent } from '../../content/NavModalContent';
+import NavLinkList from './NavLinkList';
 
 type GalleryCardProps = {
     setCurrentNav?: (value: string | null) => void;
@@ -15,7 +15,6 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ setCurrentNav }) => {
         <div 
             key={`gallery-card-${language}`}
             className=" lg:w-1/3 mx-auto bg-white lg:p-6 rounded-lg justify-between  shadow-md flex flex-col " 
-            onMouseLeave={() => setCurrentNav && setCurrentNav(null)}
         >
             <div>
                 {/* Header Section */}
@@ -40,15 +39,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ setCurrentNav }) => {
                 {/* Content Section */}
                 <div className="flex flex-col md:flex-row">
                     {/* Left Content */}
-                    <div className="flex-1  pt-3 space-y-2 ">
-                        {content.links.map((link, index) => (
-                            <Link key={`${language}-gallery-link-${index}`} to={link.path} className="block hover:bg-base-200 hover:px-2 rounded-lg p-1 duration-300">
-                                <div className="text-gray-700 text-lg font-medium cursor-pointer font-dm-sans">
-                                    {link.text}
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
+                    <NavLinkList links={content.links} onNavigate={() => setCurrentNav?.(null)} className="flex-1 pt-3" />
                 </div>
             </div>
         </div>
