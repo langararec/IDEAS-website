@@ -14,7 +14,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ setCurrentNav }) => {
     return (
         <div 
             key={`gallery-card-${language}`}
-            className=" lg:w-1/3 mx-auto bg-white lg:p-6 rounded-lg justify-between  shadow-md flex flex-col " 
+            className=" lg:w-1/3 mx-auto bg-white lg:p-6 rounded-lg justify-between flex flex-col " 
         >
             <div>
                 {/* Header Section */}
