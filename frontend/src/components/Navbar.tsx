@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { IoLanguage } from "react-icons/io5";
@@ -12,8 +12,26 @@ const Navbar: React.FC = () => {
 
     const { setLanguage, language } = useLanguage();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
     const [currentNav, setCurrentNav] = useState<string | null>(null);
+    const [displayedNav, setDisplayedNav] = useState<string | null>(null);
+    const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const cancelNavClose = useCallback(() => {
+        if (closeTimer.current !== null) {
+            clearTimeout(closeTimer.current);
+            closeTimer.current = null;
+        }
+    }, []);
+
+    const handleNavChange = useCallback((value: string | null) => {
+        cancelNavClose();
+        if (value !== null) {
+            setDisplayedNav(value);
+        }
+        setCurrentNav(value);
+    }, [cancelNavClose]);
+
+    useEffect(() => cancelNavClose, [cancelNavClose]);
 
     const toggleLanguage = useCallback(() => {
         setLanguage(language === 'en' ? 'fr' : 'en');
@@ -24,32 +42,28 @@ const Navbar: React.FC = () => {
     }, []);
 
     const handleNavLeave = useCallback(() => {
-        setCurrentNav(null);
-    }, []);
+        cancelNavClose();
+        closeTimer.current = setTimeout(() => {
+            setCurrentNav(null);
+            closeTimer.current = null;
+        }, 150);
+    }, [cancelNavClose]);
 
     return (
-        <nav className={` bg-transparent w-full fixed top-0 z-50 ${currentNav ? "h-fit" : "h-20"} `} onMouseLeave={handleNavLeave}>
-            <div className="w-full bg-white">
-                <div className={`w-full bg-white max-w-7xl mx-auto h-20 my-auto flex items-center py-4 relative`}>
+        <nav className="bg-transparent w-full fixed top-0 z-50 h-20" onMouseEnter={cancelNavClose} onMouseLeave={handleNavLeave}>
+            <div className="w-full bg-primary">
+                <div className={`w-full bg-primary max-w-7xl mx-auto h-20 my-auto flex items-center py-4 relative`}>
                     
                     {/* Logo - Absolute positioned to left */}
                     <div className="absolute left-4 my-auto">
-                        <Link to="/">
-                            <img 
-                                src="/logo_rec.svg" 
-                                alt="Logo" 
-                                width={120}
-                                height={40}
-                                loading="eager"
-                                fetchPriority="high"
-                                className="h-10 " 
-                            />
+                        <Link to="/" className="block max-w-[220px] sm:max-w-[240px] sm:text-lg font-bold font-dm-sans leading-tight text-white">
+                            IDEAs in Public Recreation
                         </Link>
                     </div>
 
                     {/* Desktop Navigation - Centered using full width and flex justify-center */}
                     <div className="w-full flex justify-center">
-                        <DesktopNav currentNav={currentNav} setCurrentNav={setCurrentNav} />
+                        <DesktopNav currentNav={currentNav} setCurrentNav={handleNavChange} />
                     </div>
                     
                     {/* Desktop Language Toggle & CTA - Absolute positioned to right */}
@@ -57,7 +71,7 @@ const Navbar: React.FC = () => {
                         <button
                             onClick={toggleLanguage}
                             aria-label={`Switch language to ${language === 'en' ? 'French' : 'English'}`}
-                            className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300 font-dm-sans font-medium text-primary"
+                            className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/15 transition-colors duration-300 font-dm-sans font-medium text-white"
                         >
                             <span className="text-sm uppercase font-semibold">{navContent[language].language}</span>
                             <IoLanguage className="text-lg" />
@@ -78,7 +92,7 @@ const Navbar: React.FC = () => {
                         <button
                             onClick={toggleLanguage}
                             aria-label={`Switch language to ${language === 'en' ? 'French' : 'English'}`}
-                            className="flex items-center gap-2 px-3 py-2 rounded-lg  hover:bg-gray-200 transition-colors duration-300 font-dm-sans font-medium text-primary"
+                            className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/15 transition-colors duration-300 font-dm-sans font-medium text-white"
                         >
                             <span className="text-sm uppercase font-semibold">{navContent[language].language}</span>
                             <IoLanguage className="text-lg" />
@@ -88,7 +102,7 @@ const Navbar: React.FC = () => {
                             onClick={toggleMobileMenu}
                             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                             aria-expanded={isMobileMenuOpen}
-                            className="text-primary text-2xl p-2"
+                            className="text-white text-2xl p-2 rounded-lg hover:bg-white/15 transition-colors duration-300"
                         >
                             {isMobileMenuOpen ? <RxCross2 /> : <RxHamburgerMenu />}
                         </button>
@@ -96,29 +110,26 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
             {/* Separator for Active Desktop Navigation */}
-            {currentNav && <div className="w-full h-1 bg-gray-100"></div>}
+            {currentNav && <div className="hidden lg:block absolute top-full w-full h-1 bg-white/20"></div>}
 
             {/* Mobile Menu - Shows up to XL screens */}
-            <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen
-                ? "max-h-[1000vh] opacity-100 py-4 backdrop-blur-sm transform translate-y-0 bg-gradient-to-b from-white/80 via-white-20 to-transparent"
-                : "max-h-0 opacity-0 py-0 transform -translate-y-2"
-                }`}>
+            <div
+                className={`navbar-dropdown lg:hidden absolute top-full w-full py-4 ${isMobileMenuOpen ? "is-open" : "pointer-events-none"}`}
+                aria-hidden={!isMobileMenuOpen}
+                inert={!isMobileMenuOpen}
+            >
                 <MobileNav
-                    isMobileMenuOpen={isMobileMenuOpen}
                     setIsMobileMenuOpen={setIsMobileMenuOpen}
-                    isMobileAboutOpen={isMobileAboutOpen}
-                    setIsMobileAboutOpen={setIsMobileAboutOpen}
                 />
             </div>
 
             {/* Desktop Navigation Content */}
-            <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${currentNav
-                ? "max-h-screen opacity-100 py-4 backdrop-blur-xs transform translate-y-0 bg-gradient-to-b from-white/25 via-white/20 to-transparent"
-                : "max-h-0 opacity-0 py-0 transform -translate-y-2"
-                }`}>
-                <div className={`transition-all duration-300  ${currentNav ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"}`}>
-                    {DesktopNavModal({ currentNav, setCurrentNav })}
-                </div>
+            <div
+                className={`navbar-dropdown hidden lg:block absolute top-full w-full py-4 ${currentNav ? "is-open" : "pointer-events-none"}`}
+                aria-hidden={!currentNav}
+                inert={!currentNav}
+            >
+                <DesktopNavModal currentNav={displayedNav} setCurrentNav={handleNavChange} />
             </div>
         </nav>
     )
