@@ -31,7 +31,9 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ city, content, langua
 
     useEffect(() => {
         const element = dialog.current;
-        if (!element || "closedBy" in HTMLDialogElement.prototype) return;
+        if (!element) return;
+        element.setAttribute("closedby", "any");
+        if ("closedBy" in HTMLDialogElement.prototype) return;
 
         const lightDismiss = (event: MouseEvent) => {
             if (event.target !== element) return;
@@ -109,7 +111,6 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ city, content, langua
 
             <dialog
                 ref={dialog}
-                closedby="any"
                 aria-label={`${labels.preview} — ${labels.languages[poster.id]}`}
                 className="m-auto max-h-[92dvh] max-w-[min(92vw,56rem)] rounded-lg bg-white p-4 backdrop:bg-black/60"
             >
