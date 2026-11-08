@@ -1,117 +1,62 @@
-import React, { useEffect } from "react";
-import { FaLinkedin } from "react-icons/fa";
+import { useEffect, useRef } from "react";
 import type { MemberInfo } from "./TeamCard";
 import { MdClose } from "react-icons/md";
+import { LuGraduationCap } from "react-icons/lu";
+import { useLanguage } from "../../context/LanguageContext";
 
 interface ExtendedMemberDescriptionProps {
     member: MemberInfo;
     onClose: () => void;
-    isTransitioning?: boolean;
+    panelId: string;
+    isSwitching: boolean;
 }
 
-const ExtendedMemberDescription: React.FC<ExtendedMemberDescriptionProps> = ({ member, onClose }) => {
-    const handleClose = () => {
-        // Restore scrolling
-        document.body.style.overflow = 'auto';
-        onClose();
-    };
+const ExtendedMemberDescription = ({ member, onClose, panelId, isSwitching }: ExtendedMemberDescriptionProps) => {
+    const { language } = useLanguage();
+    const headingRef = useRef<HTMLHeadingElement>(null);
+    const closeLabel = language === 'fr' ? 'Fermer la biographie' : 'Close biography';
 
-    // Prevent scrolling when component mounts
     useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        
-        // Cleanup on unmount
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, []);
+        headingRef.current?.focus({ preventScroll: true });
+    }, [member.name]);
 
     return (
-        <div 
-            className="w-[95vw] max-w-7xl h-[90vh] bg-white rounded-2xl mx-auto my-[5vh] animate-scaleIn overflow-hidden relative flex flex-col"
-            onClick={(e) => e.stopPropagation()}
+        <section
+            id={panelId}
+            aria-labelledby={`${panelId}-heading`}
+            className="team-bio-panel relative mt-3 mb-1 rounded-xl border border-primary bg-primary p-5 sm:p-8 font-dm-sans"
         >
-            <div className="overflow-y-auto flex-1 rounded-2xl " style={{scrollbarWidth: 'none'}}>
-            <button
-                onClick={handleClose}
-                className="absolute top-4 right-4 hover:cursor-pointer z-[10000] w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-all duration-200 hover:scale-110"
-                aria-label="Close"
-            >
-                <MdClose className="w-6 h-6" />
-            </button>
-            
-            <div className="pt-16 pb-8 px-4 sm:px-6 lg:py-16 lg:px-12">
-                <div className="max-w-full mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                        {/* Left Content */}
-                        <div className="space-y-6">
-                            {/* Name and LinkedIn */}
-                            <div className="flex items-center gap-4">
-                                <h1 className="text-4xl lg:text-5xl font-bold text-primary font-dm-sans">
-                                    {member.name}
-                                </h1>
-                                {member.linkedin && (
-                                    <a
-                                        href={member.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-blue-500 hover:text-blue-600 transition-colors"
-                                    >
-                                        <FaLinkedin size={32} />
-                                    </a>
-                                )}
-                            </div>
-
-                            {/* Role */}
-                            {member.role && (
-                                <h2 className="text-2xl lg:text-3xl font-semibold text-gray-900 font-dm-sans">
-                                    {member.role}
-                                </h2>
-                            )}
-
-                            {/* Program - with conditional link */}
-                            {member.program && (
-                                <div>
+            <div className={`team-bio-content ${isSwitching ? 'is-switching' : ''}`}>
+                <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0">
+                        <h3 ref={headingRef} id={`${panelId}-heading`} tabIndex={-1} className="text-xl sm:text-2xl font-semibold text-white outline-none [overflow-wrap:anywhere]">
+                            {member.name}
+                        </h3>
+                        {member.role && <p className="mt-2 text-sm sm:text-base text-white/75">{member.role}</p>}
+                        {member.program && (
+                            <p className="mt-2 flex items-start gap-2 text-sm sm:text-base text-white/90">
+                                <LuGraduationCap className="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 shrink-0" aria-hidden="true" />
+                                <span className="min-w-0">
                                     {member.programLink ? (
-                                        <a
-                                            href={member.programLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-xl lg:text-2xl font-medium text-accent font-dm-sans hover:text-accent/80 transition-colors  decoration-accent/30 hover:decoration-accent/60"
-                                        >
+                                        <a href={member.programLink} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white">
                                             {member.program}
                                         </a>
-                                    ) : (
-                                        <h3 className="text-xl lg:text-2xl font-medium text-accent font-dm-sans">
-                                            {member.program}
-                                        </h3>
-                                    )}
-                                </div>
-                            )}
-
-                            {/* Long Description */}
-                            <div className="space-y-4">
-                                {member.longDescription && member.longDescription.split('\n\n').map((paragraph, index) => (
-                                    <p key={index} className="text-gray-700 leading-relaxed font-dm-sans text-lg">
-                                        {paragraph}
-                                    </p>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Right Image */}
-                        <div className="flex justify-center lg:justify-end">
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-full max-w-md lg:max-w-lg h-auto object-cover rounded-lg shadow-lg"
-                            />
-                        </div>
+                                    ) : member.program}
+                                </span>
+                            </p>
+                        )}
                     </div>
+                    <button type="button" onClick={onClose} aria-label={closeLabel} title={closeLabel} className="team-person-control flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white">
+                        <MdClose className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </button>
+                </div>
+                <div className="mt-6 max-w-4xl space-y-4 text-sm sm:text-base leading-relaxed text-white/90 [overflow-wrap:anywhere]">
+                    {(member.longDescription || member.shortDescription || '').split(/\n\s*\n/).filter(Boolean).map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                    ))}
                 </div>
             </div>
-            </div>
-        </div>
+        </section>
     );
 }
 
