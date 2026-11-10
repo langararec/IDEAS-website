@@ -1,0 +1,126 @@
+.engagement-picker {
+  width: 100%;
+  font-family: var(--font-dm-sans);
+}
+
+.engagement-picker-months,
+.engagement-picker-month {
+  width: 100%;
+}
+
+.engagement-picker-grid {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+.engagement-picker-weekday {
+  height: 36px;
+  padding: 0;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.65;
+}
+
+.engagement-picker-day {
+  position: relative;
+  height: 48px;
+  padding: 0;
+  text-align: center;
+}
+
+.engagement-picker-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out;
+}
+
+.has-engagement .engagement-picker-button {
+  cursor: pointer;
+  border-color: var(--color-rule);
+  background: var(--color-base-150);
+  font-weight: 600;
+}
+
+.has-engagement .engagement-picker-button:hover {
+  border-color: var(--color-primary);
+  background: var(--color-base-200);
+}
+
+.engagement-picker-button:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.engagement-date-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  display: flex;
+  gap: 3px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.engagement-date-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.is-selected .engagement-picker-button,
+.is-selected .engagement-picker-button:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+}
+
+.is-selected .engagement-date-dot {
+  background: white;
+}
+
+.is-unavailable .engagement-picker-button {
+  opacity: 0.4;
+}
+
+.is-outside .engagement-picker-button {
+  opacity: 0.16;
+}
+
+.engagement-day-agenda {
+  animation: engagement-season-reveal 220ms var(--ease-reveal) both;
+}
+
+@media (width < 400px) {
+  .engagement-picker-grid {
+    border-spacing: 2px;
+  }
+
+  .engagement-picker-day,
+  .engagement-picker-button {
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .engagement-picker-button {
+    transition: none;
+  }
+
+  .engagement-day-agenda {
+    animation: none;
+  }
+}

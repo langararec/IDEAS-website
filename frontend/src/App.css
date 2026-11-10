@@ -54,6 +54,29 @@
   }
 }
 
+.engagement-disclosure {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 260ms var(--ease-reveal), opacity 180ms ease-out;
+}
+
+.engagement-disclosure.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+@keyframes engagement-season-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .team-person {
   --team-corner-color: var(--color-accent);
   --team-corner-width: 2px;
@@ -253,6 +276,11 @@
 @media (prefers-reduced-motion: reduce) {
   .page-hero-ribbon {
     animation: none;
+  }
+
+  .engagement-disclosure,
+  .engagement-disclosure-trigger {
+    transition: none;
   }
 
   .team-bio-panel,

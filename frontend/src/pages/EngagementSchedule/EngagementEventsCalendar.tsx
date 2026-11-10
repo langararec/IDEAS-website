@@ -1,114 +1,122 @@
-import { useState } from "react";
-import { LuMapPin } from "react-icons/lu";
-import { IoChevronDownOutline } from "react-icons/io5";
+import { lazy, Suspense, useId, useState } from "react";
+import type { ReactNode } from "react";
+import { LuCalendarDays, LuChevronDown } from "react-icons/lu";
 import { useLanguage } from "../../context/LanguageContext";
-import { engagementScheduleContent } from "../../content/EngagementScheduleContent";
+import { ENGAGEMENT_TIME_ZONE, engagementCalendarLabels, getEngagementDate, getSeasonEngagements } from "../../content/EngagementScheduleContent";
+import type { EngagementArea } from "../../content/EngagementScheduleContent";
 
-const EngagementEventsCalendar: React.FC = () => {
-    const { language } = useLanguage();
-    const content = engagementScheduleContent[language];
-    const [selectedMonth, setSelectedMonth] = useState<string>("all");
-    
-    // Get unique months for the selector
-    const months = ["all", ...content.engagementEvents.map(event => event.month)];
-    
-    // Get the currently selected month data or all months if "all" is selected
-    const displayedEvents = selectedMonth === "all" 
-        ? content.engagementEvents 
-        : content.engagementEvents.filter(data => data.month === selectedMonth);
+const areas: EngagementArea[] = ['burnaby', 'comoxValley'];
+const EngagementMonthCalendar = lazy(() => import('./EngagementMonthCalendar'));
+const eventDate = getEngagementDate;
+
+type ScheduleDisclosureProps = {
+    title: (isOpen: boolean) => ReactNode;
+    children: ReactNode;
+    className?: string;
+};
+
+const ScheduleDisclosure = ({ title, children, className = '' }: ScheduleDisclosureProps) => {
+    const id = useId();
+    const [isOpen, setIsOpen] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    const toggle = () => {
+        if (!isOpen) setIsMounted(true);
+        else if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) setIsMounted(false);
+        setIsOpen(!isOpen);
+    };
 
     return (
-        <div key={`engagement-calendar-${language}`} className="space-y-8">
-            {/* Month Selector */}
-            <div className="relative mb-8 flex ">
-                <div className="relative w-48">
-                    {/* Visually hidden but accessible label */}
-                    <label htmlFor="month-select" className="sr-only">
-                        {content.calendar.selectMonthLabel}
-                    </label>
-                    <select
-                        id="month-select"
-                        value={selectedMonth}
-                        onChange={(e) => setSelectedMonth(e.target.value)}
-                        className="appearance-none w-full bg-white border border-primary text-gray-700 py-2 px-3 pr-8 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all duration-200 font-dm-sans text-base cursor-pointer"
-                    >
-                        {months.map((month, index) => (
-                            <option key={`${language}-month-${index}`} value={month}>
-                                {month === "all" ? content.calendar.allMonths : month}
-                            </option>
-                        ))}
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <IoChevronDownOutline className="size-4" />
-                    </div>
-                </div>
+        <div className={className}>
+            <button type="button" onClick={toggle} aria-expanded={isOpen} aria-controls={id} className="engagement-disclosure-trigger flex min-h-14 w-full cursor-pointer items-center justify-between gap-4 rounded-md bg-primary px-5 py-4 text-left text-white transition-colors duration-200 hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+                <span className="min-w-0 flex-1">{title(isOpen)}</span>
+                <LuChevronDown aria-hidden="true" className={`h-5 w-5 shrink-0 transition-transform duration-300 motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div
+                id={id}
+                className={`engagement-disclosure ${isOpen ? 'is-open' : ''}`}
+                aria-hidden={!isOpen}
+                inert={!isOpen}
+                onTransitionEnd={event => {
+                    if (event.target === event.currentTarget && event.propertyName === 'grid-template-rows' && !isOpen) setIsMounted(false);
+                }}
+            >
+                <div className="min-h-0 overflow-hidden">{isMounted ? children : null}</div>
             </div>
-
-            {/* Months Content */}
-            {displayedEvents.map((monthData, monthIndex) => (
-                <div key={`${language}-month-${monthIndex}`} className="rounded-lg">
-                    <h2 className="text-3xl font-semibold text-primary mb-2 font-dm-sans">
-                        {monthData.month}
-                    </h2>
-
-                    <div>
-                        {monthData.events.map((event, eventIndex) => (
-                            <div key={`${language}-event-${eventIndex}`} className="flex gap-0 flex-wrap flex-col lg:flex-row font-dm-sans border-t-gray-200 border-t-2 py-5 ">
-                                <div className="flex-shrink-0">
-                                    <div className="text-3xl lg:text-center font-semibold text-primary text-left">
-                                        {event.date}
-                                    </div>
-                                </div>
-
-                                <div className="flex-grow space-y-6">
-                                    {event.sessions.map((session, sessionIndex) => (
-                                        <div key={`${language}-session-${sessionIndex}`} className="flex flex-col lg:flex-row justify-between py-2">
-                                            <div className="flex-1">
-                                                <div className="text-lg lg:text-xl lg:text-center font-medium text-gray-900 mb-1">
-                                                    {session.time}
-                                                </div>
-                                            </div>
-
-                                            <div className="py-4 lg:py-0 flex-1">
-                                                <h3 className="text-lg font-medium text-gray-900 mb-1">
-                                                    {session.title}
-                                                </h3>
-                                                <p className="text-gray-600">
-                                                    {session.description}
-                                                </p>
-                                            </div>
-
-                                            <div className="flex-1 flex justify-start">
-                                                <a
-                                                    href={session.mapUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    aria-label={`View ${session.location} on Google Maps (opens in new tab)`}
-                                                    className="flex items-center text-gray-900 hover:text-primary transition-colors duration-200 font-medium text-xl"
-                                                >
-                                                    <LuMapPin className="size-6 mr-4" />
-                                                    {session.location}
-                                                </a>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ))}
-            
-            {/* No events message */}
-            {(!displayedEvents.length || displayedEvents.every(month => month && !month.events.length)) && (
-                <div className="text-center py-16">
-                    <p className="text-xl text-gray-500 font-dm-sans">
-                        {content.calendar.noEventsMessage} {selectedMonth !== "all" ? `${content.calendar.noEventsForMonth} ${selectedMonth}` : ""}.
-                    </p>
-                </div>
-            )}
         </div>
     );
 };
+
+const EngagementYear = ({ year }: { year: number }) => {
+    const { language } = useLanguage();
+    const labels = engagementCalendarLabels[language];
+    const locale = language === 'fr' ? 'fr-CA' : 'en-CA';
+    const events = getSeasonEngagements(year, language);
+    const monthFormat = new Intl.DateTimeFormat(locale, { month: 'long', timeZone: ENGAGEMENT_TIME_ZONE });
+    const coveredMonths = [...new Set(events.map(event => event.date.slice(0, 7)))].sort();
+    const firstMonth = monthFormat.format(eventDate(`${coveredMonths[0]}-01`));
+    const lastMonth = monthFormat.format(eventDate(`${coveredMonths[coveredMonths.length - 1]}-01`));
+    const period = firstMonth === lastMonth ? firstMonth : `${firstMonth} - ${lastMonth}`;
+    const countLabel = (count: number) => `${count} ${count === 1 ? labels.engagement : labels.engagements}`;
+    const areaName = (area: EngagementArea) => area === 'burnaby' ? labels.burnaby : year === 2026 ? labels.courtenay : labels.comoxValley;
+
+    return (
+        <section className="min-w-0 self-start rounded-lg border border-rule bg-white p-4 sm:p-6" aria-labelledby={`engagement-year-${year}`}>
+            <h2 id={`engagement-year-${year}`} className="mb-5 text-4xl sm:text-5xl font-semibold leading-none text-primary tabular-nums">{year}</h2>
+            <div className="flex min-w-0 items-center gap-5 rounded-md bg-primary px-4 py-6 sm:px-6 sm:py-7 text-white">
+                <span className="shrink-0 text-6xl sm:text-7xl font-semibold leading-none tabular-nums" aria-hidden="true">{events.length}</span>
+                <div className="min-w-0">
+                    <p className="text-xs sm:text-sm font-semibold uppercase leading-relaxed [overflow-wrap:anywhere]">{countLabel(events.length)}</p>
+                    <p className="mt-2 text-xs sm:text-sm uppercase leading-relaxed text-white/70">({period})</p>
+                </div>
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-3" aria-label={labels.places}>
+                    {areas.map(area => (
+                        <div key={area} className="flex min-w-0 items-center gap-3 rounded-md border border-rule bg-base-100 px-3 py-4 sm:px-4">
+                            <span className="shrink-0 text-2xl sm:text-3xl leading-none font-semibold text-primary tabular-nums">
+                                {events.filter(event => event.area === area).length}
+                            </span>
+                            <span className="min-w-0 text-xs sm:text-sm leading-snug text-primary [overflow-wrap:anywhere]">
+                                {areaName(area)}
+                            </span>
+                        </div>
+                    ))}
+            </div>
+            <ScheduleDisclosure
+                className="mt-4"
+                title={isOpen => <span className="flex items-center gap-3 text-base font-semibold"><LuCalendarDays className="h-5 w-5 shrink-0" aria-hidden="true" />{isOpen ? labels.hideSchedule : labels.showSchedule}</span>}
+            >
+                <div className="grid items-start gap-8 border-t border-rule pt-6 xl:grid-cols-2 xl:gap-10">
+                    {coveredMonths.map(month => {
+                        const monthEvents = events.filter(event => event.date.startsWith(month));
+                        const monthName = monthFormat.format(eventDate(`${month}-01`));
+                        return (
+                            <section
+                                key={month}
+                                className="min-w-0"
+                                aria-labelledby={`engagement-month-${month}`}
+                            >
+                                <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2 px-2 sm:px-5">
+                                    <h3 id={`engagement-month-${month}`} className="text-xl font-semibold capitalize text-primary">{monthName}</h3>
+                                    <span className="text-xs text-muted">{countLabel(monthEvents.length)}</span>
+                                </div>
+                                <Suspense fallback={<div role="status" className="flex min-h-80 items-center justify-center text-sm text-primary/60">{labels.loadingCalendar}</div>}>
+                                    <EngagementMonthCalendar events={monthEvents} language={language} year={year} />
+                                </Suspense>
+                            </section>
+                        );
+                    })}
+                </div>
+            </ScheduleDisclosure>
+        </section>
+    );
+};
+
+const EngagementEventsCalendar = () => (
+    <div className="space-y-6 lg:space-y-8">
+        <EngagementYear year={2026} />
+        <EngagementYear year={2025} />
+    </div>
+);
 
 export default EngagementEventsCalendar;
