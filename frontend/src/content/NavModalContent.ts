@@ -13,7 +13,7 @@ export const navModalContent = {
         },
         {
           path: "/updates",
-          text: "Timeline & Updates"
+          text: "Project timeline"
         },
         {
           path: "/schedule",
@@ -74,7 +74,7 @@ export const navModalContent = {
         },
         {
           path: "/updates",
-          text: "Chronologie et Mises à Jour"
+          text: "Chronologie du projet"
         },
         {
           path: "/schedule",

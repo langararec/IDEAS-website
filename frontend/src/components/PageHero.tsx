@@ -3,6 +3,7 @@ type PageHeroProps = {
     subtitle: string;
     ribbon?: boolean;
     tone?: 'base-100' | 'base-150' | 'base-200';
+    fadeTo?: 'white' | 'base-100';
 };
 
 const heroTones = {
@@ -11,7 +12,7 @@ const heroTones = {
     'base-200': 'bg-base-200',
 };
 
-const PageHero = ({ title, subtitle, ribbon = false, tone = 'base-200' }: PageHeroProps) => (
+const PageHero = ({ title, subtitle, ribbon = false, tone = 'base-200', fadeTo }: PageHeroProps) => (
     <header className={`relative isolate overflow-hidden ${heroTones[tone]} font-dm-sans mb-4`}>
         <div className="max-w-7xl mx-auto px-6 pt-8 lg:pt-12">
             <h1 className="max-w-5xl text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-bold text-primary text-balance">
@@ -40,6 +41,9 @@ const PageHero = ({ title, subtitle, ribbon = false, tone = 'base-200' }: PageHe
                     strokeLinecap="round"
                 />
             </svg>
+        )}
+        {fadeTo && (
+            <div aria-hidden="true" className={`h-8 bg-linear-to-b from-transparent ${fadeTo === 'white' ? 'to-white' : 'to-base-100'}`} />
         )}
     </header>
 );

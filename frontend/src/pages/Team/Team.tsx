@@ -15,9 +15,9 @@ const Team: React.FC = () => {
     const groups = ['researchTeam', 'researchStaff', 'students'] as const;
 
     return (
-        <main key={`team-${language}`} className="bg-base-150">
-            <PageHero title={content.title} subtitle={content.subtitle} ribbon tone="base-150" />
-            <div className="max-w-7xl mx-auto px-6 pb-16 space-y-10 lg:space-y-12 bg-base-150">
+        <main key={`team-${language}`} className="bg-white">
+            <PageHero title={content.title} subtitle={content.subtitle} ribbon tone="base-150" fadeTo="white" />
+            <div className="max-w-7xl mx-auto px-6 pb-16 space-y-10 lg:space-y-12">
                 {groups.map(group => (
                     <section key={group} aria-labelledby={`team-${group}`}>
                         <div className="mb-8">

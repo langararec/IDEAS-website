@@ -1,5 +1,8 @@
 export const updatesContent = {
   en: {
+    title: "Project timeline",
+    subtitle: "September 2024 – May 2027",
+    timelineHeading: "What happens, and when",
     tabs: [
       {
         id: 'component1',
@@ -110,6 +113,9 @@ export const updatesContent = {
     }
   },
   fr: {
+    title: "Chronologie du projet",
+    subtitle: "Septembre 2024 – mai 2027",
+    timelineHeading: "Quoi et quand",
     tabs: [
       {
         id: 'component1',

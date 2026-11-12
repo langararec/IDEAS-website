@@ -10,8 +10,8 @@ const EngagementSchedule: React.FC = () => {
     const total = getSeasonEngagements(2025, language).length + getSeasonEngagements(2026, language).length;
 
     return (
-        <main key={`engagement-schedule-${language}`} className="bg-base-150 font-dm-sans">
-            <PageHero title={labels.title} subtitle={labels.subtitle.replace('{count}', String(total))} ribbon tone="base-150" />
+        <main key={`engagement-schedule-${language}`} className="bg-white font-dm-sans">
+            <PageHero title={labels.title} subtitle={labels.subtitle.replace('{count}', String(total))} ribbon tone="base-150" fadeTo="white" />
             <div className="max-w-7xl mx-auto px-6 pb-16 lg:pb-24">
                 <EngagementEventsCalendar />
             </div>

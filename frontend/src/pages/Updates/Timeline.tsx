@@ -8,14 +8,14 @@ const Timeline: React.FC = () => {
     const timelineData = updatesContent[language].timeline;
 
     return (
-        <div key={`timeline-${language}`} className="py-4 sm:px-4 ">
+        <div key={`timeline-${language}`} className="py-4 ">
             <div className="max-w-7xl ">
                 <div className="relative">
                     {timelineData.map((yearData, yearIndex) => (
                         <div key={`${language}-${yearData.id}`} className="relative flex flex-row  ">
                             <div className="flex items-start">
                                 {/* Commputer View Year */}
-                                <div className="text-left mr-4 min-w-16 px-4 hidden sm:block">
+                                <div className="text-left mr-4 min-w-16 hidden sm:block">
                                     <h3 className="text-4xl font-bold font-dm-sans text-primary" >
                                         {yearData.year}
                                     </h3>

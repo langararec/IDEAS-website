@@ -1,6 +1,7 @@
 export const galleryContent = {
   en: {
-    title: "Our Gallery",
+    title: "Gallery",
+    subtitle: "Moments from our community engagement events, pop-ups and workshops in Burnaby and Courtenay.",
     filterTabs: [
       { id: 'all', label: 'ALL CITIES', shortLabel: 'ALL' },
       { id: 'burnaby', label: 'BURNABY', shortLabel: 'BURNABY' },
@@ -48,7 +49,8 @@ export const galleryContent = {
     ]
   },
   fr: {
-    title: "Notre Galerie",
+    title: "Galerie",
+    subtitle: "Des moments de nos rencontres communautaires, activités éphémères et ateliers à Burnaby et à Courtenay.",
     filterTabs: [
       { id: 'all', label: 'TOUTES LES VILLES', shortLabel: 'TOUTES' },
       { id: 'burnaby', label: 'BURNABY', shortLabel: 'BURNABY' },

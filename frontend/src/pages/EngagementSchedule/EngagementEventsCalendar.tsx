@@ -61,7 +61,7 @@ const EngagementYear = ({ year }: { year: number }) => {
     const areaName = (area: EngagementArea) => area === 'burnaby' ? labels.burnaby : year === 2026 ? labels.courtenay : labels.comoxValley;
 
     return (
-        <section className="min-w-0 self-start rounded-lg border border-rule bg-white p-4 sm:p-6" aria-labelledby={`engagement-year-${year}`}>
+        <section className="min-w-0 self-start rounded-lg border border-primary/25 bg-white p-4 sm:p-6" aria-labelledby={`engagement-year-${year}`}>
             <h2 id={`engagement-year-${year}`} className="mb-5 text-4xl sm:text-5xl font-semibold leading-none text-primary tabular-nums">{year}</h2>
             <div className="flex min-w-0 items-center gap-5 rounded-md bg-primary px-4 py-6 sm:px-6 sm:py-7 text-white">
                 <span className="shrink-0 text-6xl sm:text-7xl font-semibold leading-none tabular-nums" aria-hidden="true">{events.length}</span>
