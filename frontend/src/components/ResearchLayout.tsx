@@ -445,7 +445,15 @@ export const ResearchPlaceholder = ({ project }: { project: ResearchProject }) =
 
 const ResearchLayout = ({ children }: { children: ReactNode }) => {
     const { pathname } = useLocation();
-    const { language } = useLanguage();
+    const { language, setLanguage } = useLanguage();
+    const ideasFlatPaths = ['/project', '/updates', '/team', '/get-involved', '/schedule', '/gallery', '/references', '/statistics', '/staff', '/findings'];
+    const isIdeasRoute =
+        pathname === '/ideas' ||
+        pathname.startsWith('/ideas/') ||
+        ideasFlatPaths.includes(pathname);
+    useEffect(() => {
+        if (!isIdeasRoute && language !== 'en') setLanguage('en');
+    }, [isIdeasRoute, language, setLanguage]);
     const project = getResearchProject(pathname);
     const projectKey = project?.id ?? 'hub';
     const activeIndex = researchProjects.findIndex(entry => entry.id === project?.id);

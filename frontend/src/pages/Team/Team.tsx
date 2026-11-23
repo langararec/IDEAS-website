@@ -9,7 +9,8 @@ import PageHero from "../../components/PageHero";
 const Team: React.FC = () => {
     const { language } = useLanguage();
     const { pathname } = useLocation();
-    const content = teamContent[language];
+    const isRowi = pathname === '/reaching-out-welcoming-in/team';
+    const content = teamContent[isRowi ? 'en' : language];
     const memberGroup = (role?: string) => {
         if (/principal|collaborat/i.test(role ?? '')) return 'researchTeam';
         if (/junior/i.test(role ?? '')) return 'researchStaff';
@@ -17,7 +18,6 @@ const Team: React.FC = () => {
     };
     const groups = ['researchTeam', 'researchStaff', 'students'] as const;
     const allMembers = content.members as MemberInfo[];
-    const isRowi = pathname === '/reaching-out-welcoming-in/team';
     const visibleGroups = isRowi ? ['researchTeam'] as const : groups;
     const visibleMembers = isRowi
         ? allMembers
