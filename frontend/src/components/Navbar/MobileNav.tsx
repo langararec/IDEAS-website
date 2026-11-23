@@ -40,7 +40,7 @@ const MobileNav = ({ setIsMobileMenuOpen }: MobileNavProps) => {
                                 className="flex items-center justify-between cursor-pointer"
                                 onClick={() => setIsAboutExpanded(!isAboutExpanded)}
                             >
-                                <Link to="/project">
+                                <Link to="/ideas/project">
                                     <span className="text-primary text-xl font-medium font-dm-sans">
                                         {navContent[language].about}
                                     </span>
@@ -62,7 +62,7 @@ const MobileNav = ({ setIsMobileMenuOpen }: MobileNavProps) => {
                                 className="flex items-center justify-between cursor-pointer"
                                 onClick={() => setIsTeamExpanded(!isTeamExpanded)}
                             >
-                                <Link to="/team">
+                                <Link to="/ideas/team">
                                     <span className="text-primary text-xl font-medium font-dm-sans">
                                         {navContent[language].team}
                                     </span>
@@ -84,7 +84,7 @@ const MobileNav = ({ setIsMobileMenuOpen }: MobileNavProps) => {
                                 className="flex items-center justify-between cursor-pointer"
                                 onClick={() => setIsGalleryExpanded(!isGalleryExpanded)}
                             >
-                                <Link to="/gallery">
+                                <Link to="/ideas/gallery">
                                     <span className="text-primary text-xl font-medium font-dm-sans">
                                         {navContent[language].gallery}
                                     </span>
@@ -101,7 +101,7 @@ const MobileNav = ({ setIsMobileMenuOpen }: MobileNavProps) => {
 
                                                 {/* Findings */}
                         <div className="py-3 border-b border-gray-100">
-                            <Link to="/findings">
+                            <Link to="/ideas/findings">
                                 <span className="text-primary text-xl font-medium font-dm-sans">
                                     {navContent[language].findings}
                                 </span>
@@ -109,7 +109,7 @@ const MobileNav = ({ setIsMobileMenuOpen }: MobileNavProps) => {
                         </div>
                         {/* Get Involved Button */}
                         <div className="pt-4">
-                            <Link to="/get-involved">
+                            <Link to="/ideas/get-involved">
                                 <button 
                                     className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold  py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide w-full"
                                     aria-label="Navigate to get involved page"
