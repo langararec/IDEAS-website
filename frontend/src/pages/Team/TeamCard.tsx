@@ -11,6 +11,8 @@ export type MemberInfo = {
     longDescription?: string;
     program?: string;
     programLink?: string;
+    projects?: string[];
+    roleByProject?: Record<string, string>;
 };
 
 type TeamCardProps = {
