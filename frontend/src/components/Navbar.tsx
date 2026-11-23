@@ -8,7 +8,7 @@ import DesktopNav from "./Navbar/DesktopNav";
 import DesktopNavModal from "./Navbar/DesktopNavModal";
 import MobileNav from "./Navbar/MobileNav";
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{ projectSwitcher?: React.ReactNode }> = ({ projectSwitcher }) => {
 
     const { setLanguage, language } = useLanguage();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,34 +50,28 @@ const Navbar: React.FC = () => {
     }, [cancelNavClose]);
 
     return (
-        <nav className="bg-transparent w-full fixed top-0 z-50 h-20" onMouseEnter={cancelNavClose} onMouseLeave={handleNavLeave}>
+        <nav lang={language} className="bg-transparent w-full relative h-20" onMouseEnter={cancelNavClose} onMouseLeave={handleNavLeave}>
             <div className="w-full bg-primary">
-                <div className={`w-full bg-primary max-w-7xl mx-auto h-20 my-auto flex items-center py-4 relative`}>
+                <div className={`w-full bg-primary max-w-7xl mx-auto h-20 my-auto flex items-center gap-2 px-4 py-2 relative`}>
+                    {projectSwitcher && <div className="min-w-0 flex-1 max-w-54 sm:max-w-70 lg:flex-none">{projectSwitcher}</div>}
                     
-                    {/* Logo - Absolute positioned to left */}
-                    <div className="absolute left-4 my-auto">
-                        <Link to="/" className="block max-w-[220px] sm:max-w-[240px] sm:text-lg font-bold font-dm-sans leading-tight text-white">
-                            IDEAs in Public Recreation
-                        </Link>
-                    </div>
-
-                    {/* Desktop Navigation - Centered using full width and flex justify-center */}
-                    <div className="w-full flex justify-center">
+                    {/* Desktop Navigation */}
+                    <div className="hidden min-w-0 flex-1 justify-center lg:flex">
                         <DesktopNav currentNav={currentNav} setCurrentNav={handleNavChange} />
                     </div>
                     
                     {/* Desktop Language Toggle & CTA - Absolute positioned to right */}
-                    <div className="hidden lg:flex items-center gap-4 hover:cursor-pointer absolute right-4">
+                    <div className="hidden lg:flex shrink-0 items-center gap-2 hover:cursor-pointer">
                         <button
                             onClick={toggleLanguage}
                             aria-label={`Switch language to ${language === 'en' ? 'French' : 'English'}`}
-                            className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/15 transition-colors duration-300 font-dm-sans font-medium text-white"
+                            className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-white/15 transition-colors duration-300 font-dm-sans font-medium text-white"
                         >
                             <span className="text-sm uppercase font-semibold">{navContent[language].language}</span>
                             <IoLanguage className="text-lg" />
                         </button>
 
-                        <Link to="/get-involved" className="hover:cursor-pointer">
+                        <Link to="/ideas/get-involved" className="hover:cursor-pointer">
                             <button 
                                 className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide"
                                 aria-label="Navigate to get involved page"
@@ -88,7 +82,7 @@ const Navbar: React.FC = () => {
                     </div>
 
                     {/* Mobile Language Toggle & Menu Button - Absolute positioned to right */}
-                    <div className="lg:hidden my-auto flex items-center gap-3 absolute right-4">
+                    <div className="lg:hidden my-auto ml-auto flex shrink-0 items-center gap-1">
                         <button
                             onClick={toggleLanguage}
                             aria-label={`Switch language to ${language === 'en' ? 'French' : 'English'}`}
