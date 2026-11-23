@@ -8,15 +8,15 @@ export const navModalContent = {
       },
       links: [
         {
-          path: "/project",
+          path: "/ideas/project",
           text: "The Project"
         },
         {
-          path: "/updates",
+          path: "/ideas/updates",
           text: "Project timeline"
         },
         {
-          path: "/schedule",
+          path: "/ideas/schedule",
           text: "Engagement Schedule"
         }
       ]
@@ -29,19 +29,19 @@ export const navModalContent = {
       },
       links: [
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Principal Researchers"
         },
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Collaborators"
         },
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Research Assistants"
         },
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Student Research Assistants"
         }
       ]
@@ -54,7 +54,7 @@ export const navModalContent = {
       },
       links: [
         {
-          path: "/gallery",
+          path: "/ideas/gallery",
           text: "Browse Photos"
         }
       ]
@@ -69,15 +69,15 @@ export const navModalContent = {
       },
       links: [
         {
-          path: "/project",
+          path: "/ideas/project",
           text: "Le Projet"
         },
         {
-          path: "/updates",
+          path: "/ideas/updates",
           text: "Chronologie du projet"
         },
         {
-          path: "/schedule",
+          path: "/ideas/schedule",
           text: "Calendrier d'Engagement"
         }
       ]
@@ -90,19 +90,19 @@ export const navModalContent = {
       },
       links: [
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Chercheurs Principaux"
         },
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Collaborateurs"
         },
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Assistants de Recherche"
         },
         {
-          path: "/team",
+          path: "/ideas/team",
           text: "Assistants de Recherche Étudiants"
         }
       ]
@@ -115,7 +115,7 @@ export const navModalContent = {
       },
       links: [
         {
-          path: "/gallery",
+          path: "/ideas/gallery",
           text: "Parcourir les Photos"
         }
       ]
