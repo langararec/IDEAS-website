@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
 
-                        <Link to="/get-involved" className="hover:cursor-pointer">
+                        <Link to="/ideas/get-involved" className="hover:cursor-pointer">
                             <button className="bg-accent hover:bg-accent/80 hover:cursor-pointer text-white font-semibold  py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 font-dm-sans tracking-wide ">
                                 {navContent[language].getInvolved}
                             </button>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                         <div className="space-y-4">
                             <h3 className="text-lg font-bold text-primary font-dm-sans">{footerData.resources}</h3>
                             <div className="space-y-3">
-                                <Link to="/references" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
+                                <Link to="/ideas/references" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
                                     {footerData.references}
                                 </Link>
                             </div>
@@ -62,13 +62,13 @@ const Footer: React.FC = () => {
                         <div className="space-y-4">
                             <h3 className="text-lg font-bold text-primary font-dm-sans">{content.about}</h3>
                             <div className="space-y-3">
-                                <Link to="/project" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
+                                <Link to="/ideas/project" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
                                     {modalContent.aboutUs.links[0].text}
                                 </Link>
-                                <Link to="/updates" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
+                                <Link to="/ideas/updates" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
                                     {modalContent.aboutUs.links[1].text}
                                 </Link>
-                                <Link to="/schedule" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
+                                <Link to="/ideas/schedule" className="block text-gray-600 hover:text-primary transition-colors font-dm-sans">
                                     {modalContent.aboutUs.links[2].text}
                                 </Link>
                             </div>
