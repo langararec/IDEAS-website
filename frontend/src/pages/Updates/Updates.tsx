@@ -14,7 +14,7 @@ const Updates: React.FC = () => {
             <PageHero title={content.title} subtitle={content.subtitle} ribbon tone="base-150" fadeTo="white" />
             <div className="bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-8">
-                    <h2 className="mb-6 pl-24 sm:pl-0 text-4xl font-semibold font-dm-sans text-primary">
+                    <h2 className="mb-6 text-4xl font-semibold font-dm-sans text-primary">
                         {content.timelineHeading}
                     </h2>
                     <Timeline />
