@@ -35,32 +35,32 @@ export const homeContent = {
       sshrcAlt: "SSHRCC Canada",
       partnersList: [
         {
-          image: "partner1.webp",
+          image: "city_of_burnaby.webp",
           name: "City of Burnaby",
           url: "https://www.burnaby.ca/",
           ariaLabel: "Visit City of Burnaby website (opens in new tab)",
         },
         {
-          image: "partner2.webp",
+          image: "city_of_courtenay.webp",
           name: "City of Courtenay",
           url: "https://www.courtenay.ca/",
           ariaLabel: "Visit City of Courtenay website (opens in new tab)",
         },
         {
-          image: "partner3.webp",
+          image: "SACH.webp",
           name: "SACH",
           url: "https://www.sachbc.ca/",
           ariaLabel: "Visit SACH website (opens in new tab)",
         },
         {
-          image: "partner4.webp",
+          image: "bcrpa_new.png",
           name: "BC Recreation and Parks Association",
           url: "https://www.bcrpa.bc.ca/",
           ariaLabel:
             "Visit BC Recreation and Parks Association website (opens in new tab)",
         },
         {
-          image: "partner8.webp",
+          image: "bnh.webp",
           name: "Burnaby Neighbourhood House",
           url: "https://burnabynh.ca/",
           ariaLabel:
@@ -87,25 +87,49 @@ export const homeContent = {
             "Visit Open Door Language & Culture Society website (opens in new tab)",
         },
         {
-          image: "partner5.webp",
+          image: "rec_studies.webp",
           name: "Recreation Studies Langara",
           url: "https://langara.ca/programs-and-courses/programs/recreation-studies/",
           ariaLabel:
             "Visit Recreation Studies Langara website (opens in new tab)",
         },
         {
-          image: "partner6.webp",
+          image: "ARC.webp",
           name: "Applied Research Centre Langara",
           url: "https://students.langara.ca/about-langara/applied-research/index.html",
           ariaLabel:
             "Visit Applied Research Centre Langara website (opens in new tab)",
         },
         {
-          image: "partner7.webp",
+          image: "edi_langara.webp",
           name: "Office of Equity, Diversity and Inclusion Langara",
           url: "https://students.langara.ca/about-langara/edi/",
           ariaLabel:
             "Visit Office of Equity, Diversity and Inclusion Langara website (opens in new tab)",
+        },
+        {
+          image: "vancouver_park_board.png",
+          name: "Vancouver Park Board",
+          url: "https://vancouver.ca/your-government/vancouver-board-of-parks-and-recreation.aspx",
+          ariaLabel: "Visit Vancouver Park Board website (opens in new tab)",
+        },
+        {
+          image: "nvrc.png",
+          name: "North Vancouver Recreation & Culture",
+          url: "https://nvrc.ca/",
+          ariaLabel: "Visit North Vancouver Recreation & Culture website (opens in new tab)",
+        },
+        {
+          image: "amssa.png",
+          name: "AMSSA",
+          url: "https://amssa.org/",
+          ariaLabel: "Visit AMSSA website (opens in new tab)",
+        },
+        {
+          image: "ncs.png",
+          name: "New Chelsea Society",
+          url: "https://newchelsea.ca/",
+          ariaLabel: "Visit New Chelsea Society website (opens in new tab)",
         },
       ],
     },
@@ -148,35 +172,35 @@ export const homeContent = {
       sshrcAlt: "CRSH Canada",
       partnersList: [
         {
-          image: "partner1.webp",
+          image: "city_of_burnaby.webp",
           name: "Ville de Burnaby",
           url: "https://www.burnaby.ca/",
           ariaLabel:
             "Visiter le site web de la Ville de Burnaby (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner2.webp",
+          image: "city_of_courtenay.webp",
           name: "Ville de Courtenay",
           url: "https://www.courtenay.ca/",
           ariaLabel:
             "Visiter le site web de la Ville de Courtenay (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner3.webp",
+          image: "SACH.webp",
           name: "SACH",
           url: "https://www.sachbc.ca/",
           ariaLabel:
             "Visiter le site web de SACH (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner4.webp",
+          image: "bcrpa_new.png",
           name: "Association des Loisirs et Parcs de la C.-B.",
           url: "https://www.bcrpa.bc.ca/",
           ariaLabel:
             "Visiter le site web de l'Association des Loisirs et Parcs de la C.-B. (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner8.webp",
+          image: "bnh.webp",
           name: "Maison de Quartier de Burnaby",
           url: "https://burnabynh.ca/",
           ariaLabel:
@@ -204,25 +228,49 @@ export const homeContent = {
             "Visiter le site web de Open Door Language & Culture Society (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner5.webp",
+          image: "rec_studies.webp",
           name: "Études en Loisirs Langara",
           url: "https://langara.ca/programs-and-courses/programs/recreation-studies/",
           ariaLabel:
             "Visiter le site web des Études en Loisirs Langara (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner6.webp",
+          image: "ARC.webp",
           name: "Centre de Recherche Appliquée Langara",
           url: "https://students.langara.ca/about-langara/applied-research/index.html",
           ariaLabel:
             "Visiter le site web du Centre de Recherche Appliquée Langara (s'ouvre dans un nouvel onglet)",
         },
         {
-          image: "partner7.webp",
+          image: "edi_langara.webp",
           name: "Bureau d'Équité, Diversité et Inclusion Langara",
           url: "https://students.langara.ca/about-langara/edi/",
           ariaLabel:
             "Visiter le site web du Bureau d'Équité, Diversité et Inclusion Langara (s'ouvre dans un nouvel onglet)",
+        },
+        {
+          image: "vancouver_park_board.png",
+          name: "Conseil des parcs de Vancouver",
+          url: "https://vancouver.ca/your-government/vancouver-board-of-parks-and-recreation.aspx",
+          ariaLabel: "Visiter le site web du Conseil des parcs de Vancouver (s'ouvre dans un nouvel onglet)",
+        },
+        {
+          image: "nvrc.png",
+          name: "Loisirs et Culture du North Vancouver",
+          url: "https://nvrc.ca/",
+          ariaLabel: "Visiter le site web des Loisirs et Culture du North Vancouver (s'ouvre dans un nouvel onglet)",
+        },
+        {
+          image: "amssa.png",
+          name: "AMSSA",
+          url: "https://amssa.org/",
+          ariaLabel: "Visiter le site web d'AMSSA (s'ouvre dans un nouvel onglet)",
+        },
+        {
+          image: "ncs.png",
+          name: "New Chelsea Society",
+          url: "https://newchelsea.ca/",
+          ariaLabel: "Visiter le site web de New Chelsea Society (s'ouvre dans un nouvel onglet)",
         },
       ],
     },
