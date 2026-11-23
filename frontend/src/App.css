@@ -1,6 +1,14 @@
 
 @import "tailwindcss";
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 @theme {
   --color-primary: #023f47;
@@ -38,6 +46,65 @@
   --breakpoint-3xl:2560px;
 
 
+}
+
+.research-header {
+  --research-hub-height: 64px;
+  box-shadow: 0 1px 0 rgb(2 63 71 / 0.1);
+  font-family: var(--font-dm-sans);
+}
+
+.research-project-tabs {
+  height: 64px;
+  scroll-margin-top: 64px;
+}
+
+.research-tab-highlight {
+  transition: transform 360ms var(--ease-reveal), background-color 240ms ease-out, opacity 180ms ease-out;
+}
+
+.research-hub-hero {
+  min-height: min(38rem, calc(100svh - 10rem));
+}
+
+@media (max-width: 639px) {
+  .research-hub-hero {
+    min-height: 24rem;
+  }
+}
+
+.research-project-page {
+  animation-duration: 320ms;
+  animation-timing-function: var(--ease-reveal);
+  animation-fill-mode: both;
+}
+
+.research-project-forward {
+  animation-name: research-project-forward;
+}
+
+.research-project-backward {
+  animation-name: research-project-backward;
+}
+
+@keyframes research-project-forward {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes research-project-backward {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-tab-highlight {
+    transition: none;
+  }
+
+  .research-project-page {
+    animation: none;
+  }
 }
 
 .page-hero-ribbon {
