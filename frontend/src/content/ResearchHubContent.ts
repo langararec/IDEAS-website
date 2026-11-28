@@ -13,7 +13,7 @@ export const researchProjects = [
         path: '/reaching-out-welcoming-in',
         color: '#23443B',
         image: '/Reaching_Out_Welcoming_In.webp',
-        description: 'The project aims to reduce inequalities by ensuring that public recreation services are accessible and welcoming to immigrant and racialized communities.',
+        description: "As Canada's population ages and poverty among older adults grows, social isolation is a rising concern for health and wellbeing. Marginalized older adults often face barriers to community spaces, programs, and connection.",
     },
 ] as const;
 

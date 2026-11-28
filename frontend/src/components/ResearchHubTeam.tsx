@@ -70,8 +70,8 @@ const ResearchHubTeam = () => {
 
     return (
         <section aria-labelledby="hub-team-title" className="bg-primary py-12 text-white sm:py-16">
-            <div className="mx-auto max-w-7xl">
-                <div className="px-6 text-center">
+            <div className="mx-auto max-w-7xl px-6">
+                <div className="text-center">
                     <h2 id="hub-team-title" className="text-3xl font-bold font-dm-sans sm:text-4xl">Our Team</h2>
                     <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
                         The researchers, collaborators and students behind Innovate Recreation.
@@ -80,7 +80,7 @@ const ResearchHubTeam = () => {
                 <div
                     ref={teamRail}
                     onScroll={updateTeamPage}
-                    className="mt-8 flex w-full max-w-full min-w-0 snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="mt-8 flex w-full max-w-full min-w-0 snap-x snap-mandatory gap-5 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                     aria-label="Innovate Recreation team"
                 >
                     {teamMembers.map(member => (
@@ -114,14 +114,14 @@ const ResearchHubTeam = () => {
                         </article>
                     ))}
                 </div>
-                <div className="mt-8 flex items-center justify-between px-6">
+                <div className="mt-8 flex min-w-0 items-center justify-between gap-2">
                     <Link
                         to="/ideas/team"
-                        className="inline-flex min-h-12 items-center justify-center rounded-md bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-6"
+                        className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-accent px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:min-h-12 sm:px-6 sm:py-3 sm:text-base"
                     >
                         Meet the full team
                     </Link>
-                    <div className="flex items-center gap-3">
+                    <div className="flex shrink-0 items-center gap-2 sm:gap-3">
                         <span className="hidden items-center gap-1.5 sm:flex" aria-label={`Team carousel position ${teamPage + 1}`}>
                             {Array.from({ length: teamPageCount }).map((_, index) => (
                                 <button
